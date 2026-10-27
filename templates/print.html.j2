@@ -197,7 +197,7 @@ a { color: inherit; text-decoration: none; }
       <p class="box-title">Today's biggest developments</p>
       <ol class="biggest">
         {% for st in brief %}<li><b>{{ st.headline }}.</b> {{ st.dek }}</li>{% endfor %}
-        {% for d in pf.developments[:1] %}<li><b>{{ d.headline }}.</b> See Portfolio.</li>{% endfor %}
+        {% if not share %}{% for d in pf.developments[:1] %}<li><b>{{ d.headline }}.</b> See Portfolio.</li>{% endfor %}{% endif %}
       </ol>
     </div>
     <div>
@@ -226,6 +226,7 @@ a { color: inherit; text-decoration: none; }
   <div class="cols2">{% for st in (ranked.india or [])[:print_caps.india] %}{{ pstory(st) }}{% endfor %}</div>
 </section>
 
+{% if not share %}
 <section class="pg-money">
   {{ group_head('realestate', print_titles.realestate, 'Criteria: ' ~ realestate.criteria_text) }}
   <div class="cols2">
@@ -284,12 +285,18 @@ a { color: inherit; text-decoration: none; }
   {{ group_head('finance', print_titles.finance) }}
   <div class="cols2">{% for st in (ranked.finance or [])[:print_caps.finance] %}{{ pstory(st) }}{% endfor %}</div>
 </section>
+{% endif %}
 
 <section class="pg-life">
   {% if ranked.lifestyle %}
   {{ group_head('lifestyle', print_titles.lifestyle) }}
   <div class="cols2">{% for st in ranked.lifestyle[:print_caps.lifestyle] %}{{ pstory(st, show_qr=false) }}{% endfor %}</div>
   {% endif %}
+  {% if share %}
+  <table class="tbl"><tr><th>Date</th><th>Coming up</th></tr>{% for u in ab.upcoming %}<tr><td class="t">{{ u.date }}</td><td>{{ u.event }}</td></tr>{% endfor %}</table>
+  <div class="box" style="margin-top: 4mm"><h4>About this paper</h4>
+    <p>The Kapoor Daily is a one-reader newspaper. Every morning an AI editor (Claude) researches the news, ranks each story by how much it matters to me personally, checks every claim against a cited source, and typesets the result as a web edition and this print edition. This sample leaves out the private sections: portfolio, property search, research desk and personal finance.</p></div>
+  {% else %}
   {{ group_head('actions', print_titles.actions) }}
   <div class="board">
     <div><span class="n">3</span><h3>Things worth knowing</h3><ol>{% for t in ab.three_things %}<li>{{ t }}</li>{% endfor %}</ol></div>
@@ -306,6 +313,7 @@ a { color: inherit; text-decoration: none; }
   <p class="sh">Data notes</p>
   <ul class="notes">{% for n in data_notes %}<li>{{ n }}</li>{% endfor %}{% for w in warnings %}<li>Validation: {{ w }}</li>{% endfor %}{% for w in editorial_log %}<li>Editor: {{ w }}</li>{% endfor %}</ul>
   <p class="disc">{{ ed.disclosure }} Not investment advice. Built {{ generated }}.</p>
+  {% endif %}
 </section>
 </body>
 </html>
