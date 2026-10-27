@@ -1,0 +1,10 @@
+# Editorial preference profile. Updated ONLY from the reader's explicit feedback
+# (reply to the email digest, or tell Claude in a session). Each entry records when and why.
+# The daily workflow reads this to adjust selection; it never edits risk settings or holdings.
+
+boost_topics: []        # e.g. {topic: "BigQuery", reason: "asked for deeper coverage", added: 2026-10-28}
+mute_topics: []         # e.g. {topic: "celebrity gossip", reason: "dismissed repeatedly", added: ...}
+deep_dive_requests: []  # topics the reader wants explained in more depth
+investment_themes: []   # themes the reader follows (beyond current holdings)
+property_markets: []    # neighborhoods/towns the reader has shown interest in
+feedback_log: []        # {date, feedback, action_taken}

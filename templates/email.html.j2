@@ -1,0 +1,62 @@
+{#- Email digest. Outlook (Microsoft 365 connector) sanitizes HTML to a narrow allowlist:
+    headings, paragraphs, links, lists, tables and basic emphasis. No <style>, <span> or <img>.
+    So this template is purely semantic and reads well even if every inline style is stripped. -#}
+<h1>The Kapoor Daily: {{ date_long }}</h1>
+<p><em>Edition No. {{ ed.number }} · about {{ reading_minutes }} minutes for the full edition · researched {{ researched_label }}</em></p>
+{% if links %}
+<p><strong>Full editions:</strong>
+{% if links.web %}<a href="{{ links.web }}">Interactive edition</a>{% endif %}
+{% if links.a4 %} · <a href="{{ links.a4 }}">A4 print PDF (AirPrint)</a>{% endif %}
+{% if links.bound %} · <a href="{{ links.bound }}">Bound edition PDF</a>{% endif %}
+{% if links.booklet %} · <a href="{{ links.booklet }}">A5 booklet PDF</a>{% endif %}
+</p>
+{% endif %}
+<hr>
+<h2>Lead: {{ lead.headline }}</h2>
+<p>{{ lead.summary }}</p>
+<p><strong>Why this matters to me:</strong> {{ lead.me }}</p>
+<p><a href="{{ lead.sources[0].url }}">{{ lead.sources[0].name }}</a></p>
+
+<h2>Markets (latest reported, not live)</h2>
+<table>
+{% for m in market %}<tr><td>{{ m.label }}</td><td><strong>{{ m.value }}</strong></td><td>{{ m.change }}</td><td><em>{{ m.as_of }}</em></td></tr>
+{% endfor %}</table>
+
+<h2>A · The Morning Brief</h2>
+<ol>
+{% for st in brief %}<li><strong>{{ st.headline }}.</strong> {{ st.dek }} <a href="{{ st.sources[0].url }}">Source</a></li>
+{% endfor %}</ol>
+
+{% for sid, label in [('local','B · Jersey City, NJ & NYC'),('realestate','C · Real Estate'),('tech','F · AI & Technology'),('india','G · India & Delhi'),('finance','H · Finance & Travel'),('lifestyle','I · Lifestyle')] %}
+{% if ranked[sid] or sid == 'realestate' %}
+<h2>{{ label }}</h2>
+<ul>
+{% if sid == 'realestate' %}<li><strong>Listings:</strong> {{ 'No new listing meets your criteria today.' if not realestate.matches else realestate.matches|length ~ ' match(es). See the full edition.' }}</li>{% endif %}
+{% for st in ranked[sid] or [] %}<li><strong>{{ st.headline }}.</strong> {{ st.dek }}{% if st.use %} <em>How I could use this:</em> {{ st.use }}{% endif %} <a href="{{ st.sources[0].url }}">Source</a></li>
+{% endfor %}</ul>
+{% endif %}
+{% endfor %}
+
+<h2>D · Portfolio</h2>
+<ul>
+{% for d in pf.developments %}<li><strong>{{ d.ticker }} ({{ d.signal }}, {{ d.materiality }}):</strong> {{ d.headline }}. <em>Investigate:</em> {{ d.consider }}</li>
+{% endfor %}
+{% for v in pf.verification %}<li><strong>Ticker check, {{ v.ticker }}:</strong> {{ v.status }}. {{ v.action }}</li>
+{% endfor %}</ul>
+
+<h2>E · Research Desk</h2>
+<ul>
+{% for i in research.ideas %}<li><strong>{{ i.name }} ({{ i.ticker }}): {{ i.stance }}.</strong> {{ i.conviction }}</li>
+{% endfor %}</ul>
+
+<h2>J · Action Board</h2>
+<h3>3 things worth knowing</h3>
+<ol>{% for t in ab.three_things %}<li>{{ t }}</li>{% endfor %}</ol>
+<h3>2 opportunities</h3>
+<ol>{% for o in ab.two_opportunities %}<li><strong>{{ o.title }}.</strong> {{ o.detail }}</li>{% endfor %}</ol>
+<h3>1 thing to do today</h3>
+<p>{{ ab.one_action }}</p>
+<h3>Coming up</h3>
+<ul>{% for u in ab.upcoming[:8] %}<li><strong>{{ u.date }}:</strong> {{ u.event }}</li>{% endfor %}</ul>
+<hr>
+<p><em>{{ ed.disclosure }} Not investment advice. Reply to this email with feedback (more of / less of a topic) and it will be recorded in your preference profile.</em></p>

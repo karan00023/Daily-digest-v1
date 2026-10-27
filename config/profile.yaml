@@ -1,0 +1,94 @@
+# The Kapoor Daily — reader profile and editorial configuration.
+# Changes here come only from the reader's explicit feedback (see config/preferences.yaml).
+# Never add holdings or alter risk settings without the reader saying so.
+
+reader:
+  name: Karan Kapoor
+  home: The Heights, Jersey City, NJ
+  timezone: America/New_York
+  connections: [New York City, "Delhi, India"]
+  career: >-
+    12+ years across data, analytics, technology and product management;
+    technical PM for data platforms, cloud, data architecture and enterprise analytics.
+  # Deliberately unknown until the reader supplies them. The Research Desk must not
+  # size positions or suggest allocations while these are null.
+  risk_tolerance: null
+  liquidity_needs: null
+  tax_situation: null
+  time_horizon: null
+
+publication:
+  title: THE KAPOOR DAILY
+  tagline: "Independent intelligence for one reader"
+  first_edition: 2026-10-27
+  deliver_at: "07:00"
+  timezone: America/New_York
+  reading_minutes: [7, 10]
+  print_pages: {weekday: [4, 8], sunday: [4, 12]}
+  # Stories per section in the print editions (the digital edition carries all of them).
+  print_caps: {local: 3, tech: 3, india: 2, finance: 1, realestate: 1, lifestyle: 1}
+
+# Relevance weights (editorial priorities, not precision). Each story scores 0–10 per criterion.
+relevance_weights:
+  personal: 0.35
+  impact: 0.25
+  magnitude: 0.20
+  timeliness: 0.10
+  actionability: 0.10
+feature_threshold: 7.0   # weighted score at/above which a story is featured prominently
+drop_threshold: 4.0      # below this a story is cut rather than used as filler
+
+freshness:
+  preferred_hours: 24
+  max_hours: 72          # older items must be flagged `context: true` or they fail validation
+
+sections:
+  - {id: brief,      title: "The Morning Brief",             max: 5}
+  - {id: local,      title: "Jersey City, NJ & NYC",          max: 5}
+  - {id: realestate, title: "Real Estate Radar",              max: 4}
+  - {id: portfolio,  title: "Portfolio Intelligence",         max: 6}
+  - {id: research,   title: "Investment Research Desk",       max: 3}
+  - {id: tech,       title: "AI, Technology & Career",        max: 5}
+  - {id: india,      title: "India & Delhi",                  max: 4}
+  - {id: finance,    title: "Personal Finance & Travel",      max: 4}
+  - {id: lifestyle,  title: "Entertainment & Lifestyle",      max: 4}
+
+portfolio:
+  note: >-
+    Taken from brokerage screenshots. Some securities appear in more than one account;
+    positions are never summed and values are never assumed.
+  holdings:
+    - {ticker: AMD,   expected: "Advanced Micro Devices, Inc.",            type: equity}
+    - {ticker: AVGO,  expected: "Broadcom Inc.",                           type: equity}
+    - {ticker: FDRXX, expected: "Fidelity Government Cash Reserves",       type: money_market}
+    - {ticker: GE,    expected: "GE Aerospace (General Electric Co.)",     type: equity}
+    - {ticker: GLD,   expected: "SPDR Gold Shares",                        type: etf}
+    - {ticker: GOOGL, expected: "Alphabet Inc. Class A",                   type: equity}
+    - {ticker: ORCL,  expected: "Oracle Corporation",                      type: equity}
+    - {ticker: RCAT,  expected: "Red Cat Holdings, Inc.",                  type: equity}
+    - {ticker: SPCX,  expected: "VERIFY — ambiguous ticker",               type: verify, flag: ambiguous}
+    - {ticker: TSLA,  expected: "Tesla, Inc.",                             type: equity}
+    - {ticker: VTI,   expected: "Vanguard Total Stock Market ETF",         type: etf}
+    - {ticker: RIOT,  expected: "Riot Platforms, Inc.",                    type: equity}
+    - {ticker: MSFT,  expected: "Microsoft Corporation",                   type: equity}
+    - {ticker: IBM,   expected: "International Business Machines Corp.",   type: equity}
+    - {ticker: MSTR,  expected: "Strategy Inc (formerly MicroStrategy)",   type: equity}
+    - {ticker: OCGN,  expected: "Ocugen, Inc.",                            type: equity}
+    - {ticker: IDEXQ, expected: "VERIFY — Ideanomics, Inc. (bankrupt/OTC)", type: verify, flag: distressed}
+
+real_estate:
+  min_lot_sqft: 4000
+  max_price_usd: 250000
+  max_drive_minutes: 30
+  nyc_reference: "Holland Tunnel, Manhattan entrance (Canal St & Varick St)"
+  markets: [Jersey City, Bayonne, Union City, North Bergen, West New York, Weehawken,
+            Hoboken, Kearny, Harrison, Newark, Elizabeth, Secaucus, Fort Lee,
+            Paterson, Clifton, Passaic, Orange, East Orange, Irvington]
+  require_verified: [address, url, price, lot_sqft]
+
+travel:
+  cards: ["American Express Platinum"]
+  points: {program: "Amex Membership Rewards", balance_approx: 400000}
+  home_airports: [EWR, JFK, LGA]
+  key_routes: ["NYC-DEL"]
+  rule: "Never recommend a speculative transfer of flexible points without a concrete, available redemption."

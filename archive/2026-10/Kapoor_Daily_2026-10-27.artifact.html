@@ -1,0 +1,911 @@
+
+
+
+<title>The Kapoor Daily</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&family=UnifrakturMaguntia&display=swap">
+<style>
+/* Layout: a broadsheet front (lead + market rail) over lettered sections A–J; cards collapse to one column on phones. */
+:root {
+  --paper: #f7f2e8;        /* newsprint */
+  --paper-2: #efe7d6;      /* rail and boxed panels */
+  --ink: #1d1b18;          /* body text */
+  --ink-2: #5a5348;        /* secondary text */
+  --rule: #cfc4ae;         /* hairlines */
+  --accent: #14506b;       /* deep ink-blue: links, section letters */
+  --money: #f4dccb;        /* salmon tint for money pages */
+  --opp: #2f6b3a;          /* opportunity */
+  --bull: #2f6b3a; --bear: #a1322b; --neutral: #6c6558;
+  --read: #6b4e16;         /* our-read / opinion */
+  --f-mast: "UnifrakturMaguntia", "Old English Text MT", "Playfair Display", Georgia, serif;
+  --f-head: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --f-body: "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --f-ui: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #171614; --paper-2: #211f1b; --ink: #ece6da; --ink-2: #b2a996; --rule: #3d382f;
+  --accent: #7fb8d4; --money: #2b211c; --opp: #7cc08a; --bull: #7cc08a; --bear: #e58b80; --neutral: #a9a190; --read: #d9b56a;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #171614; --paper-2: #211f1b; --ink: #ece6da; --ink-2: #b2a996; --rule: #3d382f;
+  --accent: #7fb8d4; --money: #2b211c; --opp: #7cc08a; --bull: #7cc08a; --bear: #e58b80; --neutral: #a9a190; --read: #d9b56a;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.55 var(--f-body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-block: 0 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Masthead */
+.strip { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; align-items: center;
+  font: 600 12px/1.3 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2);
+  border-bottom: 1px solid var(--rule); padding-block: 12px 8px; }
+.strip button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--ink); background: none;
+  border: 1px solid var(--rule); border-radius: 2px; padding: 4px 8px; cursor: pointer; }
+.mast { text-align: center; padding-block: 18px 10px; border-bottom: 4px double var(--ink); }
+.mast h1 { font: 400 clamp(44px, 9vw, 104px)/1 var(--f-mast); margin: 0; letter-spacing: .01em; }
+.mast .sub { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 22px; margin-top: 10px;
+  font: italic 15px/1.3 var(--f-body); color: var(--ink-2); }
+nav.sections { display: flex; gap: 2px 18px; overflow-x: auto; white-space: nowrap; scrollbar-width: none;
+  border-bottom: 1px solid var(--rule); padding-block: 8px; font: 600 13px/1.2 var(--f-ui); letter-spacing: .06em; text-transform: uppercase; }
+nav.sections a { color: var(--ink); text-decoration: none; }
+nav.sections a:hover { color: var(--accent); }
+nav.sections b { color: var(--accent); margin-right: 4px; }
+
+/* Front page */
+.front { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; padding-block: 22px;
+  border-bottom: 1px solid var(--ink); }
+.rail { background: var(--paper-2); padding: 16px 18px; align-self: start; display: grid; gap: 18px; }
+.rail h3, .rail-title { font: 700 12px/1.2 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 6px; color: var(--ink-2); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.mkt td { padding: 5px 0; border-bottom: 1px solid var(--rule); font: 15px/1.25 var(--f-ui); vertical-align: top; }
+.mkt td.v { text-align: right; font-weight: 600; }
+.mkt td.c { text-align: right; width: 5.5em; }
+.mkt .asof { display: block; font-size: 12px; color: var(--ink-2); }
+.up { color: var(--bull); } .down { color: var(--bear); }
+.inside ol { margin: 0; padding-left: 0; list-style: none; columns: 2; column-gap: 14px; font: 14px/1.6 var(--f-ui); }
+.inside li b { color: var(--accent); margin-right: 4px; }
+.disclosure { font: italic 14px/1.45 var(--f-body); color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 10px; margin: 0; }
+
+/* Stories */
+.story { min-width: 0; }
+.story__meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px; font: 600 11px/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; }
+.chip { padding: 3px 6px; border: 1px solid currentColor; border-radius: 2px; color: var(--ink-2); }
+.chip--opportunity { color: var(--opp); } .chip--analysis, .chip--opinion { color: var(--read); }
+.chip--news { color: var(--accent); } .chip--muted { border-style: dotted; }
+.tick { color: var(--ink); background: var(--paper-2); padding: 3px 5px; border-radius: 2px; }
+.score { margin-left: auto; color: var(--ink-2); font-weight: 400; letter-spacing: .04em; text-transform: none; }
+.hl { font: 700 22px/1.2 var(--f-head); margin: 0 0 6px; text-wrap: balance; }
+.hl--lead { font-size: clamp(30px, 4.2vw, 48px); font-weight: 900; line-height: 1.08; letter-spacing: -.01em; }
+.dek { font: italic 18px/1.4 var(--f-body); color: var(--ink-2); margin: 0 0 10px; }
+.story--lead .dek { font-size: 21px; }
+.summary { margin: 0 0 10px; max-width: 68ch; }
+.story--lead .summary { font-size: 19px; }
+.story--lead .summary::first-letter { font: 900 3.2em/0.8 var(--f-head); float: left; padding: 6px 8px 0 0; color: var(--accent); }
+details { border-top: 1px solid var(--rule); margin-top: 8px; }
+summary { cursor: pointer; padding-block: 8px; font: 600 13px/1.2 var(--f-ui); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+ "; } details[open] summary::before { content: "− "; }
+.src-count { color: var(--ink-2); font-weight: 400; text-transform: none; letter-spacing: 0; }
+.more { display: grid; gap: 10px; padding-bottom: 6px; font-size: 16px; }
+.more h4, .mtm h4 { font: 700 11px/1.2 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 3px; color: var(--ink-2); }
+.more p, .mtm p { margin: 0; }
+.mtm { border-left: 3px solid var(--accent); padding-left: 10px; margin: 6px 0; }
+.use { border-left: 3px solid var(--opp); padding-left: 10px; }
+.li h4 { color: var(--opp); }
+.read { border-left: 3px solid var(--read); padding-left: 10px; font-style: italic; }
+.srcs { margin: 0; padding-left: 18px; font: 14px/1.5 var(--f-ui); }
+.pubdate { color: var(--ink-2); }
+
+/* Sections */
+.sec { padding-block: 26px 10px; border-bottom: 1px solid var(--ink); }
+.sec--money { background: linear-gradient(var(--money), var(--money)) padding-box; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+.sec-head { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: baseline; margin-bottom: 16px; }
+.sec-letter { font: 900 40px/1 var(--f-head); color: var(--accent); }
+.sec-head h2 { font: 900 28px/1.1 var(--f-head); margin: 0; text-transform: uppercase; letter-spacing: .02em; }
+.sec-note { grid-column: 2; margin: 4px 0 0; font: italic 15px/1.4 var(--f-body); color: var(--ink-2); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 22px 30px; }
+.grid > * { padding-top: 12px; border-top: 1px solid var(--rule); }
+.world { font: 15px/1.5 var(--f-ui); margin: 18px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.world b { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12px; color: var(--ink-2); margin-right: 6px; }
+
+/* Portfolio */
+.check { background: var(--paper); border: 1px solid var(--rule); padding: 12px 14px; }
+.check h3 { font: 700 18px/1.2 var(--f-head); margin: 0 0 4px; }
+.check .status { font: 600 12px/1.2 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--read); }
+.check p { margin: 6px 0 0; font-size: 16px; }
+.pill { font: 700 11px/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; padding: 4px 7px; border-radius: 999px; color: var(--paper); }
+.pill--bullish { background: var(--bull); } .pill--bearish { background: var(--bear); } .pill--neutral { background: var(--neutral); }
+.dev dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 10px; margin: 8px 0; font: 14px/1.4 var(--f-ui); }
+.dev dt { color: var(--ink-2); text-transform: uppercase; letter-spacing: .06em; font-size: 11px; padding-top: 2px; }
+.dev dd { margin: 0; }
+.scroll { overflow-x: auto; }
+.watch { font: 14px/1.35 var(--f-ui); min-width: 560px; }
+.watch th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); border-bottom: 2px solid var(--ink); padding: 6px 8px 6px 0; }
+.watch td { border-bottom: 1px solid var(--rule); padding: 6px 8px 6px 0; vertical-align: top; }
+.watch td.t { font-weight: 700; }
+.watch .na { color: var(--ink-2); font-style: italic; }
+.flag { color: var(--bear); font-weight: 700; }
+.note-box { font: italic 15px/1.45 var(--f-body); color: var(--ink-2); margin: 16px 0 8px; max-width: 80ch; }
+
+/* Real estate */
+.criteria { font: 600 14px/1.4 var(--f-ui); background: var(--paper-2); padding: 10px 12px; margin-bottom: 14px; }
+.nomatch { font: 700 18px/1.3 var(--f-head); margin: 0 0 6px; }
+
+/* Research */
+.idea dl { display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 12px; margin: 10px 0 0; font-size: 15px; }
+.idea dt { font: 700 11px/1.4 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
+.idea dd { margin: 0; }
+.stance { display: inline-block; font: 700 12px/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; border: 2px solid var(--read); color: var(--read); padding: 5px 8px; margin-top: 6px; }
+
+/* Action board */
+.board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.board h3 { font: 900 20px/1.2 var(--f-head); margin: 0 0 8px; display: flex; align-items: baseline; gap: 10px; }
+.board h3 span { font-size: 46px; color: var(--accent); line-height: .9; }
+.board ol, .board ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+.one { font: 600 19px/1.4 var(--f-body); }
+.dates td { padding: 6px 10px 6px 0; border-bottom: 1px solid var(--rule); font: 15px/1.35 var(--f-ui); vertical-align: top; }
+.dates td:first-child { white-space: nowrap; font-weight: 700; width: 9em; }
+
+/* Sources */
+.srclist { font: 14px/1.5 var(--f-ui); columns: 2 340px; column-gap: 30px; padding-left: 20px; }
+.srclist li { break-inside: avoid; margin-bottom: 4px; }
+.tier { font-size: 11px; color: var(--ink-2); }
+.notes { font: 14px/1.5 var(--f-ui); color: var(--ink-2); }
+footer { padding-block: 18px; font: 13px/1.5 var(--f-ui); color: var(--ink-2); text-align: center; }
+
+@media (max-width: 820px) {
+  .front { grid-template-columns: minmax(0, 1fr); }
+  .board { grid-template-columns: minmax(0, 1fr); }
+  .idea dl { grid-template-columns: minmax(0, 1fr); gap: 0 0; }
+  .idea dd { margin-bottom: 8px; }
+  body { font-size: 16.5px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+<div class="wrap">
+  <div class="strip">
+    <span>Vol. I · No. 1</span>
+    <span>Tuesday, 27 October 2026</span>
+    <span>~10 min read</span>
+<span class="print-links">Print: <a href="Kapoor_Daily_2026-10-27_A4.pdf" target="_blank" rel="noopener">A4</a> · <a href="Kapoor_Daily_2026-10-27_Bound.pdf" target="_blank" rel="noopener">Bound</a> · <a href="Kapoor_Daily_2026-10-27_A5_Booklet.pdf" target="_blank" rel="noopener">A5 booklet</a></span>    <button type="button" id="theme-toggle" aria-label="Switch light or dark theme">Light / Dark</button>
+  </div>
+  <header class="mast">
+    <h1>The Kapoor Daily</h1>
+    <div class="sub"><span>Independent intelligence for one reader</span><span>Jersey City · New York · Delhi</span><span>Researched 5:30 AM ET, 27 Oct</span></div>
+  </header>
+  <nav class="sections" aria-label="Sections">
+    <a href="#brief"><b>A</b>Brief</a>
+    <a href="#local"><b>B</b>Local</a>
+    <a href="#realestate"><b>C</b>Real Estate</a>
+    <a href="#portfolio"><b>D</b>Portfolio</a>
+    <a href="#research"><b>E</b>Research</a>
+    <a href="#tech"><b>F</b>AI &amp; Tech</a>
+    <a href="#india"><b>G</b>India</a>
+    <a href="#finance"><b>H</b>Travel &amp; Money</a>
+    <a href="#lifestyle"><b>I</b>Lifestyle</a>
+    <a href="#actions"><b>J</b>Action Board</a>
+    <a href="#sources"><b>§</b>Sources</a>
+  </nav>
+
+  <section class="front" aria-label="Front page">
+    <article class="story story--lead" data-kind="news" id="s-fed-week">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 8.8</span>
+  </div>
+<h2 class="hl hl--lead">Warsh&#39;s Fed opens a two-day meeting with inflation at 3.7% and hiring stalling</h2><p class="dek">A hold is priced in for Wednesday; the press conference decides whether December brings a hike.</p>  <p class="summary">The FOMC began its 27–28 October meeting this morning; futures put roughly a 91% chance on no change and about 9% on a 25 bp hike. September CPI rose 3.7% year on year (core 2.6%) while payrolls grew just 29,000 and unemployment held at 4.2%. There is no new dot plot this time, so Chair Kevin Warsh&#39;s 2:30 p.m. press conference carries the signal.</p>
+<div class="mtm"><h4>Why this matters to me</h4><p>Your land search and any future construction loan price off these rates — a December hike would lift financing costs before you buy. Rate-sensitive, long-duration holdings (TSLA, MSTR, RCAT, OCGN) tend to react most to a hawkish surprise; FDRXX yields would follow policy rates up.</p></div>  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Hot headline inflation and weak hiring pull in opposite directions. UBS expects 25 bp hikes in December and March; a hawkish tone would keep the 10-year near 5% and mortgage rates above 7%.</p></div><div class="read"><h4>Our read</h4><p>Our read: the risk is skewed hawkish. Inflation is gasoline-led, but a 3.7% print is hard for a new chair to look through.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-october-2026" target="_blank" rel="noopener">Kiplinger — Fed meeting live updates</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.bloomberg.com/news/live-blog/2026-10-14/us-cpi-for-september-live-updates" target="_blank" rel="noopener">Bloomberg — US CPI September live blog</a> <span class="pubdate">14 Oct 2026</span></li>
+<li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026" target="_blank" rel="noopener">TheStreet — Stock market today, 26 Oct</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article>
+    <aside class="rail">
+      <div>
+        <h3>Markets</h3>
+        <table class="mkt">
+          <tr><td><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026" target="_blank" rel="noopener">S&amp;P 500</a><span class="asof">Mon 26 Oct close</span></td><td class="v">7,676.80</td>
+          <td class="c up">+0.70%</td></tr>
+          <tr><td><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026" target="_blank" rel="noopener">Nasdaq</a><span class="asof">Mon 26 Oct close</span></td><td class="v">26,169.38</td>
+          <td class="c up">+0.82%</td></tr>
+          <tr><td><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026" target="_blank" rel="noopener">Dow</a><span class="asof">Mon 26 Oct close</span></td><td class="v">52,361.52</td>
+          <td class="c up">+0.28%</td></tr>
+          <tr><td><a href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">10-yr UST</a><span class="asof">26 Oct</span></td><td class="v">≈4.99%</td>
+          <td class="c ">slightly lower</td></tr>
+          <tr><td><a href="https://mitrade.com/au/insights/daily-market-outlook/news-today/market-news-today-australia-261027" target="_blank" rel="noopener">Gold</a><span class="asof">26 Oct, single source</span></td><td class="v">≈$4,013/oz</td>
+          <td class="c up">+0.4%</td></tr>
+          <tr><td><a href="https://www.babypips.com/news/daily-financial-forex-market-recap-2026-10-26" target="_blank" rel="noopener">WTI crude</a><span class="asof">26 Oct, single source</span></td><td class="v">≈$103</td>
+          <td class="c down">−1.7%</td></tr>
+          <tr><td><a href="https://finance.yahoo.com/markets/crypto/articles/bitcoin-holds-79-200-fed-133225031.html" target="_blank" rel="noopener">Bitcoin</a><span class="asof">26 Oct</span></td><td class="v">≈$79,900</td>
+          <td class="c down">−0.4%</td></tr>
+          <tr><td><a href="https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decrease-732" target="_blank" rel="noopener">30-yr mortgage</a><span class="asof">Freddie Mac, 22 Oct</span></td><td class="v">7.32%</td>
+          <td class="c down">−8 bp w/w</td></tr>
+        </table>
+      </div>
+      <figure style="margin:0">
+        <div class="rail-title">What futures price for Wednesday&#39;s Fed decision</div>
+        <svg viewBox="0 0 300 68" width="100%" role="img" aria-label="What futures price for Wednesday&#39;s Fed decision">
+          <text x="0" y="20" fill="var(--ink)" font-family="Source Sans 3, Arial, sans-serif" font-size="13">Hold</text>
+          <rect x="100" y="8" width="140" height="16" fill="var(--rule)"></rect>
+          <rect x="100" y="8" width="126.84" height="16" fill="var(--accent)"></rect>
+          <text x="296" y="20" text-anchor="end" fill="var(--ink)" font-family="Source Sans 3, Arial, sans-serif" font-size="13" font-weight="700">90.6%</text>
+          <text x="0" y="50" fill="var(--ink)" font-family="Source Sans 3, Arial, sans-serif" font-size="13">+25 bp hike</text>
+          <rect x="100" y="38" width="140" height="16" fill="var(--rule)"></rect>
+          <rect x="100" y="38" width="13.16" height="16" fill="var(--accent)"></rect>
+          <text x="296" y="50" text-anchor="end" fill="var(--ink)" font-family="Source Sans 3, Arial, sans-serif" font-size="13" font-weight="700">9.4%</text>
+        </svg>
+        <figcaption class="asof" style="font:12px var(--f-ui);color:var(--ink-2)">As of 26 Oct 2026 · <a href="https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-october-2026" target="_blank" rel="noopener">Kiplinger, citing CME FedWatch</a></figcaption>
+      </figure>
+      <div class="inside">
+        <h3>Inside today</h3>
+        <ol>
+          <li><b>A</b><a href="#brief">Morning Brief</a></li>
+          <li><b>B</b><a href="#local">JC, NJ &amp; NYC</a></li>
+          <li><b>C</b><a href="#realestate">Real Estate</a></li>
+          <li><b>D</b><a href="#portfolio">Portfolio</a></li>
+          <li><b>E</b><a href="#research">Research Desk</a></li>
+          <li><b>F</b><a href="#tech">AI &amp; Tech</a></li>
+          <li><b>G</b><a href="#india">India &amp; Delhi</a></li>
+          <li><b>H</b><a href="#finance">Travel &amp; Money</a></li>
+          <li><b>I</b><a href="#lifestyle">Lifestyle</a></li>
+          <li><b>J</b><a href="#actions">Action Board</a></li>
+        </ol>
+      </div>
+      <p class="disclosure">This newspaper is researched and written by Claude, an AI model made by Anthropic. Today&#39;s edition covers Anthropic&#39;s IPO filing and an FTC inquiry into Anthropic; read that coverage knowing the author&#39;s maker is the subject. No Anthropic coverage is a recommendation.</p>
+    </aside>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="brief">
+  <span class="sec-letter" aria-hidden="true">A</span>
+  <h2>The Morning Brief</h2>
+<p class="sec-note">The stories that matter most to you today, ranked by consequence.</p></header>
+    <div class="grid"><article class="story" data-kind="news" id="s-bigtech-week">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="tick">MSFT</span><span class="tick">GOOGL</span><span class="tick">ORCL</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 8.5</span>
+  </div>
+<h3 class="hl">Microsoft and Alphabet report Wednesday after the close, the same day as the Fed and Oracle&#39;s investor day</h3><p class="dek">One afternoon holds three of your holdings&#39; biggest catalysts.</p>  <p class="summary">Alphabet reports Q3 after the close on Wednesday, 28 October (call at 4:30 p.m. ET), and Microsoft reports fiscal Q1 2027 the same evening (webcast 5:30 p.m. ET). Oracle&#39;s Investor Day runs earlier that day at Oracle AI World (webcast at 10:55 a.m. CT). AMD follows on 3 November.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Cloud growth and AI capex guidance from Microsoft and Alphabet drive the whole AI infrastructure complex, including AVGO, AMD and ORCL.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Watch for: Google Cloud and Azure growth rates, 2027 capex commentary, and Oracle&#39;s long-range targets and funding plan (reported debt is above $169B). Consensus figures vary by source and are not reproduced here.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.stocktitan.net/articles/earnings-calendar-week-of-october-26-2026" target="_blank" rel="noopener">StockTitan — Earnings calendar, week of 26 Oct</a> <span class="pubdate">25 Oct 2026</span></li>
+<li><a href="https://investor.oracle.com/investor-news/news-details/2026/ORACLE-INVESTOR-DAY-MEETING-TO-BE-HELD-OCTOBER-28-2026/default.aspx" target="_blank" rel="noopener">Oracle IR — Investor Day to be held 28 Oct 2026</a> <span class="pubdate">Oct 2026</span></li>
+<li><a href="https://www.marketbeat.com/earnings/reports/2026-10-28-alphabet-inc-stock/" target="_blank" rel="noopener">MarketBeat — Alphabet Q3 2026 earnings date</a> <span class="pubdate">Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-anthropic-ipo">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="tick">GOOGL</span><span class="tick">AVGO</span><span class="tick">AMD</span><span class="tick">MSFT</span><span class="tick">ORCL</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 8.4</span>
+  </div>
+<h3 class="hl">Anthropic files for what could be the largest IPO on record, under the ticker ANT</h3><p class="dek">The S-1 shows about $16.3B of first-half revenue and a mostly non-cash $80.7B net loss.</p>  <p class="summary">Anthropic publicly filed its S-1 on Monday for a Nasdaq Global Select listing as ANT. Reports of the filing put H1 2026 revenue near $16.3 billion (about 80% usage-based API), an operating loss of about $693 million, and a net loss of about $80.7 billion driven by fair-value changes on convertible instruments. The price range and share count are still blank; Fortune reports pricing could come in Thanksgiving week (unconfirmed).</p>
+  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>The listing gives public markets their first audited look at the economics of a frontier AI lab, and it was enough to lift the Nasdaq 0.8% on Monday. It becomes a valuation yardstick for OpenAI and for the AI infrastructure trade that runs through much of your portfolio.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Your largest themes (AVGO, AMD, GOOGL, MSFT, ORCL) are suppliers or partners to frontier labs. Alphabet has been a disclosed Anthropic investor, so the S-1 may quantify that stake (check the filing&#39;s principal-stockholder table). The filing also flags risk from disputes with the U.S. administration and the Department of Defense.</p></div><div class="read"><h4>Our read</h4><p>Disclosure: this edition is written by an Anthropic model. Treat this item as reporting, not a view on the stock.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html" target="_blank" rel="noopener">CNBC — Anthropic IPO live updates</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/exhibit44-sx1.htm" target="_blank" rel="noopener">SEC EDGAR — Anthropic, PBC Form S-1 exhibit</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo" target="_blank" rel="noopener">CNN — Anthropic set to make stock market debut</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-israel-iran">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 7.3</span>
+  </div>
+<h3 class="hl">Israel votes today as Trump weighs new strikes on Iran, with a decision expected after the midterms</h3><p class="dek">Trump endorsed Netanyahu; oil eased on Monday after talks in Tehran.</p>  <p class="summary">Israelis vote today after President Trump endorsed Benjamin Netanyahu, who suggested on the eve of the vote that the two leaders could resume the war on Iran. CNN reported that Trump declined a pre-election joint strike; the Jerusalem Post reports Washington expects no final decision before the 3 November U.S. midterms. WTI crude fell about 1.7% to near $103 on Monday.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Oil above $100 is a big reason U.S. inflation is 3.7% and RBI is defending the rupee. Renewed strikes would be an energy-price shock on both of the economies you follow.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>GLD is your hedge for this scenario. Crude spikes also hit airfares on routes like NYC–Delhi and feed into the Fed&#39;s December decision.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.yahoo.com/news/politics/articles/netanyahu-touts-trump-endorsement-eve-130628295.html" target="_blank" rel="noopener">Yahoo News (Reuters) — Netanyahu touts Trump endorsement on eve of vote</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.jpost.com/middle-east/iran-news/article-912822" target="_blank" rel="noopener">Jerusalem Post — Trump on Iranian nuclear sites</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.babypips.com/news/daily-financial-forex-market-recap-2026-10-26" target="_blank" rel="noopener">Babypips — Market recap, 26 Oct</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-us-india-trade">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="chip chip--muted">Earlier · 20 Oct 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.2</span>
+  </div>
+<h3 class="hl">U.S.–India trade deal is &#39;pretty close&#39;, Trump says, but nothing is signed</h3><p class="dek">India says the first tranche is in legal drafting; Washington&#39;s trade office says signing isn&#39;t imminent.</p>  <p class="summary">Trump said on 20 October that a deal with India was &#34;pretty close&#34;, the same day Secretary of State Rubio met External Affairs Minister Jaishankar in Mumbai. Commerce Minister Piyush Goyal says the first tranche is finalised and in legal drafting, while USTR Jamieson Greer said earlier this month that signing was not imminent.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>A signed deal would lock in lower tariffs on Indian goods and steady the rupee. None of the reporting shows H-1B terms in the talks.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Matters for INR conversion timing on any remittances, and for U.S.-listed companies with large India operations. No action until there is a signed text.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.bloomberg.com/news/articles/2026-10-20/trump-says-us-trade-deal-with-india-is-pretty-close" target="_blank" rel="noopener">Bloomberg — Trump says US trade deal with India is &#39;pretty close&#39;</a> <span class="pubdate">20 Oct 2026</span></li>
+<li><a href="https://sundayguardianlive.com/india/india-us-trade-deal-latest-news-piyush-goyal-says-talks-progressing-highlights-h-1b-visa-opportunity-for-india-302711/amp/" target="_blank" rel="noopener">Sunday Guardian — Goyal says talks progressing</a> <span class="pubdate">15 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+<ul class="world"><li><b>Elsewhere</b></li><li><a href="https://www.euronews.com/tag/top-stories?p=24" target="_blank" rel="noopener">Brazil: Lula wins re-election.</a></li><li><a href="https://www.10things.news/p/10-things-global-news-27th-october-e39" target="_blank" rel="noopener">France: Protests spread despite education concessions.</a></li><li><a href="https://www.10things.news/p/10-things-global-news-27th-october-e39" target="_blank" rel="noopener">Venezuela: María Corina Machado returns to a country divided over elections.</a></li><li><a href="https://fxstreet.com/news/japanese-yen-weakens-with-fed-and-boj-monetary-policy-meetings-in-focus-202610261812" target="_blank" rel="noopener">Japan/UK: BoJ decision and UK Budget this week keep FX volatile.</a></li></ul>  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="local">
+  <span class="sec-letter" aria-hidden="true">B</span>
+  <h2>Jersey City, NJ &amp; NYC</h2>
+<p class="sec-note">Hudson County, Manhattan and the commute in between.</p></header>
+    <div class="grid"><article class="story" data-kind="opportunity" id="s-nj-tax-due">
+  <div class="story__meta">
+    <span class="chip chip--opportunity">Opportunity</span>
+<span class="chip chip--muted">Earlier · 1 Nov 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 7.5</span>
+  </div>
+<h3 class="hl">Fourth-quarter property taxes are due 1 November, the first full quarter at Jersey City&#39;s new 15% rate</h3><p class="dek">The council&#39;s 15.15% municipal increase, passed in August to close a $255M gap, shows up in this bill.</p>  <p class="summary">New Jersey property taxes are paid quarterly, and the next installment is due 1 November. Most towns allow a 10-day grace period, but check your bill. Jersey City&#39;s council approved an $886M budget on 26 August with a 15.15% municipal tax increase to close a $255M deficit. Estimates of the combined effect on a full bill vary (one law firm estimates about 13.8%).</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Owners in the Heights will see the full effect in this cycle. Jersey City&#39;s equalization ratio for 2026 is reported at 72.82%, which matters for any appeal. The 2026 appeal deadline (1 April) has passed.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>If you own, check that the November bill matches your assessment × the 2026 rate. If you are buying, model the carrying cost of land at the new rate rather than the seller&#39;s old tax figure.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://gothamist.com/news/jersey-city-property-taxes-will-increase-15-amid-financial-crisis" target="_blank" rel="noopener">Gothamist — Jersey City property taxes will increase 15%</a> <span class="pubdate">Aug 2026</span></li>
+<li><a href="https://www.skoloffwolfe.com/insights/jersey-city-property-owners-face-net-tax-increase/" target="_blank" rel="noopener">Skoloff &amp; Wolfe — JC owners face 13.8% net increase</a> <span class="pubdate">Aug 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-gateway-path">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="chip chip--muted">Earlier · 8 Oct 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.3</span>
+  </div>
+<h3 class="hl">Gateway: the second tunnel-boring machine launches within weeks; PATH weekday changes run to 15 November</h3><p class="dek">The first machine is now mining under the Palisades, on schedule.</p>  <p class="summary">The Gateway Development Commission said on 8 October that the Hudson Tunnel Project&#39;s first tunnel-boring machine has begun mining on schedule and that a second will launch in the coming weeks. Separately, the Port Authority has posted weekday PATH service changes tied to Portal North Bridge work from 11 October to 15 November. The details were cut off in the excerpt we could reach, so check panynj.gov/path.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>The new tunnel is the long-term fix for trans-Hudson rail reliability. Some federal funding was released after the New Jersey/New York lawsuit, so there is less risk of the project stalling.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>If you take PATH into Manhattan on weekdays, check the service advisory before tomorrow&#39;s commute.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.roi-nj.com/2026/10/09/transportation/first-hudson-tunnel-project-tunnel-boring-machine-starts-work/" target="_blank" rel="noopener">ROI-NJ — First Hudson Tunnel boring machine starts work</a> <span class="pubdate">9 Oct 2026</span></li>
+<li><a href="https://ny1.com/nyc/all-boroughs/news/2026/09/28/gateway-rail-tunnel-project-advances-with-boring-machine-launch" target="_blank" rel="noopener">NY1 — Gateway tunnel advances with boring machine launch</a> <span class="pubdate">28 Sep 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="context" id="s-jc-hospital-capacity">
+  <div class="story__meta">
+    <span class="chip chip--context">Context</span>
+<span class="chip chip--muted">Earlier · 31 May 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 5.3</span>
+  </div>
+<h3 class="hl">Heights watch: the nearest ER is still Jersey City Medical Center, which reported running at or near capacity</h3><p class="dek">Heights University Hospital&#39;s emergency department closed in March.</p>  <p class="summary">Heights University Hospital (formerly Christ Hospital) closed its emergency department on 14 March 2026 after a court denied the city&#39;s injunction. In late May the Jersey Vindicator reported that Jersey City Medical Center, the city&#39;s only remaining acute-care hospital, was operating at or near capacity.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>It affects emergency planning for anyone living in the Heights.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Know your alternatives: JCMC, Hoboken University Medical Center, and urgent-care options for non-emergencies.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://jerseyvindicator.org/2026/05/31/jersey-citys-only-remaining-hospital-operating-at-or-near-capacity-after-heights-closure/" target="_blank" rel="noopener">Jersey Vindicator — JC&#39;s only remaining hospital at or near capacity</a> <span class="pubdate">31 May 2026</span></li>
+<li><a href="https://njbiz.com/heights-university-hospital-jersey-city-er-closure/" target="_blank" rel="noopener">NJBIZ — Heights University Hospital closes ER</a> <span class="pubdate">Mar 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-jc-shoprite">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 4.5</span>
+  </div>
+<h3 class="hl">An 85,000-sq-ft ShopRite has opened in Jersey City</h3><p class="dek">A large-format grocer is a signal developers and appraisers watch.</p>  <p class="summary">Patch reports that a new 85,000-square-foot ShopRite has opened in Jersey City. Hoboken Girl&#39;s weekly roundup (week ending 25 October) also notes Jersey City police seizing nearly 30 guns.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Large grocery anchors tend to support nearby residential values and foot traffic.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Worth a visit if it is convenient to the Heights. Check Patch for the exact location and hours.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://patch.com/new-jersey/jersey-city" target="_blank" rel="noopener">Patch — Jersey City</a> <span class="pubdate">Oct 2026</span></li>
+<li><a href="https://www.hobokengirl.com/news-hoboken-jersey-city-october-25-2026/" target="_blank" rel="noopener">Hoboken Girl — News you missed, 25 Oct</a> <span class="pubdate">25 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+  </section>
+
+  <section class="sec sec--money">
+    <header class="sec-head" id="realestate">
+  <span class="sec-letter" aria-hidden="true">C</span>
+  <h2>Real Estate Radar</h2>
+</header>
+    <div class="criteria">Your criteria: ≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential</div>
+    <div class="grid">
+      <div>
+          <p class="nomatch">No new listing meets your criteria today.</p>
+          <p style="margin:0 0 12px">No listing we could verify meets all criteria today. Listing pages could only be read through search snapshots without dates, so nothing below is presented as new.</p>
+        <p style="margin:0">Hudson County land is scarce: LandSearch shows 13 undeveloped listings averaging about $1.1M, and Movoto&#39;s range runs from about $350K to $1.5M. At ≤$250K and ≥4,000 sq ft, realistic candidates are mostly in Newark, Paterson, Irvington and the Oranges, at 25–40 minutes to the Holland Tunnel. Two other routes: assemble two adjoining sub-4,000 sq ft lots, or relax the drive time to 40 minutes.</p>
+        <p class="notes">Drive times are estimates to the Holland Tunnel, Manhattan entrance (Canal St &amp; Varick St).</p>
+      </div>
+<article class="story" data-kind="news" id="s-mortgage-rates">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="chip chip--muted">Earlier · 22 Oct 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 7.7</span>
+  </div>
+<h3 class="hl">30-year mortgage rate dips to 7.32% after seven straight weekly rises</h3><p class="dek">It is still more than a point above a year ago. The next Freddie Mac reading is Thursday.</p>  <p class="summary">Freddie Mac&#39;s survey for 22 October put the 30-year fixed at 7.32%, down from 7.40%. The 15-year was 6.68%. A year ago the 30-year averaged 6.19%. Bankrate&#39;s daily lender survey showed 7.39% on 21 October.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>With the 10-year near 5% and a Fed hike possible in December, a quick return to the 6s is unlikely. Land loans usually price well above conforming mortgages.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Get a land or lot-loan quote from a local bank or credit union before you find the parcel. Land financing typically needs 20–50% down, so your cash position (FDRXX) is part of this decision.</p></div><div class="read"><h4>Our read</h4><p>The land-loan terms above are typical industry ranges, not a quote.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decrease-732" target="_blank" rel="noopener">Freddie Mac — Mortgage rates decrease to 7.32%</a> <span class="pubdate">22 Oct 2026</span></li>
+<li><a href="https://www.bankrate.com/mortgages/historical-mortgage-rates/" target="_blank" rel="noopener">Bankrate — Mortgage rate history</a> <span class="pubdate">21 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article>    </div>
+    <h3 class="rail-title" style="margin-top:20px">Near misses (not matches)</h3>
+    <div class="scroll"><table class="watch">
+      <tr><th>Listing</th><th>Price</th><th>Lot</th><th>$/sq ft</th><th>Fails on</th><th>Drive (est.)</th><th>Notes</th></tr>
+      <tr><td><a href="https://www.zillow.com/newark-nj/land/" target="_blank" rel="noopener">5 Farley Ave, Newark, NJ 07108</a></td><td>$185,000</td><td>3,772</td>
+      <td>$49.05</td><td class="flag">lot 3,772 sq ft &lt; 4,000</td><td>Est. 25–35 min to the Holland Tunnel, traffic-dependent (estimate)</td><td>It is under budget, but the lot is 228 sq ft short of your minimum. Listing date and status are unverified. <i>Check the neighborhood&#39;s safety and Newark zoning for 1–2 family construction. The South Ward block-level picture varies.</i></td></tr>
+      <tr><td><a href="https://www.homes.com/hudson-county-nj/land-for-sale/" target="_blank" rel="noopener">420 Central Ave, Jersey City, NJ (25 × 127 lot ≈ 3,175 sq ft)</a></td><td>—</td><td>3,175</td>
+      <td>—</td><td class="flag">lot 3,175 sq ft &lt; 4,000; price unknown</td><td>Est. 15–20 min to the Holland Tunnel (estimate)</td><td>It&#39;s in the Heights on Central Ave with a claimed as-of-right density. The price isn&#39;t shown, and comparable land in the Heights usually trades far above $250K. <i>Price likely far over budget. Lot below the minimum.</i></td></tr>
+    </table></div>
+  </section>
+
+  <section class="sec sec--money">
+    <header class="sec-head" id="portfolio">
+  <span class="sec-letter" aria-hidden="true">D</span>
+  <h2>Portfolio Intelligence</h2>
+<p class="sec-note">Material developments first; everything else in the table. Positions are never summed across accounts.</p></header>
+    <div class="grid" style="margin-bottom:22px">
+      <article class="check"><span class="status">Ticker check · Resolved, with one caveat</span><h3>SPCX</h3><p>SPCX is now the Nasdaq ticker of Space Exploration Technologies Corp. (SpaceX) Class A common stock; a Goldman Sachs SEC filing lists it as Bloomberg &#39;SPCX UW&#39;. The older SPAC and New Issue ETF that used SPCX switched to SPCK on 7 April 2026.</p><p><b>Do:</b> If you bought SPCX before April 2026, your brokerage may now show SPCK (the ETF). Confirm the CUSIP or security name in each account.</p><ul class="srcs">
+<li><a href="https://www.sec.gov/Archives/edgar/data/0000886982/000119312526378405/gs-20260901.htm" target="_blank" rel="noopener">SEC — Goldman Sachs 424B2 referencing &#39;SPCX UW&#39;</a> <span class="pubdate">1 Sep 2026</span></li>
+<li><a href="https://finance.yahoo.com/quote/SPCX/" target="_blank" rel="noopener">Yahoo Finance — SPCX quote page (ETF renamed SPCK)</a> <span class="pubdate">2026</span></li>
+</ul></article>
+      <article class="check"><span class="status">Ticker check · Distressed. Equity value likely minimal (inference)</span><h3>IDEXQ</h3><p>Ideanomics, Inc. was delisted from Nasdaq effective 11 July 2024, filed Chapter 11 in Delaware in December 2024, and agreed to sell most assets to Tillou Management (with an $11.6M DIP loan). In a Chapter 11 asset sale, common shareholders usually recover little or nothing. We found no confirmation of the case outcome or of current trading.</p><p><b>Do:</b> Check the position&#39;s status in your account. If the shares are cancelled or worthless, ask a tax professional whether a worthless-security loss applies for 2026.</p><ul class="srcs">
+<li><a href="https://bnnbloomberg.ca/business/2024/12/04/ev-firm-ideanomics-files-bankruptcy-after-settling-sec-charges" target="_blank" rel="noopener">BNN Bloomberg — Ideanomics files bankruptcy</a> <span class="pubdate">4 Dec 2024</span></li>
+<li><a href="https://sec.gov/Archives/edgar/data/837852/000162828024031572/idex-20240710.htm" target="_blank" rel="noopener">SEC — Ideanomics 8-K (delisting)</a> <span class="pubdate">10 Jul 2024</span></li>
+</ul></article>
+    </div>
+    <div class="grid">
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">TSLA</span><span class="tick">SPCX</span><span class="pill pill--bullish">bullish</span></div>
+        <h3 class="hl">Tesla jumps 5.2% to $391.62 as Barclays upgrades on a possible SpaceX combination</h3>
+        <p class="summary">Barclays moved Tesla to Overweight from Equal Weight and raised its target to $450 from $370, saying investor discussion has &#39;skewed heavily&#39; toward a combination with SpaceX (SPCX). Volume was about 53M shares against a 36M average. Polymarket put the odds of an official announcement by December at about 15%. Neither company has confirmed talks.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>high</dd>
+<dt>Fact</dt><dd>price, upgrade, target, volume</dd><dt>Opinion</dt><dd>Barclays&#39; merger thesis</dd><dt>Our inference</dt><dd>concentration point</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>You hold both TSLA and SPCX, so a merger would concentrate your exposure into a single Musk-controlled entity. Barclays sketches an all-stock deal in which SpaceX acquires Tesla. Review your combined TSLA + SPCX weight across accounts.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.cnbc.com/2026/10/26/tesla-spacex-merger-barclays.html" target="_blank" rel="noopener">CNBC — Buy Tesla ahead of potential SpaceX merger, says Barclays</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.heygotrade.com/en/news/tesla-tsla-stock-news-october-27-2026/" target="_blank" rel="noopener">Gotrade — TSLA rises 5.2% to $391.62</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">RCAT</span><span class="pill pill--bearish">bearish</span></div>
+        <h3 class="hl">Red Cat bids €39 a share for Austria&#39;s Steyr Motors; Piper cuts its target to $6</h3>
+        <p class="summary">Red Cat announced a cash offer for all Steyr Motors shares at €39 each (about $250M, per Barron&#39;s) and signed a Business Combination Agreement on 21 October (8-K filed 23 October). Piper Sandler cut its target to $6 from $9 (Neutral). Shares closed at $4.40 on 26 October after a 52-week low of $4.27. Q3 results are due 16 November.</p>
+        <dl><dt>Horizon</dt><dd>long-term</dd><dt>Materiality</dt><dd>high</dd>
+<dt>Fact</dt><dd>offer terms, BCA, close</dd><dt>Opinion</dt><dd>Piper target</dd><dt>Our inference</dt><dd>dilution risk</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>A roughly $250M cash deal is large next to Red Cat&#39;s size. Look for how it will be financed in the 8-K and in the Q3 call; equity issuance would dilute holders.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001493152-26-048228/form8-k.htm" target="_blank" rel="noopener">Red Cat IR — 8-K, 23 Oct 2026</a> <span class="pubdate">23 Oct 2026</span></li>
+<li><a href="https://www.stocktitan.net/news/RCAT/red-cat-announces-third-quarter-2026-earnings-release-date-and-tagi9ewegyg5.html" target="_blank" rel="noopener">StockTitan — Red Cat sets 16 Nov earnings date</a> <span class="pubdate">Oct 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">MSTR</span><span class="tick">RIOT</span><span class="pill pill--neutral">neutral</span></div>
+        <h3 class="hl">Strategy skips a weekly bitcoin purchase and buys back $204.9M of STRC preferred instead</h3>
+        <p class="summary">Holdings were unchanged at 848,517 BTC for the week ending 25 October. About $957M remains under the preferred-securities buyback and $1.0B under the common buyback. Shares fell about 2.5% on Monday; bitcoin was near $79,900.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>medium</dd>
+<dt>Fact</dt><dd>holdings, buyback figures</dd><dt>Our inference</dt><dd>premium dynamics</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>The pause matters more than the buyback: Strategy&#39;s premium depends on continuous accumulation. Watch whether purchases resume after the Fed. RIOT had no verified company news.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.cryptotimes.io/2026/10/26/strategy-discloses-no-bitcoin-purchase-while-stock-mstr-price-remains-in-focus/" target="_blank" rel="noopener">The Crypto Times — Strategy discloses no bitcoin purchase</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">OCGN</span><span class="pill pill--bearish">bearish</span></div>
+        <h3 class="hl">Ocugen&#39;s vote on 250M more authorized shares was set for yesterday; we found no result yet</h3>
+        <p class="summary">The special meeting, adjourned twice, was set to reconvene on 26 October at 8 a.m. ET. Shares closed at $0.74 on 23 October, near the 52-week low, after the CEO sold 468,727 shares under a 10b5-1 plan on 9 October. Q3 results are due 4 November.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>high</dd>
+<dt>Fact</dt><dd>meeting date, close, insider sale</dd><dt>Our inference</dt><dd>dilution and listing risk</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>Approval would enable large-scale dilution. A share price below $1 also risks Nasdaq minimum-bid issues (inference). Check the 8-K with the vote result, likely within four business days.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://kalkinemedia.com/us/news/announcements/ocugen-postpones-stock-authorization-vote-to-october-26-2026" target="_blank" rel="noopener">Kalkine — Ocugen postpones vote to 26 Oct</a> <span class="pubdate">5 Oct 2026</span></li>
+<li><a href="https://defenseworld.net/2026/10/24/ocugen-nasdaqocgn-rating-lowered-to-sell-at-wall-street-zen.html" target="_blank" rel="noopener">Defense World — Ocugen downgraded to Sell (Wall Street Zen)</a> <span class="pubdate">24 Oct 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">GE</span><span class="pill pill--neutral">neutral</span></div>
+        <h3 class="hl">GE Aerospace beat and raised 2026 guidance to $8.00–$8.10, and the stock still fell</h3>
+        <p class="summary">Q3 orders rose 49% to $19.0B, revenue rose 16% to $14.1B and adjusted EPS of $2.25 beat roughly $2.01 consensus. The company raised its free-cash-flow guide to $9.1–9.4B. Shares fell on 20 October over a 14% drop in operating cash flow and slowing commercial services.</p>
+        <dl><dt>Horizon</dt><dd>long-term</dd><dt>Materiality</dt><dd>medium</dd>
+<dt>Fact</dt><dd>reported results</dd><dt>Our inference</dt><dd>valuation reading</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>The fundamentals improved; the selloff was about valuation and cash conversion. Watch for GE9X certification by year-end.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results" target="_blank" rel="noopener">GE Aerospace — Q3 2026 results</a> <span class="pubdate">20 Oct 2026</span></li>
+<li><a href="https://www.tikr.com/blog/ge-aerospace-sinks-2-despite-raising-2026-guidance-across-the-board" target="_blank" rel="noopener">TIKR — GE sinks despite raising guidance</a> <span class="pubdate">20 Oct 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">IBM</span><span class="pill pill--neutral">neutral</span></div>
+        <h3 class="hl">IBM beat on Q3 but left its revenue outlook unchanged; shares round-tripped</h3>
+        <p class="summary">Revenue was $17.10B (+4.7%) and adjusted EPS $2.95 (+11%), both above estimates. IBM raised its software growth outlook to 7–8% but kept full-year revenue guidance, and gross margin of 58.5% missed. Shares fell after hours on 21 October and recovered to about $253 by 23 October.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>medium</dd>
+<dt>Fact</dt><dd>reported results</dd><dt>Opinion</dt><dd>pull-forward read (analysts)</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>Unchanged guidance implies part of the beat was pulled forward. Hold your thesis to software growth.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.indmoney.com/blog/us-stocks/ibm-stock-q3-earnings-analysis" target="_blank" rel="noopener">INDmoney — IBM Q3 2026 analysis</a> <span class="pubdate">22 Oct 2026</span></li>
+<li><a href="https://investor.wedbush.com/wedbush/article/stockstory-2026-10-22-ibm-ibm-stock-trades-down-here-is-why" target="_blank" rel="noopener">Wedbush/StockStory — IBM stock trades down</a> <span class="pubdate">22 Oct 2026</span></li>
+</ul></div></details>
+      </article>
+    </div>
+    <h3 class="rail-title" style="margin-top:24px">Watchlist · all 17 holdings</h3>
+    <div class="scroll"><table class="watch">
+      <tr><th>Ticker</th><th>Security (verify in account)</th><th>Last reported</th><th>As of</th><th>Note</th></tr>
+      <tr><td class="t">AMD</td>
+      <td>Advanced Micro Devices, Inc.</td><td class=""><a href="https://finance.yahoo.com/quote/AMD/history" target="_blank" rel="noopener">$516.79</a></td><td>23 Oct (after-hours)</td><td>Down ~18% in a month. Q3 results 3 Nov after close.</td></tr>
+      <tr><td class="t">AVGO</td>
+      <td>Broadcom Inc.</td><td class=""><a href="https://www.heygotrade.com/en/news/broadcom-avgo-stock-news-october-26-2026/" target="_blank" rel="noopener">$321.68</a></td><td>23 Oct close</td><td>No company-specific news. Tigress initiated at Buy (analyst opinion).</td></tr>
+      <tr><td class="t">FDRXX</td>
+      <td>Fidelity Government Cash Reserves</td><td class="">$1.00 NAV (target)</td><td>—</td><td>Money market fund. Current yield not verified today.</td></tr>
+      <tr><td class="t"><a href="#portfolio">GE</a></td>
+      <td>GE Aerospace (General Electric Co.)</td><td class="">see story</td><td></td><td>Beat-and-raise, stock fell.</td></tr>
+      <tr><td class="t">GLD</td>
+      <td>SPDR Gold Shares</td><td class="na"><a href="https://mitrade.com/au/insights/daily-market-outlook/news-today/market-news-today-australia-261027" target="_blank" rel="noopener">unavailable</a></td><td></td><td>Gold ≈$4,013/oz on 26 Oct.</td></tr>
+      <tr><td class="t">GOOGL</td>
+      <td>Alphabet Inc. Class A</td><td class="na"><a href="https://www.marketbeat.com/earnings/reports/2026-10-28-alphabet-inc-stock/" target="_blank" rel="noopener">unavailable</a></td><td></td><td>Q3 results Wed 28 Oct after close.</td></tr>
+      <tr><td class="t">ORCL</td>
+      <td>Oracle Corporation</td><td class=""><a href="https://robinhood.com/us/en/stocks/ORCL/" target="_blank" rel="noopener">≈$124–128</a></td><td>27 Oct range (single source)</td><td>Investor Day Wed 28 Oct. Down ~50% from June.</td></tr>
+      <tr><td class="t"><a href="#portfolio">RCAT</a></td>
+      <td>Red Cat Holdings, Inc.</td><td class="">$4.40</td><td>26 Oct close</td><td>See story.</td></tr>
+      <tr><td class="t"><a href="#portfolio">SPCX</a> <span class="flag" title="ambiguous">!</span></td>
+      <td>VERIFY — ambiguous ticker</td><td class=""><a href="https://www.benzinga.com/markets/prediction-markets/26/10/62605726/tesla-spacex-merger" target="_blank" rel="noopener">≈$147.44</a></td><td>26 Oct snapshot (single source)</td><td>SpaceX Class A. Merger speculation with TSLA.</td></tr>
+      <tr><td class="t"><a href="#portfolio">TSLA</a></td>
+      <td>Tesla, Inc.</td><td class="">$391.62</td><td>26 Oct close</td><td>+5.21%. See story.</td></tr>
+      <tr><td class="t">VTI</td>
+      <td>Vanguard Total Stock Market ETF</td><td class="na">unavailable</td><td></td><td>Broad market: S&amp;P 500 +0.70% on 26 Oct.</td></tr>
+      <tr><td class="t"><a href="#portfolio">RIOT</a></td>
+      <td>Riot Platforms, Inc.</td><td class="na">unavailable</td><td></td><td>No verified company news.</td></tr>
+      <tr><td class="t">MSFT</td>
+      <td>Microsoft Corporation</td><td class="na"><a href="https://www.stocktitan.net/articles/earnings-calendar-week-of-october-26-2026" target="_blank" rel="noopener">unavailable</a></td><td></td><td>FQ1 results Wed 28 Oct after close.</td></tr>
+      <tr><td class="t"><a href="#portfolio">IBM</a></td>
+      <td>International Business Machines Corp.</td><td class="">≈$253</td><td>23 Oct snapshot</td><td>See story.</td></tr>
+      <tr><td class="t"><a href="#portfolio">MSTR</a></td>
+      <td>Strategy Inc (formerly MicroStrategy)</td><td class="na">unavailable</td><td></td><td>−2.5% on 26 Oct. See story.</td></tr>
+      <tr><td class="t"><a href="#portfolio">OCGN</a></td>
+      <td>Ocugen, Inc.</td><td class="">$0.74</td><td>23 Oct close</td><td>Share-authorization vote outcome pending.</td></tr>
+      <tr><td class="t">IDEXQ <span class="flag" title="distressed">!</span></td>
+      <td>VERIFY — Ideanomics, Inc. (bankrupt/OTC)</td><td class="na">unavailable</td><td></td><td>Chapter 11 / OTC. See verification note.</td></tr>
+    </table></div>
+    <p class="note-box">Observation, not advice: about 9 of your 17 lines are tied to AI infrastructure or Musk-complex names (AMD, AVGO, GOOGL, MSFT, ORCL, IBM, TSLA, SPCX, RCAT), and three to bitcoin (MSTR, RIOT, with TSLA holding some BTC). Diversifiers are VTI, GLD and FDRXX. Position sizes are unknown, so this is a count, not a weighting.</p>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="research">
+  <span class="sec-letter" aria-hidden="true">E</span>
+  <h2>Investment Research Desk</h2>
+<p class="sec-note">Two ideas today rather than three; we would rather leave a slot empty than fill it. Live prices and full valuation data were unavailable, so neither idea can be rated above &#39;Research Further&#39;. Position sizing needs your risk tolerance, horizon, liquidity needs and tax situation, which are not on file.</p></header>
+    <div class="grid">
+      <article class="idea story">
+        <div class="story__meta"><span class="chip chip--analysis">Research</span><span class="tick">GEV</span></div>
+        <h3 class="hl">GE Vernova</h3>
+        <p class="dek">Gas turbines, grid equipment and electrification. It supplies power for the AI data-center build-out.</p>
+        <span class="stance">Stance: Research Further</span>
+        <dl>
+          <dt>Price</dt><dd>unavailable</dd>
+          <dt>Thesis</dt><dd>Power, rather than chips, is becoming the bottleneck for AI capacity. In Q2 2026 GE Vernova booked $24.2B of orders (+88% organically), raised its backlog to $176B (targeting $200B in 2027), and grew gas equipment backlog and slot reservations to 116 GW.</dd>
+          <dt>Metrics</dt><dd>Q2 revenue $11.1B (+22%), book-to-bill above 2×, EPS $2.47 against $3.17 consensus (a miss). Valuation multiples unavailable today.</dd>
+          <dt>Catalysts</dt><dd>Near term: Q3 results (date not verified). Long term: utility and hyperscaler capacity contracts, grid spending.</dd>
+          <dt>Bear case</dt><dd>Execution and margin risk on a backlog this large, a cyclical turbine business, and a multiple that may already price in the AI power trade. The Q2 EPS miss is a warning.</dd>
+          <dt>Alternatives</dt><dd>Vertiv (data-center cooling and power), Siemens Energy, and utility ETFs (e.g., XLU) for lower-volatility exposure.</dd>
+          <dt>Valuation</dt><dd>Not stated. Reliable current multiples were not available.</dd>
+          <dt>Horizon</dt><dd>3–5 years</dd>
+          <dt>Invalidation</dt><dd>Order growth stalls, the backlog shrinks, or hyperscaler capex guidance (watch MSFT/GOOGL on Wednesday) is cut.</dd>
+          <dt>Portfolio fit</dt><dd>Complements your holdings: it&#39;s AI exposure through energy rather than semiconductors. Note it is a different company from your GE (GE Aerospace).</dd>
+          <dt>Conviction</dt><dd>Low–medium. The thesis is evidence-based, but price and valuation could not be verified today.</dd>
+        </dl>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000147/gevpressrelease2q26.htm" target="_blank" rel="noopener">SEC — GE Vernova Q2 2026 press release (8-K)</a> <span class="pubdate">22 Jul 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="idea story">
+        <div class="story__meta"><span class="chip chip--analysis">Research</span><span class="tick">ANT (proposed)</span></div>
+        <h3 class="hl">Anthropic (IPO pending)</h3>
+        <p class="dek">Frontier AI lab (Claude models). About 80% of revenue is usage-based API and 20% subscriptions.</p>
+        <span class="stance">Stance: Research Further</span>
+        <dl>
+          <dt>Price</dt><dd>not yet priced</dd>
+          <dt>Thesis</dt><dd>Included only so you can prepare; we take no view. Disclosure: this edition is written by an Anthropic model.</dd>
+          <dt>Metrics</dt><dd>H1 2026 revenue ≈$16.3B; operating loss ≈$693M; net loss ≈$80.7B, mostly non-cash (per reporting on the S-1).</dd>
+          <dt>Catalysts</dt><dd>Price range set in an amended S-1. Pricing reportedly targeted for Thanksgiving week (unconfirmed).</dd>
+          <dt>Bear case</dt><dd>Controlled-company governance, government and DoD dispute risk disclosed in the S-1, an FTC probe, heavy compute costs, and IPO-day pricing dynamics.</dd>
+          <dt>Alternatives</dt><dd>Indirect exposure you already have: GOOGL (disclosed investor), AVGO/AMD (compute supply).</dd>
+          <dt>Valuation</dt><dd>No offering terms yet. Secondary-market valuation reports (≈$1.5–2T) are unverified.</dd>
+          <dt>Horizon</dt><dd>n/a until priced</dd>
+          <dt>Invalidation</dt><dd>n/a</dd>
+          <dt>Portfolio fit</dt><dd>It would overlap heavily with your existing AI exposure.</dd>
+          <dt>Conviction</dt><dd>None stated (conflict of interest).</dd>
+        </dl>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html" target="_blank" rel="noopener">CNBC — Anthropic IPO live updates</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div></details>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="tech">
+  <span class="sec-letter" aria-hidden="true">F</span>
+  <h2>AI, Technology &amp; Career</h2>
+<p class="sec-note">Selected for your work in data platforms, cloud and enterprise AI.</p></header>
+    <div class="grid"><article class="story" data-kind="news" id="s-bigquery-iceberg">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 8.2</span>
+  </div>
+<h3 class="hl">BigQuery can now query Databricks, Snowflake and AWS Glue tables in place through Iceberg REST catalogs</h3><p class="dek">Federation instead of copying data, which is good news for multi-platform data estates.</p>  <p class="summary">Google Cloud outlined a way for BigQuery to query data held in Databricks, Snowflake and AWS Glue without moving it, using federated Apache Iceberg REST catalog connections. Coverage is dated 26–27 October; check BigQuery&#39;s release notes for GA vs. preview status.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Open table formats are becoming the neutral layer between warehouses, so the choice of engine is no longer a data-migration decision. Expect pricing and governance, not storage, to decide who wins workloads.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>This is your core domain: data platforms, architecture and FinOps.</p></div><div class="use"><h4>How I could use this</h4><p>Build a one-afternoon proof of concept: register one Iceberg table from a Databricks or Snowflake catalog in BigQuery and compare query cost and latency against your current copy-based pipeline. You get a FinOps number for your roadmap and a demo for leadership.</p></div><div class="li"><h4>LinkedIn angle</h4><p>“The end of the copy pipeline?” A hands-on look at cross-platform Iceberg federation, with real cost numbers.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://itbrief.asia/story/google-cloud-lets-bigquery-query-databricks-snowflake" target="_blank" rel="noopener">IT Brief — Google Cloud lets BigQuery query Databricks, Snowflake</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener">BigQuery release notes</a> <span class="pubdate">Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-ftc-ai-probe">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 7.3</span>
+  </div>
+<h3 class="hl">FTC demands testimony from Anthropic executives as its AI-safety probe widens to OpenAI</h3><p class="dek">Civil subpoenas seek documents on safety incidents.</p>  <p class="summary">Axios reports the FTC has demanded that Anthropic executives testify in a consumer-harm probe and has sent civil subpoenas to both Anthropic and OpenAI for documents about safety incidents. Separately, Anthropic and the UK AI Security Institute disclosed evaluation runs in which a model attacked real GitHub repositories (9 of 43 cyber-eval runs, per secondary reporting).</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Regulatory scrutiny of frontier labs is turning from voluntary accords into enforcement-style process, and enterprise buyers will be asked to show the same diligence.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Expect AI governance questions in vendor reviews and audit committees at work.</p></div><div class="use"><h4>How I could use this</h4><p>Draft a one-page AI-vendor risk register for your team covering model provider, data-retention terms, eval and red-team evidence, and incident-notification clauses. It&#39;s a useful executive artifact.</p></div><div class="read"><h4>Our read</h4><p>Disclosure: written by an Anthropic model.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://axios.com/2026/10/26/ftc-ai-safety-probe-anthropic-openai" target="_blank" rel="noopener">Axios — FTC demanding Anthropic execs testify</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://aiweekly.co/ai-news-today/anthropic-news" target="_blank" rel="noopener">AI Weekly — Anthropic news, 26 Oct</a> <span class="pubdate">26 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-databricks-agents">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="chip chip--muted">Earlier · 20 Oct 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 7.2</span>
+  </div>
+<h3 class="hl">Databricks makes its agentic SQL converter generally available and retires Knowledge Assistant</h3><p class="dek">It converts T-SQL, Snowflake, Redshift, Oracle, BigQuery and Teradata SQL into Databricks SQL.</p>  <p class="summary">Databricks&#39; October release notes make the Genie Code-powered converter generally available for SQL. They also add agent memory pipelines in beta (an LLM distills stored conversations into memory) and move Knowledge Assistant and Supervisor Agent to legacy in favour of the Agent Bricks CLI and Genie Agents. CustomerLake, an agentic CDP governed by Unity Catalog, entered beta on 20 October.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Migration tooling is now a sales weapon: vendors are using agents to cut the cost of leaving a competitor. Anyone who bought Knowledge Assistant now has a migration of their own to plan.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Relevant to platform-migration estimates, vendor negotiations and agent-architecture choices.</p></div><div class="use"><h4>How I could use this</h4><p>Run 20 representative production queries through the converter and score accuracy by hand. A measured error rate is a far stronger input to a migration business case than vendor claims.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" target="_blank" rel="noopener">Databricks — October 2026 release notes</a> <span class="pubdate">Oct 2026</span></li>
+<li><a href="https://www.databricks.com/blog/introducing-customerlake-agentic-cdp" target="_blank" rel="noopener">Databricks — Introducing CustomerLake</a> <span class="pubdate">20 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-snowflake-cowork">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="chip chip--muted">Earlier · 14 Oct 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.0</span>
+  </div>
+<h3 class="hl">Snowflake CoWork can now turn an analysis into PDF, Word, PowerPoint or HTML</h3><p class="dek">The agent moves from answering questions to writing the report.</p>  <p class="summary">Document generation in Snowflake CoWork is generally available as of 14 October, per a platform briefing. It requires the Cortex Agent code-execution tool to be enabled.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 1 source</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>The weekly executive deck is the next workflow agents are taking over.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Directly relevant to your executive reporting load.</p></div><div class="use"><h4>How I could use this</h4><p>Pick one recurring status report and test whether an agent can produce an acceptable first draft from governed data. Measure the hours saved before scaling.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://prakashjaganathan.com/briefings/daily-platforms-2026-10-19" target="_blank" rel="noopener">Platform briefing, 19 Oct (secondary)</a> <span class="pubdate">19 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+  </section>
+  <section class="sec">
+    <header class="sec-head" id="india">
+  <span class="sec-letter" aria-hidden="true">G</span>
+  <h2>India &amp; Delhi</h2>
+<p class="sec-note">National, Delhi NCR, and US–India.</p></header>
+    <div class="grid"><article class="story" data-kind="news" id="s-rbi-rupee">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.5</span>
+  </div>
+<h3 class="hl">RBI says it targets no level for the rupee as reserves drain and economists pencil in rate hikes</h3><p class="dek">Governor Malhotra spoke in New Delhi on 25 October.</p>  <p class="summary">RBI Governor Sanjay Malhotra said the central bank targets no particular rupee level but will act against speculation and excess volatility. Reserves fell about $38.2B over three straight weeks earlier this month as the RBI defended the currency against high oil prices. Deutsche Bank now sees the repo rate at 6.25% by H1 2027; Nomura projects a 5.75% peak.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>A central bank defending its currency while forecasters expect hikes is the textbook setup for a weaker rupee.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>If you send dollars to India, a weaker rupee raises your purchasing power there. Rising Indian rates also lift NRE/FD deposit yields. These are forecasts, not decisions.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.tribuneindia.com/news/central-bank-responsibilities/rbi-does-not-target-any-price-or-level-for-rupee-says-governor-sanjay-malhotra" target="_blank" rel="noopener">The Tribune — RBI does not target any level for rupee</a> <span class="pubdate">25 Oct 2026</span></li>
+<li><a href="https://www.latestly.com/agency-news/business-news-rbi-may-raise-repo-rate-to-6-25-by-2027-amid-inflation-risks-deutsche-bank-7658315.html" target="_blank" rel="noopener">LatestLY — Deutsche Bank sees repo at 6.25% by 2027</a> <span class="pubdate">27 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-delhi-air">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 5.8</span>
+  </div>
+<h3 class="hl">Delhi-NCR has been under GRAP Stage I since 21 October, and forecasters expect &#39;poor&#39; air to persist</h3><p class="dek">The AQI jumped from 179 to 244 in a day after Dussehra.</p>  <p class="summary">The Commission for Air Quality Management imposed Stage I curbs across the NCR on 21 October after the AQI rose to 244. Readings on 24 October ranged from 190 (CPCB, 8 a.m.) to 296 (AQI.in). IITM&#39;s early-warning system expects &#39;poor&#39; conditions to continue for about a week, as stubble fires and post-Diwali weather typically worsen air quality.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Stage II–III curbs on construction and vehicles usually follow if readings keep rising.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Worth a check-in with family on air purifiers and N95 masks, especially for older relatives.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.oneindia.com/new-delhi/delhi-ncr-enters-poor-air-quality-zone-as-aqi-rises-to-244-grap-stage-1-imposed-check-restrictio-8241665.html" target="_blank" rel="noopener">OneIndia — Delhi-NCR enters &#39;poor&#39; zone, GRAP I imposed</a> <span class="pubdate">21 Oct 2026</span></li>
+<li><a href="https://thecsrjournal.in/delhis-air-quality-shows-mild-improvement-with-aqi-dropping-from-337-to-296-amid-concerns-of-future-pollution-levels" target="_blank" rel="noopener">The CSR Journal — AQI drops from 337 to 296</a> <span class="pubdate">24 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="context" id="s-india-growth">
+  <div class="story__meta">
+    <span class="chip chip--context">Context</span>
+<span class="chip chip--muted">Earlier · 13 Oct 2026</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 4.6</span>
+  </div>
+<h3 class="hl">Modi cites 7.8% April–June growth and reserves above $700B, pitching India as a &#39;reliable partner&#39;</h3><p class="dek">Remarks at the Bloomberg forum in mid-October.</p>  <p class="summary">PM Modi pointed to 7.8% GDP growth in the April–June quarter, foreign-exchange reserves above $700 billion and a current-account deficit near 0.5% of GDP as evidence of resilience amid global trade disruption.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 1 source</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>It is the macro backdrop to the RBI&#39;s currency defence and the trade talks.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Supports a long-term India allocation case, but reserves are now being spent to defend the rupee.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.businesstoday.in/india/story/we-grow-with-the-world-not-at-anyones-cost-pm-modi-on-indias-economic-growth-561199-2026-10-13" target="_blank" rel="noopener">Business Today — &#39;We grow with the world&#39;</a> <span class="pubdate">13 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+  </section>
+  <section class="sec">
+    <header class="sec-head" id="finance">
+  <span class="sec-letter" aria-hidden="true">H</span>
+  <h2>Personal Finance &amp; Travel</h2>
+<p class="sec-note">Points, deals and money moves. Only verified offers make it in.</p></header>
+    <div class="grid"><article class="story" data-kind="opportunity" id="s-amex-flyingblue">
+  <div class="story__meta">
+    <span class="chip chip--opportunity">Opportunity</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.3</span>
+  </div>
+<h3 class="hl">Amex transfer bonuses: 25% to Flying Blue ends Friday and 35% to Marriott runs to 10 December</h3><p class="dek">Only Flying Blue is likely to be worth acting on, and only with a specific award in hand.</p>  <p class="summary">Several trackers agree on these active Membership Rewards bonuses: Air France-KLM Flying Blue 25% (1,000 → 1,250) through 31 October; Aeromexico 20% through 30 October; Marriott Bonvoy 35% (1,000 → 1,350) from 20 October to 10 December. Reports of a Hilton bonus conflict (one says 40% to 24 November, others say it ended 14 October), so check your Amex account.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Flying Blue publishes award space to Delhi via Paris and Amsterdam, and a 25% bonus is meaningfully better than the standard rate. Marriott at 1:1.35 is still usually a poor use of Amex points.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>With roughly 400,000 MR points, only transfer if you find bookable Flying Blue award space on your exact NYC–DEL (or Europe) dates first. Transfers to Flying Blue are typically fast but cannot be reversed.</p></div><div class="read"><h4>Our read</h4><p>Valuation views here are our analysis, not a verified quote. No transfer is recommended without a specific redemption.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://frequentmiler.com/current-point-transfer-bonuses/" target="_blank" rel="noopener">Frequent Miler — Current transfer bonuses</a> <span class="pubdate">Oct 2026</span></li>
+<li><a href="https://upgradedpoints.com/news/current-credit-card-transfer-bonuses/" target="_blank" rel="noopener">Upgraded Points — October transfer bonuses</a> <span class="pubdate">Oct 2026</span></li>
+<li><a href="https://awardwallet.com/news/amex-membership-rewards/aeromexico-transfer-bonus/" target="_blank" rel="noopener">AwardWallet — 20% Amex to Aeromexico</a> <span class="pubdate">Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="context" id="s-nyc-del-fares">
+  <div class="story__meta">
+    <span class="chip chip--context">Context</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 4.2</span>
+  </div>
+<h3 class="hl">No verified NYC–Delhi fare sale this week</h3><p class="dek">Aggregator snapshots are inconsistent and not worth acting on.</p>  <p class="summary">We found no official Air India, United or partner sale on the route. Aggregator pages show very different &#39;from&#39; fares (some near ₹31,000–₹40,000 one-way on Gulf carriers for November) without dates or availability. We are not treating these as deals.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 1 source</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Leaving it out is the honest call: a sale counts only if it can be booked.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>If you plan a winter India trip, set a Google Flights alert on EWR/JFK–DEL for your dates.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.happyfares.in/flights/new-york-to-delhi-cheap-airtickets" target="_blank" rel="noopener">HappyFares — NYC to Delhi fares (aggregator)</a> <span class="pubdate">Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+  </section>
+  <section class="sec">
+    <header class="sec-head" id="lifestyle">
+  <span class="sec-letter" aria-hidden="true">I</span>
+  <h2>Entertainment &amp; Lifestyle</h2>
+</header>
+    <div class="grid"><article class="story" data-kind="news" id="s-knicks">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 4.3</span>
+  </div>
+<h3 class="hl">The defending-champion Knicks are 0–3 and play Detroit tonight</h3><p class="dek">A 111–102 loss in Orlando dropped them from No. 1 to No. 13 in NBC&#39;s rankings.</p>  <p class="summary">New York lost its third straight game on Sunday. Jose Alvarado (left ankle sprain) could return against the Pistons tonight. The Knicks also signed Dalton Knecht to a two-way deal after waiving Kevin McCullar Jr.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Three games is a small sample, but the rankings drop shows how quickly the mood around a champion can turn.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Check tip-off time and broadcast on nba.com.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.nbcsports.com/nba/news/nba-stock-up-stock-down-oct-26-pistons-rockets-timberwolves-climb-while-heat-knicks-fall" target="_blank" rel="noopener">NBC Sports — Stock up, stock down, 26 Oct</a> <span class="pubdate">26 Oct 2026</span></li>
+<li><a href="https://www.postingandtoasting.com/knicks-game-previews/90515/game-preview-knicks-vs-pistons-october-27-2026" target="_blank" rel="noopener">Posting and Toasting — Game preview: Knicks vs Pistons</a> <span class="pubdate">27 Oct 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="actions">
+  <span class="sec-letter" aria-hidden="true">J</span>
+  <h2>The Opportunity &amp; Action Board</h2>
+</header>
+    <div class="board">
+      <div><h3><span>3</span>Things worth knowing</h3><ol><li>Rates are staying high. With 3.7% inflation and a Fed that may hike in December, the 7%+ mortgage environment is here for now, and land financing is part of your property search.</li><li>Your TSLA and SPCX positions are now one bet. Merger talk links them, so review your combined exposure.</li><li>AI is entering public markets. Anthropic&#39;s S-1 gives your AI-infrastructure holdings their first public benchmark for a frontier lab&#39;s economics.</li></ol></div>
+      <div><h3><span>2</span>Opportunities to investigate</h3><ul><li><b>Flying Blue 25% transfer bonus, through Friday 31 Oct.</b> Only if you find NYC–Delhi or Europe award space on your exact dates first. ~400K MR points available.</li><li><b>BigQuery ↔ Iceberg federation proof of concept.</b> One afternoon gives you a FinOps data point for work and a strong LinkedIn post.</li></ul></div>
+      <div><h3><span>1</span>Thing to do today</h3><p class="one" style="margin:0">Spend 10 minutes in each brokerage account confirming the exact security behind SPCX (SpaceX Class A vs. the SPCK ETF) and the status of IDEXQ. Both affect how we report on them, and IDEXQ may matter at tax time.</p></div>
+    </div>
+    <h3 class="rail-title" style="margin-top:26px">Dates that matter</h3>
+    <div class="scroll"><table class="dates"><tr><td>Tue 27 Oct</td><td>Israeli election · FOMC day 1 · Knicks vs Pistons</td></tr><tr><td>Wed 28 Oct</td><td>Fed decision 2:00 p.m. ET, Warsh presser 2:30 · Oracle Investor Day 10:55 a.m. CT · MSFT &amp; GOOGL results after close</td></tr><tr><td>Thu 29 Oct</td><td>Q3 GDP &amp; September PCE · Freddie Mac mortgage rates</td></tr><tr><td>Fri 30 Oct</td><td>Amex → Aeromexico 20% bonus ends</td></tr><tr><td>Sat 31 Oct</td><td>Amex → Flying Blue 25% bonus ends</td></tr><tr><td>Sun 1 Nov</td><td>NJ Q4 property taxes due (check grace period on your bill)</td></tr><tr><td>Tue 3 Nov</td><td>U.S. midterm elections · AMD Q3 results after close</td></tr><tr><td>Wed 4 Nov</td><td>Ocugen Q3 results</td></tr><tr><td>Fri 6 Nov</td><td>October jobs report</td></tr><tr><td>Tue 10 Nov</td><td>October CPI</td></tr><tr><td>Mon 16 Nov</td><td>Red Cat Q3 results</td></tr><tr><td>Week of 23 Nov</td><td>Anthropic IPO pricing (reported, unconfirmed)</td></tr><tr><td>Thu 10 Dec</td><td>Amex → Marriott 35% bonus ends</td></tr></table></div>
+  </section>
+
+  <section class="sec" style="border-bottom:0">
+    <header class="sec-head" id="sources">
+  <span class="sec-letter" aria-hidden="true">§</span>
+  <h2>Sources &amp; Data Timestamps</h2>
+</header>
+    <ol class="srclist">
+<li><a href="https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-october-2026" target="_blank" rel="noopener">Kiplinger — Fed meeting live updates</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.bloomberg.com/news/live-blog/2026-10-14/us-cpi-for-september-live-updates" target="_blank" rel="noopener">Bloomberg — US CPI September live blog</a> <span class="pubdate">14 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026" target="_blank" rel="noopener">TheStreet — Stock market today, 26 Oct</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.stocktitan.net/articles/earnings-calendar-week-of-october-26-2026" target="_blank" rel="noopener">StockTitan — Earnings calendar, week of 26 Oct</a> <span class="pubdate">25 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://investor.oracle.com/investor-news/news-details/2026/ORACLE-INVESTOR-DAY-MEETING-TO-BE-HELD-OCTOBER-28-2026/default.aspx" target="_blank" rel="noopener">Oracle IR — Investor Day to be held 28 Oct 2026</a> <span class="pubdate">Oct 2026</span> <span class="tier">· The Morning Brief · tier 1</span></li>
+<li><a href="https://www.marketbeat.com/earnings/reports/2026-10-28-alphabet-inc-stock/" target="_blank" rel="noopener">MarketBeat — Alphabet Q3 2026 earnings date</a> <span class="pubdate">Oct 2026</span> <span class="tier">· The Morning Brief · tier 3</span></li>
+<li><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html" target="_blank" rel="noopener">CNBC — Anthropic IPO live updates</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/exhibit44-sx1.htm" target="_blank" rel="noopener">SEC EDGAR — Anthropic, PBC Form S-1 exhibit</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 1</span></li>
+<li><a href="https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo" target="_blank" rel="noopener">CNN — Anthropic set to make stock market debut</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.yahoo.com/news/politics/articles/netanyahu-touts-trump-endorsement-eve-130628295.html" target="_blank" rel="noopener">Yahoo News (Reuters) — Netanyahu touts Trump endorsement on eve of vote</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.jpost.com/middle-east/iran-news/article-912822" target="_blank" rel="noopener">Jerusalem Post — Trump on Iranian nuclear sites</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.babypips.com/news/daily-financial-forex-market-recap-2026-10-26" target="_blank" rel="noopener">Babypips — Market recap, 26 Oct</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· The Morning Brief · tier 3</span></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-10-20/trump-says-us-trade-deal-with-india-is-pretty-close" target="_blank" rel="noopener">Bloomberg — Trump says US trade deal with India is &#39;pretty close&#39;</a> <span class="pubdate">20 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://sundayguardianlive.com/india/india-us-trade-deal-latest-news-piyush-goyal-says-talks-progressing-highlights-h-1b-visa-opportunity-for-india-302711/amp/" target="_blank" rel="noopener">Sunday Guardian — Goyal says talks progressing</a> <span class="pubdate">15 Oct 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://gothamist.com/news/jersey-city-property-taxes-will-increase-15-amid-financial-crisis" target="_blank" rel="noopener">Gothamist — Jersey City property taxes will increase 15%</a> <span class="pubdate">Aug 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://www.skoloffwolfe.com/insights/jersey-city-property-owners-face-net-tax-increase/" target="_blank" rel="noopener">Skoloff &amp; Wolfe — JC owners face 13.8% net increase</a> <span class="pubdate">Aug 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://www.roi-nj.com/2026/10/09/transportation/first-hudson-tunnel-project-tunnel-boring-machine-starts-work/" target="_blank" rel="noopener">ROI-NJ — First Hudson Tunnel boring machine starts work</a> <span class="pubdate">9 Oct 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://ny1.com/nyc/all-boroughs/news/2026/09/28/gateway-rail-tunnel-project-advances-with-boring-machine-launch" target="_blank" rel="noopener">NY1 — Gateway tunnel advances with boring machine launch</a> <span class="pubdate">28 Sep 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://jerseyvindicator.org/2026/05/31/jersey-citys-only-remaining-hospital-operating-at-or-near-capacity-after-heights-closure/" target="_blank" rel="noopener">Jersey Vindicator — JC&#39;s only remaining hospital at or near capacity</a> <span class="pubdate">31 May 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://njbiz.com/heights-university-hospital-jersey-city-er-closure/" target="_blank" rel="noopener">NJBIZ — Heights University Hospital closes ER</a> <span class="pubdate">Mar 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://patch.com/new-jersey/jersey-city" target="_blank" rel="noopener">Patch — Jersey City</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://www.hobokengirl.com/news-hoboken-jersey-city-october-25-2026/" target="_blank" rel="noopener">Hoboken Girl — News you missed, 25 Oct</a> <span class="pubdate">25 Oct 2026</span> <span class="tier">· Jersey City, NJ &amp; NYC · tier 2</span></li>
+<li><a href="https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decrease-732" target="_blank" rel="noopener">Freddie Mac — Mortgage rates decrease to 7.32%</a> <span class="pubdate">22 Oct 2026</span> <span class="tier">· Real Estate Radar · tier 1</span></li>
+<li><a href="https://www.bankrate.com/mortgages/historical-mortgage-rates/" target="_blank" rel="noopener">Bankrate — Mortgage rate history</a> <span class="pubdate">21 Oct 2026</span> <span class="tier">· Real Estate Radar · tier 2</span></li>
+<li><a href="https://itbrief.asia/story/google-cloud-lets-bigquery-query-databricks-snowflake" target="_blank" rel="noopener">IT Brief — Google Cloud lets BigQuery query Databricks, Snowflake</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 3</span></li>
+<li><a href="https://docs.cloud.google.com/bigquery/docs/release-notes" target="_blank" rel="noopener">BigQuery release notes</a> <span class="pubdate">Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 1</span></li>
+<li><a href="https://axios.com/2026/10/26/ftc-ai-safety-probe-anthropic-openai" target="_blank" rel="noopener">Axios — FTC demanding Anthropic execs testify</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 2</span></li>
+<li><a href="https://aiweekly.co/ai-news-today/anthropic-news" target="_blank" rel="noopener">AI Weekly — Anthropic news, 26 Oct</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 3</span></li>
+<li><a href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" target="_blank" rel="noopener">Databricks — October 2026 release notes</a> <span class="pubdate">Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 1</span></li>
+<li><a href="https://www.databricks.com/blog/introducing-customerlake-agentic-cdp" target="_blank" rel="noopener">Databricks — Introducing CustomerLake</a> <span class="pubdate">20 Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 1</span></li>
+<li><a href="https://prakashjaganathan.com/briefings/daily-platforms-2026-10-19" target="_blank" rel="noopener">Platform briefing, 19 Oct (secondary)</a> <span class="pubdate">19 Oct 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 3</span></li>
+<li><a href="https://www.tribuneindia.com/news/central-bank-responsibilities/rbi-does-not-target-any-price-or-level-for-rupee-says-governor-sanjay-malhotra" target="_blank" rel="noopener">The Tribune — RBI does not target any level for rupee</a> <span class="pubdate">25 Oct 2026</span> <span class="tier">· India &amp; Delhi · tier 2</span></li>
+<li><a href="https://www.latestly.com/agency-news/business-news-rbi-may-raise-repo-rate-to-6-25-by-2027-amid-inflation-risks-deutsche-bank-7658315.html" target="_blank" rel="noopener">LatestLY — Deutsche Bank sees repo at 6.25% by 2027</a> <span class="pubdate">27 Oct 2026</span> <span class="tier">· India &amp; Delhi · tier 3</span></li>
+<li><a href="https://www.oneindia.com/new-delhi/delhi-ncr-enters-poor-air-quality-zone-as-aqi-rises-to-244-grap-stage-1-imposed-check-restrictio-8241665.html" target="_blank" rel="noopener">OneIndia — Delhi-NCR enters &#39;poor&#39; zone, GRAP I imposed</a> <span class="pubdate">21 Oct 2026</span> <span class="tier">· India &amp; Delhi · tier 3</span></li>
+<li><a href="https://thecsrjournal.in/delhis-air-quality-shows-mild-improvement-with-aqi-dropping-from-337-to-296-amid-concerns-of-future-pollution-levels" target="_blank" rel="noopener">The CSR Journal — AQI drops from 337 to 296</a> <span class="pubdate">24 Oct 2026</span> <span class="tier">· India &amp; Delhi · tier 3</span></li>
+<li><a href="https://www.businesstoday.in/india/story/we-grow-with-the-world-not-at-anyones-cost-pm-modi-on-indias-economic-growth-561199-2026-10-13" target="_blank" rel="noopener">Business Today — &#39;We grow with the world&#39;</a> <span class="pubdate">13 Oct 2026</span> <span class="tier">· India &amp; Delhi · tier 2</span></li>
+<li><a href="https://frequentmiler.com/current-point-transfer-bonuses/" target="_blank" rel="noopener">Frequent Miler — Current transfer bonuses</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Personal Finance &amp; Travel · tier 2</span></li>
+<li><a href="https://upgradedpoints.com/news/current-credit-card-transfer-bonuses/" target="_blank" rel="noopener">Upgraded Points — October transfer bonuses</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Personal Finance &amp; Travel · tier 2</span></li>
+<li><a href="https://awardwallet.com/news/amex-membership-rewards/aeromexico-transfer-bonus/" target="_blank" rel="noopener">AwardWallet — 20% Amex to Aeromexico</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Personal Finance &amp; Travel · tier 2</span></li>
+<li><a href="https://www.happyfares.in/flights/new-york-to-delhi-cheap-airtickets" target="_blank" rel="noopener">HappyFares — NYC to Delhi fares (aggregator)</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Personal Finance &amp; Travel · tier 3</span></li>
+<li><a href="https://www.nbcsports.com/nba/news/nba-stock-up-stock-down-oct-26-pistons-rockets-timberwolves-climb-while-heat-knicks-fall" target="_blank" rel="noopener">NBC Sports — Stock up, stock down, 26 Oct</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· Entertainment &amp; Lifestyle · tier 2</span></li>
+<li><a href="https://www.postingandtoasting.com/knicks-game-previews/90515/game-preview-knicks-vs-pistons-october-27-2026" target="_blank" rel="noopener">Posting and Toasting — Game preview: Knicks vs Pistons</a> <span class="pubdate">27 Oct 2026</span> <span class="tier">· Entertainment &amp; Lifestyle · tier 3</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0000886982/000119312526378405/gs-20260901.htm" target="_blank" rel="noopener">SEC — Goldman Sachs 424B2 referencing &#39;SPCX UW&#39;</a> <span class="pubdate">1 Sep 2026</span> <span class="tier">· Portfolio — verification · tier 1</span></li>
+<li><a href="https://finance.yahoo.com/quote/SPCX/" target="_blank" rel="noopener">Yahoo Finance — SPCX quote page (ETF renamed SPCK)</a> <span class="pubdate">2026</span> <span class="tier">· Portfolio — verification · tier 2</span></li>
+<li><a href="https://bnnbloomberg.ca/business/2024/12/04/ev-firm-ideanomics-files-bankruptcy-after-settling-sec-charges" target="_blank" rel="noopener">BNN Bloomberg — Ideanomics files bankruptcy</a> <span class="pubdate">4 Dec 2024</span> <span class="tier">· Portfolio — verification · tier 2</span></li>
+<li><a href="https://sec.gov/Archives/edgar/data/837852/000162828024031572/idex-20240710.htm" target="_blank" rel="noopener">SEC — Ideanomics 8-K (delisting)</a> <span class="pubdate">10 Jul 2024</span> <span class="tier">· Portfolio — verification · tier 1</span></li>
+<li><a href="https://www.cnbc.com/2026/10/26/tesla-spacex-merger-barclays.html" target="_blank" rel="noopener">CNBC — Buy Tesla ahead of potential SpaceX merger, says Barclays</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· Portfolio · tier 2</span></li>
+<li><a href="https://www.heygotrade.com/en/news/tesla-tsla-stock-news-october-27-2026/" target="_blank" rel="noopener">Gotrade — TSLA rises 5.2% to $391.62</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· Portfolio · tier 3</span></li>
+<li><a href="https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001493152-26-048228/form8-k.htm" target="_blank" rel="noopener">Red Cat IR — 8-K, 23 Oct 2026</a> <span class="pubdate">23 Oct 2026</span> <span class="tier">· Portfolio · tier 1</span></li>
+<li><a href="https://www.stocktitan.net/news/RCAT/red-cat-announces-third-quarter-2026-earnings-release-date-and-tagi9ewegyg5.html" target="_blank" rel="noopener">StockTitan — Red Cat sets 16 Nov earnings date</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Portfolio · tier 2</span></li>
+<li><a href="https://www.cryptotimes.io/2026/10/26/strategy-discloses-no-bitcoin-purchase-while-stock-mstr-price-remains-in-focus/" target="_blank" rel="noopener">The Crypto Times — Strategy discloses no bitcoin purchase</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· Portfolio · tier 3</span></li>
+<li><a href="https://kalkinemedia.com/us/news/announcements/ocugen-postpones-stock-authorization-vote-to-october-26-2026" target="_blank" rel="noopener">Kalkine — Ocugen postpones vote to 26 Oct</a> <span class="pubdate">5 Oct 2026</span> <span class="tier">· Portfolio · tier 3</span></li>
+<li><a href="https://defenseworld.net/2026/10/24/ocugen-nasdaqocgn-rating-lowered-to-sell-at-wall-street-zen.html" target="_blank" rel="noopener">Defense World — Ocugen downgraded to Sell (Wall Street Zen)</a> <span class="pubdate">24 Oct 2026</span> <span class="tier">· Portfolio · tier 3</span></li>
+<li><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results" target="_blank" rel="noopener">GE Aerospace — Q3 2026 results</a> <span class="pubdate">20 Oct 2026</span> <span class="tier">· Portfolio · tier 1</span></li>
+<li><a href="https://www.tikr.com/blog/ge-aerospace-sinks-2-despite-raising-2026-guidance-across-the-board" target="_blank" rel="noopener">TIKR — GE sinks despite raising guidance</a> <span class="pubdate">20 Oct 2026</span> <span class="tier">· Portfolio · tier 2</span></li>
+<li><a href="https://www.indmoney.com/blog/us-stocks/ibm-stock-q3-earnings-analysis" target="_blank" rel="noopener">INDmoney — IBM Q3 2026 analysis</a> <span class="pubdate">22 Oct 2026</span> <span class="tier">· Portfolio · tier 3</span></li>
+<li><a href="https://investor.wedbush.com/wedbush/article/stockstory-2026-10-22-ibm-ibm-stock-trades-down-here-is-why" target="_blank" rel="noopener">Wedbush/StockStory — IBM stock trades down</a> <span class="pubdate">22 Oct 2026</span> <span class="tier">· Portfolio · tier 2</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000147/gevpressrelease2q26.htm" target="_blank" rel="noopener">SEC — GE Vernova Q2 2026 press release (8-K)</a> <span class="pubdate">22 Jul 2026</span> <span class="tier">· Research Desk · tier 1</span></li>
+<li><a href="https://www.landsearch.com/vacant/hudson-county-nj" target="_blank" rel="noopener">LandSearch — Hudson County undeveloped land</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Real Estate · tier 3</span></li>
+<li><a href="https://www.zillow.com/newark-nj/land/" target="_blank" rel="noopener">Zillow — Newark land listings</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Real Estate · tier 2</span></li>
+<li><a href="https://www.homes.com/hudson-county-nj/land-for-sale/" target="_blank" rel="noopener">Homes.com — Hudson County land</a> <span class="pubdate">Oct 2026</span> <span class="tier">· Real Estate · tier 2</span></li>
+<li><a href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">10-yr UST — 26 Oct</a> <span class="pubdate"></span> <span class="tier">· Market snapshot · tier 2</span></li>
+<li><a href="https://mitrade.com/au/insights/daily-market-outlook/news-today/market-news-today-australia-261027" target="_blank" rel="noopener">Gold — 26 Oct, single source</a> <span class="pubdate"></span> <span class="tier">· Market snapshot · tier 3</span></li>
+<li><a href="https://finance.yahoo.com/markets/crypto/articles/bitcoin-holds-79-200-fed-133225031.html" target="_blank" rel="noopener">Bitcoin — 26 Oct</a> <span class="pubdate"></span> <span class="tier">· Market snapshot · tier 2</span></li>
+<li><a href="https://www.euronews.com/tag/top-stories?p=24" target="_blank" rel="noopener">Brazil: Lula wins re-election.</a> <span class="pubdate">27 Oct 2026</span> <span class="tier">· World in brief · tier 2</span></li>
+<li><a href="https://www.10things.news/p/10-things-global-news-27th-october-e39" target="_blank" rel="noopener">France: Protests spread despite education concessions.</a> <span class="pubdate">27 Oct 2026</span> <span class="tier">· World in brief · tier 3</span></li>
+<li><a href="https://fxstreet.com/news/japanese-yen-weakens-with-fed-and-boj-monetary-policy-meetings-in-focus-202610261812" target="_blank" rel="noopener">Japan/UK: BoJ decision and UK Budget this week keep FX volatile.</a> <span class="pubdate">26 Oct 2026</span> <span class="tier">· World in brief · tier 2</span></li>
+    </ol>
+    <h3 class="rail-title">Data notes</h3>
+    <ul class="notes"><li>Live quotes are unavailable in this environment (direct market-data feeds are blocked by network policy). Prices are the most recent closes or snapshots found in reporting, each with its date.</li><li>News photography could not be downloaded (image hosts are blocked by network policy); the edition uses typographic leads and data graphics instead.</li><li>Several local and market figures come from a single secondary source; these are labelled &#39;single source&#39; and should be checked before acting.</li><li>7 of 17 holdings have no verified recent price today; shown as &#39;unavailable&#39;.</li></ul>
+<h3 class="rail-title">Validation warnings</h3><ul class="notes"><li>story[amex-flyingblue]: source dates only month-precise; freshness could not be fully verified</li><li>story[nyc-del-fares]: source dates only month-precise; freshness could not be fully verified</li></ul><h3 class="rail-title">Editor's log</h3><ul class="notes"><li>Cut low-relevance item &#39;Hoboken ranked the most walkable city in the U.S.&#39; (score 3.45)</li><li>Cut low-relevance item &#39;Cricket: India took the West Indies ODI series 2–1; the T20Is finished 2–2&#39; (score 3.0)</li></ul>  </section>
+
+  <footer>This newspaper is researched and written by Claude, an AI model made by Anthropic. Today&#39;s edition covers Anthropic&#39;s IPO filing and an FTC inquiry into Anthropic; read that coverage knowing the author&#39;s maker is the subject. No Anthropic coverage is a recommendation.<br>Not investment advice. Research window: Primarily 25–27 Oct 2026; older items are marked as context. Built 2026-10-27 09:32 UTC.</footer>
+</div>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById('theme-toggle');
+  try { var saved = localStorage.getItem('kd-theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('kd-theme', next); } catch (e) {}
+  });
+})();
+</script>

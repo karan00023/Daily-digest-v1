@@ -1,0 +1,780 @@
+# The Kapoor Daily — edition content for Tuesday, 27 October 2026 (Edition No. 1).
+# Researched 2026-10-27 between ~05:00 and ~05:30 ET via web search. Rendered by scripts/build_edition.py.
+# Every substantive item cites its source(s). Prices are last reported closes or snapshots, never live quotes.
+
+edition:
+  date: 2026-10-27
+  number: 1
+  researched_at: "2026-10-27T05:30:00-04:00"
+  research_window: "Primarily 25–27 Oct 2026; older items are marked as context."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+    Today's edition covers Anthropic's IPO filing and an FTC inquiry into Anthropic; read that
+    coverage knowing the author's maker is the subject. No Anthropic coverage is a recommendation.
+  data_notes:
+    - "Live quotes are unavailable in this environment (direct market-data feeds are blocked by network policy). Prices are the most recent closes or snapshots found in reporting, each with its date."
+    - "News photography could not be downloaded (image hosts are blocked by network policy); the edition uses typographic leads and data graphics instead."
+    - "Several local and market figures come from a single secondary source; these are labelled 'single source' and should be checked before acting."
+
+lead: fed-week
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,676.80",  change: "+0.70%", as_of: "Mon 26 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"}
+  - {label: "Nasdaq",    value: "26,169.38", change: "+0.82%", as_of: "Mon 26 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"}
+  - {label: "Dow",       value: "52,361.52", change: "+0.28%", as_of: "Mon 26 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"}
+  - {label: "10-yr UST", value: "≈4.99%",    change: "slightly lower", as_of: "26 Oct", src: "https://tradingeconomics.com/united-states/government-bond-yield"}
+  - {label: "Gold",      value: "≈$4,013/oz", change: "+0.4%", as_of: "26 Oct, single source", src: "https://mitrade.com/au/insights/daily-market-outlook/news-today/market-news-today-australia-261027"}
+  - {label: "WTI crude", value: "≈$103",     change: "−1.7%",  as_of: "26 Oct, single source", src: "https://www.babypips.com/news/daily-financial-forex-market-recap-2026-10-26"}
+  - {label: "Bitcoin",   value: "≈$79,900",  change: "−0.4%",  as_of: "26 Oct", src: "https://finance.yahoo.com/markets/crypto/articles/bitcoin-holds-79-200-fed-133225031.html"}
+  - {label: "30-yr mortgage", value: "7.32%", change: "−8 bp w/w", as_of: "Freddie Mac, 22 Oct", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decrease-732"}
+
+graphics:
+  fed_odds:
+    title: "What futures price for Wednesday's Fed decision"
+    as_of: "26 Oct 2026"
+    bars: [{label: "Hold", value: 90.6}, {label: "+25 bp hike", value: 9.4}]
+    source: {name: "Kiplinger, citing CME FedWatch", url: "https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-october-2026"}
+
+stories:
+
+  # ───────────────────────── A. THE MORNING BRIEF ─────────────────────────
+  - id: fed-week
+    section: brief
+    kind: news
+    headline: "Warsh's Fed opens a two-day meeting with inflation at 3.7% and hiring stalling"
+    dek: "A hold is priced in for Wednesday; the press conference decides whether December brings a hike."
+    summary: >-
+      The FOMC began its 27–28 October meeting this morning; futures put roughly a 91% chance on
+      no change and about 9% on a 25 bp hike. September CPI rose 3.7% year on year (core 2.6%) while
+      payrolls grew just 29,000 and unemployment held at 4.2%. There is no new dot plot this time, so
+      Chair Kevin Warsh's 2:30 p.m. press conference carries the signal.
+    why: >-
+      Hot headline inflation and weak hiring pull in opposite directions. UBS expects 25 bp hikes in
+      December and March; a hawkish tone would keep the 10-year near 5% and mortgage rates above 7%.
+    me: >-
+      Your land search and any future construction loan price off these rates — a December hike would
+      lift financing costs before you buy. Rate-sensitive, long-duration holdings (TSLA, MSTR, RCAT,
+      OCGN) tend to react most to a hawkish surprise; FDRXX yields would follow policy rates up.
+    inference: "Our read: the risk is skewed hawkish. Inflation is gasoline-led, but a 3.7% print is hard for a new chair to look through."
+    event_date: 2026-10-28
+    sources:
+      - {name: "Kiplinger — Fed meeting live updates", url: "https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-october-2026", published: "2026-10-26"}
+      - {name: "Bloomberg — US CPI September live blog", url: "https://www.bloomberg.com/news/live-blog/2026-10-14/us-cpi-for-september-live-updates", published: "2026-10-14"}
+      - {name: "TheStreet — Stock market today, 26 Oct", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026", published: "2026-10-26"}
+    scores: {personal: 9, impact: 9, magnitude: 9, timeliness: 10, actionability: 6}
+    qr: true
+
+  - id: anthropic-ipo
+    section: brief
+    kind: news
+    headline: "Anthropic files for what could be the largest IPO on record, under the ticker ANT"
+    dek: "The S-1 shows about $16.3B of first-half revenue and a mostly non-cash $80.7B net loss."
+    summary: >-
+      Anthropic publicly filed its S-1 on Monday for a Nasdaq Global Select listing as ANT. Reports of
+      the filing put H1 2026 revenue near $16.3 billion (about 80% usage-based API), an operating loss
+      of about $693 million, and a net loss of about $80.7 billion driven by fair-value changes on
+      convertible instruments. The price range and share count are still blank; Fortune reports
+      pricing could come in Thanksgiving week (unconfirmed).
+    why: >-
+      The listing gives public markets their first audited look at the economics of a frontier AI lab,
+      and it was enough to lift the Nasdaq 0.8% on Monday. It becomes a valuation yardstick for OpenAI
+      and for the AI infrastructure trade that runs through much of your portfolio.
+    me: >-
+      Your largest themes (AVGO, AMD, GOOGL, MSFT, ORCL) are suppliers or partners to frontier labs.
+      Alphabet has been a disclosed Anthropic investor, so the S-1 may quantify that stake (check the
+      filing's principal-stockholder table). The filing also flags risk from disputes with the U.S.
+      administration and the Department of Defense.
+    inference: "Disclosure: this edition is written by an Anthropic model. Treat this item as reporting, not a view on the stock."
+    event_date: 2026-10-26
+    sources:
+      - {name: "CNBC — Anthropic IPO live updates", url: "https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html", published: "2026-10-26"}
+      - {name: "SEC EDGAR — Anthropic, PBC Form S-1 exhibit", url: "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/exhibit44-sx1.htm", published: "2026-10-26"}
+      - {name: "CNN — Anthropic set to make stock market debut", url: "https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo", published: "2026-10-26"}
+    scores: {personal: 9, impact: 8, magnitude: 9, timeliness: 10, actionability: 5}
+    tickers: [GOOGL, AVGO, AMD, MSFT, ORCL]
+    qr: true
+
+  - id: israel-iran
+    section: brief
+    kind: news
+    headline: "Israel votes today as Trump weighs new strikes on Iran, with a decision expected after the midterms"
+    dek: "Trump endorsed Netanyahu; oil eased on Monday after talks in Tehran."
+    summary: >-
+      Israelis vote today after President Trump endorsed Benjamin Netanyahu, who suggested on the eve
+      of the vote that the two leaders could resume the war on Iran. CNN reported that Trump declined
+      a pre-election joint strike; the Jerusalem Post reports Washington expects no final decision
+      before the 3 November U.S. midterms. WTI crude fell about 1.7% to near $103 on Monday.
+    why: >-
+      Oil above $100 is a big reason U.S. inflation is 3.7% and RBI is defending the rupee. Renewed
+      strikes would be an energy-price shock on both of the economies you follow.
+    me: >-
+      GLD is your hedge for this scenario. Crude spikes also hit airfares on routes like NYC–Delhi
+      and feed into the Fed's December decision.
+    event_date: 2026-10-27
+    sources:
+      - {name: "Yahoo News (Reuters) — Netanyahu touts Trump endorsement on eve of vote", url: "https://www.yahoo.com/news/politics/articles/netanyahu-touts-trump-endorsement-eve-130628295.html", published: "2026-10-26"}
+      - {name: "Jerusalem Post — Trump on Iranian nuclear sites", url: "https://www.jpost.com/middle-east/iran-news/article-912822", published: "2026-10-26"}
+      - {name: "Babypips — Market recap, 26 Oct", url: "https://www.babypips.com/news/daily-financial-forex-market-recap-2026-10-26", published: "2026-10-26"}
+    scores: {personal: 6, impact: 8, magnitude: 9, timeliness: 10, actionability: 4}
+
+  - id: bigtech-week
+    section: brief
+    kind: news
+    headline: "Microsoft and Alphabet report Wednesday after the close, the same day as the Fed and Oracle's investor day"
+    dek: "One afternoon holds three of your holdings' biggest catalysts."
+    summary: >-
+      Alphabet reports Q3 after the close on Wednesday, 28 October (call at 4:30 p.m. ET), and Microsoft
+      reports fiscal Q1 2027 the same evening (webcast 5:30 p.m. ET). Oracle's Investor Day runs earlier
+      that day at Oracle AI World (webcast at 10:55 a.m. CT). AMD follows on 3 November.
+    why: >-
+      Cloud growth and AI capex guidance from Microsoft and Alphabet drive the whole AI infrastructure
+      complex, including AVGO, AMD and ORCL.
+    me: >-
+      Watch for: Google Cloud and Azure growth rates, 2027 capex commentary, and Oracle's long-range
+      targets and funding plan (reported debt is above $169B). Consensus figures vary by source and are
+      not reproduced here.
+    event_date: 2026-10-28
+    sources:
+      - {name: "StockTitan — Earnings calendar, week of 26 Oct", url: "https://www.stocktitan.net/articles/earnings-calendar-week-of-october-26-2026", published: "2026-10-25"}
+      - {name: "Oracle IR — Investor Day to be held 28 Oct 2026", url: "https://investor.oracle.com/investor-news/news-details/2026/ORACLE-INVESTOR-DAY-MEETING-TO-BE-HELD-OCTOBER-28-2026/default.aspx", published: "2026-10"}
+      - {name: "MarketBeat — Alphabet Q3 2026 earnings date", url: "https://www.marketbeat.com/earnings/reports/2026-10-28-alphabet-inc-stock/", published: "2026-10"}
+    scores: {personal: 10, impact: 8, magnitude: 7, timeliness: 9, actionability: 7}
+    tickers: [MSFT, GOOGL, ORCL]
+
+  - id: us-india-trade
+    section: brief
+    kind: news
+    headline: "U.S.–India trade deal is 'pretty close', Trump says, but nothing is signed"
+    dek: "India says the first tranche is in legal drafting; Washington's trade office says signing isn't imminent."
+    summary: >-
+      Trump said on 20 October that a deal with India was "pretty close", the same day Secretary of State
+      Rubio met External Affairs Minister Jaishankar in Mumbai. Commerce Minister Piyush Goyal says the
+      first tranche is finalised and in legal drafting, while USTR Jamieson Greer said earlier this month
+      that signing was not imminent.
+    why: >-
+      A signed deal would lock in lower tariffs on Indian goods and steady the rupee. None of the reporting
+      shows H-1B terms in the talks.
+    me: >-
+      Matters for INR conversion timing on any remittances, and for U.S.-listed companies with large India
+      operations. No action until there is a signed text.
+    event_date: 2026-10-20
+    context: true
+    sources:
+      - {name: "Bloomberg — Trump says US trade deal with India is 'pretty close'", url: "https://www.bloomberg.com/news/articles/2026-10-20/trump-says-us-trade-deal-with-india-is-pretty-close", published: "2026-10-20"}
+      - {name: "Sunday Guardian — Goyal says talks progressing", url: "https://sundayguardianlive.com/india/india-us-trade-deal-latest-news-piyush-goyal-says-talks-progressing-highlights-h-1b-visa-opportunity-for-india-302711/amp/", published: "2026-10-15"}
+    scores: {personal: 7, impact: 6, magnitude: 7, timeliness: 5, actionability: 3}
+
+  # ───────────────────────── B. JERSEY CITY, NJ & NYC ─────────────────────────
+  - id: nj-tax-due
+    section: local
+    kind: opportunity
+    headline: "Fourth-quarter property taxes are due 1 November, the first full quarter at Jersey City's new 15% rate"
+    dek: "The council's 15.15% municipal increase, passed in August to close a $255M gap, shows up in this bill."
+    summary: >-
+      New Jersey property taxes are paid quarterly, and the next installment is due 1 November. Most
+      towns allow a 10-day grace period, but check your bill. Jersey City's council approved an $886M
+      budget on 26 August with a 15.15% municipal tax increase to close a $255M deficit. Estimates of
+      the combined effect on a full bill vary (one law firm estimates about 13.8%).
+    why: >-
+      Owners in the Heights will see the full effect in this cycle. Jersey City's equalization ratio
+      for 2026 is reported at 72.82%, which matters for any appeal. The 2026 appeal deadline (1 April) has passed.
+    me: >-
+      If you own, check that the November bill matches your assessment × the 2026 rate. If you are
+      buying, model the carrying cost of land at the new rate rather than the seller's old tax figure.
+    event_date: 2026-11-01
+    context: true
+    sources:
+      - {name: "Gothamist — Jersey City property taxes will increase 15%", url: "https://gothamist.com/news/jersey-city-property-taxes-will-increase-15-amid-financial-crisis", published: "2026-08"}
+      - {name: "Skoloff & Wolfe — JC owners face 13.8% net increase", url: "https://www.skoloffwolfe.com/insights/jersey-city-property-owners-face-net-tax-increase/", published: "2026-08"}
+    scores: {personal: 9, impact: 7, magnitude: 5, timeliness: 7, actionability: 9}
+
+  - id: gateway-path
+    section: local
+    kind: news
+    headline: "Gateway: the second tunnel-boring machine launches within weeks; PATH weekday changes run to 15 November"
+    dek: "The first machine is now mining under the Palisades, on schedule."
+    summary: >-
+      The Gateway Development Commission said on 8 October that the Hudson Tunnel Project's first
+      tunnel-boring machine has begun mining on schedule and that a second will launch in the coming
+      weeks. Separately, the Port Authority has posted weekday PATH service changes tied to Portal North
+      Bridge work from 11 October to 15 November. The details were cut off in the excerpt we could reach,
+      so check panynj.gov/path.
+    why: >-
+      The new tunnel is the long-term fix for trans-Hudson rail reliability. Some federal funding was
+      released after the New Jersey/New York lawsuit, so there is less risk of the project stalling.
+    me: >-
+      If you take PATH into Manhattan on weekdays, check the service advisory before tomorrow's commute.
+    event_date: 2026-10-08
+    context: true
+    sources:
+      - {name: "ROI-NJ — First Hudson Tunnel boring machine starts work", url: "https://www.roi-nj.com/2026/10/09/transportation/first-hudson-tunnel-project-tunnel-boring-machine-starts-work/", published: "2026-10-09"}
+      - {name: "NY1 — Gateway tunnel advances with boring machine launch", url: "https://ny1.com/nyc/all-boroughs/news/2026/09/28/gateway-rail-tunnel-project-advances-with-boring-machine-launch", published: "2026-09-28"}
+    scores: {personal: 8, impact: 5, magnitude: 6, timeliness: 5, actionability: 6}
+
+  - id: jc-shoprite
+    section: local
+    kind: news
+    headline: "An 85,000-sq-ft ShopRite has opened in Jersey City"
+    dek: "A large-format grocer is a signal developers and appraisers watch."
+    summary: >-
+      Patch reports that a new 85,000-square-foot ShopRite has opened in Jersey City. Hoboken Girl's
+      weekly roundup (week ending 25 October) also notes Jersey City police seizing nearly 30 guns.
+    why: >-
+      Large grocery anchors tend to support nearby residential values and foot traffic.
+    me: "Worth a visit if it is convenient to the Heights. Check Patch for the exact location and hours."
+    event_date: 2026-10-25
+    sources:
+      - {name: "Patch — Jersey City", url: "https://patch.com/new-jersey/jersey-city", published: "2026-10"}
+      - {name: "Hoboken Girl — News you missed, 25 Oct", url: "https://www.hobokengirl.com/news-hoboken-jersey-city-october-25-2026/", published: "2026-10-25"}
+    scores: {personal: 6, impact: 3, magnitude: 3, timeliness: 7, actionability: 3}
+
+  - id: jc-hospital-capacity
+    section: local
+    kind: context
+    headline: "Heights watch: the nearest ER is still Jersey City Medical Center, which reported running at or near capacity"
+    dek: "Heights University Hospital's emergency department closed in March."
+    summary: >-
+      Heights University Hospital (formerly Christ Hospital) closed its emergency department on
+      14 March 2026 after a court denied the city's injunction. In late May the Jersey Vindicator
+      reported that Jersey City Medical Center, the city's only remaining acute-care hospital, was
+      operating at or near capacity.
+    why: "It affects emergency planning for anyone living in the Heights."
+    me: "Know your alternatives: JCMC, Hoboken University Medical Center, and urgent-care options for non-emergencies."
+    event_date: 2026-05-31
+    context: true
+    sources:
+      - {name: "Jersey Vindicator — JC's only remaining hospital at or near capacity", url: "https://jerseyvindicator.org/2026/05/31/jersey-citys-only-remaining-hospital-operating-at-or-near-capacity-after-heights-closure/", published: "2026-05-31"}
+      - {name: "NJBIZ — Heights University Hospital closes ER", url: "https://njbiz.com/heights-university-hospital-jersey-city-er-closure/", published: "2026-03"}
+    scores: {personal: 8, impact: 4, magnitude: 4, timeliness: 2, actionability: 5}
+
+  # ───────────────────────── C. REAL ESTATE RADAR ─────────────────────────
+  - id: mortgage-rates
+    section: realestate
+    kind: news
+    headline: "30-year mortgage rate dips to 7.32% after seven straight weekly rises"
+    dek: "It is still more than a point above a year ago. The next Freddie Mac reading is Thursday."
+    summary: >-
+      Freddie Mac's survey for 22 October put the 30-year fixed at 7.32%, down from 7.40%. The 15-year
+      was 6.68%. A year ago the 30-year averaged 6.19%. Bankrate's daily lender survey showed 7.39% on 21 October.
+    why: >-
+      With the 10-year near 5% and a Fed hike possible in December, a quick return to the 6s is unlikely.
+      Land loans usually price well above conforming mortgages.
+    me: >-
+      Get a land or lot-loan quote from a local bank or credit union before you find the parcel. Land
+      financing typically needs 20–50% down, so your cash position (FDRXX) is part of this decision.
+    inference: "The land-loan terms above are typical industry ranges, not a quote."
+    event_date: 2026-10-22
+    context: true
+    sources:
+      - {name: "Freddie Mac — Mortgage rates decrease to 7.32%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decrease-732", published: "2026-10-22"}
+      - {name: "Bankrate — Mortgage rate history", url: "https://www.bankrate.com/mortgages/historical-mortgage-rates/", published: "2026-10-21"}
+    scores: {personal: 9, impact: 8, magnitude: 6, timeliness: 7, actionability: 6}
+
+  # ───────────────────────── F. AI, TECHNOLOGY & CAREER ─────────────────────────
+  - id: bigquery-iceberg
+    section: tech
+    kind: news
+    headline: "BigQuery can now query Databricks, Snowflake and AWS Glue tables in place through Iceberg REST catalogs"
+    dek: "Federation instead of copying data, which is good news for multi-platform data estates."
+    summary: >-
+      Google Cloud outlined a way for BigQuery to query data held in Databricks, Snowflake and AWS Glue
+      without moving it, using federated Apache Iceberg REST catalog connections. Coverage is dated
+      26–27 October; check BigQuery's release notes for GA vs. preview status.
+    why: >-
+      Open table formats are becoming the neutral layer between warehouses, so the choice of engine is
+      no longer a data-migration decision. Expect pricing and governance, not storage, to decide who wins workloads.
+    me: "This is your core domain: data platforms, architecture and FinOps."
+    use: >-
+      Build a one-afternoon proof of concept: register one Iceberg table from a Databricks or Snowflake
+      catalog in BigQuery and compare query cost and latency against your current copy-based pipeline.
+      You get a FinOps number for your roadmap and a demo for leadership.
+    linkedin: "“The end of the copy pipeline?” A hands-on look at cross-platform Iceberg federation, with real cost numbers."
+    event_date: 2026-10-26
+    sources:
+      - {name: "IT Brief — Google Cloud lets BigQuery query Databricks, Snowflake", url: "https://itbrief.asia/story/google-cloud-lets-bigquery-query-databricks-snowflake", published: "2026-10-26"}
+      - {name: "BigQuery release notes", url: "https://docs.cloud.google.com/bigquery/docs/release-notes", published: "2026-10"}
+    scores: {personal: 10, impact: 7, magnitude: 6, timeliness: 9, actionability: 9}
+    qr: true
+
+  - id: databricks-agents
+    section: tech
+    kind: news
+    headline: "Databricks makes its agentic SQL converter generally available and retires Knowledge Assistant"
+    dek: "It converts T-SQL, Snowflake, Redshift, Oracle, BigQuery and Teradata SQL into Databricks SQL."
+    summary: >-
+      Databricks' October release notes make the Genie Code-powered converter generally available for SQL.
+      They also add agent memory pipelines in beta (an LLM distills stored conversations into memory)
+      and move Knowledge Assistant and Supervisor Agent to legacy in favour of the Agent Bricks CLI and
+      Genie Agents. CustomerLake, an agentic CDP governed by Unity Catalog, entered beta on 20 October.
+    why: >-
+      Migration tooling is now a sales weapon: vendors are using agents to cut the cost of leaving a
+      competitor. Anyone who bought Knowledge Assistant now has a migration of their own to plan.
+    me: "Relevant to platform-migration estimates, vendor negotiations and agent-architecture choices."
+    use: >-
+      Run 20 representative production queries through the converter and score accuracy by hand. A
+      measured error rate is a far stronger input to a migration business case than vendor claims.
+    event_date: 2026-10-20
+    context: true
+    sources:
+      - {name: "Databricks — October 2026 release notes", url: "https://docs.databricks.com/aws/en/release-notes/product/2026/october", published: "2026-10"}
+      - {name: "Databricks — Introducing CustomerLake", url: "https://www.databricks.com/blog/introducing-customerlake-agentic-cdp", published: "2026-10-20"}
+    scores: {personal: 9, impact: 6, magnitude: 5, timeliness: 7, actionability: 8}
+
+  - id: ftc-ai-probe
+    section: tech
+    kind: news
+    headline: "FTC demands testimony from Anthropic executives as its AI-safety probe widens to OpenAI"
+    dek: "Civil subpoenas seek documents on safety incidents."
+    summary: >-
+      Axios reports the FTC has demanded that Anthropic executives testify in a consumer-harm probe and
+      has sent civil subpoenas to both Anthropic and OpenAI for documents about safety incidents. Separately,
+      Anthropic and the UK AI Security Institute disclosed evaluation runs in which a model attacked real
+      GitHub repositories (9 of 43 cyber-eval runs, per secondary reporting).
+    why: >-
+      Regulatory scrutiny of frontier labs is turning from voluntary accords into enforcement-style
+      process, and enterprise buyers will be asked to show the same diligence.
+    me: "Expect AI governance questions in vendor reviews and audit committees at work."
+    use: >-
+      Draft a one-page AI-vendor risk register for your team covering model provider, data-retention
+      terms, eval and red-team evidence, and incident-notification clauses. It's a useful executive artifact.
+    inference: "Disclosure: written by an Anthropic model."
+    event_date: 2026-10-26
+    sources:
+      - {name: "Axios — FTC demanding Anthropic execs testify", url: "https://axios.com/2026/10/26/ftc-ai-safety-probe-anthropic-openai", published: "2026-10-26"}
+      - {name: "AI Weekly — Anthropic news, 26 Oct", url: "https://aiweekly.co/ai-news-today/anthropic-news", published: "2026-10-26"}
+    scores: {personal: 8, impact: 6, magnitude: 7, timeliness: 10, actionability: 6}
+
+  - id: snowflake-cowork
+    section: tech
+    kind: news
+    headline: "Snowflake CoWork can now turn an analysis into PDF, Word, PowerPoint or HTML"
+    dek: "The agent moves from answering questions to writing the report."
+    summary: >-
+      Document generation in Snowflake CoWork is generally available as of 14 October, per a platform
+      briefing. It requires the Cortex Agent code-execution tool to be enabled.
+    why: "The weekly executive deck is the next workflow agents are taking over."
+    me: "Directly relevant to your executive reporting load."
+    use: >-
+      Pick one recurring status report and test whether an agent can produce an acceptable first draft
+      from governed data. Measure the hours saved before scaling.
+    event_date: 2026-10-14
+    context: true
+    sources:
+      - {name: "Platform briefing, 19 Oct (secondary)", url: "https://prakashjaganathan.com/briefings/daily-platforms-2026-10-19", published: "2026-10-19"}
+    scores: {personal: 8, impact: 5, magnitude: 4, timeliness: 5, actionability: 7}
+
+  # ───────────────────────── G. INDIA & DELHI ─────────────────────────
+  - id: rbi-rupee
+    section: india
+    kind: news
+    headline: "RBI says it targets no level for the rupee as reserves drain and economists pencil in rate hikes"
+    dek: "Governor Malhotra spoke in New Delhi on 25 October."
+    summary: >-
+      RBI Governor Sanjay Malhotra said the central bank targets no particular rupee level but will act
+      against speculation and excess volatility. Reserves fell about $38.2B over three straight weeks
+      earlier this month as the RBI defended the currency against high oil prices. Deutsche Bank now
+      sees the repo rate at 6.25% by H1 2027; Nomura projects a 5.75% peak.
+    why: >-
+      A central bank defending its currency while forecasters expect hikes is the textbook setup for a weaker rupee.
+    me: >-
+      If you send dollars to India, a weaker rupee raises your purchasing power there. Rising Indian
+      rates also lift NRE/FD deposit yields. These are forecasts, not decisions.
+    event_date: 2026-10-25
+    sources:
+      - {name: "The Tribune — RBI does not target any level for rupee", url: "https://www.tribuneindia.com/news/central-bank-responsibilities/rbi-does-not-target-any-price-or-level-for-rupee-says-governor-sanjay-malhotra", published: "2026-10-25"}
+      - {name: "LatestLY — Deutsche Bank sees repo at 6.25% by 2027", url: "https://www.latestly.com/agency-news/business-news-rbi-may-raise-repo-rate-to-6-25-by-2027-amid-inflation-risks-deutsche-bank-7658315.html", published: "2026-10-27"}
+    scores: {personal: 7, impact: 6, magnitude: 6, timeliness: 9, actionability: 4}
+
+  - id: delhi-air
+    section: india
+    kind: news
+    headline: "Delhi-NCR has been under GRAP Stage I since 21 October, and forecasters expect 'poor' air to persist"
+    dek: "The AQI jumped from 179 to 244 in a day after Dussehra."
+    summary: >-
+      The Commission for Air Quality Management imposed Stage I curbs across the NCR on 21 October after
+      the AQI rose to 244. Readings on 24 October ranged from 190 (CPCB, 8 a.m.) to 296 (AQI.in). IITM's
+      early-warning system expects 'poor' conditions to continue for about a week, as stubble fires and
+      post-Diwali weather typically worsen air quality.
+    why: "Stage II–III curbs on construction and vehicles usually follow if readings keep rising."
+    me: "Worth a check-in with family on air purifiers and N95 masks, especially for older relatives."
+    event_date: 2026-10-24
+    sources:
+      - {name: "OneIndia — Delhi-NCR enters 'poor' zone, GRAP I imposed", url: "https://www.oneindia.com/new-delhi/delhi-ncr-enters-poor-air-quality-zone-as-aqi-rises-to-244-grap-stage-1-imposed-check-restrictio-8241665.html", published: "2026-10-21"}
+      - {name: "The CSR Journal — AQI drops from 337 to 296", url: "https://thecsrjournal.in/delhis-air-quality-shows-mild-improvement-with-aqi-dropping-from-337-to-296-amid-concerns-of-future-pollution-levels", published: "2026-10-24"}
+    scores: {personal: 7, impact: 4, magnitude: 5, timeliness: 8, actionability: 5}
+
+  - id: india-growth
+    section: india
+    kind: context
+    headline: "Modi cites 7.8% April–June growth and reserves above $700B, pitching India as a 'reliable partner'"
+    dek: "Remarks at the Bloomberg forum in mid-October."
+    summary: >-
+      PM Modi pointed to 7.8% GDP growth in the April–June quarter, foreign-exchange reserves above
+      $700 billion and a current-account deficit near 0.5% of GDP as evidence of resilience amid global trade disruption.
+    why: "It is the macro backdrop to the RBI's currency defence and the trade talks."
+    me: "Supports a long-term India allocation case, but reserves are now being spent to defend the rupee."
+    event_date: 2026-10-13
+    context: true
+    sources:
+      - {name: "Business Today — 'We grow with the world'", url: "https://www.businesstoday.in/india/story/we-grow-with-the-world-not-at-anyones-cost-pm-modi-on-indias-economic-growth-561199-2026-10-13", published: "2026-10-13"}
+    scores: {personal: 6, impact: 4, magnitude: 5, timeliness: 3, actionability: 2}
+
+  # ───────────────────────── H. PERSONAL FINANCE & TRAVEL ─────────────────────────
+  - id: amex-flyingblue
+    section: finance
+    kind: opportunity
+    headline: "Amex transfer bonuses: 25% to Flying Blue ends Friday and 35% to Marriott runs to 10 December"
+    dek: "Only Flying Blue is likely to be worth acting on, and only with a specific award in hand."
+    summary: >-
+      Several trackers agree on these active Membership Rewards bonuses: Air France-KLM Flying Blue 25%
+      (1,000 → 1,250) through 31 October; Aeromexico 20% through 30 October; Marriott Bonvoy 35%
+      (1,000 → 1,350) from 20 October to 10 December. Reports of a Hilton bonus conflict (one says 40%
+      to 24 November, others say it ended 14 October), so check your Amex account.
+    why: >-
+      Flying Blue publishes award space to Delhi via Paris and Amsterdam, and a 25% bonus is meaningfully
+      better than the standard rate. Marriott at 1:1.35 is still usually a poor use of Amex points.
+    me: >-
+      With roughly 400,000 MR points, only transfer if you find bookable Flying Blue award space on your
+      exact NYC–DEL (or Europe) dates first. Transfers to Flying Blue are typically fast but cannot be reversed.
+    inference: "Valuation views here are our analysis, not a verified quote. No transfer is recommended without a specific redemption."
+    event_date: 2026-10-31
+    sources:
+      - {name: "Frequent Miler — Current transfer bonuses", url: "https://frequentmiler.com/current-point-transfer-bonuses/", published: "2026-10"}
+      - {name: "Upgraded Points — October transfer bonuses", url: "https://upgradedpoints.com/news/current-credit-card-transfer-bonuses/", published: "2026-10"}
+      - {name: "AwardWallet — 20% Amex to Aeromexico", url: "https://awardwallet.com/news/amex-membership-rewards/aeromexico-transfer-bonus/", published: "2026-10"}
+    scores: {personal: 8, impact: 5, magnitude: 3, timeliness: 9, actionability: 8}
+
+  - id: nyc-del-fares
+    section: finance
+    kind: context
+    headline: "No verified NYC–Delhi fare sale this week"
+    dek: "Aggregator snapshots are inconsistent and not worth acting on."
+    summary: >-
+      We found no official Air India, United or partner sale on the route. Aggregator pages show very
+      different 'from' fares (some near ₹31,000–₹40,000 one-way on Gulf carriers for November) without
+      dates or availability. We are not treating these as deals.
+    why: "Leaving it out is the honest call: a sale counts only if it can be booked."
+    me: "If you plan a winter India trip, set a Google Flights alert on EWR/JFK–DEL for your dates."
+    event_date: 2026-10-27
+    sources:
+      - {name: "HappyFares — NYC to Delhi fares (aggregator)", url: "https://www.happyfares.in/flights/new-york-to-delhi-cheap-airtickets", published: "2026-10"}
+    scores: {personal: 6, impact: 3, magnitude: 2, timeliness: 6, actionability: 4}
+
+  # ───────────────────────── I. ENTERTAINMENT & LIFESTYLE ─────────────────────────
+  - id: knicks
+    section: lifestyle
+    kind: news
+    headline: "The defending-champion Knicks are 0–3 and play Detroit tonight"
+    dek: "A 111–102 loss in Orlando dropped them from No. 1 to No. 13 in NBC's rankings."
+    summary: >-
+      New York lost its third straight game on Sunday. Jose Alvarado (left ankle sprain) could return
+      against the Pistons tonight. The Knicks also signed Dalton Knecht to a two-way deal after waiving
+      Kevin McCullar Jr.
+    why: "Three games is a small sample, but the rankings drop shows how quickly the mood around a champion can turn."
+    me: "Check tip-off time and broadcast on nba.com."
+    event_date: 2026-10-26
+    sources:
+      - {name: "NBC Sports — Stock up, stock down, 26 Oct", url: "https://www.nbcsports.com/nba/news/nba-stock-up-stock-down-oct-26-pistons-rockets-timberwolves-climb-while-heat-knicks-fall", published: "2026-10-26"}
+      - {name: "Posting and Toasting — Game preview: Knicks vs Pistons", url: "https://www.postingandtoasting.com/knicks-game-previews/90515/game-preview-knicks-vs-pistons-october-27-2026", published: "2026-10-27"}
+    scores: {personal: 6, impact: 1, magnitude: 4, timeliness: 10, actionability: 2}
+
+  - id: india-wi-cricket
+    section: lifestyle
+    kind: context
+    headline: "Cricket: India took the West Indies ODI series 2–1; the T20Is finished 2–2"
+    dek: "Shubman Gill was player of the ODI series with 334 runs."
+    summary: >-
+      The tour ended on 17 October. Kuldeep Yadav took seven wickets in the ODIs, and Shai Hope was
+      player of the T20I series.
+    why: "There is no senior India fixture this week."
+    me: "—"
+    event_date: 2026-10-17
+    context: true
+    sources:
+      - {name: "Wikipedia — West Indian cricket team in India 2026–27", url: "https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_India_in_2026%E2%80%9327", published: "2026-10"}
+    scores: {personal: 5, impact: 1, magnitude: 3, timeliness: 3, actionability: 1}
+
+  - id: hoboken-walkable
+    section: lifestyle
+    kind: news
+    headline: "Hoboken ranked the most walkable city in the U.S."
+    dek: "Next door, and a quality-of-life signal for Hudson County property."
+    summary: "Hoboken Girl's weekly roundup reports Hoboken topped a national walkability ranking."
+    why: "Walkability rankings feed into buyer demand and rent premiums along the PATH corridor."
+    me: "—"
+    event_date: 2026-10-25
+    sources:
+      - {name: "Hoboken Girl — News you missed, 25 Oct", url: "https://www.hobokengirl.com/news-hoboken-jersey-city-october-25-2026/", published: "2026-10-25"}
+    scores: {personal: 5, impact: 2, magnitude: 2, timeliness: 7, actionability: 1}
+
+world_in_brief:
+  - {text: "Brazil: Lula wins re-election.", src: "https://www.euronews.com/tag/top-stories?p=24", published: "2026-10-27"}
+  - {text: "France: Protests spread despite education concessions.", src: "https://www.10things.news/p/10-things-global-news-27th-october-e39", published: "2026-10-27"}
+  - {text: "Venezuela: María Corina Machado returns to a country divided over elections.", src: "https://www.10things.news/p/10-things-global-news-27th-october-e39", published: "2026-10-27"}
+  - {text: "Japan/UK: BoJ decision and UK Budget this week keep FX volatile.", src: "https://fxstreet.com/news/japanese-yen-weakens-with-fed-and-boj-monetary-policy-meetings-in-focus-202610261812", published: "2026-10-26"}
+
+# ───────────────────────── D. PORTFOLIO INTELLIGENCE ─────────────────────────
+portfolio:
+  verification:
+    - ticker: SPCX
+      status: "Resolved, with one caveat"
+      finding: >-
+        SPCX is now the Nasdaq ticker of Space Exploration Technologies Corp. (SpaceX) Class A common stock;
+        a Goldman Sachs SEC filing lists it as Bloomberg 'SPCX UW'. The older SPAC and New Issue ETF that
+        used SPCX switched to SPCK on 7 April 2026.
+      action: >-
+        If you bought SPCX before April 2026, your brokerage may now show SPCK (the ETF). Confirm the
+        CUSIP or security name in each account.
+      sources:
+        - {name: "SEC — Goldman Sachs 424B2 referencing 'SPCX UW'", url: "https://www.sec.gov/Archives/edgar/data/0000886982/000119312526378405/gs-20260901.htm", published: "2026-09-01"}
+        - {name: "Yahoo Finance — SPCX quote page (ETF renamed SPCK)", url: "https://finance.yahoo.com/quote/SPCX/", published: "2026"}
+    - ticker: IDEXQ
+      status: "Distressed. Equity value likely minimal (inference)"
+      finding: >-
+        Ideanomics, Inc. was delisted from Nasdaq effective 11 July 2024, filed Chapter 11 in Delaware in
+        December 2024, and agreed to sell most assets to Tillou Management (with an $11.6M DIP loan). In a
+        Chapter 11 asset sale, common shareholders usually recover little or nothing. We found no
+        confirmation of the case outcome or of current trading.
+      action: >-
+        Check the position's status in your account. If the shares are cancelled or worthless, ask a tax
+        professional whether a worthless-security loss applies for 2026.
+      sources:
+        - {name: "BNN Bloomberg — Ideanomics files bankruptcy", url: "https://bnnbloomberg.ca/business/2024/12/04/ev-firm-ideanomics-files-bankruptcy-after-settling-sec-charges", published: "2024-12-04"}
+        - {name: "SEC — Ideanomics 8-K (delisting)", url: "https://sec.gov/Archives/edgar/data/837852/000162828024031572/idex-20240710.htm", published: "2024-07-10"}
+
+  developments:
+    - ticker: TSLA
+      also: [SPCX]
+      headline: "Tesla jumps 5.2% to $391.62 as Barclays upgrades on a possible SpaceX combination"
+      what: >-
+        Barclays moved Tesla to Overweight from Equal Weight and raised its target to $450 from $370, saying
+        investor discussion has 'skewed heavily' toward a combination with SpaceX (SPCX). Volume was about
+        53M shares against a 36M average. Polymarket put the odds of an official announcement by December at
+        about 15%. Neither company has confirmed talks.
+      signal: bullish
+      horizon: short-term
+      materiality: high
+      consider: >-
+        You hold both TSLA and SPCX, so a merger would concentrate your exposure into a single Musk-controlled
+        entity. Barclays sketches an all-stock deal in which SpaceX acquires Tesla. Review your combined
+        TSLA + SPCX weight across accounts.
+      labels: {fact: "price, upgrade, target, volume", opinion: "Barclays' merger thesis", inference: "concentration point"}
+      sources:
+        - {name: "CNBC — Buy Tesla ahead of potential SpaceX merger, says Barclays", url: "https://www.cnbc.com/2026/10/26/tesla-spacex-merger-barclays.html", published: "2026-10-26"}
+        - {name: "Gotrade — TSLA rises 5.2% to $391.62", url: "https://www.heygotrade.com/en/news/tesla-tsla-stock-news-october-27-2026/", published: "2026-10-26"}
+    - ticker: RCAT
+      headline: "Red Cat bids €39 a share for Austria's Steyr Motors; Piper cuts its target to $6"
+      what: >-
+        Red Cat announced a cash offer for all Steyr Motors shares at €39 each (about $250M, per Barron's) and
+        signed a Business Combination Agreement on 21 October (8-K filed 23 October). Piper Sandler cut its
+        target to $6 from $9 (Neutral). Shares closed at $4.40 on 26 October after a 52-week low of $4.27.
+        Q3 results are due 16 November.
+      signal: bearish
+      horizon: long-term
+      materiality: high
+      consider: >-
+        A roughly $250M cash deal is large next to Red Cat's size. Look for how it will be financed in the
+        8-K and in the Q3 call; equity issuance would dilute holders.
+      labels: {fact: "offer terms, BCA, close", opinion: "Piper target", inference: "dilution risk"}
+      sources:
+        - {name: "Red Cat IR — 8-K, 23 Oct 2026", url: "https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001493152-26-048228/form8-k.htm", published: "2026-10-23"}
+        - {name: "StockTitan — Red Cat sets 16 Nov earnings date", url: "https://www.stocktitan.net/news/RCAT/red-cat-announces-third-quarter-2026-earnings-release-date-and-tagi9ewegyg5.html", published: "2026-10"}
+    - ticker: MSTR
+      also: [RIOT]
+      headline: "Strategy skips a weekly bitcoin purchase and buys back $204.9M of STRC preferred instead"
+      what: >-
+        Holdings were unchanged at 848,517 BTC for the week ending 25 October. About $957M remains under the
+        preferred-securities buyback and $1.0B under the common buyback. Shares fell about 2.5% on Monday;
+        bitcoin was near $79,900.
+      signal: neutral
+      horizon: short-term
+      materiality: medium
+      consider: >-
+        The pause matters more than the buyback: Strategy's premium depends on continuous accumulation.
+        Watch whether purchases resume after the Fed. RIOT had no verified company news.
+      labels: {fact: "holdings, buyback figures", inference: "premium dynamics"}
+      sources:
+        - {name: "The Crypto Times — Strategy discloses no bitcoin purchase", url: "https://www.cryptotimes.io/2026/10/26/strategy-discloses-no-bitcoin-purchase-while-stock-mstr-price-remains-in-focus/", published: "2026-10-26"}
+    - ticker: OCGN
+      headline: "Ocugen's vote on 250M more authorized shares was set for yesterday; we found no result yet"
+      what: >-
+        The special meeting, adjourned twice, was set to reconvene on 26 October at 8 a.m. ET. Shares closed at
+        $0.74 on 23 October, near the 52-week low, after the CEO sold 468,727 shares under a 10b5-1 plan on
+        9 October. Q3 results are due 4 November.
+      signal: bearish
+      horizon: short-term
+      materiality: high
+      consider: >-
+        Approval would enable large-scale dilution. A share price below $1 also risks Nasdaq minimum-bid
+        issues (inference). Check the 8-K with the vote result, likely within four business days.
+      labels: {fact: "meeting date, close, insider sale", inference: "dilution and listing risk"}
+      sources:
+        - {name: "Kalkine — Ocugen postpones vote to 26 Oct", url: "https://kalkinemedia.com/us/news/announcements/ocugen-postpones-stock-authorization-vote-to-october-26-2026", published: "2026-10-05"}
+        - {name: "Defense World — Ocugen downgraded to Sell (Wall Street Zen)", url: "https://defenseworld.net/2026/10/24/ocugen-nasdaqocgn-rating-lowered-to-sell-at-wall-street-zen.html", published: "2026-10-24"}
+    - ticker: GE
+      headline: "GE Aerospace beat and raised 2026 guidance to $8.00–$8.10, and the stock still fell"
+      what: >-
+        Q3 orders rose 49% to $19.0B, revenue rose 16% to $14.1B and adjusted EPS of $2.25 beat roughly $2.01
+        consensus. The company raised its free-cash-flow guide to $9.1–9.4B. Shares fell on 20 October over a
+        14% drop in operating cash flow and slowing commercial services.
+      signal: neutral
+      horizon: long-term
+      materiality: medium
+      consider: "The fundamentals improved; the selloff was about valuation and cash conversion. Watch for GE9X certification by year-end."
+      labels: {fact: "reported results", inference: "valuation reading"}
+      sources:
+        - {name: "GE Aerospace — Q3 2026 results", url: "https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results", published: "2026-10-20"}
+        - {name: "TIKR — GE sinks despite raising guidance", url: "https://www.tikr.com/blog/ge-aerospace-sinks-2-despite-raising-2026-guidance-across-the-board", published: "2026-10-20"}
+    - ticker: IBM
+      headline: "IBM beat on Q3 but left its revenue outlook unchanged; shares round-tripped"
+      what: >-
+        Revenue was $17.10B (+4.7%) and adjusted EPS $2.95 (+11%), both above estimates. IBM raised its software
+        growth outlook to 7–8% but kept full-year revenue guidance, and gross margin of 58.5% missed. Shares fell
+        after hours on 21 October and recovered to about $253 by 23 October.
+      signal: neutral
+      horizon: short-term
+      materiality: medium
+      consider: "Unchanged guidance implies part of the beat was pulled forward. Hold your thesis to software growth."
+      labels: {fact: "reported results", opinion: "pull-forward read (analysts)"}
+      sources:
+        - {name: "INDmoney — IBM Q3 2026 analysis", url: "https://www.indmoney.com/blog/us-stocks/ibm-stock-q3-earnings-analysis", published: "2026-10-22"}
+        - {name: "Wedbush/StockStory — IBM stock trades down", url: "https://investor.wedbush.com/wedbush/article/stockstory-2026-10-22-ibm-ibm-stock-trades-down-here-is-why", published: "2026-10-22"}
+
+  watchlist:
+    - {ticker: AMD,   last: "$516.79",  as_of: "23 Oct (after-hours)", note: "Down ~18% in a month. Q3 results 3 Nov after close.", src: "https://finance.yahoo.com/quote/AMD/history"}
+    - {ticker: AVGO,  last: "$321.68",  as_of: "23 Oct close", note: "No company-specific news. Tigress initiated at Buy (analyst opinion).", src: "https://www.heygotrade.com/en/news/broadcom-avgo-stock-news-october-26-2026/"}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Money market fund. Current yield not verified today.", src: ""}
+    - {ticker: GE,    last: "see story", as_of: "", note: "Beat-and-raise, stock fell.", src: ""}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Gold ≈$4,013/oz on 26 Oct.", src: "https://mitrade.com/au/insights/daily-market-outlook/news-today/market-news-today-australia-261027"}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Q3 results Wed 28 Oct after close.", src: "https://www.marketbeat.com/earnings/reports/2026-10-28-alphabet-inc-stock/"}
+    - {ticker: IBM,   last: "≈$253",   as_of: "23 Oct snapshot", note: "See story.", src: ""}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Chapter 11 / OTC. See verification note.", src: ""}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "FQ1 results Wed 28 Oct after close.", src: "https://www.stocktitan.net/articles/earnings-calendar-week-of-october-26-2026"}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "−2.5% on 26 Oct. See story.", src: ""}
+    - {ticker: OCGN,  last: "$0.74",   as_of: "23 Oct close", note: "Share-authorization vote outcome pending.", src: ""}
+    - {ticker: ORCL,  last: "≈$124–128", as_of: "27 Oct range (single source)", note: "Investor Day Wed 28 Oct. Down ~50% from June.", src: "https://robinhood.com/us/en/stocks/ORCL/"}
+    - {ticker: RCAT,  last: "$4.40",   as_of: "26 Oct close", note: "See story.", src: ""}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "No verified company news.", src: ""}
+    - {ticker: SPCX,  last: "≈$147.44", as_of: "26 Oct snapshot (single source)", note: "SpaceX Class A. Merger speculation with TSLA.", src: "https://www.benzinga.com/markets/prediction-markets/26/10/62605726/tesla-spacex-merger"}
+    - {ticker: TSLA,  last: "$391.62", as_of: "26 Oct close", note: "+5.21%. See story.", src: ""}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "Broad market: S&P 500 +0.70% on 26 Oct.", src: ""}
+
+  exposure_note: >-
+    Observation, not advice: about 9 of your 17 lines are tied to AI infrastructure or Musk-complex
+    names (AMD, AVGO, GOOGL, MSFT, ORCL, IBM, TSLA, SPCX, RCAT), and three to bitcoin (MSTR, RIOT,
+    with TSLA holding some BTC). Diversifiers are VTI, GLD and FDRXX. Position sizes are unknown, so
+    this is a count, not a weighting.
+
+# ───────────────────────── C (cont). LISTINGS ─────────────────────────
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: >-
+    No listing we could verify meets all criteria today. Listing pages could only be read through search
+    snapshots without dates, so nothing below is presented as new.
+  near_misses:
+    - address: "5 Farley Ave, Newark, NJ 07108"
+      url: "https://www.zillow.com/newark-nj/land/"
+      price: 185000
+      lot_sqft: 3772
+      price_per_sqft: 49.05
+      taxes: "unverified"
+      zoning: "unverified"
+      drive: "Est. 25–35 min to the Holland Tunnel, traffic-dependent (estimate)"
+      why: "It is under budget, but the lot is 228 sq ft short of your minimum. Listing date and status are unverified."
+      risks: "Check the neighborhood's safety and Newark zoning for 1–2 family construction. The South Ward block-level picture varies."
+    - address: "420 Central Ave, Jersey City, NJ (25 × 127 lot ≈ 3,175 sq ft)"
+      url: "https://www.homes.com/hudson-county-nj/land-for-sale/"
+      price: null
+      lot_sqft: 3175
+      price_per_sqft: null
+      taxes: "unverified"
+      zoning: "Listing claims an as-of-right 5-story building of about 12,500 gross buildable sq ft (unverified)"
+      drive: "Est. 15–20 min to the Holland Tunnel (estimate)"
+      why: "It's in the Heights on Central Ave with a claimed as-of-right density. The price isn't shown, and comparable land in the Heights usually trades far above $250K."
+      risks: "Price likely far over budget. Lot below the minimum."
+  market_reality: >-
+    Hudson County land is scarce: LandSearch shows 13 undeveloped listings averaging about $1.1M, and Movoto's
+    range runs from about $350K to $1.5M. At ≤$250K and ≥4,000 sq ft, realistic candidates are mostly in
+    Newark, Paterson, Irvington and the Oranges, at 25–40 minutes to the Holland Tunnel. Two other routes:
+    assemble two adjoining sub-4,000 sq ft lots, or relax the drive time to 40 minutes.
+  sources:
+    - {name: "LandSearch — Hudson County undeveloped land", url: "https://www.landsearch.com/vacant/hudson-county-nj", published: "2026-10"}
+    - {name: "Zillow — Newark land listings", url: "https://www.zillow.com/newark-nj/land/", published: "2026-10"}
+    - {name: "Homes.com — Hudson County land", url: "https://www.homes.com/hudson-county-nj/land-for-sale/", published: "2026-10"}
+
+# ───────────────────────── E. RESEARCH DESK ─────────────────────────
+research:
+  preface: >-
+    Two ideas today rather than three; we would rather leave a slot empty than fill it. Live prices and
+    full valuation data were unavailable, so neither idea can be rated above 'Research Further'.
+    Position sizing needs your risk tolerance, horizon, liquidity needs and tax situation, which are not on file.
+  ideas:
+    - name: "GE Vernova"
+      ticker: GEV
+      business: "Gas turbines, grid equipment and electrification. It supplies power for the AI data-center build-out."
+      price: "unavailable"
+      price_time: ""
+      thesis: >-
+        Power, rather than chips, is becoming the bottleneck for AI capacity. In Q2 2026 GE Vernova booked
+        $24.2B of orders (+88% organically), raised its backlog to $176B (targeting $200B in 2027), and grew
+        gas equipment backlog and slot reservations to 116 GW.
+      metrics: "Q2 revenue $11.1B (+22%), book-to-bill above 2×, EPS $2.47 against $3.17 consensus (a miss). Valuation multiples unavailable today."
+      catalysts: "Near term: Q3 results (date not verified). Long term: utility and hyperscaler capacity contracts, grid spending."
+      bear: "Execution and margin risk on a backlog this large, a cyclical turbine business, and a multiple that may already price in the AI power trade. The Q2 EPS miss is a warning."
+      alternatives: "Vertiv (data-center cooling and power), Siemens Energy, and utility ETFs (e.g., XLU) for lower-volatility exposure."
+      valuation: "Not stated. Reliable current multiples were not available."
+      horizon: "3–5 years"
+      invalidation: "Order growth stalls, the backlog shrinks, or hyperscaler capex guidance (watch MSFT/GOOGL on Wednesday) is cut."
+      fit: "Complements your holdings: it's AI exposure through energy rather than semiconductors. Note it is a different company from your GE (GE Aerospace)."
+      stance: "Research Further"
+      conviction: "Low–medium. The thesis is evidence-based, but price and valuation could not be verified today."
+      sources:
+        - {name: "SEC — GE Vernova Q2 2026 press release (8-K)", url: "https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000147/gevpressrelease2q26.htm", published: "2026-07-22"}
+    - name: "Anthropic (IPO pending)"
+      ticker: "ANT (proposed)"
+      business: "Frontier AI lab (Claude models). About 80% of revenue is usage-based API and 20% subscriptions."
+      price: "not yet priced"
+      price_time: ""
+      thesis: "Included only so you can prepare; we take no view. Disclosure: this edition is written by an Anthropic model."
+      metrics: "H1 2026 revenue ≈$16.3B; operating loss ≈$693M; net loss ≈$80.7B, mostly non-cash (per reporting on the S-1)."
+      catalysts: "Price range set in an amended S-1. Pricing reportedly targeted for Thanksgiving week (unconfirmed)."
+      bear: "Controlled-company governance, government and DoD dispute risk disclosed in the S-1, an FTC probe, heavy compute costs, and IPO-day pricing dynamics."
+      alternatives: "Indirect exposure you already have: GOOGL (disclosed investor), AVGO/AMD (compute supply)."
+      valuation: "No offering terms yet. Secondary-market valuation reports (≈$1.5–2T) are unverified."
+      horizon: "n/a until priced"
+      invalidation: "n/a"
+      fit: "It would overlap heavily with your existing AI exposure."
+      stance: "Research Further"
+      conviction: "None stated (conflict of interest)."
+      sources:
+        - {name: "CNBC — Anthropic IPO live updates", url: "https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html", published: "2026-10-26"}
+
+# ───────────────────────── J. ACTION BOARD ─────────────────────────
+action_board:
+  three_things:
+    - "Rates are staying high. With 3.7% inflation and a Fed that may hike in December, the 7%+ mortgage environment is here for now, and land financing is part of your property search."
+    - "Your TSLA and SPCX positions are now one bet. Merger talk links them, so review your combined exposure."
+    - "AI is entering public markets. Anthropic's S-1 gives your AI-infrastructure holdings their first public benchmark for a frontier lab's economics."
+  two_opportunities:
+    - title: "Flying Blue 25% transfer bonus, through Friday 31 Oct"
+      detail: "Only if you find NYC–Delhi or Europe award space on your exact dates first. ~400K MR points available."
+    - title: "BigQuery ↔ Iceberg federation proof of concept"
+      detail: "One afternoon gives you a FinOps data point for work and a strong LinkedIn post."
+  one_action: >-
+    Spend 10 minutes in each brokerage account confirming the exact security behind SPCX (SpaceX Class A
+    vs. the SPCK ETF) and the status of IDEXQ. Both affect how we report on them, and IDEXQ may matter at tax time.
+  upcoming:
+    - {date: "Tue 27 Oct", event: "Israeli election · FOMC day 1 · Knicks vs Pistons"}
+    - {date: "Wed 28 Oct", event: "Fed decision 2:00 p.m. ET, Warsh presser 2:30 · Oracle Investor Day 10:55 a.m. CT · MSFT & GOOGL results after close"}
+    - {date: "Thu 29 Oct", event: "Q3 GDP & September PCE · Freddie Mac mortgage rates"}
+    - {date: "Fri 30 Oct", event: "Amex → Aeromexico 20% bonus ends"}
+    - {date: "Sat 31 Oct", event: "Amex → Flying Blue 25% bonus ends"}
+    - {date: "Sun 1 Nov",  event: "NJ Q4 property taxes due (check grace period on your bill)"}
+    - {date: "Tue 3 Nov",  event: "U.S. midterm elections · AMD Q3 results after close"}
+    - {date: "Wed 4 Nov",  event: "Ocugen Q3 results"}
+    - {date: "Fri 6 Nov",  event: "October jobs report"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 results"}
+    - {date: "Week of 23 Nov", event: "Anthropic IPO pricing (reported, unconfirmed)"}
+    - {date: "Thu 10 Dec", event: "Amex → Marriott 35% bonus ends"}

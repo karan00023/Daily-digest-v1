@@ -1,0 +1,311 @@
+{#- The Kapoor Daily — typeset print edition (not a printout of the website).
+    variant: "a4" (standard, duplex-friendly), "bound" (mirrored inner gutter, cover + contents),
+    "booklet" (A5 pages, later imposed 2-up onto A4 sheets).
+    pages: {group_id: first page number} from the layout pass, used for the contents. -#}
+{% set a5 = variant == 'booklet' %}
+{% set bound = variant == 'bound' %}
+{% macro src_line(srcs) -%}
+<p class="src">Source{{ 's' if srcs|length > 1 }}: {% for s in srcs %}{{ s.name }} ({{ s.published|pub }}){{ '; ' if not loop.last }}{% endfor %}</p>
+{%- endmacro %}
+{% macro pstory(st, show_qr=true) -%}
+<article class="st{% if st.kind == 'opportunity' %} st--opp{% endif %}" data-headline="{{ st.headline }}">
+  <p class="kick">{{ kind_label[st.kind or 'news'] }}{% if st.context %} · earlier, {{ st.event_date|pub }}{% endif %}{% if st.tickers %} · {{ st.tickers|join(' ') }}{% endif %}</p>
+  <h3>{{ st.headline }}</h3>
+  {% if st.dek %}<p class="dek">{{ st.dek }}</p>{% endif %}
+  {% if show_qr and st.qr and not a5 %}<div class="qr">{{ st.sources[0].url|qr(15) }}<span>Scan for source</span></div>{% endif %}
+  <p class="body">{{ st.summary }}</p>
+  {% if st.why and st.featured %}<p class="body"><b>Why it matters.</b> {{ st.why }}</p>{% endif %}
+  {% if st.me and st.me != '—' %}<p class="body mtm"><b>Why this matters to me.</b> {{ st.me }}</p>{% endif %}
+  {% if st.use %}<p class="body use"><b>How I could use this.</b> {{ st.use }}</p>{% endif %}
+  {% if st.linkedin %}<p class="body"><b>LinkedIn angle.</b> <i>{{ st.linkedin }}</i></p>{% endif %}
+  {% if st.inference %}<p class="body read"><i>{{ st.inference }}</i></p>{% endif %}
+  {{ src_line(st.sources) }}
+</article>
+{%- endmacro %}
+{% macro group_head(gid, title, sub='') -%}
+<header class="gh"{% if gid in force_break %} style="break-before: page"{% endif %}><h2 data-group="{{ gid }}">{{ title }}</h2>{% if sub %}<p>{{ sub }}</p>{% endif %}</header>
+{%- endmacro %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Kapoor Daily · {{ date.isoformat() }} · {{ variant }}</title>
+<link rel="stylesheet" href="{{ fonts_css }}">
+<style>
+:root {
+  --ink: #111; --ink-2: #4a4a4a; --rule: #9a9a9a; --tint: #efefef; --accent: #14506b;
+  --f-mast: "UnifrakturMaguntia", "Playfair Display", serif;
+  --f-head: "Playfair Display", "Liberation Serif", serif;
+  --f-body: "Source Serif 4", "Liberation Serif", serif;
+  --f-ui: "Source Sans 3", "Liberation Sans", sans-serif;
+}
+@page {
+  size: {{ 'A5' if a5 else 'A4' }} portrait;
+  margin: {{ '12mm 11mm 14mm 11mm' if a5 else '15mm 13mm 16mm 13mm' }};
+  @top-left { content: "The Kapoor Daily"; font: 600 7.5pt var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+  @top-right { content: "{{ date_long }}"; font: 7.5pt var(--f-ui); color: var(--ink-2); }
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); font: 7.5pt var(--f-ui); color: var(--ink-2); }
+}
+{% if bound %}
+/* Binding gutter: the inner margin is wider; running heads sit on the outer edge. */
+@page :right { margin-left: 24mm; margin-right: 13mm;
+  @top-left { content: none; } @top-right { content: "The Kapoor Daily · {{ date_long }}"; font: 600 7.5pt var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+  @bottom-center { content: none; } @bottom-right { content: counter(page); font: 600 9pt var(--f-ui); } }
+@page :left { margin-left: 13mm; margin-right: 24mm;
+  @top-right { content: none; } @top-left { content: "The Kapoor Daily · {{ date_long }}"; font: 600 7.5pt var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+  @bottom-center { content: none; } @bottom-left { content: counter(page); font: 600 9pt var(--f-ui); } }
+@page cover { margin: 22mm 18mm 20mm 26mm; @top-left { content: none; } @top-right { content: none; } @bottom-right { content: none; } @bottom-left { content: none; } }
+{% endif %}
+@page front { @top-left { content: none; } @top-right { content: none; } }
+{% for gid, label, _ in print_groups %}
+@page {{ gid }} { @top-center { content: "{{ label }}"; font: italic 7.5pt var(--f-body); color: var(--ink-2); white-space: nowrap; } }
+{% endfor %}
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; color: var(--ink); font: {{ '9pt/1.38' if a5 else '9.8pt/1.4' }} var(--f-body); hyphens: auto; orphans: 3; widows: 3; text-align: justify; }
+h1, h2, h3, h4 { text-align: left; hyphens: manual; break-inside: avoid; break-after: avoid; }
+a { color: inherit; text-decoration: none; }
+.cover { page: cover; break-after: page; height: 250mm; display: flex; flex-direction: column; text-align: center; }
+.front { page: front; }
+{% for gid, _, _ in print_groups %}.pg-{{ gid }} { page: {{ gid }}; break-before: page; }
+{% endfor %}
+
+/* Masthead */
+.mast { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 2.5mm; margin-bottom: 3mm; }
+.mast .ear { display: flex; justify-content: space-between; font: 600 7.5pt var(--f-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2);
+  border-bottom: .5pt solid var(--rule); padding-bottom: 1.5mm; }
+.mast h1 { font: 400 {{ '32pt' if a5 else '46pt' }}/1 var(--f-mast); margin: 2.5mm 0 1mm; }
+.mast .sub { font: italic 9pt var(--f-body); color: var(--ink-2); }
+
+/* Front page */
+.lead h2 { font: 900 {{ '19pt' if a5 else '25pt' }}/1.05 var(--f-head); margin: 0 0 2mm; letter-spacing: -.01em; }
+.lead .dek { font: italic 12pt/1.3 var(--f-body); margin: 0 0 2.5mm; color: var(--ink-2); }
+.lead .cols { columns: {{ 1 if a5 else 2 }}; column-gap: 6mm; column-rule: .5pt solid var(--rule); }
+.lead .cols p { margin: 0 0 2mm; }
+.lead .cols > p:first-child::first-letter { font: 900 30pt/.8 var(--f-head); float: left; padding: 1.2mm 1.5mm 0 0; }
+.frontgrid { display: grid; grid-template-columns: {{ '1fr' if a5 else '1.15fr 1fr' }}; gap: 6mm; margin-top: 3mm; border-top: 1pt solid var(--ink); padding-top: 3mm; }
+.box-title { text-align: left; font: 700 7.5pt var(--f-ui); letter-spacing: .12em; text-transform: uppercase; margin: 0 0 1.5mm; border-bottom: .5pt solid var(--ink); padding-bottom: 1mm; }
+.biggest { margin: 0; padding-left: 4.5mm; }
+.biggest li { margin-bottom: 1.8mm; break-inside: avoid; }
+.biggest b { font-family: var(--f-head); }
+.mkt { width: 100%; border-collapse: collapse; font: 8.2pt/1.25 var(--f-ui); font-variant-numeric: tabular-nums; }
+.mkt td { border-bottom: .4pt solid var(--rule); padding: .9mm 0; vertical-align: top; }
+.mkt td.v, .mkt td.c { text-align: right; white-space: nowrap; padding-left: 2mm; }
+.mkt .asof { color: var(--ink-2); font-size: 6.8pt; display: block; }
+.inside { font: 7.8pt/1.45 var(--f-ui); columns: 2; margin: 0; padding: 0; list-style: none; }
+.inside li { display: flex; justify-content: space-between; gap: 2mm; padding-right: 3mm; }
+.disc { font: italic 7.6pt/1.35 var(--f-body); color: var(--ink-2); margin-top: 2.5mm; text-align: left; }
+.fedbar { font: 8pt var(--f-ui); }
+.fedbar .row { display: grid; grid-template-columns: 20mm 1fr 11mm; align-items: center; gap: 2mm; margin: 1mm 0; }
+.fedbar .track { height: 3mm; background: var(--tint); border: .3pt solid var(--rule); }
+.fedbar .fill { height: 100%; background: var(--ink); }
+
+/* Interior */
+/* keep a section head with at least its first story */
+.gh { border-top: 2.5pt solid var(--ink); border-bottom: .5pt solid var(--ink); padding: 1.2mm 0; margin-bottom: 3mm; break-after: avoid; }
+.gh h2 { font: 900 {{ '13pt' if a5 else '16pt' }}/1.1 var(--f-head); margin: 0; text-transform: uppercase; letter-spacing: .04em; }
+.gh p { margin: .6mm 0 0; font: italic 8.4pt var(--f-body); color: var(--ink-2); }
+.sh { font: 700 8pt var(--f-ui); letter-spacing: .14em; text-transform: uppercase; margin: 2mm 0 2mm; break-after: avoid; column-span: all; }
+.cols2 { columns: {{ 1 if a5 else 2 }}; column-gap: 6mm; column-rule: .5pt solid var(--rule); }
+.st { break-inside: auto; margin: 0 0 3.5mm; padding-bottom: 2.5mm; border-bottom: .4pt solid var(--rule); }
+.st:last-child { border-bottom: 0; }
+.st--opp { border-left: 1.4pt solid var(--ink); padding-left: 2mm; }
+.kick { break-after: avoid; font: 700 6.8pt var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 .8mm; }
+.st h3 { font: 700 {{ '10.5pt' if a5 else '11.8pt' }}/1.15 var(--f-head); margin: 0 0 1mm; break-after: avoid; }
+.st .dek { break-after: avoid; font: italic 9pt/1.3 var(--f-body); color: var(--ink-2); margin: 0 0 1.2mm; text-align: left; }
+.body { margin: 0 0 1.3mm; }
+.mtm { padding-left: 2mm; border-left: 1pt solid var(--ink); }
+.use { padding-left: 2mm; border-left: 1pt dashed var(--ink); }
+.read { color: var(--ink-2); }
+.src { font: 6.8pt/1.3 var(--f-ui); color: var(--ink-2); margin: 1mm 0 0; text-align: left; }
+.qr { float: right; width: 17mm; margin: 0 0 1mm 2mm; text-align: center; font: 5.5pt var(--f-ui); color: var(--ink-2); }
+.qr svg { display: block; margin: 0 auto; }
+.box { border: .6pt solid var(--ink); padding: 2mm 2.5mm; margin: 0 0 3mm; break-inside: avoid; }
+.box h4 { font: 700 10pt var(--f-head); margin: 0 0 1mm; }
+.box p { margin: 0 0 1mm; }
+.tbl { width: 100%; border-collapse: collapse; font: 7.6pt/1.3 var(--f-ui); margin: 0 0 3mm; break-inside: auto; text-align: left; }
+.tbl th { text-align: left; border-bottom: 1pt solid var(--ink); padding: .8mm 1.5mm .8mm 0; font-size: 6.6pt; letter-spacing: .08em; text-transform: uppercase; }
+.tbl td { border-bottom: .4pt solid var(--rule); padding: .8mm 1.5mm .8mm 0; vertical-align: top; }
+.tbl tr { break-inside: avoid; }
+.tbl td.t { font-weight: 700; white-space: nowrap; }
+.sig { font: 700 6.8pt var(--f-ui); letter-spacing: .1em; text-transform: uppercase; border: .6pt solid var(--ink); padding: .2mm 1mm; }
+.sig--bullish { background: var(--ink); color: #fff; } .sig--bearish { border-style: double; border-width: 2pt; }
+.dl { display: grid; grid-template-columns: 22mm 1fr; gap: .6mm 2.5mm; font-size: 8.8pt; margin: 1.5mm 0 0; }
+.dl dt { font: 700 6.8pt/1.6 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.dl dd { margin: 0; text-align: left; }
+.idea { border: .6pt solid var(--ink); padding: 2.5mm 3mm; margin-bottom: 3.5mm; break-inside: avoid; }
+.idea h3 { font: 900 13pt var(--f-head); margin: 0; }
+.stance { font: 700 7.5pt var(--f-ui); letter-spacing: .1em; text-transform: uppercase; border: 1.2pt solid var(--ink); padding: .4mm 1.5mm; float: right; }
+.board { display: grid; grid-template-columns: {{ '1fr' if a5 else '1fr 1fr 1fr' }}; gap: 4mm; margin-bottom: 4mm; break-inside: avoid; }
+.board > div { border-top: 2pt solid var(--ink); padding-top: 1.5mm; }
+.board h3 { font: 900 11pt/1.15 var(--f-head); margin: 0 0 1.5mm; }
+.board .n { font: 900 24pt/1 var(--f-head); display: block; }
+.board ol, .board ul { margin: 0; padding-left: 4mm; font-size: 8.8pt; text-align: left; }
+.board li { margin-bottom: 1.2mm; }
+.srcs { font: 6.8pt/1.35 var(--f-ui); columns: 2; column-gap: 6mm; text-align: left; } .srcs p { margin: 0 0 1.2mm; break-inside: avoid; }
+.srcs li { break-inside: avoid; margin-bottom: .9mm; }
+.srcs .u { color: var(--ink-2); }
+.notes { font: 7.6pt/1.4 var(--f-ui); color: var(--ink-2); padding-left: 4mm; text-align: left; }
+.toc { list-style: none; padding: 0; margin: 8mm auto 0; width: 120mm; font: 10.5pt/1.75 var(--f-body); text-align: left; }
+.toc li { display: flex; gap: 2mm; } .toc li .dots { flex: 1; border-bottom: .6pt dotted var(--ink); margin-bottom: 2.2mm; }
+</style>
+</head>
+<body>
+
+{% if bound %}
+<section class="cover">
+  <div style="font: 600 8pt var(--f-ui); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2)">Bound edition · Vol. I · No. {{ ed.number }}</div>
+  <h1 style="font: 400 64pt/1 var(--f-mast); margin: 26mm 0 6mm">The Kapoor Daily</h1>
+  <div style="font: italic 13pt var(--f-body)">{{ date_long }}</div>
+  <div style="border-top: 3px double var(--ink); width: 70mm; margin: 10mm auto 0"></div>
+  <h2 style="font: 700 10pt var(--f-ui); letter-spacing: .16em; text-transform: uppercase; margin: 10mm 0 0">Contents</h2>
+  <ol class="toc">
+    <li><span>Front page</span><span class="dots"></span><span>{{ pages.get('front', '') }}</span></li>
+    {% for sid, t in print_short.items() if sid in pages %}<li><span>{{ t }}</span><span class="dots"></span><span>{{ pages[sid] }}</span></li>{% endfor %}
+  </ol>
+  <p style="margin-top: auto; font: italic 8pt var(--f-body); color: var(--ink-2)">{{ ed.disclosure }}</p>
+</section>
+{% endif %}
+
+<section class="front">
+  <header class="mast">
+    <div class="ear"><span>Vol. I · No. {{ ed.number }}</span><span>Jersey City Heights edition</span><span>{{ date_long }}</span></div>
+    <h1 data-group="front">The Kapoor Daily</h1>
+    <div class="sub">{{ tagline }} · Jersey City · New York · Delhi · Researched {{ researched_label }}</div>
+  </header>
+  <article class="lead" data-headline="{{ lead.headline }}">
+    <p class="kick">Lead · {{ kind_label[lead.kind or 'news'] }}</p>
+    <h2>{{ lead.headline }}</h2>
+    <p class="dek">{{ lead.dek }}</p>
+    <div class="cols">
+      <p>{{ lead.summary }}</p>
+      <p><b>Why it matters.</b> {{ lead.why }}</p>
+      <p class="mtm"><b>Why this matters to me.</b> {{ lead.me }}</p>
+      {% if graphics.fed_odds %}{% set g = graphics.fed_odds %}
+      <div class="fedbar" style="break-inside: avoid">
+        <p class="box-title">{{ g.title }}</p>
+        {% for b in g.bars %}<div class="row"><span>{{ b.label }}</span><div class="track"><div class="fill" style="width: {{ b.value }}%"></div></div><b>{{ '%.1f'|format(b.value) }}%</b></div>{% endfor %}
+        <p class="src">As of {{ g.as_of }} · {{ g.source.name }}</p>
+      </div>
+      {% endif %}
+      {{ src_line(lead.sources) }}
+    </div>
+  </article>
+  <div class="frontgrid">
+    <div>
+      <p class="box-title">Today's biggest developments</p>
+      <ol class="biggest">
+        {% for st in brief %}<li><b>{{ st.headline }}.</b> {{ st.dek }}</li>{% endfor %}
+        {% for d in pf.developments[:1] %}<li><b>{{ d.headline }}.</b> See Portfolio.</li>{% endfor %}
+      </ol>
+    </div>
+    <div>
+      <p class="box-title">Market snapshot · latest reported, not live</p>
+      <table class="mkt">
+        {% for m in market %}<tr><td>{{ m.label }}<span class="asof">{{ m.as_of }}</span></td><td class="v"><b>{{ m.value }}</b></td><td class="c">{{ m.change }}</td></tr>{% endfor %}
+      </table>
+      <p class="box-title" style="margin-top: 3mm">Inside</p>
+      <ul class="inside">
+        {% for sid, t in print_short.items() if sid in pages %}<li><span>{{ t }}</span><span>{{ pages[sid] }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+  <p class="disc">Written by Claude, an AI model made by Anthropic; today's Anthropic coverage carries a disclosure. Prices are latest reported, never live. Not investment advice.</p>
+</section>
+
+<section class="pg-news">
+  {{ group_head('brief', print_titles.brief, 'Ranked by consequence, not sensation.') }}
+  <div class="cols2">{% for st in brief %}{{ pstory(st) }}{% endfor %}</div>
+  {% if world %}<p class="src" style="margin: 0 0 3mm"><b>Elsewhere:</b> {% for w in world %}{{ w.text }} {% endfor %}</p>{% endif %}
+  {{ group_head('local', print_titles.local, 'Hudson County, Manhattan and the commute in between.') }}
+  <div class="cols2">{% for st in (ranked.local or [])[:print_caps.local] %}{{ pstory(st) }}{% endfor %}</div>
+  {{ group_head('tech', print_titles.tech, 'Selected for data platforms, cloud and enterprise AI.') }}
+  <div class="cols2">{% for st in (ranked.tech or [])[:print_caps.tech] %}{{ pstory(st) }}{% endfor %}</div>
+  {{ group_head('india', print_titles.india, 'National, Delhi NCR, and US–India.') }}
+  <div class="cols2">{% for st in (ranked.india or [])[:print_caps.india] %}{{ pstory(st) }}{% endfor %}</div>
+</section>
+
+<section class="pg-money">
+  {{ group_head('realestate', print_titles.realestate, 'Criteria: ' ~ realestate.criteria_text) }}
+  <div class="cols2">
+    <div class="box">
+      <h4>{{ 'No new listing meets your criteria today' if not realestate.matches else realestate.matches|length ~ ' listing(s) match' }}</h4>
+      {% for m in realestate.matches %}<p><b>{{ m.address }}</b>: {{ m.price|money }}, {{ '{:,}'.format(m.lot_sqft) }} sq ft (${{ m.price_per_sqft }}/sq ft). {{ m.drive }}. {{ m.why }} Risks: {{ m.risks }}</p>{% endfor %}
+      {% if not realestate.matches %}<p>{{ realestate.no_match_note }}</p>{% endif %}
+      <p>{{ realestate.market_reality }}</p>
+      <p class="src">Drive times are estimates to the {{ realestate.nyc_reference }}.</p>
+    </div>
+    {% for st in (ranked.realestate or [])[:print_caps.realestate] %}{{ pstory(st) }}{% endfor %}
+  </div>
+  {% if realestate.near_misses %}
+  <table class="tbl"><tr><th>Near miss (not a match)</th><th>Price</th><th>Lot (sq ft)</th><th>$/sq ft</th><th>Fails on</th><th>Drive (est.)</th></tr>
+  {% for m in realestate.near_misses %}<tr><td>{{ m.address }}</td><td>{{ m.price|money }}</td><td>{{ '{:,}'.format(m.lot_sqft) if m.lot_sqft else '—' }}</td><td>{{ '$%.2f'|format(m.price_per_sqft) if m.price_per_sqft else '—' }}</td><td>{{ m.fails|join('; ') }}</td><td>{{ m.drive }}</td></tr>{% endfor %}
+  </table>
+  {% endif %}
+
+  {{ group_head('portfolio', print_titles.portfolio, 'Material developments first. Positions are never summed across accounts.') }}
+  <div class="cols2">
+    {% for v in pf.verification %}
+    <div class="box"><p class="kick">Ticker check · {{ v.status }}</p><h4>{{ v.ticker }}</h4><p>{{ v.finding }}</p><p><b>Do:</b> {{ v.action }}</p>{{ src_line(v.sources) }}</div>
+    {% endfor %}
+    {% for d in pf.developments %}
+    <article class="st" data-headline="{{ d.headline }}">
+      <p class="kick">{{ d.ticker }}{% for a in d.also or [] %} · {{ a }}{% endfor %} · <span class="sig sig--{{ d.signal }}">{{ d.signal }}</span> · {{ d.horizon }} · materiality {{ d.materiality }}</p>
+      <h3>{{ d.headline }}</h3>
+      <p class="body">{{ d.what }}</p>
+      <p class="body mtm"><b>What to investigate.</b> {{ d.consider }}</p>
+      {% if d.labels %}<p class="src">Fact: {{ d.labels.fact or '—' }}{% if d.labels.opinion %} · Opinion: {{ d.labels.opinion }}{% endif %}{% if d.labels.inference %} · Our inference: {{ d.labels.inference }}{% endif %}</p>{% endif %}
+      {{ src_line(d.sources) }}
+    </article>
+    {% endfor %}
+  </div>
+  <table class="tbl"><tr><th>Watchlist</th><th>Security (verify in account)</th><th>Last reported</th><th>As of</th><th>Note</th></tr>
+  {% for r in rows %}<tr><td class="t">{{ r.ticker }}{{ ' !' if r.flag }}</td><td>{{ r.name }}</td><td>{{ r.last }}</td><td>{{ r.as_of }}</td><td>{{ r.note }}</td></tr>{% endfor %}
+  </table>
+  <p class="src">{{ pf.exposure_note }}</p>
+
+  {{ group_head('research', print_titles.research, research.preface) }}
+  {% for i in research.ideas %}
+  <article class="idea" data-headline="{{ i.name }}">
+    <span class="stance">{{ i.stance }}</span>
+    <p class="kick">{{ i.ticker }} · Price: {{ i.price }}{% if i.price_time %} ({{ i.price_time }}){% endif %}</p>
+    <h3>{{ i.name }}</h3>
+    <p class="dek" style="font: italic 9pt var(--f-body); color: var(--ink-2); margin: .5mm 0 0">{{ i.business }}</p>
+    <dl class="dl">
+      <dt>Thesis</dt><dd>{{ i.thesis }}</dd><dt>Metrics</dt><dd>{{ i.metrics }}</dd><dt>Catalysts</dt><dd>{{ i.catalysts }}</dd>
+      <dt>Bear case</dt><dd>{{ i.bear }}</dd><dt>Alternatives</dt><dd>{{ i.alternatives }}</dd><dt>Valuation</dt><dd>{{ i.valuation }}</dd>
+      <dt>Horizon</dt><dd>{{ i.horizon }}</dd><dt>Invalidation</dt><dd>{{ i.invalidation }}</dd><dt>Fit</dt><dd>{{ i.fit }}</dd><dt>Conviction</dt><dd>{{ i.conviction }}</dd>
+    </dl>
+    {{ src_line(i.sources) }}
+  </article>
+  {% endfor %}
+
+  {{ group_head('finance', print_titles.finance) }}
+  <div class="cols2">{% for st in (ranked.finance or [])[:print_caps.finance] %}{{ pstory(st) }}{% endfor %}</div>
+</section>
+
+<section class="pg-life">
+  {% if ranked.lifestyle %}
+  {{ group_head('lifestyle', print_titles.lifestyle) }}
+  <div class="cols2">{% for st in ranked.lifestyle[:print_caps.lifestyle] %}{{ pstory(st, show_qr=false) }}{% endfor %}</div>
+  {% endif %}
+  {{ group_head('actions', print_titles.actions) }}
+  <div class="board">
+    <div><span class="n">3</span><h3>Things worth knowing</h3><ol>{% for t in ab.three_things %}<li>{{ t }}</li>{% endfor %}</ol></div>
+    <div><span class="n">2</span><h3>Opportunities to investigate</h3><ul>{% for o in ab.two_opportunities %}<li><b>{{ o.title }}.</b> {{ o.detail }}</li>{% endfor %}</ul></div>
+    <div><span class="n">1</span><h3>Thing to do today</h3><p style="margin: 0; font-size: 9.4pt; text-align: left"><b>{{ ab.one_action }}</b></p></div>
+  </div>
+  <table class="tbl"><tr><th>Date</th><th>Dates that matter</th></tr>{% for u in ab.upcoming %}<tr><td class="t">{{ u.date }}</td><td>{{ u.event }}</td></tr>{% endfor %}</table>
+
+  {{ group_head('sources', print_titles.sources, 'Publication dates for every substantive item. Full links are in the digital edition; scan the QR codes beside major stories.') }}
+  <div class="srcs">
+    {% for where, items in sources|groupby('where') %}<p><b>{{ where }}:</b> {% for s in items %}{{ s.domain }}{% if s.published %} ({{ s.published|pub }}){% endif %}{{ '; ' if not loop.last }}{% endfor %}.</p>{% endfor %}
+  </div>
+  {% if digital_only %}<p class="sh">Also in the digital edition</p><ul class="notes">{% for st in digital_only %}<li>{{ st.headline }}</li>{% endfor %}</ul>{% endif %}
+  <p class="sh">Data notes</p>
+  <ul class="notes">{% for n in data_notes %}<li>{{ n }}</li>{% endfor %}{% for w in warnings %}<li>Validation: {{ w }}</li>{% endfor %}{% for w in editorial_log %}<li>Editor: {{ w }}</li>{% endfor %}</ul>
+  <p class="disc">{{ ed.disclosure }} Not investment advice. Built {{ generated }}.</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-27",
+  "built_at": "2026-10-27T06:30:00-04:00",
+  "warnings": [
+    "story[amex-flyingblue]: source dates only month-precise; freshness could not be fully verified",
+    "story[nyc-del-fares]: source dates only month-precise; freshness could not be fully verified"
+  ],
+  "editorial_log": [
+    "Cut low-relevance item 'Hoboken ranked the most walkable city in the U.S.' (score 3.45)",
+    "Cut low-relevance item 'Cricket: India took the West Indies ODI series 2\u20131; the T20Is finished 2\u20132' (score 3.0)"
+  ],
+  "outputs": {
+    "web": "archive/2026-10/Kapoor_Daily_2026-10-27.html",
+    "artifact": "archive/2026-10/Kapoor_Daily_2026-10-27.artifact.html",
+    "email": "archive/2026-10/Kapoor_Daily_2026-10-27_email.html"
+  },
+  "print": {
+    "a4": {
+      "file": "archive/2026-10/Kapoor_Daily_2026-10-27_A4.pdf",
+      "pages": 11,
+      "sections": {
+        "front": 1,
+        "brief": 2,
+        "local": 3,
+        "realestate": 6,
+        "portfolio": 6,
+        "research": 8,
+        "tech": 3,
+        "india": 4,
+        "finance": 9,
+        "lifestyle": 10,
+        "actions": 10,
+        "sources": 10
+      },
+      "errors": [],
+      "warnings": [
+        "a4: 11 pages (target 4\u20138)"
+      ]
+    },
+    "bound": {
+      "file": "archive/2026-10/Kapoor_Daily_2026-10-27_Bound.pdf",
+      "pages": 13,
+      "sections": {
+        "front": 2,
+        "brief": 3,
+        "local": 4,
+        "realestate": 7,
+        "portfolio": 7,
+        "research": 10,
+        "tech": 4,
+        "india": 6,
+        "finance": 11,
+        "lifestyle": 12,
+        "actions": 12,
+        "sources": 12
+      },
+      "errors": [],
+      "warnings": [
+        "bound: 13 pages (target 5\u201310)"
+      ]
+    },
+    "booklet": {
+      "file": "archive/2026-10/Kapoor_Daily_2026-10-27_A5_Booklet.pdf",
+      "a5_pages": 20,
+      "sheet_sides": 10,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}
