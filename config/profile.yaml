@@ -92,3 +92,13 @@ travel:
   home_airports: [EWR, JFK, LGA]
   key_routes: ["NYC-DEL"]
   rule: "Never recommend a speculative transfer of flexible points without a concrete, available redemption."
+
+delivery:
+  # Approved by the reader on 2026-10-27.
+  email_to: [karan.kapoor5137@gmail.com]
+  email_via: "Microsoft 365 connector (sends from kkapoor@integrisgroup.com)"
+  subject: "The Kapoor Daily — {date_long}"
+  web_edition: https://claude.ai/artifact/NSgoAHfvjKFWXt8goJdtz3   # one standing artifact, republished daily
+  archive_branch: claude/kapoor-daily-v1
+  pdf_link_base: https://github.com/karan00023/daily-digest-v1/blob/claude/kapoor-daily-v1/archive/{yyyy_mm}
+  schedule: "CRON_TZ=America/New_York 5 6 * * *"

@@ -67,7 +67,7 @@ Sunday editions add a **Week Ahead** to `action_board.upcoming` and may run up t
 ## 3. Build and QA
 
 ```bash
-python -m kapoor_daily.build --date $DATE --links-base "<where PDFs will live>"
+python -m kapoor_daily.build --date $DATE      # links come from config/profile.yaml → delivery
 ```
 
 * Exit **0**: all outputs are in `archive/YYYY-MM/`.
@@ -78,14 +78,17 @@ python -m kapoor_daily.build --date $DATE --links-base "<where PDFs will live>"
 
 ## 4. Publish
 
-1. Commit `editions/$DATE/` and `archive/YYYY-MM/Kapoor_Daily_$DATE*` and push to the archive branch.
-2. Update the standing web edition (Artifact) with `archive/.../Kapoor_Daily_$DATE.artifact.html`, publishing
-   the three PDFs alongside it as files. Read the artifact first, then publish to its `url`.
+1. Commit `editions/$DATE/` and `archive/YYYY-MM/Kapoor_Daily_$DATE*` and push to `delivery.archive_branch`
+   (`git push -u origin claude/kapoor-daily-v1`).
+2. Update the standing web edition at `delivery.web_edition`: Artifact `read` that URL first, then publish
+   `archive/YYYY-MM/Kapoor_Daily_$DATE.artifact.html` with `url` set to it, and pass the three PDFs in `files`
+   under their own file names. Never create a second artifact.
 
 ## 5. Deliver
 
-a. **Success**: send `Kapoor_Daily_$DATE_email.html` as the HTML body (subject
-   `The Kapoor Daily — <Weekday, D Month YYYY>`) to the configured recipient, with links to the web edition and the A4 PDF.
+a. **Success**: use the Microsoft 365 `outlook_send_mail` tool. Send the contents of
+   `archive/YYYY-MM/Kapoor_Daily_${DATE}_email.html` as the body with `bodyType: html`, to `delivery.email_to`,
+   with the subject `The Kapoor Daily — <Weekday, D Month YYYY>`. The body already links to the web edition and PDFs.
 b. **Failure**: send a short plain-text notice: "Today's edition failed QA", the top errors, and
    whether yesterday's edition is still available. Never send stale content as today's.
 

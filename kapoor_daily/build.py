@@ -130,9 +130,12 @@ def main(argv=None):
         paths["failure"].unlink()
 
     links = {}
-    if args.links_base:
-        base = args.links_base.rstrip("/")
-        links = {k: f"{base}/{paths[k].name}" for k in ("web", "a4", "bound", "booklet")}
+    delivery = cfg.get("delivery", {})
+    base = args.links_base or (delivery.get("pdf_link_base", "").format(yyyy_mm=date.strftime("%Y-%m")) or None)
+    if base:
+        base = base.rstrip("/")
+        links = {k: f"{base}/{paths[k].name}" for k in ("a4", "bound", "booklet")}
+        links["web"] = delivery.get("web_edition") or f"{base}/{paths['web'].name}"
 
     print_files = [] if args.skip_pdf else [("A4", paths["a4"].name), ("Bound", paths["bound"].name),
                                              ("A5 booklet", paths["booklet"].name)]

@@ -4,11 +4,11 @@
 
 | Step | Runs on | Needs | Status |
 |---|---|---|---|
-| Research (news, markets, listings) | A Claude Code cloud session, started by a **scheduled task** | Web search (built in) | Needs your go-ahead to schedule |
+| Research (news, markets, listings) | A Claude Code cloud session, started by a **scheduled task** | Web search (built in) | Approved 27 Oct 2026, scheduled daily 06:05 ET |
 | Validate → rank → render HTML/email → typeset A4, Bound, A5 booklet PDFs → print QA | Same session: `python -m kapoor_daily.build` | Python 3, Chromium + Playwright (preinstalled) | Built and tested in this repo |
-| Archive | Git: `editions/` (content) and `archive/YYYY-MM/` (outputs) | Push access to `karan00023/daily-digest-v1` (GitHub app already connected) | Needs your go-ahead to push |
+| Archive | Git: `editions/` (content) and `archive/YYYY-MM/` (outputs) | Push access to `karan00023/daily-digest-v1` (GitHub app already connected) | Approved; branch `claude/kapoor-daily-v1` |
 | Web edition + PDFs on iPhone | A private claude.ai Artifact updated daily, with the PDFs published alongside it | Your claude.ai login on the phone | Ready |
-| Email digest | Microsoft 365 connector (`outlook_send_mail`) | Sends from **kkapoor@integrisgroup.com**, your work mailbox | Needs your go-ahead (see below) |
+| Email digest | Microsoft 365 connector (`outlook_send_mail`) | Sends from **kkapoor@integrisgroup.com** to karan.kapoor5137@gmail.com | Approved 27 Oct 2026 |
 | Failure reporting | Same session: emails a failure notice instead of the edition | — | Built (`*_FAILURE.md`) |
 
 ### Constraints found while building
