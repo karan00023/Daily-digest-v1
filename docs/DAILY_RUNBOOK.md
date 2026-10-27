@@ -86,11 +86,13 @@ python -m kapoor_daily.build --date $DATE      # links come from config/profile.
 
 ## 5. Deliver
 
-a. **Success**: use the Microsoft 365 `outlook_send_mail` tool. Send the contents of
-   `archive/YYYY-MM/Kapoor_Daily_${DATE}_email.html` as the body with `bodyType: html`, to `delivery.email_to`,
-   with the subject `The Kapoor Daily — <Weekday, D Month YYYY>`. The body already links to the web edition and PDFs.
-b. **Failure**: send a short plain-text notice: "Today's edition failed QA", the top errors, and
-   whether yesterday's edition is still available. Never send stale content as today's.
+a. **Success**: if the Microsoft 365 `outlook_send_mail` tool is available *and* works, send the contents of
+   `archive/YYYY-MM/Kapoor_Daily_${DATE}_email.html` as the body (`bodyType: html`) to `delivery.email_to`, with the
+   subject `The Kapoor Daily — <Weekday, D Month YYYY>`. As of 27 Oct 2026 the tenant has **not** granted `Mail.Send`
+   (403 FORBIDDEN), so expect this to fail. A failed email does not fail the run: note it in the summary. The
+   standing web edition and the push notification are the delivery channel.
+b. **Failure**: don't republish the web edition. Send the failure notice by email if mail works, and put the top
+   errors in the run summary, which the push notification surfaces. Never deliver stale content as today's.
 
 ## 6. Learn
 
