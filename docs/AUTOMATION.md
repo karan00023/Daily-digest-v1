@@ -25,11 +25,14 @@
 
 ## The scheduled task
 
-A Claude Code scheduled task starts a **fresh cloud session** at **06:05 ET** daily
-(`CRON_TZ=America/New_York 5 6 * * *`), so the edition is out before 07:00. The session's
-prompt is: *"Run docs/DAILY_RUNBOOK.md for today's date in America/New_York, end to end."*
+A Claude Code scheduled task fires at **06:05 ET** daily (`CRON_TZ=America/New_York 5 6 * * *`)
+**into the original build session** (session_01RrMUWPVX14PYjroHFcs1ue), not a fresh one.
 
-Manage it on claude.ai → Code → Scheduled tasks, or ask Claude to pause, retime or delete it.
+The first version started a fresh session each morning. Those sessions had no repo push access and no
+connectors. On 29 Oct the edition was built and the web page updated, but the git push failed with a 403 and
+that day's archive commit was lost. Running in the original session keeps push access and the Microsoft 365 connector.
+
+Manage the task on claude.ai → Code → Scheduled tasks, or ask Claude to pause, retime or delete it.
 
 ### Alternative without Claude scheduling: GitHub Actions
 
