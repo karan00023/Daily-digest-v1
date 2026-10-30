@@ -37,6 +37,7 @@ tier1:
   - learn.microsoft.com
   - americanexpress.com
   - nba.com
+  - njtransit.com
   - databricks.com
 
 tier2:
@@ -102,6 +103,18 @@ tier2:
   - robinhood.com
   - euronews.com
   - fxstreet.com
+  - aljazeera.com
+  - siliconangle.com
+  - fortune.com
+  - cmcmarkets.com
+  - container-news.com
+  - railwayage.com
+  - abc7ny.com
+  - jcitytimes.com
+  - foxsports.com
+  - fool.com
+  - princeoftravel.com
+  - investinglive.com
 
 tier3:
   - heygotrade.com
@@ -145,3 +158,9 @@ tier3:
   - happyfares.in
   - landsearch.com
   - 10things.news
+  - dailypioneer.com
+  - androidheadlines.com
+  - fxleaders.com
+  - thedailyguardian.com
+  - bitcoinnewsdigest.substack.com
+  - whalesbook.com
