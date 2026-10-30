@@ -31,6 +31,8 @@ jobs:
       HAS_WHATSAPP: ${{ secrets.CALLMEBOT_APIKEY != '' && secrets.WHATSAPP_PHONE != '' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: claude/kapoor-daily-v1   # editions live on this branch
 
       - name: Find the edition
         id: ed
