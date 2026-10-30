@@ -86,11 +86,10 @@ python -m kapoor_daily.build --date $DATE      # links come from config/profile.
 
 ## 5. Deliver
 
-a. **Success**: if the Microsoft 365 `outlook_send_mail` tool is available *and* works, send the contents of
-   `archive/YYYY-MM/Kapoor_Daily_${DATE}_email.html` as the body (`bodyType: html`) to `delivery.email_to`, with the
-   subject `The Kapoor Daily — <Weekday, D Month YYYY>`. As of 27 Oct 2026 the tenant has **not** granted `Mail.Send`
-   (403 FORBIDDEN), so expect this to fail. A failed email does not fail the run: note it in the summary. The
-   standing web edition and the push notification are the delivery channel.
+a. **Success**: email and WhatsApp go out automatically. Pushing `archive/.../Kapoor_Daily_${DATE}_email.html`
+   triggers `.github/workflows/deliver.yml`, which emails it from the reader's Gmail with the A4 PDF attached and
+   sends a WhatsApp alert if configured. Also try the Microsoft 365 `outlook_send_mail` tool. It is expected to fail
+   (no `Mail.Send`), and a failure does not fail the run.
 b. **Failure**: don't republish the web edition. Send the failure notice by email if mail works, and put the top
    errors in the run summary, which the push notification surfaces. Never deliver stale content as today's.
 

@@ -1,0 +1,88 @@
+# Delivers each new edition of The Kapoor Daily by email (from your Gmail, A4 PDF attached)
+# and, optionally, a WhatsApp message with the headline and link.
+#
+# Runs automatically when the morning run pushes a new edition, or by hand from the
+# Actions tab ("Run workflow", optionally with a date).
+#
+# One-time setup (Settings → Secrets and variables → Actions → New repository secret):
+#   GMAIL_ADDRESS        karan.kapoor5137@gmail.com
+#   GMAIL_APP_PASSWORD   a 16-character Google App Password (myaccount.google.com/apppasswords)
+# Optional WhatsApp (free CallMeBot service, see docs/AUTOMATION.md):
+#   WHATSAPP_PHONE       your number with country code, e.g. +12015551234
+#   CALLMEBOT_APIKEY     the key CallMeBot sends you on WhatsApp
+
+name: Deliver edition
+
+on:
+  push:
+    branches: [claude/kapoor-daily-v1]
+    paths: ["archive/**/Kapoor_Daily_*_email.html"]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Edition date (YYYY-MM-DD). Leave empty for the latest."
+        required: false
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    env:
+      HAS_GMAIL: ${{ secrets.GMAIL_APP_PASSWORD != '' && secrets.GMAIL_ADDRESS != '' }}
+      HAS_WHATSAPP: ${{ secrets.CALLMEBOT_APIKEY != '' && secrets.WHATSAPP_PHONE != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find the edition
+        id: ed
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            f=$(ls archive/*/Kapoor_Daily_${{ github.event.inputs.date }}_email.html)
+          else
+            f=$(ls archive/*/Kapoor_Daily_*_email.html | sort | tail -1)
+          fi
+          [ -f "$f" ] || { echo "No edition email found"; exit 1; }
+          d=$(basename "$f" | sed -E 's/Kapoor_Daily_([0-9-]+)_email.html/\1/')
+          dir=$(dirname "$f")
+          echo "date=$d" >> "$GITHUB_OUTPUT"
+          echo "email=$f" >> "$GITHUB_OUTPUT"
+          echo "pdf=$dir/Kapoor_Daily_${d}_A4.pdf" >> "$GITHUB_OUTPUT"
+          echo "long=$(date -d "$d" '+%A, %-d %B %Y')" >> "$GITHUB_OUTPUT"
+          headline=$(grep -m1 -oP '(?<=<h2>Lead: ).*?(?=</h2>)' "$f" | sed 's/&#39;/'"'"'/g; s/&amp;/\&/g; s/&quot;/"/g')
+          echo "headline=$headline" >> "$GITHUB_OUTPUT"
+
+      - name: Email
+        if: env.HAS_GMAIL == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_ADDRESS }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          from: The Kapoor Daily <${{ secrets.GMAIL_ADDRESS }}>
+          to: karan.kapoor5137@gmail.com
+          subject: "The Kapoor Daily — ${{ steps.ed.outputs.long }}"
+          html_body: file://${{ steps.ed.outputs.email }}
+          attachments: ${{ steps.ed.outputs.pdf }}
+
+      - name: WhatsApp
+        if: env.HAS_WHATSAPP == 'true'
+        env:
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          HEADLINE: ${{ steps.ed.outputs.headline }}
+          LONG: ${{ steps.ed.outputs.long }}
+        run: |
+          text="📰 The Kapoor Daily — ${LONG}
+          ${HEADLINE}
+          Full edition: https://claude.ai/artifact/NSgoAHfvjKFWXt8goJdtz3
+          (A4 PDF is in your Gmail)"
+          curl -sS --get "https://api.callmebot.com/whatsapp.php" \
+            --data-urlencode "phone=${WHATSAPP_PHONE}" \
+            --data-urlencode "text=${text}" \
+            --data-urlencode "apikey=${CALLMEBOT_APIKEY}" | head -c 300
+
+      - name: Report missing setup
+        if: env.HAS_GMAIL != 'true'
+        run: |
+          echo "::warning::Email not sent: add GMAIL_ADDRESS and GMAIL_APP_PASSWORD repository secrets (see docs/AUTOMATION.md)."
