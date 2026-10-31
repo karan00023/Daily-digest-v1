@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-31",
+  "built_at": "2026-10-31T06:08:29.113054-04:00",
+  "warnings": [
+    "portfolio: IDEXQ is flagged ambiguous/distressed but has no verification note today",
+    "portfolio: SPCX is flagged ambiguous/distressed but has no verification note today"
+  ],
+  "editorial_log": [],
+  "outputs": {
+    "web": "archive/2026-10/Kapoor_Daily_2026-10-31.html",
+    "artifact": "archive/2026-10/Kapoor_Daily_2026-10-31.artifact.html",
+    "email": "archive/2026-10/Kapoor_Daily_2026-10-31_email.html"
+  },
+  "print": {
+    "a4": {
+      "file": "archive/2026-10/Kapoor_Daily_2026-10-31_A4.pdf",
+      "pages": 5,
+      "sections": {
+        "front": 1,
+        "brief": 2,
+        "local": 2,
+        "realestate": 3,
+        "portfolio": 3,
+        "research": 4,
+        "tech": 2,
+        "india": 2,
+        "finance": 4,
+        "actions": 5,
+        "sources": 5
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "bound": {
+      "file": "archive/2026-10/Kapoor_Daily_2026-10-31_Bound.pdf",
+      "pages": 6,
+      "sections": {
+        "front": 2,
+        "brief": 3,
+        "local": 3,
+        "realestate": 4,
+        "portfolio": 4,
+        "research": 5,
+        "tech": 3,
+        "india": 3,
+        "finance": 5,
+        "actions": 6,
+        "sources": 6
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "booklet": {
+      "file": "archive/2026-10/Kapoor_Daily_2026-10-31_A5_Booklet.pdf",
+      "a5_pages": 9,
+      "sheet_sides": 6,
+      "errors": [],
+      "warnings": [
+        "booklet: possible stranded headline at foot of page 1: 'Musk: special committees at Tesla and SpaceX have '",
+        "booklet: forced page breaks before ['finance'] to keep heads with their stories"
+      ]
+    }
+  }
+}

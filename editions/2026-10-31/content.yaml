@@ -1,0 +1,219 @@
+# The Kapoor Daily — Saturday, 31 October 2026 (Edition No. 4). Weekend edition: shorter, more analysis.
+# Researched 2026-10-31 ~06:07–06:20 ET via web search.
+
+edition:
+  date: 2026-10-31
+  number: 4
+  researched_at: "2026-10-31T06:20:00-04:00"
+  research_window: "Primarily 30–31 Oct 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Correction: the 27 Oct edition described Indian rate hikes as forecasts only. Business Recorder reports the RBI raised rates in October, its first increase in nearly four years."
+    - "Weekend edition: the Research Desk, Real Estate and Lifestyle desks have no new verified items today, so they are intentionally light."
+    - "Friday closing levels for gold, the 10-year and bitcoin come from market recaps that differ slightly. Each is labelled approximate."
+
+lead: october-rout
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,580.07",  change: "−1.82%", as_of: "Fri 30 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"}
+  - {label: "Nasdaq",    value: "25,437.00", change: "−2.86%", as_of: "Fri 30 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"}
+  - {label: "Dow",       value: "51,770.31", change: "−1.09%", as_of: "Fri 30 Oct close", src: "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-ai-sell-off-191429143.html"}
+  - {label: "10-yr UST", value: "≈4.94%",    change: "≈−5 bp",  as_of: "30 Oct, recap", src: "https://noctaaa.substack.com/p/daily-brief-saturday-31-october-2026"}
+  - {label: "Gold",      value: "≈$3,870–3,900", change: "≈−3%", as_of: "30 Oct, sources differ", src: "https://www.kitco.com/news/article/2026-10-30/gold-drops-below-4000-silver-tumbles-hormuz-attack-lifts-oil-prices-kitco"}
+  - {label: "WTI crude", value: "$104.12",   change: "+2.08%", as_of: "30 Oct settle, recap", src: "https://thewallstreetrepublic.substack.com/p/intel-falls-2858-the-nasdaq-100-enters"}
+  - {label: "Bitcoin",   value: "≈$77,000",  change: "six-week low", as_of: "30 Oct, recap", src: "https://noctaaa.substack.com/p/daily-brief-saturday-31-october-2026"}
+  - {label: "30-yr mortgage", value: "7.24%", change: "−8 bp w/w", as_of: "Freddie Mac, 29 Oct", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724"}
+
+graphics: {}
+
+stories:
+  - id: october-rout
+    section: brief
+    kind: news
+    headline: "October ends with the worst day since June: Nasdaq −2.9%, Intel −28.6%, Nasdaq-100 in correction"
+    dek: "A third straight weekly loss for the S&P 500 as the AI-spending repricing spread from Alphabet and Amazon to chips."
+    summary: >-
+      The S&P 500 fell 1.82% to 7,580.07 on Friday and the Nasdaq fell 2.86% to 25,437.00. Intel lost about 28.6% to
+      $65.76, its worst day since the 1970s, after guiding Q4 adjusted EPS to $0.25 against a $0.43 estimate. Amazon
+      also fell after its miss and higher capex guidance. Treasuries and oil rallied while gold fell below $4,000.
+    why: >-
+      A correction in the Nasdaq-100 means the market is no longer giving AI spending the benefit of the doubt.
+      Expect volatility into Tuesday, which brings both the midterms and AMD's results.
+    me: >-
+      Most of your holdings sit in this selloff's path (AMD, AVGO, GOOGL, MSFT, ORCL, TSLA). Your diversifiers behaved
+      differently: Treasuries rallied, but gold (GLD) fell too, so it didn't act as a hedge this week.
+    inference: "Our read: this is a valuation reset on AI capex, not a demand collapse. Cloud growth this week was strong everywhere."
+    event_date: 2026-10-30
+    sources:
+      - {name: "TheStreet — Stock market today, 30 Oct", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026", published: "2026-10-30"}
+      - {name: "Yahoo Finance — October closes with brutal sell-off", url: "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-ai-sell-off-191429143.html", published: "2026-10-30"}
+      - {name: "StockTitan — Intel has its worst day in decades", url: "https://www.stocktitan.net/articles/stock-market-today-live-october-30-2026", published: "2026-10-30"}
+    scores: {personal: 10, impact: 9, magnitude: 9, timeliness: 10, actionability: 6}
+    tickers: [AMD, AVGO, GOOGL, MSFT, ORCL, TSLA]
+    qr: true
+
+  - id: iran-after-midterms
+    section: brief
+    kind: news
+    headline: "Reports say the US told Gulf allies to expect strikes on Iran as soon as 4 November; the White House denies the election is a factor"
+    dek: "Iran says four tankers hit mines in Hormuz, and oil rose about 2%."
+    summary: >-
+      MS NOW, as summarised by Political Wire, reported that the administration briefed Gulf allies to prepare for a
+      short, intense round of strikes as soon as the day after Tuesday's midterms. A White House official said
+      election results will not factor into the decision. Iran claimed four tankers struck mines in the Strait of
+      Hormuz, which the US disputes, and WTI settled near $104.
+    why: "Renewed strikes would hit oil, which feeds US inflation, the December Fed decision and the rupee."
+    me: "Oil above $100 also pushes up airfares. If you're planning a Delhi trip, book sooner rather than later."
+    inference: "These are reports of plans, not announcements. Treat the timing as unconfirmed."
+    event_date: 2026-10-30
+    sources:
+      - {name: "CNBC — Iran claims four tankers struck mines in Hormuz", url: "https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html", published: "2026-10-30"}
+      - {name: "Political Wire — Trump to resume strikes on Iran day after midterms", url: "https://politicalwire.com/2026/10/30/trump-to-resume-strikes-on-iran-day-after-midterms/", published: "2026-10-30"}
+      - {name: "Washington Post — A resumed Iran war would test fragile gains in Hormuz", url: "https://www.washingtonpost.com/world/2026/10/30/resumed-iran-war-after-midterms-would-put-fragile-gains-hormuz-test/", published: "2026-10-30"}
+    scores: {personal: 6, impact: 8, magnitude: 9, timeliness: 10, actionability: 3}
+
+  - id: jcworks
+    section: local
+    kind: news
+    headline: "Mayor Solomon launches 'JCWorks', a performance-management system for Jersey City services"
+    dek: "Public metrics on how city departments are performing."
+    summary: "Hudson County View reports Jersey City is rolling out JCWorks to track and improve city operations and services."
+    why: "After a 15% tax increase, residents will be watching whether service delivery measurably improves."
+    me: "If it publishes service metrics (311, permits, inspections), it becomes a useful data source for judging neighbourhoods and timing development."
+    use: "If the dashboards are public, they're a real-world example of operational KPIs to cite in a product-metrics discussion."
+    event_date: 2026-10-30
+    sources:
+      - {name: "Hudson County View — Solomon rolls out JCWorks", url: "https://hudsoncountyview.com/solomon-rolls-out-jcworks-new-jersey-city-performance-management-system/", published: "2026-10-30"}
+    scores: {personal: 7, impact: 4, magnitude: 3, timeliness: 9, actionability: 4}
+
+  - id: rupee-best-month
+    section: india
+    kind: news
+    headline: "Rupee posts its best month in eight, closing near 94.93 per dollar, as RBI curbs on dollar demand take hold"
+    dek: "Reserves stand at $719.75B. Bank lending rates eased to 8.51% in September."
+    summary: >-
+      The rupee rose 33 paise on Friday to about 94.93, helped by the RBI's moves to keep oil companies' dollar buying
+      out of the spot market and to tighten hedging rules. The RBI also raised rates in October, its first increase in
+      nearly four years, and has signalled more may follow. Forex reserves fell $1.27 billion to $719.75 billion.
+    why: "The rupee's slide from near 97 has paused, but analysts still see oil as the main risk."
+    me: "If you're sending money to India, the rupee has recovered from its lows, so dollars buy slightly less than they did mid-October."
+    event_date: 2026-10-30
+    sources:
+      - {name: "Business Recorder — Rupee posts best month in eight", url: "https://www.brecorder.com/news/40446683/indian-rupee-posts-best-month-in-eight-on-rbi-measures-to-curb-dollar-demand", published: "2026-10-30"}
+      - {name: "Daily Excelsior — Forex reserves drop to $719.75 bn", url: "https://www.dailyexcelsior.com/indias-forex-reserves-drop-by-usd-1-27-bn-to-usd-719-75-bn", published: "2026-10-30"}
+    scores: {personal: 7, impact: 5, magnitude: 5, timeliness: 10, actionability: 4}
+
+  - id: flyingblue-today
+    section: finance
+    kind: opportunity
+    update: true
+    headline: "Today is the last day of the Amex-to-Flying Blue 25% transfer bonus"
+    dek: "Transfer only if award space is bookable on your exact dates."
+    summary: >-
+      The 25% bonus (1,000 Membership Rewards to 1,250 Flying Blue miles) ends today, 31 October. No follow-up bonus
+      has been announced, and Amex typically runs this one once or twice a year.
+    why: "Oil above $100 is pushing cash fares up, so award seats are relatively better value."
+    me: "If you don't have a specific Air France or KLM award in mind, let it lapse. Points kept are still flexible."
+    event_date: 2026-10-31
+    sources:
+      - {name: "Prince of Travel — 25% Amex MR to Flying Blue (ending soon)", url: "https://princeoftravel.com/deals/amex-mr-flying-blue-transfer-bonus/", published: "2026-10-29"}
+    scores: {personal: 8, impact: 4, magnitude: 2, timeliness: 10, actionability: 9}
+
+world_in_brief:
+  - {text: "Crypto: bitcoin fell to about $77,000 after a reported $6.3 billion theft at Binance (single-source recap).", src: "https://noctaaa.substack.com/p/daily-brief-saturday-31-october-2026", published: "2026-10-31"}
+  - {text: "US politics: Trump held his 26th October rally in Daytona Beach ahead of Tuesday's midterms.", src: "https://cnn.com/2026/10/30/politics/live-news/midterm-election-congress", published: "2026-10-30"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: TSLA
+      also: [SPCX]
+      headline: "Musk: special committees at Tesla and SpaceX have not agreed on terms, and a deal isn't assured"
+      what: >-
+        Both boards formed committees of independent directors on 20 October. Musk has stepped back from them, says
+        they have not agreed terms, and notes that Tesla would need a 50% vote of all shares, not just shares voted.
+        Bank of America flagged Tesla's Shanghai plant as a possible regulatory hurdle given SpaceX's defense ties.
+      signal: neutral
+      horizon: long-term
+      materiality: high
+      consider: "A deal needs most of Tesla's whole shareholder base, which is a high bar. Don't size positions on the assumption that a merger happens."
+      labels: {fact: "committee formation, vote threshold", opinion: "BofA regulatory view", inference: "probability framing"}
+      sources:
+        - {name: "TechCrunch — SpaceX and Tesla boards form special committees", url: "https://techcrunch.com/2026/10/20/spacex-and-tesla-boards-form-special-committees-to-review-merger/", published: "2026-10-20"}
+        - {name: "Yahoo Finance — Tesla reclaims $400 as merger hopes build", url: "https://finance.yahoo.com/markets/stocks/articles/tesla-just-reclaimed-400-spacex-124832257.html", published: "2026-10-30"}
+    - ticker: MSTR
+      also: [RIOT]
+      headline: "Bitcoin slides to about $77,000, a six-week low, after a reported Binance theft"
+      what: >-
+        Market recaps report that bitcoin fell to around $77,000 after a $6.3 billion theft at Binance. We found this in
+        single-source recaps only. Strategy's next weekly holdings disclosure is due Monday.
+      signal: bearish
+      horizon: short-term
+      materiality: medium
+      consider: "Confirm the Binance incident from a primary source before reading much into it. MSTR and RIOT both move with bitcoin."
+      labels: {fact: "price level (approximate)", inference: "attribution to the hack"}
+      sources:
+        - {name: "Nocta — Daily brief, 31 Oct", url: "https://noctaaa.substack.com/p/daily-brief-saturday-31-october-2026", published: "2026-10-31"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Q3 results Tue 3 Nov after close."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Chip selloff after Intel's guidance."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash yield tracks the 3.75–4% policy rate."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Gold fell ≈3% to below $4,000 on 30 Oct."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Part of the AI-capex selloff."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Chapter 11 / OTC. Weekly re-check due 3 Nov."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Post-earnings gains tested by the selloff."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Q3 results 4 Nov. Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "Investor Day gains now facing the chip selloff."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin. See story."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Merger committees, no terms. Weekly re-check due 3 Nov."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −1.82% on 30 Oct. Third weekly loss."}
+
+  exposure_note: >-
+    Observation, not advice: this week tested your diversifiers. Treasuries rallied, but gold fell alongside tech,
+    and bitcoin-linked names (MSTR, RIOT) dropped too. Only cash (FDRXX) held steady.
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today. Listing sites aren't readable from this environment, and we don't repeat old listings."
+  market_reality: "Mortgage rates eased to 7.24% this week and Treasury yields fell on Friday. If the bond rally holds, next Thursday's Freddie Mac reading could be lower again."
+  sources:
+    - {name: "Freddie Mac — Mortgage rates decline further to 7.24%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724", published: "2026-10-29"}
+
+research:
+  preface: >-
+    No ideas this weekend. After a week like this, prices are moving faster than the fundamentals we could verify.
+    We'll revisit after AMD's report and the midterms. Position sizing needs your risk profile, which isn't on file.
+  ideas: []
+
+action_board:
+  three_things:
+    - "The AI repricing broadened from Alphabet and Amazon to chips. The Nasdaq-100 is now in a correction and the S&P 500 has fallen three weeks in a row."
+    - "Tuesday is the week's pivot: the midterms, AMD's results, and reports of Iran strikes as soon as Wednesday."
+    - "Your hedges were mixed this week. Treasuries worked, while gold and bitcoin fell with tech."
+  two_opportunities:
+    - title: "Flying Blue 25% bonus, last day today"
+      detail: "Only with a bookable award on your dates. Otherwise, keep the points flexible."
+    - title: "Watch Thursday's mortgage reading"
+      detail: "The bond rally could push the 30-year rate lower again. Useful timing information for a land-loan quote."
+  one_action: >-
+    Before Tuesday, write down what you'd do if AMD misses and oil spikes the same week: which holdings you'd review
+    first and what would make you act. Deciding ahead of time beats reacting at the open.
+  upcoming:
+    - {date: "Sun 1 Nov",  event: "NJ Q4 property taxes due (grace period on your bill) · Daylight saving time ends"}
+    - {date: "Mon 2 Nov",  event: "Strategy weekly bitcoin disclosure · Apple results (per one calendar, unconfirmed)"}
+    - {date: "Tue 3 Nov",  event: "US midterm elections · AMD Q3 results after close"}
+    - {date: "Wed 4 Nov",  event: "Ocugen Q3 results · reported earliest date for Iran strikes (unconfirmed)"}
+    - {date: "Thu 5 Nov",  event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 6 Nov",  event: "October jobs report"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · earliest reported Anthropic trading date (unconfirmed)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
