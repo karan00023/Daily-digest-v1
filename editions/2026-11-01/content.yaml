@@ -1,0 +1,186 @@
+# The Kapoor Daily — Sunday, 1 November 2026 (Edition No. 5). Sunday edition with the Week Ahead.
+# Researched 2026-11-01 ~06:06–06:20 EST via web search. Markets closed since Friday's close.
+
+edition:
+  date: 2026-11-01
+  number: 5
+  researched_at: "2026-11-01T06:20:00-05:00"
+  research_window: "Primarily 30 Oct–1 Nov 2026, plus scheduled events for 2–6 Nov."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Correction: yesterday's edition repeated a market recap's claim of a $6.3B theft at Binance. We could not confirm it from any primary source today, so treat it as unverified. Bitcoin's fall to about $77,000 is still reported."
+    - "Clocks fell back an hour overnight. Times in this edition are Eastern Standard Time."
+    - "Markets are closed for the weekend. Prices are Friday's closes."
+
+lead: week-ahead
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,580.07",  change: "−1.82%", as_of: "Fri 30 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"}
+  - {label: "Nasdaq",    value: "25,437.00", change: "−2.86%", as_of: "Fri 30 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"}
+  - {label: "Dow",       value: "51,770.31", change: "−1.09%", as_of: "Fri 30 Oct close", src: "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-ai-sell-off-191429143.html"}
+  - {label: "WTI crude", value: "$104.12",   change: "+2.08%", as_of: "30 Oct settle, recap", src: "https://thewallstreetrepublic.substack.com/p/intel-falls-2858-the-nasdaq-100-enters"}
+  - {label: "30-yr mortgage", value: "7.24%", change: "−8 bp w/w", as_of: "Freddie Mac, 29 Oct", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724"}
+
+graphics: {}
+
+stories:
+  - id: week-ahead
+    section: brief
+    kind: analysis
+    headline: "The Week Ahead: midterms Tuesday, Apple and Palantir Monday, AMD Tuesday, jobs Friday, and Iran in the background"
+    dek: "Markets go into it after three straight losing weeks and a Nasdaq-100 correction."
+    summary: >-
+      Apple and Palantir report after Monday's close. Americans vote Tuesday for all 435 House seats and 35 Senate
+      seats, and AMD reports Q3 after the close the same day. ISM manufacturing (Monday) and services (Wednesday)
+      reports follow, and October payrolls arrive Friday at 8:30 a.m., with consensus around 55,000 jobs and
+      unemployment at 4.2%. Reports that the US could resume strikes on Iran as soon as Wednesday hang over oil.
+    why: >-
+      CNBC notes investors expect the vote itself to move markets less than AI earnings do. A second weak payrolls
+      print next to 3.6% inflation would sharpen the Fed's December dilemma.
+    me: >-
+      AMD is your biggest single event this week. Wednesday's Iran risk matters for oil, GLD and travel costs, and
+      Friday's jobs number feeds the rate path behind your land-financing plans.
+    inference: "Our read: AMD's data-center guide is this week's most important number for your portfolio. The election comes second."
+    event_date: 2026-11-02
+    sources:
+      - {name: "CNBC — Midterms, Apple earnings, jobs report: the week ahead", url: "https://www.cnbc.com/2026/10/30/stock-market-next-week-outlook-for-nov-2-6-2026.html", published: "2026-10-30"}
+      - {name: "StockTitan — Earnings calendar, week of 2 Nov", url: "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-2-2026", published: "2026-10-31"}
+      - {name: "MS NOW — Trump plans to resume strikes on Iran day after midterms", url: "https://www.ms.now/news/trump-plans-to-resume-strikes-on-iran-day-after-midterm-elections", published: "2026-10-30"}
+    scores: {personal: 10, impact: 8, magnitude: 8, timeliness: 10, actionability: 7}
+    tickers: [AMD]
+    qr: true
+
+  - id: heights-mallorca
+    section: local
+    kind: news
+    headline: "In the Heights: Mallorca, a Mediterranean and American restaurant, is taking over the old Los Amigos space at 395 Central Ave"
+    dek: "Also new: Sinta Bakery, a Filipino-inspired café, at 240 Newark Street."
+    summary: >-
+      Hoboken Girl's weekly roundup reports the Central Avenue opening. It also notes Hoboken is examining its
+      short-term rental rules and that Church Square Park was briefly evacuated during a threat investigation.
+    why: "New restaurants on Central Avenue are a small signal of Heights retail health. Short-term rental rules affect investment-property returns next door in Hoboken."
+    me: "This is on your block's main street. If you ever look at an income property in Hoboken, watch the short-term rental rules."
+    event_date: 2026-11-01
+    sources:
+      - {name: "Hoboken Girl — News you missed, 1 Nov", url: "https://www.hobokengirl.com/news-hoboken-jersey-city-november-1-2026/", published: "2026-11-01"}
+    scores: {personal: 8, impact: 3, magnitude: 2, timeliness: 10, actionability: 3}
+
+  - id: tax-due-today
+    section: finance
+    kind: opportunity
+    update: true
+    headline: "Reminder: NJ fourth-quarter property taxes are due today"
+    dek: "It's a Sunday. Check your bill for Jersey City's grace period."
+    summary: >-
+      New Jersey's quarterly installment is due 1 November. Most municipalities allow a grace period, commonly 10
+      days, before interest accrues. This is the first full quarter at Jersey City's higher 2026 rate.
+    why: "Late payment interest in NJ is steep and starts from the due date once the grace period lapses."
+    me: "If you own, pay this week. Check the amount against your assessment and the new rate."
+    event_date: 2026-11-01
+    context: true
+    sources:
+      - {name: "Gothamist — Jersey City property taxes will increase 15%", url: "https://gothamist.com/news/jersey-city-property-taxes-will-increase-15-amid-financial-crisis", published: "2026-08-27"}
+    scores: {personal: 9, impact: 5, magnitude: 3, timeliness: 10, actionability: 10}
+
+  - id: rupee-reserves-sunday
+    section: india
+    kind: context
+    headline: "India week in review: the rupee had its best month in eight; reserves stand near $720B"
+    dek: "Delhi: four people died in a factory fire in Mangolpuri on Friday night (aggregator report)."
+    summary: >-
+      The rupee ended October near 94.93 per dollar after the RBI curbed dollar demand and raised rates for the first
+      time in nearly four years. In Delhi, an aggregator reports four deaths in a shoe-factory fire in the Mangolpuri
+      Industrial Area. We could not confirm this from a primary outlet.
+    why: "Oil above $100 remains the main risk to the rupee's recovery, and a renewed Iran conflict this week would test it."
+    me: "If you send money home, the rupee's recovery has narrowed the window that opened in mid-October."
+    event_date: 2026-10-31
+    context: true
+    sources:
+      - {name: "Business Recorder — Rupee posts best month in eight", url: "https://www.brecorder.com/news/40446683/indian-rupee-posts-best-month-in-eight-on-rbi-measures-to-curb-dollar-demand", published: "2026-10-30"}
+      - {name: "Indian Opinion — Today in India, 31 Oct", url: "https://indianopinion.org/today-in-india-31-october-2026/", published: "2026-10-31"}
+    scores: {personal: 7, impact: 4, magnitude: 4, timeliness: 8, actionability: 3}
+
+world_in_brief:
+  - {text: "Iran: Trump said 'anything's possible' about strikes after the midterms. The US naval blockade remains in place.", src: "https://www.foxnews.com/live-news/us-iran-war-trump-speaks-strait-hormuz-10-28-26", published: "2026-10-28"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: AMD
+      headline: "AMD reports Q3 on Tuesday after the close, its first test since the chip selloff"
+      what: >-
+        AMD set the date in an 6 October release. One preview cites expected revenue near $13 billion and says
+        attention will be on the Helios rack platform and MI450 accelerators. Shares fell after Intel's guidance cut
+        on Thursday and in Friday's broad selloff.
+      signal: neutral
+      horizon: short-term
+      materiality: high
+      consider: >-
+        Watch the data-center segment and Q4 guide rather than the headline beat. Intel's problem was PCs, so AMD's
+        PC exposure is the read-across risk. Options had implied about ±10.8% earlier this month.
+      labels: {fact: "date, selloff", opinion: "preview estimates", inference: "what to watch"}
+      sources:
+        - {name: "Finviz — AMD to report Q3 2026 results", url: "https://finviz.com/news/399552/amd-to-report-fiscal-third-quarter-2026-financial-results", published: "2026-10-06"}
+        - {name: "tech-insider — Week ahead: midterms, jobs, AMD", url: "https://tech-insider.org/wall-st-week-ahead-midterms-jobs-fed-hike-odds-ai-market-2026/", published: "2026-10-31"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Q3 results Tue 3 Nov after close. See story."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Moves with AMD's AI read-through."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash. Yield tracks the policy rate."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Gold below $4,000 on Friday. Iran risk this week."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Watch for any rebound after its record drop."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check due 3 Nov."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly bitcoin disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Q3 results Wed 4 Nov."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin (≈$77K on Friday)."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Merger committees, no terms. Re-check due 3 Nov."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "Merger committees, no terms."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 down three weeks running."}
+
+  exposure_note: >-
+    Observation, not advice: this week's biggest single risk to your holdings is one event, AMD on Tuesday,
+    landing on the same night as the election.
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week. Listing sites aren't readable from this environment, and we don't repeat old listings."
+  market_reality: >-
+    Weekly review: the 30-year rate eased from 7.40% to 7.24% over two weeks while Treasury yields fell. Hoboken is
+    reviewing short-term rental rules, which matters if an income property is ever part of the plan.
+  sources:
+    - {name: "Freddie Mac — Mortgage rates decline further to 7.24%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724", published: "2026-10-29"}
+
+research:
+  preface: >-
+    No new ideas this Sunday. We'll reassess after AMD's report, the election and Friday's jobs data.
+    Position sizing needs your risk profile, which isn't on file.
+  ideas: []
+
+action_board:
+  three_things:
+    - "This week has three big tests: AMD on Tuesday, the election the same night, and payrolls on Friday."
+    - "Reported plans for Iran strikes as soon as Wednesday would mostly hit you through oil, your gold position (GLD) and the cost of travel."
+    - "Two corrections this weekend: the RBI did hike in October, and the Binance theft claim is unverified."
+  two_opportunities:
+    - title: "Pre-commit your AMD plan"
+      detail: "Decide before Tuesday what data-center guide would make you add, hold or trim, and write it down."
+    - title: "Land-loan quote this month"
+      detail: "Rates eased two weeks running. A quote now gives you a baseline before the December Fed."
+  one_action: "Pay (or schedule) your Q4 Jersey City property tax this week, and check the amount against your assessment at the new 2026 rate."
+  upcoming:
+    - {date: "Mon 2 Nov",  event: "Apple & Palantir results after close · ISM manufacturing · Strategy weekly bitcoin disclosure"}
+    - {date: "Tue 3 Nov",  event: "US midterm elections (435 House, 35 Senate seats) · AMD Q3 after close"}
+    - {date: "Wed 4 Nov",  event: "ISM services · Ocugen Q3 · reported earliest date for Iran strikes (unconfirmed)"}
+    - {date: "Thu 5 Nov",  event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 6 Nov",  event: "October jobs report, 8:30 a.m. (consensus ≈55K, 4.2%)"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · earliest reported Anthropic trading date (unconfirmed)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}

@@ -121,6 +121,9 @@ tier2:
   - brecorder.com
   - dailyexcelsior.com
   - politicalwire.com
+  - ms.now
+  - foxnews.com
+  - finviz.com
 
 tier3:
   - heygotrade.com
@@ -172,3 +175,4 @@ tier3:
   - whalesbook.com
   - noctaaa.substack.com
   - thewallstreetrepublic.substack.com
+  - indianopinion.org
