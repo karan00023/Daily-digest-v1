@@ -218,12 +218,18 @@ a { color: inherit; text-decoration: none; }
   {{ group_head('brief', print_titles.brief, 'Ranked by consequence, not sensation.') }}
   <div class="cols2">{% for st in brief %}{{ pstory(st) }}{% endfor %}</div>
   {% if world %}<p class="src" style="margin: 0 0 3mm"><b>Elsewhere:</b> {% for w in world %}{{ w.text }} {% endfor %}</p>{% endif %}
+  {% if 'local' not in empty_sections %}
   {{ group_head('local', print_titles.local, 'Hudson County, Manhattan and the commute in between.') }}
   <div class="cols2">{% for st in (ranked.local or [])[:print_caps.local] %}{{ pstory(st) }}{% endfor %}</div>
+  {% endif %}
+  {% if 'tech' not in empty_sections %}
   {{ group_head('tech', print_titles.tech, 'Selected for data platforms, cloud and enterprise AI.') }}
   <div class="cols2">{% for st in (ranked.tech or [])[:print_caps.tech] %}{{ pstory(st) }}{% endfor %}</div>
+  {% endif %}
+  {% if 'india' not in empty_sections %}
   {{ group_head('india', print_titles.india, 'National, Delhi NCR, and US–India.') }}
   <div class="cols2">{% for st in (ranked.india or [])[:print_caps.india] %}{{ pstory(st) }}{% endfor %}</div>
+  {% endif %}
 </section>
 
 {% if not share %}
@@ -266,7 +272,7 @@ a { color: inherit; text-decoration: none; }
   </table>
   <p class="src">{{ pf.exposure_note }}</p>
 
-  {{ group_head('research', print_titles.research, research.preface) }}
+  {{ group_head('research', print_titles.research, research.preface ~ (' Nothing on the desk today.' if 'research' in empty_sections else '')) }}
   {% for i in research.ideas %}
   <article class="idea" data-headline="{{ i.name }}">
     <span class="stance">{{ i.stance }}</span>
@@ -282,8 +288,10 @@ a { color: inherit; text-decoration: none; }
   </article>
   {% endfor %}
 
+  {% if 'finance' not in empty_sections %}
   {{ group_head('finance', print_titles.finance) }}
   <div class="cols2">{% for st in (ranked.finance or [])[:print_caps.finance] %}{{ pstory(st) }}{% endfor %}</div>
+  {% endif %}
 </section>
 {% endif %}
 

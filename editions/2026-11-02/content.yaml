@@ -1,0 +1,180 @@
+# The Kapoor Daily — Monday, 2 November 2026 (Edition No. 6).
+# Researched 2026-11-02 ~06:11–06:25 EST via web search.
+
+edition:
+  date: 2026-11-02
+  number: 6
+  researched_at: "2026-11-02T06:25:00-05:00"
+  research_window: "Primarily 30 Oct–2 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Today's technology
+    coverage mentions Anthropic; that item is reporting only.
+  data_notes:
+    - "Update to yesterday's correction: Investing.com now lists a 'Binance hack' among this morning's market movers. Details, including the $6.3B figure, are still not confirmed from a primary source."
+    - "Futures levels are early-morning indications, not closing prices."
+
+lead: futures-rebound
+
+market_snapshot:
+  - {label: "Nasdaq 100 fut.", value: "≈+0.9%", change: "—", as_of: "Mon 2 Nov early, futures", src: "https://www.investing.com/news/stock-market-news/us-stock-futures-edge-high-after-bruising-oct-earnings-elections-in-focus-4989789"}
+  - {label: "S&P 500 fut.", value: "≈+0.5%",   change: "—", as_of: "Mon 2 Nov early, futures", src: "https://www.investing.com/news/stock-market-news/us-stock-futures-edge-high-after-bruising-oct-earnings-elections-in-focus-4989789"}
+  - {label: "S&P 500",   value: "7,580.07",  change: "−1.82%", as_of: "Fri 30 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"}
+  - {label: "Nasdaq",    value: "25,437.00", change: "−2.86%", as_of: "Fri 30 Oct close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"}
+  - {label: "WTI crude", value: "≈$100",     change: "—",      as_of: "2 Nov morning, approximate", src: "https://news.ssbcrack.com/stock-futures-rise-ahead-of-apple-earnings-and-midterm-elections/"}
+  - {label: "30-yr mortgage", value: "7.24%", change: "−8 bp w/w", as_of: "Freddie Mac, 29 Oct", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724"}
+
+graphics: {}
+
+stories:
+  - id: futures-rebound
+    section: brief
+    kind: news
+    headline: "Futures bounce after a $5 trillion AI rout, with Apple tonight and the midterms tomorrow"
+    dek: "Nasdaq 100 futures up about 0.9% early Monday. The Nasdaq lost nearly 7% in October."
+    summary: >-
+      Stock futures rose early Monday after October's tech selloff, which Yahoo Finance estimates erased about $5
+      trillion of AI and chip market value. Apple reports after the close. It's the first quarter under new CEO John
+      Ternus, and investors will focus on iPhone 18 sales and rising memory-chip costs. Palantir also reports tonight,
+      and October payrolls on Friday are expected around 55,000.
+    why: "A rebound in futures after a correction is common. Whether it lasts depends on tonight's results and Tuesday's AMD report."
+    me: "Most of your tech holdings fell in October, so a bounce helps, but AMD's report tomorrow is the bigger test for you."
+    event_date: 2026-11-02
+    sources:
+      - {name: "Investing.com — US stock futures rise after bruising October", url: "https://www.investing.com/news/stock-market-news/us-stock-futures-edge-high-after-bruising-oct-earnings-elections-in-focus-4989789", published: "2026-11-02"}
+      - {name: "Investing.com — Apple earnings, Binance hack, midterms: what's moving markets", url: "https://www.investing.com/news/economy-news/apple-earnings-binance-hack-midterm-elections--whats-moving-markets-4990049", published: "2026-11-02"}
+    scores: {personal: 9, impact: 8, magnitude: 7, timeliness: 10, actionability: 5}
+    tickers: [AMD]
+    qr: true
+
+  - id: midterms-eve
+    section: brief
+    kind: news
+    headline: "Election eve: Trump's approval at 32% and Democrats lead the generic ballot 47–36 in a Reuters/Ipsos poll"
+    dek: "The Iran war now ranks ahead of immigration and crime as a voter concern."
+    summary: >-
+      Tuesday's vote decides all 435 House seats, 35 Senate seats and 36 governorships. A Reuters/Ipsos poll completed
+      26 October put Trump's approval at 32% and showed Democrats ahead 47% to 36% among registered voters. Fox News and
+      AP-NORC polls rank the Iran war behind only the economy, corruption and health care as a voter priority.
+    why: "A Democratic House would change the fiscal and regulatory outlook for 2027. Post-election Iran decisions are the other risk."
+    me: "In New Jersey you vote for House seats on Tuesday. Check your polling place."
+    inference: "Polls are not results. Prediction markets and polls have missed before."
+    event_date: 2026-11-03
+    sources:
+      - {name: "Responsible Statecraft — Voters more worried about Iran war than immigration or crime", url: "https://responsiblestatecraft.org/iran-war-midterm-polling/", published: "2026-10-30"}
+      - {name: "CNBC — Midterms, Apple earnings, jobs report: the week ahead", url: "https://www.cnbc.com/2026/10/30/stock-market-next-week-outlook-for-nov-2-6-2026.html", published: "2026-10-30"}
+    scores: {personal: 7, impact: 7, magnitude: 8, timeliness: 10, actionability: 5}
+
+  - id: ai-optout-standard
+    section: tech
+    kind: news
+    headline: "OpenAI, Google, Microsoft and Anthropic agree to honour one robots.txt signal for opting out of AI training"
+    dek: "A single token, __usage_ai-training. Google's version also affects grounding in Gemini and Vertex AI."
+    summary: >-
+      Announced on 30 October, the voluntary standard lets publishers block AI training with one robots.txt entry.
+      Anthropic has reportedly adopted it already, while Google and Microsoft plan support in 2027 and OpenAI has yet
+      to publish details. Microsoft also introduced a separate "AI Grounding" setting that controls whether pages can
+      feed answers in Bing, Copilot and Microsoft 365. Meta hasn't committed.
+    why: "Training and grounding are now separate controls, which data-governance teams have long asked for."
+    me: "If your company publishes documentation or data externally, there's now a decision to make about training versus grounding."
+    use: >-
+      Draft a one-page policy note for your web and data teams: which public content to keep available for grounding
+      (search answers, Copilot) but exclude from training, and the exact robots.txt entries for each vendor.
+    linkedin: "“Training versus grounding: the AI content control enterprises actually needed.” A practical robots.txt guide."
+    inference: "Disclosure: Claude is made by Anthropic, one of the four companies."
+    event_date: 2026-10-30
+    sources:
+      - {name: "H2S Media — Google, OpenAI, Microsoft and Anthropic agree on one AI training opt-out", url: "https://www.how2shout.com/ai/shared-robots-txt-ai-training-opt-out-google-openai-microsoft-anthropic.html", published: "2026-10-31"}
+      - {name: "Resultsense — Big AI firms back a shared opt-out signal", url: "https://www.resultsense.com/news/2026-11-02-ai-firms-shared-robots-training-signal/", published: "2026-11-02"}
+    scores: {personal: 9, impact: 6, magnitude: 6, timeliness: 9, actionability: 8}
+    qr: true
+
+  - id: gst-october
+    section: india
+    kind: news
+    headline: "India's October GST collections jump 22.9% to ₹2.31 lakh crore on festive spending"
+    dek: "Second-highest month since GST began. Import-related GST rose 42%."
+    summary: >-
+      Provisional Finance Ministry data show gross GST collections of about ₹2.31 lakh crore in October, up 22.9% from
+      a year earlier. Net collections after refunds rose 25.6%. April–October collections are up 13.2%.
+    why: "Strong tax receipts give the government fiscal room while the RBI tightens to defend the rupee."
+    me: "It's a sign of solid Indian consumer demand. Part of the import-GST jump reflects higher oil prices, not volume."
+    inference: "The oil-price point is our inference."
+    event_date: 2026-11-01
+    sources:
+      - {name: "The Tribune (ANI) — Gross GST collections rise 22.9%", url: "https://www.tribuneindia.com/news/business/gross-gst-collections-rise-22-9-to-rs-2-31-lakh-crore-in-october-net-revenue-up-25-6", published: "2026-11-01"}
+    scores: {personal: 6, impact: 5, magnitude: 5, timeliness: 10, actionability: 2}
+
+world_in_brief:
+  - {text: "Markets: memory-chip costs are a margin question for Apple tonight, and a read-through for AMD and Broadcom.", src: "https://www.investing.com/news/stock-market-news/us-stock-futures-edge-high-after-bruising-oct-earnings-elections-in-focus-4989789", published: "2026-11-02"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: MSTR
+      also: [RIOT]
+      headline: "Binance hack now on Investing.com's list of market movers; Strategy's weekly disclosure is due today"
+      what: >-
+        Investing.com lists a Binance hack among Monday's market drivers, after bitcoin fell to about $77,000 on Friday.
+        We still can't confirm the size of the theft from a primary source. We found no Strategy bitcoin-purchase
+        filing for this week yet; it usually files an 8-K on Mondays.
+      signal: bearish
+      horizon: short-term
+      materiality: medium
+      consider: "Check Strategy's 8-K today. Whether it resumed buying after last week's pause matters more for MSTR than the hack headline."
+      labels: {fact: "listing as a market mover, prior price", inference: "what matters for MSTR"}
+      sources:
+        - {name: "Investing.com — Apple earnings, Binance hack, midterms: what's moving markets", url: "https://www.investing.com/news/economy-news/apple-earnings-binance-hack-midterm-elections--whats-moving-markets-4990049", published: "2026-11-02"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Q3 results Tue 3 Nov after close."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Memory-cost read-through from Apple tonight."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash. Yield tracks the policy rate."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Gold fell below $4,000 on Friday."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Futures bounce. No new company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check due 3 Nov."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Q3 results Wed 4 Nov."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Re-check due 3 Nov."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "Merger committees, no terms."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 futures ≈+0.5% early Monday."}
+
+  exposure_note: "Observation, not advice: Tuesday night stacks AMD's results on top of the election count."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Next mortgage-rate reading Thursday. Last week's bond rally points to a flat-to-lower print."
+  sources:
+    - {name: "Freddie Mac — Mortgage rates decline further to 7.24%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724", published: "2026-10-29"}
+
+research:
+  preface: "No ideas today. We'll reassess after AMD and the election. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Futures are bouncing after a roughly $5 trillion AI selloff in October, but tonight (Apple) and tomorrow night (AMD, the election) decide whether it holds."
+    - "Polls show a weak backdrop for Republicans, and the Iran war is now a top voter issue."
+    - "The big AI labs agreed a common training opt-out, splitting 'train on my content' from 'use it to answer questions'."
+  two_opportunities:
+    - title: "AI opt-out policy note"
+      detail: "Training versus grounding is a timely governance memo for work and a strong LinkedIn topic."
+    - title: "AMD pre-commitment"
+      detail: "Write down your add, hold or trim thresholds for AMD's data-center guide before tomorrow's report."
+  one_action: "Confirm your polling place and plan when you'll vote tomorrow."
+  upcoming:
+    - {date: "Mon 2 Nov",  event: "Apple & Palantir results after close · ISM manufacturing · Strategy weekly disclosure"}
+    - {date: "Tue 3 Nov",  event: "Election Day · AMD Q3 after close"}
+    - {date: "Wed 4 Nov",  event: "ISM services · Ocugen Q3 · reported earliest date for Iran strikes (unconfirmed)"}
+    - {date: "Thu 5 Nov",  event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 6 Nov",  event: "October jobs report (consensus ≈55K)"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · earliest reported Anthropic trading date (unconfirmed)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}

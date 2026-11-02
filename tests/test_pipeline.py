@@ -122,3 +122,13 @@ def test_booklet_imposition_is_a_permutation(n):
 
 def test_missing_edition_produces_failure_report(tmp_path):
     assert build_main(["--date", "1999-01-01", "--skip-pdf"]) == 1
+
+
+def test_empty_desks_are_marked_so_print_qa_skips_them(content, cfg):
+    from kapoor_daily.render import build_context
+    from kapoor_daily.validate import Report
+    content["research"]["ideas"] = []
+    content["stories"] = [s for s in content["stories"] if s["section"] != "finance"]
+    ranked = rank(content, cfg, [], [])
+    ctx = build_context(content, cfg, ranked, Report(), [])
+    assert {"research", "finance"} <= ctx["empty_sections"]

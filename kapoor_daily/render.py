@@ -141,6 +141,10 @@ def build_context(content, cfg, ranked, report, log, assets_href="assets"):
         "print_caps": cfg["publication"]["print_caps"],
         "digital_only": [st for sid, n in cfg["publication"]["print_caps"].items() for st in ranked.get(sid, [])[n:]],
         "force_break": set(),
+        # Desks with nothing to print today. Their heads are omitted (or, for research, kept as a one-line note)
+        # and excluded from the stranded-head check, since a head with no stories always "strands".
+        "empty_sections": {sid for sid in ("local", "tech", "india", "finance", "lifestyle") if not ranked.get(sid)}
+                          | ({"research"} if not content["research"].get("ideas") else set()),
         "print_titles": {**{s["id"]: s["title"] for s in cfg["sections"]}, **SECTION_TITLES},
         "assets": assets_href,
         "researched_label": researched_label(ed.get("researched_at")),

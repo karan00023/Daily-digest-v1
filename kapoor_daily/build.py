@@ -53,7 +53,7 @@ def write_failure(paths, date, errors, warnings, stage):
 
 def section_titles(ctx):
     """Heading text of every printed section, used to find its page number."""
-    titles = {sid: t for sid, t in ctx["sections"].items() if sid != "lifestyle" or ctx["ranked"].get("lifestyle")}
+    titles = {sid: t for sid, t in ctx["sections"].items() if sid not in ctx["empty_sections"]}
     titles.update(SECTION_TITLES)
     return titles
 
