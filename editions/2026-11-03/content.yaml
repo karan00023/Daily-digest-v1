@@ -1,0 +1,212 @@
+# The Kapoor Daily — Tuesday, 3 November 2026 (Edition No. 7). Election Day.
+# Researched 2026-11-03 ~06:06–06:25 EST via web search.
+
+edition:
+  date: 2026-11-03
+  number: 7
+  researched_at: "2026-11-03T06:25:00-05:00"
+  research_window: "Primarily 2–3 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Update: last week's editions cited reports of US strikes on Iran as soon as 4 November. On Monday, both sides signalled diplomacy and oil fell about 7%. Nothing is settled."
+    - "Apple's after-hours move wasn't confirmed in what we could read. One report says futures fell because Apple's results disappointed."
+
+lead: oil-diplomacy
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,541.40",  change: "−0.51%", as_of: "Mon 2 Nov close", src: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html"}
+  - {label: "Nasdaq",    value: "25,164.36", change: "−1.07%", as_of: "Mon 2 Nov close", src: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html"}
+  - {label: "Dow",       value: "51,983.98", change: "+0.41%", as_of: "Mon 2 Nov close", src: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html"}
+  - {label: "WTI crude", value: "$96.46",    change: "−7.36%", as_of: "2 Nov settle", src: "https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226"}
+  - {label: "Brent",     value: "$104.77",   change: "−7.63%", as_of: "2 Nov settle", src: "https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226"}
+  - {label: "30-yr mortgage", value: "7.24%", change: "−8 bp w/w", as_of: "Freddie Mac, 29 Oct", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724"}
+
+graphics: {}
+
+stories:
+  - id: oil-diplomacy
+    section: brief
+    kind: news
+    headline: "Oil falls about 7%, its biggest drop since July, as the US and Iran signal room for diplomacy"
+    dek: "WTI is back below $100. Rubio says no decision on new strikes has been made."
+    summary: >-
+      Brent settled near $104.77 and WTI near $96.46 on Monday, each down about 7%. Reports said Trump told Netanyahu
+      he wants to let talks play out, and Secretary of State Rubio said Trump prefers a diplomatic resolution. Iran's
+      foreign minister said negotiators in Qatar are working on a proposal that could reopen the Strait of Hormuz
+      within days if conditions are met, including ending the US blockade and lifting oil sanctions.
+    why: >-
+      This reverses last week's reporting of strikes as soon as Wednesday. Lower oil eases the inflation pressure
+      behind a possible December Fed hike. There's no ceasefire yet, and Iran's Supreme Leader has ordered the
+      military to prepare for renewed confrontation.
+    me: >-
+      Cheaper oil helps on inflation, rates and airfares, and with the rupee. It would also take some of the
+      geopolitical bid out of gold (GLD). Treat this as a positive but fragile development.
+    inference: "Our read: talks lower the odds of an immediate strike, but the risk hasn't gone away. Oil could rebound quickly if talks fail."
+    event_date: 2026-11-02
+    sources:
+      - {name: "Quartz — Crude sinks more than 7% as US–Iran talks ease war fears", url: "https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226", published: "2026-11-02"}
+      - {name: "OilPrice.com — Oil plunges 7% as US and Iran signal diplomacy", url: "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Plunge-7-as-US-and-Iran-Signal-Room-for-Diplomacy.html", published: "2026-11-02"}
+      - {name: "Energy Connects (Bloomberg) — Trump to give Iran diplomacy more time", url: "https://www.energyconnects.com/news/oil/2026/november/oil-slides-as-report-says-trump-to-give-iran-diplomacy-more-time/", published: "2026-11-02"}
+    scores: {personal: 8, impact: 9, magnitude: 9, timeliness: 10, actionability: 4}
+    qr: true
+
+  - id: election-day
+    section: brief
+    kind: news
+    headline: "Election Day: New Jersey polls are open 6 a.m.–8 p.m., with Booker's Senate seat and 12 House races on the ballot"
+    dek: "Nationally, all 435 House seats and 35 Senate seats are up."
+    summary: >-
+      Polls in New Jersey close at 8 p.m. Mail-in ballots must be in a drop box by then, and drop boxes are open
+      until polls close. Incumbent Senator Cory Booker faces Republican Justin Murphy. New Jersey has no same-day
+      registration and no statewide ballot questions this year. For problems at the polls, call 1-877-NJ-VOTER.
+    why: "Control of the House and Senate shapes 2027 fiscal policy, tariffs and oversight of the Iran war."
+    me: "Look up your polling place on the NJ Division of Elections voter search. Results start after 8 p.m., around the same time as AMD's earnings."
+    event_date: 2026-11-03
+    sources:
+      - {name: "CBS New York — When polls open and close in NY and NJ", url: "https://www.cbsnews.com/newyork/news/new-york-new-jersey-poll-hours-midterms-2026/", published: "2026-11-03"}
+      - {name: "NJ Division of Elections — Voter information portal", url: "https://nj.gov/state/elections/vote.shtml", published: "2026-11-03"}
+      - {name: "Decode the Vote — What's on the NJ ballot", url: "https://www.decodethevote.com/election-2026/new-jersey", published: "2026-11-02"}
+    scores: {personal: 9, impact: 7, magnitude: 8, timeliness: 10, actionability: 9}
+
+  - id: apple-tech-monday
+    section: brief
+    kind: news
+    headline: "Apple beats with $114.5B in revenue and a record September-quarter iPhone, but futures slip as investors find the report disappointing"
+    dek: "The S&P 500 fell for a third straight day to its lowest close since 31 July."
+    summary: >-
+      Apple's fiscal Q4 revenue was about $114.5 billion and diluted EPS $2.10 (+14%), ahead of a roughly $113.4
+      billion and $1.99 consensus. iPhone revenue rose 17% to $57.6 billion. It was CEO John Ternus's first call,
+      and memory costs were a focus. On Monday the Nasdaq fell 1.07% as chip stocks slid (the SOX fell more than 3%).
+      Futures were lower early Tuesday.
+    why: "Rising memory-chip costs are a margin question for every hardware maker, and a pricing signal for chip suppliers."
+    me: "You don't hold Apple, but the memory-cost theme and Monday's chip selloff feed into AMD and AVGO."
+    event_date: 2026-11-02
+    sources:
+      - {name: "MacRumors — Apple reports 4Q 2026 results", url: "https://www.macrumors.com/2026/11/02/apple-4q-2026-earnings/", published: "2026-11-02"}
+      - {name: "SEC — Apple 8-K, Q4 FY2026", url: "https://www.sec.gov/Archives/edgar/data/0000320193/000032019326000024/aapl-20261102.htm", published: "2026-11-02"}
+      - {name: "TipRanks — Futures fall as Apple earnings disappoint", url: "https://www.tipranks.com/news/u-s-stock-futures-fall-as-apple-earnings-disappoint-midterm-elections-in-focus", published: "2026-11-03"}
+    scores: {personal: 6, impact: 6, magnitude: 6, timeliness: 10, actionability: 3}
+
+  - id: marvell-lumentum
+    section: tech
+    kind: news
+    headline: "Marvell agrees to buy Lumentum in an all-stock deal valuing it near $115B, and Marvell shares fall 12.7%"
+    dek: "Optical networking is becoming the next bottleneck in AI data centres."
+    summary: >-
+      Marvell will pay about a 24% premium for Lumentum, a maker of optical components used in AI data-centre
+      networking. Investors balked at the price. Lumentum was trading at about a fifth of that valuation a year ago,
+      and Marvell closed at $171.41.
+    why: "Chipmakers are buying their way into the optical interconnects that link AI clusters, a market where Broadcom competes."
+    me: "Relevant to AVGO's networking franchise, and a sign the AI build-out is shifting from GPUs to the plumbing between them."
+    use: "For infrastructure planning, data-centre network bandwidth (not just compute) is increasingly the cost and lead-time constraint to model."
+    event_date: 2026-11-02
+    sources:
+      - {name: "Yahoo Finance (Motley Fool) — Why Marvell stock is tumbling today", url: "https://finance.yahoo.com/markets/stocks/articles/why-marvell-stock-tumbling-today-180329656.html", published: "2026-11-02"}
+      - {name: "The Motley Fool — Why Marvell Technology plunged today", url: "https://www.fool.com/investing/2026/11/02/why-marvell-technology-plunged-today/", published: "2026-11-02"}
+    scores: {personal: 7, impact: 5, magnitude: 6, timeliness: 10, actionability: 4}
+    tickers: [AVGO]
+
+world_in_brief:
+  - {text: "Palantir also beat expectations after Monday's close, per a market recap.", src: "https://www.tradingkey.com/analysis/stocks/us-stocks/262265688-oil-plunge-8-percent-apple-pltr-beat-marvell-drop-tradingkey", published: "2026-11-02"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: ORCL
+      headline: "Oracle falls 8.8% as it moves to raise $20 billion in stock and bonds for its AI build-out"
+      what: >-
+        A week after its Investor Day set a $20 billion cap on new capital-markets funding through FY2030, split
+        between debt and equity, Oracle announced plans to raise that money. Shares fell about 8.8% on Monday, giving
+        back most of the Investor Day jump.
+      signal: bearish
+      horizon: short-term
+      materiality: high
+      consider: >-
+        The raise was flagged in advance; the timing is what surprised. The equity half is dilution. Check the
+        offering terms and whether this uses up the whole FY2030 cap at once.
+      labels: {fact: "announcement, price move", inference: "cap usage question"}
+      sources:
+        - {name: "Investing.com — Oracle, Intel among market-cap movers on Monday", url: "https://www.investing.com/news/stock-market-news/oracle-intel-among-market-cap-stock-movers-on-monday-93CH-4992591", published: "2026-11-02"}
+        - {name: "The Wall Street Republic — Oracle falls 8.76% on AI debt fears", url: "https://thewallstreetrepublic.substack.com/p/marvell-sinks-1272-on-a-115bn-lumentum", published: "2026-11-02"}
+    - ticker: AMD
+      headline: "AMD reports Q3 tonight after a second day of chip selling"
+      what: >-
+        AMD was among Monday's leading tech decliners as the semiconductor index fell more than 3%. We couldn't find a
+        dated, reliable consensus for tonight. Previews we found were undated or from earlier years, so we don't print a number.
+      signal: neutral
+      horizon: short-term
+      materiality: high
+      consider: "Focus on data-center revenue and the Q4 guide, and on any comment about memory costs, which Apple flagged."
+      labels: {fact: "report timing, Monday move", inference: "what to watch"}
+      sources:
+        - {name: "StockTitan — Tech pulled the Nasdaq lower, 2 Nov", url: "https://stocktitan.net/articles/stock-market-today-live-november-2-2026", published: "2026-11-02"}
+    - ticker: MSTR
+      headline: "Strategy resumes buying: 811 bitcoin last week for about $65.5M, taking holdings to about 849,327"
+      what: >-
+        Strategy's 2 November 8-K shows purchases from 26 October to 1 November at an average of about $80,846, funded
+        by MSTR stock sales, plus about $208 million of share repurchases. The filing's tables were partly garbled in
+        extraction, so check the exact figures on EDGAR.
+      signal: neutral
+      horizon: short-term
+      materiality: medium
+      consider: "Buying resumed after a one-week pause, which supports the 'continuous accumulation' story. It's funded by selling MSTR stock."
+      labels: {fact: "8-K figures", inference: "premium dynamics"}
+      sources:
+        - {name: "SEC — Strategy 8-K, 2 Nov 2026", url: "https://www.sec.gov/Archives/edgar/data/0001050446/000119312526442707/mstr-20261102.htm", published: "2026-11-02"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Reports tonight after close. See story."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "SOX −3%+ on Mon. Marvell–Lumentum deal in its networking market."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "Lower oil helps airline demand, its main customer base (inference)."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Iran diplomacy reduces geopolitical demand for gold (inference)."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check due today. No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Q3 results Wed 4 Nov."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "−8.76% on Mon. See story."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Weekly re-check due today. Merger committees, no terms."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −0.51% on Mon, lowest close since 31 Jul."}
+
+  exposure_note: >-
+    Observation, not advice: Monday showed the split inside your holdings again. Oil and the Dow rose on Iran
+    diplomacy, while ORCL, AMD and other AI names fell.
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Lower oil and softer yields support Thursday's mortgage-rate reading. A sub-7.2% print is possible but not assured."
+  sources:
+    - {name: "Freddie Mac — Mortgage rates decline further to 7.24%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724", published: "2026-10-29"}
+
+research:
+  preface: "No ideas today. We'll reassess after AMD's results and the election. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Oil fell about 7% as Washington and Tehran signalled diplomacy, which reverses last week's strike reports for now."
+    - "Oracle is raising the $20 billion it flagged at Investor Day, and the stock gave back most of that day's gain."
+    - "Tonight brings the election results and AMD's numbers within hours of each other."
+  two_opportunities:
+    - title: "AI networking as a theme"
+      detail: "Marvell's $115B bid for Lumentum shows where AI infrastructure money is moving. It's worth a research note on your AVGO exposure."
+    - title: "Thursday mortgage reading"
+      detail: "Lower oil and yields could push rates down. It's a useful moment for a land-loan quote."
+  one_action: "Vote today. NJ polls are open 6 a.m.–8 p.m., and mail-in ballots must be in a drop box by 8 p.m."
+  upcoming:
+    - {date: "Tue 3 Nov",  event: "Election Day (NJ polls 6 a.m.–8 p.m.) · AMD Q3 after close"}
+    - {date: "Wed 4 Nov",  event: "ISM services · Ocugen Q3"}
+    - {date: "Thu 5 Nov",  event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 6 Nov",  event: "October jobs report (consensus ≈55K)"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · Apple dividend paid · earliest reported Anthropic trading date (unconfirmed)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}

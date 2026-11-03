@@ -1,0 +1,485 @@
+
+
+
+<title>The Kapoor Daily</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&family=UnifrakturMaguntia&display=swap">
+<style>
+/* Layout: a broadsheet front (lead + market rail) over lettered sections A–J; cards collapse to one column on phones. */
+:root {
+  --paper: #f7f2e8;        /* newsprint */
+  --paper-2: #efe7d6;      /* rail and boxed panels */
+  --ink: #1d1b18;          /* body text */
+  --ink-2: #5a5348;        /* secondary text */
+  --rule: #cfc4ae;         /* hairlines */
+  --accent: #14506b;       /* deep ink-blue: links, section letters */
+  --money: #f4dccb;        /* salmon tint for money pages */
+  --opp: #2f6b3a;          /* opportunity */
+  --bull: #2f6b3a; --bear: #a1322b; --neutral: #6c6558;
+  --read: #6b4e16;         /* our-read / opinion */
+  --f-mast: "UnifrakturMaguntia", "Old English Text MT", "Playfair Display", Georgia, serif;
+  --f-head: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --f-body: "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --f-ui: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #171614; --paper-2: #211f1b; --ink: #ece6da; --ink-2: #b2a996; --rule: #3d382f;
+  --accent: #7fb8d4; --money: #2b211c; --opp: #7cc08a; --bull: #7cc08a; --bear: #e58b80; --neutral: #a9a190; --read: #d9b56a;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #171614; --paper-2: #211f1b; --ink: #ece6da; --ink-2: #b2a996; --rule: #3d382f;
+  --accent: #7fb8d4; --money: #2b211c; --opp: #7cc08a; --bull: #7cc08a; --bear: #e58b80; --neutral: #a9a190; --read: #d9b56a;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.55 var(--f-body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-block: 0 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Masthead */
+.strip { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; align-items: center;
+  font: 600 12px/1.3 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2);
+  border-bottom: 1px solid var(--rule); padding-block: 12px 8px; }
+.strip button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--ink); background: none;
+  border: 1px solid var(--rule); border-radius: 2px; padding: 4px 8px; cursor: pointer; }
+.mast { text-align: center; padding-block: 18px 10px; border-bottom: 4px double var(--ink); }
+.mast h1 { font: 400 clamp(44px, 9vw, 104px)/1 var(--f-mast); margin: 0; letter-spacing: .01em; }
+.mast .sub { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 22px; margin-top: 10px;
+  font: italic 15px/1.3 var(--f-body); color: var(--ink-2); }
+nav.sections { display: flex; gap: 2px 18px; overflow-x: auto; white-space: nowrap; scrollbar-width: none;
+  border-bottom: 1px solid var(--rule); padding-block: 8px; font: 600 13px/1.2 var(--f-ui); letter-spacing: .06em; text-transform: uppercase; }
+nav.sections a { color: var(--ink); text-decoration: none; }
+nav.sections a:hover { color: var(--accent); }
+nav.sections b { color: var(--accent); margin-right: 4px; }
+
+/* Front page */
+.front { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; padding-block: 22px;
+  border-bottom: 1px solid var(--ink); }
+.rail { background: var(--paper-2); padding: 16px 18px; align-self: start; display: grid; gap: 18px; }
+.rail h3, .rail-title { font: 700 12px/1.2 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 6px; color: var(--ink-2); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.mkt td { padding: 5px 0; border-bottom: 1px solid var(--rule); font: 15px/1.25 var(--f-ui); vertical-align: top; }
+.mkt td.v { text-align: right; font-weight: 600; }
+.mkt td.c { text-align: right; width: 5.5em; }
+.mkt .asof { display: block; font-size: 12px; color: var(--ink-2); }
+.up { color: var(--bull); } .down { color: var(--bear); }
+.inside ol { margin: 0; padding-left: 0; list-style: none; columns: 2; column-gap: 14px; font: 14px/1.6 var(--f-ui); }
+.inside li b { color: var(--accent); margin-right: 4px; }
+.disclosure { font: italic 14px/1.45 var(--f-body); color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 10px; margin: 0; }
+
+/* Stories */
+.story { min-width: 0; }
+.story__meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px; font: 600 11px/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; }
+.chip { padding: 3px 6px; border: 1px solid currentColor; border-radius: 2px; color: var(--ink-2); }
+.chip--opportunity { color: var(--opp); } .chip--analysis, .chip--opinion { color: var(--read); }
+.chip--news { color: var(--accent); } .chip--muted { border-style: dotted; }
+.tick { color: var(--ink); background: var(--paper-2); padding: 3px 5px; border-radius: 2px; }
+.score { margin-left: auto; color: var(--ink-2); font-weight: 400; letter-spacing: .04em; text-transform: none; }
+.hl { font: 700 22px/1.2 var(--f-head); margin: 0 0 6px; text-wrap: balance; }
+.hl--lead { font-size: clamp(30px, 4.2vw, 48px); font-weight: 900; line-height: 1.08; letter-spacing: -.01em; }
+.dek { font: italic 18px/1.4 var(--f-body); color: var(--ink-2); margin: 0 0 10px; }
+.story--lead .dek { font-size: 21px; }
+.summary { margin: 0 0 10px; max-width: 68ch; }
+.story--lead .summary { font-size: 19px; }
+.story--lead .summary::first-letter { font: 900 3.2em/0.8 var(--f-head); float: left; padding: 6px 8px 0 0; color: var(--accent); }
+details { border-top: 1px solid var(--rule); margin-top: 8px; }
+summary { cursor: pointer; padding-block: 8px; font: 600 13px/1.2 var(--f-ui); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+ "; } details[open] summary::before { content: "− "; }
+.src-count { color: var(--ink-2); font-weight: 400; text-transform: none; letter-spacing: 0; }
+.more { display: grid; gap: 10px; padding-bottom: 6px; font-size: 16px; }
+.more h4, .mtm h4 { font: 700 11px/1.2 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 3px; color: var(--ink-2); }
+.more p, .mtm p { margin: 0; }
+.mtm { border-left: 3px solid var(--accent); padding-left: 10px; margin: 6px 0; }
+.use { border-left: 3px solid var(--opp); padding-left: 10px; }
+.li h4 { color: var(--opp); }
+.read { border-left: 3px solid var(--read); padding-left: 10px; font-style: italic; }
+.srcs { margin: 0; padding-left: 18px; font: 14px/1.5 var(--f-ui); }
+.pubdate { color: var(--ink-2); }
+
+/* Sections */
+.sec { padding-block: 26px 10px; border-bottom: 1px solid var(--ink); }
+.sec--money { background: linear-gradient(var(--money), var(--money)) padding-box; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+.sec-head { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: baseline; margin-bottom: 16px; }
+.sec-letter { font: 900 40px/1 var(--f-head); color: var(--accent); }
+.sec-head h2 { font: 900 28px/1.1 var(--f-head); margin: 0; text-transform: uppercase; letter-spacing: .02em; }
+.sec-note { grid-column: 2; margin: 4px 0 0; font: italic 15px/1.4 var(--f-body); color: var(--ink-2); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 22px 30px; }
+.grid > * { padding-top: 12px; border-top: 1px solid var(--rule); }
+.world { font: 15px/1.5 var(--f-ui); margin: 18px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.world b { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12px; color: var(--ink-2); margin-right: 6px; }
+
+/* Portfolio */
+.check { background: var(--paper); border: 1px solid var(--rule); padding: 12px 14px; }
+.check h3 { font: 700 18px/1.2 var(--f-head); margin: 0 0 4px; }
+.check .status { font: 600 12px/1.2 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--read); }
+.check p { margin: 6px 0 0; font-size: 16px; }
+.pill { font: 700 11px/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; padding: 4px 7px; border-radius: 999px; color: var(--paper); }
+.pill--bullish { background: var(--bull); } .pill--bearish { background: var(--bear); } .pill--neutral { background: var(--neutral); }
+.dev dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 10px; margin: 8px 0; font: 14px/1.4 var(--f-ui); }
+.dev dt { color: var(--ink-2); text-transform: uppercase; letter-spacing: .06em; font-size: 11px; padding-top: 2px; }
+.dev dd { margin: 0; }
+.scroll { overflow-x: auto; }
+.watch { font: 14px/1.35 var(--f-ui); min-width: 560px; }
+.watch th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); border-bottom: 2px solid var(--ink); padding: 6px 8px 6px 0; }
+.watch td { border-bottom: 1px solid var(--rule); padding: 6px 8px 6px 0; vertical-align: top; }
+.watch td.t { font-weight: 700; }
+.watch .na { color: var(--ink-2); font-style: italic; }
+.flag { color: var(--bear); font-weight: 700; }
+.note-box { font: italic 15px/1.45 var(--f-body); color: var(--ink-2); margin: 16px 0 8px; max-width: 80ch; }
+
+/* Real estate */
+.criteria { font: 600 14px/1.4 var(--f-ui); background: var(--paper-2); padding: 10px 12px; margin-bottom: 14px; }
+.nomatch { font: 700 18px/1.3 var(--f-head); margin: 0 0 6px; }
+
+/* Research */
+.idea dl { display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 12px; margin: 10px 0 0; font-size: 15px; }
+.idea dt { font: 700 11px/1.4 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
+.idea dd { margin: 0; }
+.stance { display: inline-block; font: 700 12px/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; border: 2px solid var(--read); color: var(--read); padding: 5px 8px; margin-top: 6px; }
+
+/* Action board */
+.board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.board h3 { font: 900 20px/1.2 var(--f-head); margin: 0 0 8px; display: flex; align-items: baseline; gap: 10px; }
+.board h3 span { font-size: 46px; color: var(--accent); line-height: .9; }
+.board ol, .board ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+.one { font: 600 19px/1.4 var(--f-body); }
+.dates td { padding: 6px 10px 6px 0; border-bottom: 1px solid var(--rule); font: 15px/1.35 var(--f-ui); vertical-align: top; }
+.dates td:first-child { white-space: nowrap; font-weight: 700; width: 9em; }
+
+/* Sources */
+.srclist { font: 14px/1.5 var(--f-ui); columns: 2 340px; column-gap: 30px; padding-left: 20px; }
+.srclist li { break-inside: avoid; margin-bottom: 4px; }
+.tier { font-size: 11px; color: var(--ink-2); }
+.notes { font: 14px/1.5 var(--f-ui); color: var(--ink-2); }
+footer { padding-block: 18px; font: 13px/1.5 var(--f-ui); color: var(--ink-2); text-align: center; }
+
+@media (max-width: 820px) {
+  .front { grid-template-columns: minmax(0, 1fr); }
+  .board { grid-template-columns: minmax(0, 1fr); }
+  .idea dl { grid-template-columns: minmax(0, 1fr); gap: 0 0; }
+  .idea dd { margin-bottom: 8px; }
+  body { font-size: 16.5px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+<div class="wrap">
+  <div class="strip">
+    <span>Vol. I · No. 7</span>
+    <span>Tuesday, 3 November 2026</span>
+    <span>~5 min read</span>
+<span class="print-links">Print: <a href="Kapoor_Daily_2026-11-03_A4.pdf" target="_blank" rel="noopener">A4</a> · <a href="Kapoor_Daily_2026-11-03_Bound.pdf" target="_blank" rel="noopener">Bound</a> · <a href="Kapoor_Daily_2026-11-03_A5_Booklet.pdf" target="_blank" rel="noopener">A5 booklet</a></span>    <button type="button" id="theme-toggle" aria-label="Switch light or dark theme">Light / Dark</button>
+  </div>
+  <header class="mast">
+    <h1>The Kapoor Daily</h1>
+    <div class="sub"><span>Independent intelligence for one reader</span><span>Jersey City · New York · Delhi</span><span>Researched 6:25 AM ET, 3 Nov</span></div>
+  </header>
+  <nav class="sections" aria-label="Sections">
+    <a href="#brief"><b>A</b>Brief</a>
+    <a href="#local"><b>B</b>Local</a>
+    <a href="#realestate"><b>C</b>Real Estate</a>
+    <a href="#portfolio"><b>D</b>Portfolio</a>
+    <a href="#research"><b>E</b>Research</a>
+    <a href="#tech"><b>F</b>AI &amp; Tech</a>
+    <a href="#india"><b>G</b>India</a>
+    <a href="#finance"><b>H</b>Travel &amp; Money</a>
+    <a href="#lifestyle"><b>I</b>Lifestyle</a>
+    <a href="#actions"><b>J</b>Action Board</a>
+    <a href="#sources"><b>§</b>Sources</a>
+  </nav>
+
+  <section class="front" aria-label="Front page">
+    <article class="story story--lead" data-kind="news" id="s-oil-diplomacy">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 8.2</span>
+  </div>
+<h2 class="hl hl--lead">Oil falls about 7%, its biggest drop since July, as the US and Iran signal room for diplomacy</h2><p class="dek">WTI is back below $100. Rubio says no decision on new strikes has been made.</p>  <p class="summary">Brent settled near $104.77 and WTI near $96.46 on Monday, each down about 7%. Reports said Trump told Netanyahu he wants to let talks play out, and Secretary of State Rubio said Trump prefers a diplomatic resolution. Iran&#39;s foreign minister said negotiators in Qatar are working on a proposal that could reopen the Strait of Hormuz within days if conditions are met, including ending the US blockade and lifting oil sanctions.</p>
+<div class="mtm"><h4>Why this matters to me</h4><p>Cheaper oil helps on inflation, rates and airfares, and with the rupee. It would also take some of the geopolitical bid out of gold (GLD). Treat this as a positive but fragile development.</p></div>  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>This reverses last week&#39;s reporting of strikes as soon as Wednesday. Lower oil eases the inflation pressure behind a possible December Fed hike. There&#39;s no ceasefire yet, and Iran&#39;s Supreme Leader has ordered the military to prepare for renewed confrontation.</p></div><div class="read"><h4>Our read</h4><p>Our read: talks lower the odds of an immediate strike, but the risk hasn&#39;t gone away. Oil could rebound quickly if talks fail.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226" target="_blank" rel="noopener">Quartz — Crude sinks more than 7% as US–Iran talks ease war fears</a> <span class="pubdate">2 Nov 2026</span></li>
+<li><a href="https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Plunge-7-as-US-and-Iran-Signal-Room-for-Diplomacy.html" target="_blank" rel="noopener">OilPrice.com — Oil plunges 7% as US and Iran signal diplomacy</a> <span class="pubdate">2 Nov 2026</span></li>
+<li><a href="https://www.energyconnects.com/news/oil/2026/november/oil-slides-as-report-says-trump-to-give-iran-diplomacy-more-time/" target="_blank" rel="noopener">Energy Connects (Bloomberg) — Trump to give Iran diplomacy more time</a> <span class="pubdate">2 Nov 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article>
+    <aside class="rail">
+      <div>
+        <h3>Markets</h3>
+        <table class="mkt">
+          <tr><td><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html" target="_blank" rel="noopener">S&amp;P 500</a><span class="asof">Mon 2 Nov close</span></td><td class="v">7,541.40</td>
+          <td class="c down">−0.51%</td></tr>
+          <tr><td><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html" target="_blank" rel="noopener">Nasdaq</a><span class="asof">Mon 2 Nov close</span></td><td class="v">25,164.36</td>
+          <td class="c down">−1.07%</td></tr>
+          <tr><td><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html" target="_blank" rel="noopener">Dow</a><span class="asof">Mon 2 Nov close</span></td><td class="v">51,983.98</td>
+          <td class="c up">+0.41%</td></tr>
+          <tr><td><a href="https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226" target="_blank" rel="noopener">WTI crude</a><span class="asof">2 Nov settle</span></td><td class="v">$96.46</td>
+          <td class="c down">−7.36%</td></tr>
+          <tr><td><a href="https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226" target="_blank" rel="noopener">Brent</a><span class="asof">2 Nov settle</span></td><td class="v">$104.77</td>
+          <td class="c down">−7.63%</td></tr>
+          <tr><td><a href="https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724" target="_blank" rel="noopener">30-yr mortgage</a><span class="asof">Freddie Mac, 29 Oct</span></td><td class="v">7.24%</td>
+          <td class="c down">−8 bp w/w</td></tr>
+        </table>
+      </div>
+      <div class="inside">
+        <h3>Inside today</h3>
+        <ol>
+          <li><b>A</b><a href="#brief">Morning Brief</a></li>
+          <li><b>B</b><a href="#local">JC, NJ &amp; NYC</a></li>
+          <li><b>C</b><a href="#realestate">Real Estate</a></li>
+          <li><b>D</b><a href="#portfolio">Portfolio</a></li>
+          <li><b>E</b><a href="#research">Research Desk</a></li>
+          <li><b>F</b><a href="#tech">AI &amp; Tech</a></li>
+          <li><b>G</b><a href="#india">India &amp; Delhi</a></li>
+          <li><b>H</b><a href="#finance">Travel &amp; Money</a></li>
+          <li><b>I</b><a href="#lifestyle">Lifestyle</a></li>
+          <li><b>J</b><a href="#actions">Action Board</a></li>
+        </ol>
+      </div>
+      <p class="disclosure">This newspaper is researched and written by Claude, an AI model made by Anthropic.</p>
+    </aside>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="brief">
+  <span class="sec-letter" aria-hidden="true">A</span>
+  <h2>The Morning Brief</h2>
+<p class="sec-note">The stories that matter most to you today, ranked by consequence.</p></header>
+    <div class="grid"><article class="story" data-kind="news" id="s-election-day">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 8.4</span>
+  </div>
+<h3 class="hl">Election Day: New Jersey polls are open 6 a.m.–8 p.m., with Booker&#39;s Senate seat and 12 House races on the ballot</h3><p class="dek">Nationally, all 435 House seats and 35 Senate seats are up.</p>  <p class="summary">Polls in New Jersey close at 8 p.m. Mail-in ballots must be in a drop box by then, and drop boxes are open until polls close. Incumbent Senator Cory Booker faces Republican Justin Murphy. New Jersey has no same-day registration and no statewide ballot questions this year. For problems at the polls, call 1-877-NJ-VOTER.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Control of the House and Senate shapes 2027 fiscal policy, tariffs and oversight of the Iran war.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Look up your polling place on the NJ Division of Elections voter search. Results start after 8 p.m., around the same time as AMD&#39;s earnings.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.cbsnews.com/newyork/news/new-york-new-jersey-poll-hours-midterms-2026/" target="_blank" rel="noopener">CBS New York — When polls open and close in NY and NJ</a> <span class="pubdate">3 Nov 2026</span></li>
+<li><a href="https://nj.gov/state/elections/vote.shtml" target="_blank" rel="noopener">NJ Division of Elections — Voter information portal</a> <span class="pubdate">3 Nov 2026</span></li>
+<li><a href="https://www.decodethevote.com/election-2026/new-jersey" target="_blank" rel="noopener">Decode the Vote — What&#39;s on the NJ ballot</a> <span class="pubdate">2 Nov 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article><article class="story" data-kind="news" id="s-apple-tech-monday">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.1</span>
+  </div>
+<h3 class="hl">Apple beats with $114.5B in revenue and a record September-quarter iPhone, but futures slip as investors find the report disappointing</h3><p class="dek">The S&amp;P 500 fell for a third straight day to its lowest close since 31 July.</p>  <p class="summary">Apple&#39;s fiscal Q4 revenue was about $114.5 billion and diluted EPS $2.10 (+14%), ahead of a roughly $113.4 billion and $1.99 consensus. iPhone revenue rose 17% to $57.6 billion. It was CEO John Ternus&#39;s first call, and memory costs were a focus. On Monday the Nasdaq fell 1.07% as chip stocks slid (the SOX fell more than 3%). Futures were lower early Tuesday.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 3 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Rising memory-chip costs are a margin question for every hardware maker, and a pricing signal for chip suppliers.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>You don&#39;t hold Apple, but the memory-cost theme and Monday&#39;s chip selloff feed into AMD and AVGO.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://www.macrumors.com/2026/11/02/apple-4q-2026-earnings/" target="_blank" rel="noopener">MacRumors — Apple reports 4Q 2026 results</a> <span class="pubdate">2 Nov 2026</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0000320193/000032019326000024/aapl-20261102.htm" target="_blank" rel="noopener">SEC — Apple 8-K, Q4 FY2026</a> <span class="pubdate">2 Nov 2026</span></li>
+<li><a href="https://www.tipranks.com/news/u-s-stock-futures-fall-as-apple-earnings-disappoint-midterm-elections-in-focus" target="_blank" rel="noopener">TipRanks — Futures fall as Apple earnings disappoint</a> <span class="pubdate">3 Nov 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+<ul class="world"><li><b>Elsewhere</b></li><li><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262265688-oil-plunge-8-percent-apple-pltr-beat-marvell-drop-tradingkey" target="_blank" rel="noopener">Palantir also beat expectations after Monday&#39;s close, per a market recap.</a></li></ul>  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="local">
+  <span class="sec-letter" aria-hidden="true">B</span>
+  <h2>Jersey City, NJ &amp; NYC</h2>
+<p class="sec-note">Hudson County, Manhattan and the commute in between.</p></header>
+    <div class="grid"></div>
+  </section>
+
+  <section class="sec sec--money">
+    <header class="sec-head" id="realestate">
+  <span class="sec-letter" aria-hidden="true">C</span>
+  <h2>Real Estate Radar</h2>
+</header>
+    <div class="criteria">Your criteria: ≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential</div>
+    <div class="grid">
+      <div>
+          <p class="nomatch">No new listing meets your criteria today.</p>
+          <p style="margin:0 0 12px">No new verified listing today.</p>
+        <p style="margin:0">Lower oil and softer yields support Thursday&#39;s mortgage-rate reading. A sub-7.2% print is possible but not assured.</p>
+        <p class="notes">Drive times are estimates to the Holland Tunnel, Manhattan entrance (Canal St &amp; Varick St).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--money">
+    <header class="sec-head" id="portfolio">
+  <span class="sec-letter" aria-hidden="true">D</span>
+  <h2>Portfolio Intelligence</h2>
+<p class="sec-note">Material developments first; everything else in the table. Positions are never summed across accounts.</p></header>
+    <div class="grid">
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">ORCL</span><span class="pill pill--bearish">bearish</span></div>
+        <h3 class="hl">Oracle falls 8.8% as it moves to raise $20 billion in stock and bonds for its AI build-out</h3>
+        <p class="summary">A week after its Investor Day set a $20 billion cap on new capital-markets funding through FY2030, split between debt and equity, Oracle announced plans to raise that money. Shares fell about 8.8% on Monday, giving back most of the Investor Day jump.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>high</dd>
+<dt>Fact</dt><dd>announcement, price move</dd><dt>Our inference</dt><dd>cap usage question</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>The raise was flagged in advance; the timing is what surprised. The equity half is dilution. Check the offering terms and whether this uses up the whole FY2030 cap at once.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.investing.com/news/stock-market-news/oracle-intel-among-market-cap-stock-movers-on-monday-93CH-4992591" target="_blank" rel="noopener">Investing.com — Oracle, Intel among market-cap movers on Monday</a> <span class="pubdate">2 Nov 2026</span></li>
+<li><a href="https://thewallstreetrepublic.substack.com/p/marvell-sinks-1272-on-a-115bn-lumentum" target="_blank" rel="noopener">The Wall Street Republic — Oracle falls 8.76% on AI debt fears</a> <span class="pubdate">2 Nov 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">AMD</span><span class="pill pill--neutral">neutral</span></div>
+        <h3 class="hl">AMD reports Q3 tonight after a second day of chip selling</h3>
+        <p class="summary">AMD was among Monday&#39;s leading tech decliners as the semiconductor index fell more than 3%. We couldn&#39;t find a dated, reliable consensus for tonight. Previews we found were undated or from earlier years, so we don&#39;t print a number.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>high</dd>
+<dt>Fact</dt><dd>report timing, Monday move</dd><dt>Our inference</dt><dd>what to watch</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>Focus on data-center revenue and the Q4 guide, and on any comment about memory costs, which Apple flagged.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://stocktitan.net/articles/stock-market-today-live-november-2-2026" target="_blank" rel="noopener">StockTitan — Tech pulled the Nasdaq lower, 2 Nov</a> <span class="pubdate">2 Nov 2026</span></li>
+</ul></div></details>
+      </article>
+      <article class="dev story">
+        <div class="story__meta"><span class="tick">MSTR</span><span class="pill pill--neutral">neutral</span></div>
+        <h3 class="hl">Strategy resumes buying: 811 bitcoin last week for about $65.5M, taking holdings to about 849,327</h3>
+        <p class="summary">Strategy&#39;s 2 November 8-K shows purchases from 26 October to 1 November at an average of about $80,846, funded by MSTR stock sales, plus about $208 million of share repurchases. The filing&#39;s tables were partly garbled in extraction, so check the exact figures on EDGAR.</p>
+        <dl><dt>Horizon</dt><dd>short-term</dd><dt>Materiality</dt><dd>medium</dd>
+<dt>Fact</dt><dd>8-K figures</dd><dt>Our inference</dt><dd>premium dynamics</dd></dl>
+        <div class="mtm"><h4>What to investigate</h4><p>Buying resumed after a one-week pause, which supports the &#39;continuous accumulation&#39; story. It&#39;s funded by selling MSTR stock.</p></div>
+        <details><summary>Sources</summary><div class="more"><ul class="srcs">
+<li><a href="https://www.sec.gov/Archives/edgar/data/0001050446/000119312526442707/mstr-20261102.htm" target="_blank" rel="noopener">SEC — Strategy 8-K, 2 Nov 2026</a> <span class="pubdate">2 Nov 2026</span></li>
+</ul></div></details>
+      </article>
+    </div>
+    <h3 class="rail-title" style="margin-top:24px">Watchlist · all 17 holdings</h3>
+    <div class="scroll"><table class="watch">
+      <tr><th>Ticker</th><th>Security (verify in account)</th><th>Last reported</th><th>As of</th><th>Note</th></tr>
+      <tr><td class="t"><a href="#portfolio">AMD</a></td>
+      <td>Advanced Micro Devices, Inc.</td><td class="na">unavailable</td><td></td><td>Reports tonight after close. See story.</td></tr>
+      <tr><td class="t">AVGO</td>
+      <td>Broadcom Inc.</td><td class="na">unavailable</td><td></td><td>SOX −3%+ on Mon. Marvell–Lumentum deal in its networking market.</td></tr>
+      <tr><td class="t">FDRXX</td>
+      <td>Fidelity Government Cash Reserves</td><td class="">$1.00 NAV (target)</td><td>—</td><td>Cash.</td></tr>
+      <tr><td class="t">GE</td>
+      <td>GE Aerospace (General Electric Co.)</td><td class="na">unavailable</td><td></td><td>Lower oil helps airline demand, its main customer base (inference).</td></tr>
+      <tr><td class="t">GLD</td>
+      <td>SPDR Gold Shares</td><td class="na">unavailable</td><td></td><td>Iran diplomacy reduces geopolitical demand for gold (inference).</td></tr>
+      <tr><td class="t">GOOGL</td>
+      <td>Alphabet Inc. Class A</td><td class="na">unavailable</td><td></td><td>No new company news.</td></tr>
+      <tr><td class="t"><a href="#portfolio">ORCL</a></td>
+      <td>Oracle Corporation</td><td class="na">unavailable</td><td></td><td>−8.76% on Mon. See story.</td></tr>
+      <tr><td class="t">RCAT</td>
+      <td>Red Cat Holdings, Inc.</td><td class="na">unavailable</td><td></td><td>Q3 results 16 Nov.</td></tr>
+      <tr><td class="t">SPCX <span class="flag" title="ambiguous">!</span></td>
+      <td>VERIFY — ambiguous ticker</td><td class="na">unavailable</td><td></td><td>Weekly re-check due today. Merger committees, no terms.</td></tr>
+      <tr><td class="t">TSLA</td>
+      <td>Tesla, Inc.</td><td class="na">unavailable</td><td></td><td>No new company news.</td></tr>
+      <tr><td class="t">VTI</td>
+      <td>Vanguard Total Stock Market ETF</td><td class="na">unavailable</td><td></td><td>S&amp;P 500 −0.51% on Mon, lowest close since 31 Jul.</td></tr>
+      <tr><td class="t">RIOT</td>
+      <td>Riot Platforms, Inc.</td><td class="na">unavailable</td><td></td><td>Moves with bitcoin.</td></tr>
+      <tr><td class="t">MSFT</td>
+      <td>Microsoft Corporation</td><td class="na">unavailable</td><td></td><td>No new company news.</td></tr>
+      <tr><td class="t">IBM</td>
+      <td>International Business Machines Corp.</td><td class="na">unavailable</td><td></td><td>No new company news.</td></tr>
+      <tr><td class="t"><a href="#portfolio">MSTR</a></td>
+      <td>Strategy Inc (formerly MicroStrategy)</td><td class="na">unavailable</td><td></td><td>See story.</td></tr>
+      <tr><td class="t">OCGN</td>
+      <td>Ocugen, Inc.</td><td class="na">unavailable</td><td></td><td>Q3 results Wed 4 Nov.</td></tr>
+      <tr><td class="t">IDEXQ <span class="flag" title="distressed">!</span></td>
+      <td>VERIFY — Ideanomics, Inc. (bankrupt/OTC)</td><td class="na">unavailable</td><td></td><td>Weekly re-check due today. No new filing found.</td></tr>
+    </table></div>
+    <p class="note-box">Observation, not advice: Monday showed the split inside your holdings again. Oil and the Dow rose on Iran diplomacy, while ORCL, AMD and other AI names fell.</p>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="research">
+  <span class="sec-letter" aria-hidden="true">E</span>
+  <h2>Investment Research Desk</h2>
+<p class="sec-note">No ideas today. We&#39;ll reassess after AMD&#39;s results and the election. Position sizing needs your risk profile, which isn&#39;t on file.</p></header>
+    <div class="grid">
+    </div>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="tech">
+  <span class="sec-letter" aria-hidden="true">F</span>
+  <h2>AI, Technology &amp; Career</h2>
+<p class="sec-note">Selected for your work in data platforms, cloud and enterprise AI.</p></header>
+    <div class="grid"><article class="story" data-kind="news" id="s-marvell-lumentum">
+  <div class="story__meta">
+    <span class="chip chip--news">News</span>
+<span class="tick">AVGO</span>    <span class="score" title="Weighted relevance: personal 35%, impact 25%, magnitude 20%, timeliness 10%, actionability 10%">relevance 6.3</span>
+  </div>
+<h3 class="hl">Marvell agrees to buy Lumentum in an all-stock deal valuing it near $115B, and Marvell shares fall 12.7%</h3><p class="dek">Optical networking is becoming the next bottleneck in AI data centres.</p>  <p class="summary">Marvell will pay about a 24% premium for Lumentum, a maker of optical components used in AI data-centre networking. Investors balked at the price. Lumentum was trading at about a fifth of that valuation a year ago, and Marvell closed at $171.41.</p>
+  <details>
+    <summary>Read more <span class="src-count">· 2 sources</span></summary>
+    <div class="more">
+<div><h4>Why it matters</h4><p>Chipmakers are buying their way into the optical interconnects that link AI clusters, a market where Broadcom competes.</p></div><div class="mtm"><h4>Why this matters to me</h4><p>Relevant to AVGO&#39;s networking franchise, and a sign the AI build-out is shifting from GPUs to the plumbing between them.</p></div><div class="use"><h4>How I could use this</h4><p>For infrastructure planning, data-centre network bandwidth (not just compute) is increasingly the cost and lead-time constraint to model.</p></div>      <div><h4>Sources</h4><ul class="srcs">
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/why-marvell-stock-tumbling-today-180329656.html" target="_blank" rel="noopener">Yahoo Finance (Motley Fool) — Why Marvell stock is tumbling today</a> <span class="pubdate">2 Nov 2026</span></li>
+<li><a href="https://www.fool.com/investing/2026/11/02/why-marvell-technology-plunged-today/" target="_blank" rel="noopener">The Motley Fool — Why Marvell Technology plunged today</a> <span class="pubdate">2 Nov 2026</span></li>
+</ul></div>
+    </div>
+  </details>
+</article></div>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head" id="actions">
+  <span class="sec-letter" aria-hidden="true">J</span>
+  <h2>The Opportunity &amp; Action Board</h2>
+</header>
+    <div class="board">
+      <div><h3><span>3</span>Things worth knowing</h3><ol><li>Oil fell about 7% as Washington and Tehran signalled diplomacy, which reverses last week&#39;s strike reports for now.</li><li>Oracle is raising the $20 billion it flagged at Investor Day, and the stock gave back most of that day&#39;s gain.</li><li>Tonight brings the election results and AMD&#39;s numbers within hours of each other.</li></ol></div>
+      <div><h3><span>2</span>Opportunities to investigate</h3><ul><li><b>AI networking as a theme.</b> Marvell&#39;s $115B bid for Lumentum shows where AI infrastructure money is moving. It&#39;s worth a research note on your AVGO exposure.</li><li><b>Thursday mortgage reading.</b> Lower oil and yields could push rates down. It&#39;s a useful moment for a land-loan quote.</li></ul></div>
+      <div><h3><span>1</span>Thing to do today</h3><p class="one" style="margin:0">Vote today. NJ polls are open 6 a.m.–8 p.m., and mail-in ballots must be in a drop box by 8 p.m.</p></div>
+    </div>
+    <h3 class="rail-title" style="margin-top:26px">Dates that matter</h3>
+    <div class="scroll"><table class="dates"><tr><td>Tue 3 Nov</td><td>Election Day (NJ polls 6 a.m.–8 p.m.) · AMD Q3 after close</td></tr><tr><td>Wed 4 Nov</td><td>ISM services · Ocugen Q3</td></tr><tr><td>Thu 5 Nov</td><td>Freddie Mac mortgage rates</td></tr><tr><td>Fri 6 Nov</td><td>October jobs report (consensus ≈55K)</td></tr><tr><td>Tue 10 Nov</td><td>October CPI</td></tr><tr><td>Sun 15 Nov</td><td>Midtown Direct service returns to Penn Station</td></tr><tr><td>Mon 16 Nov</td><td>Red Cat Q3 · Apple dividend paid · earliest reported Anthropic trading date (unconfirmed)</td></tr><tr><td>Wed 9 Dec</td><td>Next Fed decision</td></tr></table></div>
+  </section>
+
+  <section class="sec" style="border-bottom:0">
+    <header class="sec-head" id="sources">
+  <span class="sec-letter" aria-hidden="true">§</span>
+  <h2>Sources &amp; Data Timestamps</h2>
+</header>
+    <ol class="srclist">
+<li><a href="https://www.cbsnews.com/newyork/news/new-york-new-jersey-poll-hours-midterms-2026/" target="_blank" rel="noopener">CBS New York — When polls open and close in NY and NJ</a> <span class="pubdate">3 Nov 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://nj.gov/state/elections/vote.shtml" target="_blank" rel="noopener">NJ Division of Elections — Voter information portal</a> <span class="pubdate">3 Nov 2026</span> <span class="tier">· The Morning Brief · tier 1</span></li>
+<li><a href="https://www.decodethevote.com/election-2026/new-jersey" target="_blank" rel="noopener">Decode the Vote — What&#39;s on the NJ ballot</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://qz.com/oil-prices-sink-us-iran-talks-war-fears-110226" target="_blank" rel="noopener">Quartz — Crude sinks more than 7% as US–Iran talks ease war fears</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Plunge-7-as-US-and-Iran-Signal-Room-for-Diplomacy.html" target="_blank" rel="noopener">OilPrice.com — Oil plunges 7% as US and Iran signal diplomacy</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.energyconnects.com/news/oil/2026/november/oil-slides-as-report-says-trump-to-give-iran-diplomacy-more-time/" target="_blank" rel="noopener">Energy Connects (Bloomberg) — Trump to give Iran diplomacy more time</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.macrumors.com/2026/11/02/apple-4q-2026-earnings/" target="_blank" rel="noopener">MacRumors — Apple reports 4Q 2026 results</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· The Morning Brief · tier 2</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0000320193/000032019326000024/aapl-20261102.htm" target="_blank" rel="noopener">SEC — Apple 8-K, Q4 FY2026</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· The Morning Brief · tier 1</span></li>
+<li><a href="https://www.tipranks.com/news/u-s-stock-futures-fall-as-apple-earnings-disappoint-midterm-elections-in-focus" target="_blank" rel="noopener">TipRanks — Futures fall as Apple earnings disappoint</a> <span class="pubdate">3 Nov 2026</span> <span class="tier">· The Morning Brief · tier 3</span></li>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/why-marvell-stock-tumbling-today-180329656.html" target="_blank" rel="noopener">Yahoo Finance (Motley Fool) — Why Marvell stock is tumbling today</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 2</span></li>
+<li><a href="https://www.fool.com/investing/2026/11/02/why-marvell-technology-plunged-today/" target="_blank" rel="noopener">The Motley Fool — Why Marvell Technology plunged today</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· AI, Technology &amp; Career · tier 2</span></li>
+<li><a href="https://www.investing.com/news/stock-market-news/oracle-intel-among-market-cap-stock-movers-on-monday-93CH-4992591" target="_blank" rel="noopener">Investing.com — Oracle, Intel among market-cap movers on Monday</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· Portfolio · tier 2</span></li>
+<li><a href="https://thewallstreetrepublic.substack.com/p/marvell-sinks-1272-on-a-115bn-lumentum" target="_blank" rel="noopener">The Wall Street Republic — Oracle falls 8.76% on AI debt fears</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· Portfolio · tier 3</span></li>
+<li><a href="https://stocktitan.net/articles/stock-market-today-live-november-2-2026" target="_blank" rel="noopener">StockTitan — Tech pulled the Nasdaq lower, 2 Nov</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· Portfolio · tier 2</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/0001050446/000119312526442707/mstr-20261102.htm" target="_blank" rel="noopener">SEC — Strategy 8-K, 2 Nov 2026</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· Portfolio · tier 1</span></li>
+<li><a href="https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724" target="_blank" rel="noopener">Freddie Mac — Mortgage rates decline further to 7.24%</a> <span class="pubdate">29 Oct 2026</span> <span class="tier">· Real Estate · tier 1</span></li>
+<li><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html" target="_blank" rel="noopener">S&amp;P 500 — Mon 2 Nov close</a> <span class="pubdate"></span> <span class="tier">· Market snapshot · tier 2</span></li>
+<li><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262265688-oil-plunge-8-percent-apple-pltr-beat-marvell-drop-tradingkey" target="_blank" rel="noopener">Palantir also beat expectations after Monday&#39;s close, per a market recap.</a> <span class="pubdate">2 Nov 2026</span> <span class="tier">· World in brief · tier 3</span></li>
+    </ol>
+    <h3 class="rail-title">Data notes</h3>
+    <ul class="notes"><li>Update: last week&#39;s editions cited reports of US strikes on Iran as soon as 4 November. On Monday, both sides signalled diplomacy and oil fell about 7%. Nothing is settled.</li><li>Apple&#39;s after-hours move wasn&#39;t confirmed in what we could read. One report says futures fell because Apple&#39;s results disappointed.</li><li>16 of 17 holdings have no verified recent price today; shown as &#39;unavailable&#39;.</li></ul>
+<h3 class="rail-title">Validation warnings</h3><ul class="notes"><li>portfolio: IDEXQ is flagged ambiguous/distressed but has no verification note today</li><li>portfolio: SPCX is flagged ambiguous/distressed but has no verification note today</li></ul>  </section>
+
+  <footer>This newspaper is researched and written by Claude, an AI model made by Anthropic.<br>Not investment advice. Research window: Primarily 2–3 Nov 2026. Built 2026-11-03 11:07 UTC.</footer>
+</div>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById('theme-toggle');
+  try { var saved = localStorage.getItem('kd-theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('kd-theme', next); } catch (e) {}
+  });
+})();
+</script>
