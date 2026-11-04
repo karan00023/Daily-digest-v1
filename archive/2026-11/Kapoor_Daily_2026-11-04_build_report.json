@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-04",
+  "built_at": "2026-11-04T06:08:10.941588-05:00",
+  "warnings": [
+    "portfolio: IDEXQ is flagged ambiguous/distressed but has no verification note today",
+    "portfolio: SPCX is flagged ambiguous/distressed but has no verification note today"
+  ],
+  "editorial_log": [],
+  "outputs": {
+    "web": "archive/2026-11/Kapoor_Daily_2026-11-04.html",
+    "artifact": "archive/2026-11/Kapoor_Daily_2026-11-04.artifact.html",
+    "email": "archive/2026-11/Kapoor_Daily_2026-11-04_email.html"
+  },
+  "print": {
+    "a4": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-04_A4.pdf",
+      "pages": 5,
+      "sections": {
+        "front": 1,
+        "brief": 2,
+        "local": 2,
+        "realestate": 3,
+        "portfolio": 3,
+        "actions": 5,
+        "sources": 5
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "bound": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-04_Bound.pdf",
+      "pages": 6,
+      "sections": {
+        "front": 2,
+        "brief": 3,
+        "local": 3,
+        "realestate": 4,
+        "portfolio": 4,
+        "actions": 6,
+        "sources": 6
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "booklet": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-04_A5_Booklet.pdf",
+      "a5_pages": 7,
+      "sheet_sides": 4,
+      "errors": [],
+      "warnings": [
+        "booklet: 7 pages (target 8\u201320)",
+        "booklet: possible stranded headline at foot of page 1: 'AMD beats and guides to about $17 billion as data-'"
+      ]
+    }
+  }
+}
