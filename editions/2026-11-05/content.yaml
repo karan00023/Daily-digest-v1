@@ -1,0 +1,157 @@
+# The Kapoor Daily — Thursday, 5 November 2026 (Edition No. 9).
+# Researched 2026-11-05 ~06:07–06:25 EST via web search.
+
+edition:
+  date: 2026-11-05
+  number: 9
+  researched_at: "2026-11-05T06:25:00-05:00"
+  research_window: "Primarily 4–5 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "House seat totals are still provisional and differ by outlet (AP count via Al Jazeera, NBC and CBS projections)."
+    - "AMD's 4 Nov close conflicts between sources (+1.01% vs −0.17%), so we don't print one."
+    - "Freddie Mac's weekly mortgage rate publishes at midday today, after this edition."
+
+lead: gridlock-rally
+
+market_snapshot:
+  - {label: "Dow",       value: "53,356.12", change: "≈+3.0%", as_of: "Wed 4 Nov close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-04-2026"}
+  - {label: "S&P 500",   value: "7,688.62",  change: "≈+1.6%", as_of: "Wed 4 Nov close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-04-2026"}
+  - {label: "Nasdaq",    value: "25,736.51", change: "≈+1.4%", as_of: "Wed 4 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-4-2026"}
+  - {label: "Brent",     value: "<$100",     change: "falling", as_of: "4 Nov", src: "https://cryptobriefing.com/brent-crude-oil-drops-below-100-amid-us-iran-diplomatic-talks/"}
+  - {label: "30-yr mortgage", value: "7.24%", change: "new reading today", as_of: "Freddie Mac, 29 Oct", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724"}
+
+graphics: {}
+
+stories:
+  - id: gridlock-rally
+    section: brief
+    kind: news
+    headline: "Dow jumps about 3%, its best day since April 2025, as investors cheer gridlock and Brent falls below $100"
+    dek: "The S&P 500 rose 1.6% and the Nasdaq 1.4%. Energy stocks were the only big losers."
+    summary: >-
+      Stocks rallied Wednesday after Democrats won both chambers. Traders read a split government as a check on policy
+      surprises, and oil kept falling on US–Iran diplomacy, with Brent dropping below $100. AMD's strong report also
+      eased AI-spending fears. The S&P 500 closed at 7,688.62, recovering much of last week's losses.
+    why: "Falling oil, gridlock and AI earnings holding up are three supports that reduce the odds of a December Fed hike."
+    me: "Your diversified core (VTI) and AI names both benefited. Friday's jobs report is the next test."
+    inference: "Our read: one strong day after a correction doesn't make a trend. Watch Friday's payrolls and next Tuesday's CPI."
+    event_date: 2026-11-04
+    sources:
+      - {name: "TheStreet — Stocks rise, oil collapses after Dems sweep", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-04-2026", published: "2026-11-04"}
+      - {name: "StockTitan — The Dow soared after Democrats won Congress", url: "https://www.stocktitan.net/articles/stock-market-today-live-november-4-2026", published: "2026-11-04"}
+    scores: {personal: 9, impact: 8, magnitude: 8, timeliness: 10, actionability: 4}
+    tickers: [AMD]
+    qr: true
+
+  - id: house-count
+    section: brief
+    kind: news
+    headline: "House count: Democrats at 228 seats and leading in 34 more, per AP; Jeffries predicts at least 255"
+    dek: "Mississippi and Colorado are still counting. Projections range from 242 to 268."
+    summary: >-
+      Al Jazeera's AP-based tally showed Democrats with 228 called seats and leads in 34 more. NBC projected 242 with 42
+      uncalled, and CBS estimated 251–268. House Minority Leader Hakeem Jeffries predicts at least 255.
+    why: "The size of the majority decides how much the new House can do on tariffs, war powers and tech regulation from January."
+    me: "Nothing changes until January. Watch for early signals on data-centre and AI regulation."
+    event_date: 2026-11-04
+    sources:
+      - {name: "Al Jazeera — Democrats win control of House and Senate: key takeaways", url: "https://www.aljazeera.com/news/2026/11/4/democrats-win-control-of-house-and-senate-key-us-midterms-takeaways", published: "2026-11-04"}
+      - {name: "CBS News — House results as Democrats capture majority", url: "https://www.cbsnews.com/live-updates/house-election-results-2026/", published: "2026-11-04"}
+    scores: {personal: 6, impact: 6, magnitude: 7, timeliness: 9, actionability: 2}
+
+  - id: jc-boe
+    section: local
+    kind: news
+    headline: "'For Stronger Schools' slate sweeps the Jersey City school board election"
+    dek: "Hudson County cast more than 152,000 ballots, high for a midterm."
+    summary: >-
+      Hudson County View reports the slate won the 12-person race, which it says will shift the balance of the
+      nine-member board next year. A county official also said an analysis found two Union City voting machines from a
+      viral video were not compromised.
+    why: "The school board sets roughly half of a Jersey City property-tax bill through the school levy."
+    me: "The new board's budget choices will feed into your 2027 property-tax bill."
+    inference: "The 'roughly half' share is our approximation of a typical Jersey City bill, not a figure from the article."
+    event_date: 2026-11-03
+    sources:
+      - {name: "Hudson County View — 'For Stronger Schools' slate sweeps BOE election", url: "https://hudsoncountyview.com/for-stronger-schools-jersey-city-boe-slate-sweeps-12-person-election/", published: "2026-11-03"}
+      - {name: "Hudson County View — Midterm winners and losers in Hudson County", url: "https://hudsoncountyview.com/2026-midterm-elections-the-biggest-winners-and-losers-in-hudson-county/", published: "2026-11-04"}
+    scores: {personal: 8, impact: 5, magnitude: 3, timeliness: 9, actionability: 3}
+
+world_in_brief:
+  - {text: "Iran: oil fell further as a draft proposal to end the war circulated. Trump says he's in 'no rush'.", src: "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Plunge-as-Draft-Proposal-to-End-US-Iran-War-is-Circulated.html", published: "2026-11-04"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: OCGN
+      headline: "Ocugen's Q3 net loss narrows to $3.6M, helped by a $16.6M non-cash gain; Phase 3 data due Q1 2027"
+      what: >-
+        Revenue was $1.95 million and R&D rose to $12.5 million. The narrower loss (from about $20.1 million a year ago)
+        came mostly from a change in the fair value of a derivative liability, not from operations. Interest expense
+        rose to $3.1 million. Top-line data from the 140-patient Phase 3 liMeliGhT trial is expected in Q1 2027. Dosing
+        has started in the Phase 3 trial of OCU410 for geographic atrophy.
+      signal: neutral
+      horizon: long-term
+      materiality: medium
+      consider: >-
+        Operations are still burning cash, and the authorized-share vote is on 22 December. Check the 10-Q for cash
+        runway. That and the Q1 2027 readout are what matter.
+      labels: {fact: "10-Q figures, timelines", inference: "quality of the loss improvement"}
+      sources:
+        - {name: "SEC — Ocugen 10-Q, Q3 2026", url: "https://www.sec.gov/Archives/edgar/data/0001372299/000162828026069835/ocgn-20260930.htm", published: "2026-11-04"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Rose ≈6% premarket on 4 Nov after its beat. Close disputed."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Rose with the AI rebound."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "Lower oil is a tailwind for airlines (inference)."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Iran diplomacy is pressuring the war premium."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Rose with the rally."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Rose with the rally."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "$20B raise under way."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No new company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +1.6% on 4 Nov."}
+
+  exposure_note: "Observation, not advice: on Wednesday cheaper oil, gridlock and AI earnings all helped most of your holdings at once, a rare combination."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Freddie Mac publishes at midday. With oil under $100 and yields lower, a reading below 7.24% looks likely, but it isn't confirmed."
+  sources:
+    - {name: "Freddie Mac — Mortgage rates decline further to 7.24%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-further-724", published: "2026-10-29"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Gridlock plus cheaper oil gave the Dow its best day since April 2025."
+    - "The House majority is larger than expected, which strengthens Democrats' hand on oversight from January."
+    - "Ocugen's narrower loss is mostly an accounting gain. The real catalysts are the Q1 2027 data and the December share vote."
+  two_opportunities:
+    - title: "Land-loan quote this week"
+      detail: "Lower oil and yields are moving rates the right way. Get a baseline before the December Fed meeting."
+    - title: "Policy note on AI infrastructure"
+      detail: "A one-page view of the new Congress and data-centre regulation is timely for work and your portfolio."
+  one_action: "Check today's Freddie Mac rate at midday and save it alongside last week's 7.24% to track the trend."
+  upcoming:
+    - {date: "Thu 5 Nov",  event: "Freddie Mac mortgage rates (midday)"}
+    - {date: "Fri 6 Nov",  event: "October jobs report (consensus ≈55K)"}
+    - {date: "Mon 9 Nov",  event: "Strategy weekly disclosure"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · earliest reported Anthropic trading date (unconfirmed)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "Tue 22 Dec", event: "Ocugen share-authorization vote"}
