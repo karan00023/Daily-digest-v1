@@ -1,0 +1,189 @@
+# The Kapoor Daily — Friday, 6 November 2026 (Edition No. 10).
+# Researched 2026-11-06 ~06:06–06:25 EST via web search. Jobs report due 8:30 a.m., after this edition.
+
+edition:
+  date: 2026-11-06
+  number: 10
+  researched_at: "2026-11-06T06:25:00-05:00"
+  research_window: "Primarily 5–6 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Today's edition reports on
+    Anthropic's IPO timing; that item is reporting only.
+  data_notes:
+    - "Futures readings conflict by time of capture. Treat them as indicative only."
+    - "The October jobs report is released at 8:30 a.m., after this edition was researched."
+
+lead: ai-meltdown
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,353.73",  change: "−4.36%", as_of: "Thu 5 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-5-2026"}
+  - {label: "Nasdaq",    value: "24,315.00", change: "−5.52%", as_of: "Thu 5 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-5-2026"}
+  - {label: "Dow",       value: "51,523.06", change: "−3.44%", as_of: "Thu 5 Nov close", src: "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"}
+  - {label: "SOX (chips)", value: "9,011.14", change: "−12.25%", as_of: "Thu 5 Nov close", src: "https://aiera.blog/did-ai-bubble-just-pop-november-2026/"}
+  - {label: "Nasdaq 100 fut.", value: "≈+1%",  change: "rebounding", as_of: "Fri 6 Nov early, futures", src: "https://investing.com/news/stock-market-news/nasdaq-futures-rise-after-steep-ai-selloff-as-chip-stocks-stabilize-5007026"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "−6 bp w/w", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: ai-meltdown
+    section: brief
+    kind: news
+    headline: "AI chip meltdown: S&P 500 falls 4.4%, its worst day since April 2025, and the chip index plunges 12%"
+    dek: "Fears of AI and data-centre regulation under a Democratic Congress wiped out Wednesday's rally and more."
+    summary: >-
+      The Nasdaq fell 5.52% into correction territory and the Dow lost 1,833 points. AMD closed down 17.3% at $404.40
+      despite Tuesday's strong report, Broadcom fell 10.4% to $291.53, and Nvidia fell 9.3%. The PHLX Semiconductor
+      Index dropped 12.25%. Reuters tied the selloff to worries about tougher AI rules and slower data-centre
+      construction, while weak outlooks from Qualcomm and Intel added to doubts about chip demand. Nasdaq futures were
+      about 1% higher early Friday.
+    why: >-
+      This is a policy-driven repricing, not a change in demand. AMD's data-center business nearly doubled two days
+      earlier. The market is pricing the risk that Washington slows the AI build-out. Traders now see a December Fed
+      hike as more than 65% likely, according to one report.
+    me: >-
+      Your two largest AI hardware holdings, AMD and AVGO, took the biggest hits, and GOOGL, MSFT and ORCL are exposed
+      to the same theme. Prices like these test whether your plan holds. Look back at what you wrote down before
+      AMD's report rather than reacting today.
+    inference: "Our read: a one-day 17% fall after a beat is about policy and positioning, not fundamentals. That doesn't make the policy risk any smaller."
+    event_date: 2026-11-05
+    sources:
+      - {name: "CNBC — Dow drops 1,800 points; Nasdaq tumbles into correction", url: "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html", published: "2026-11-05"}
+      - {name: "Yahoo Finance — Nasdaq enters correction in AI trade meltdown", url: "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-5-dow-sp-500-nasdaq-plunge-chip-stocks-melt-down-193726491.html", published: "2026-11-05"}
+      - {name: "Investing.com (Reuters) — Nasdaq futures rise as chip stocks stabilize", url: "https://investing.com/news/stock-market-news/nasdaq-futures-rise-after-steep-ai-selloff-as-chip-stocks-stabilize-5007026", published: "2026-11-06"}
+    scores: {personal: 10, impact: 10, magnitude: 10, timeliness: 10, actionability: 6}
+    tickers: [AMD, AVGO, GOOGL, MSFT, ORCL]
+    qr: true
+
+  - id: jobs-today
+    section: brief
+    kind: news
+    headline: "October jobs report at 8:30 a.m.: consensus around 59,000 jobs and 4.2% unemployment"
+    dek: "It lands after the worst day for stocks in 18 months, with a December hike priced at more than 65%."
+    summary: >-
+      Dow Jones consensus is about 59,000 payrolls, and others cite 65,000. September added just 29,000 jobs. A weak
+      number could lower December hike odds, while a strong one with 3.6% inflation could raise them.
+    why: "Today's print sets the tone for markets after Thursday's rout and for next Tuesday's CPI."
+    me: "Rates drive both your land-financing costs and how much valuation pressure falls on long-duration tech holdings."
+    event_date: 2026-11-06
+    sources:
+      - {name: "Yahoo Finance — Futures wobble after brutal selloff, jobs report on deck", url: "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-6-dow-sp-500-nasdaq-jobs-report-091927729.html", published: "2026-11-06"}
+    scores: {personal: 8, impact: 8, magnitude: 8, timeliness: 10, actionability: 4}
+
+  - id: anthropic-ipo-delay
+    section: tech
+    kind: news
+    headline: "Anthropic's IPO could price well below its $1.5 trillion target, or be delayed, after the selloff"
+    dek: "One major investor says the valuation needs to come down to $1 trillion. Anthropic had $146.6 billion in cash at 30 September."
+    summary: >-
+      Benzinga reports the listing could price well below target and that a delay is possible. Anthropic's large cash
+      balance means it doesn't need to rush. No price range has been filed.
+    why: "The largest pending AI IPO is now caught up in the same repricing hitting AI stocks."
+    me: "No view from us. The amended S-1 with a price range, or a delay announcement, is the next document to watch."
+    inference: "Disclosure: this edition is written by an Anthropic model. This is reporting only."
+    event_date: 2026-11-05
+    sources:
+      - {name: "Benzinga — Anthropic IPO valuation could fall to $1 trillion, may delay", url: "https://www.benzinga.com/markets/ipos/26/11/62965664/anthropic-ipo-valuation-1-trillion-delay-stock-market-selloff", published: "2026-11-05"}
+      - {name: "BeInCrypto — Is $1.5 trillion too much for Anthropic?", url: "https://beincrypto.com/anthropic-ipo-roadshow-investor-doubts/", published: "2026-11-05"}
+    scores: {personal: 7, impact: 5, magnitude: 7, timeliness: 10, actionability: 2}
+
+  - id: mortgage-718
+    section: realestate
+    kind: news
+    headline: "Mortgage rates fall for a third straight week, to 7.18%"
+    dek: "The 15-year is at 6.57%. Rates are down 22 bp from mid-October."
+    summary: >-
+      Freddie Mac's 5 November survey put the 30-year fixed at 7.18% (from 7.24%) and the 15-year at 6.57%. The
+      30-year is still 96 basis points above a year ago.
+    why: "Three weekly declines in a row while the Fed holds suggests markets expect slower growth."
+    me: "This is a reasonable time to get a land-loan quote. Thursday's stock drop and any rush into bonds could pull rates lower still."
+    inference: "The bond-flow point is our inference."
+    event_date: 2026-11-05
+    sources:
+      - {name: "Freddie Mac — Mortgage rates decline for third consecutive week to 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+    scores: {personal: 9, impact: 7, magnitude: 5, timeliness: 10, actionability: 7}
+
+world_in_brief:
+  - {text: "Next AI test: Nvidia's quarterly report on 17 November.", src: "https://aiera.blog/did-ai-bubble-just-pop-november-2026/", published: "2026-11-05"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: AMD
+      also: [AVGO]
+      headline: "AMD falls 17.3% to $404.40 and Broadcom 10.4% to $291.53, two days after AMD's beat"
+      what: >-
+        Thursday's chip selloff wiped out AMD's post-earnings gain and more. AMD's CEO said he doesn't see AI chip
+        demand slowing. The fall was driven by sector-wide fear of regulation, not company news.
+      signal: bearish
+      horizon: short-term
+      materiality: high
+      consider: >-
+        Separate price from fundamentals. AMD guided to about $17 billion and data-center revenue nearly doubled. The
+        new risk is policy. Revisit the thresholds you set before the report, and remember that Nvidia reports on
+        17 November.
+      labels: {fact: "closing prices, index move", opinion: "CEO demand comment", inference: "policy vs fundamentals"}
+      sources:
+        - {name: "Aiera — Did the AI bubble pop on 5 November?", url: "https://aiera.blog/did-ai-bubble-just-pop-november-2026/", published: "2026-11-05"}
+        - {name: "The Motley Fool — Nvidia slides on AI chip selloff", url: "https://www.fool.com/coverage/stock-market-today/2026/11/05/stock-market-today-nov-5-nvidia-slides-on-ai-chip-selloff-as-election-uncertainty-weighs/", published: "2026-11-05"}
+
+  watchlist:
+    - {ticker: AMD,   last: "$404.40", as_of: "5 Nov close", note: "−17.26%. See story.", src: "https://aiera.blog/did-ai-bubble-just-pop-november-2026/"}
+    - {ticker: AVGO,  last: "$291.53", as_of: "5 Nov close", note: "−10.43%. See story.", src: "https://aiera.blog/did-ai-bubble-just-pop-november-2026/"}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash. Held steady."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "No verified move."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "AI-exposed. Fell with the market."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "AI-exposed. Fell with the market."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec. Data Q1 2027."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "AI-exposed. Fell with the market."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "An analyst sees 60% downside (single, undated source; not verified)."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −4.36% on 5 Nov."}
+
+  exposure_note: >-
+    Observation, not advice: this week showed how concentrated your holdings are in one theme. Nine of seventeen
+    lines are tied to AI infrastructure, and on Thursday that theme fell about 12% in a day. Cash (FDRXX) was the only
+    holding that didn't move.
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Rates fell for three straight weeks, to 7.18%. A good moment to get a financing baseline before the December Fed meeting."
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: >-
+    No new ideas today. After a 12% one-day fall in chip stocks, we won't propose ideas without verified valuation
+    data. Position sizing needs your risk profile, which isn't on file. This would be a good week to provide it.
+  ideas: []
+
+action_board:
+  three_things:
+    - "The chip index fell about 12% in one day on fears of AI regulation under the new Congress. AMD and AVGO took the brunt."
+    - "Fundamentals didn't change: AMD's data-center business nearly doubled two days earlier. The policy risk is new."
+    - "Mortgage rates fell for a third straight week, to 7.18%."
+  two_opportunities:
+    - title: "Write down your risk profile"
+      detail: "Risk tolerance, time horizon, cash needs and tax situation. With these on file, future editions can address concentration properly."
+    - title: "Land-loan quote"
+      detail: "Rates at 7.18% and falling make this a sensible week to get a baseline."
+  one_action: >-
+    Before the open, add up how much of your portfolio sits in AMD, AVGO, GOOGL, MSFT and ORCL combined, and compare
+    it with the thresholds you set last week. Don't trade on Thursday's headline alone.
+  upcoming:
+    - {date: "Fri 6 Nov",  event: "October jobs report 8:30 a.m. (consensus ≈59K)"}
+    - {date: "Mon 9 Nov",  event: "Strategy weekly disclosure"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
