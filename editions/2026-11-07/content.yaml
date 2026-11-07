@@ -1,0 +1,141 @@
+# The Kapoor Daily — Saturday, 7 November 2026 (Edition No. 11). Weekend edition.
+# Researched 2026-11-07 ~06:06–06:20 EST via web search.
+
+edition:
+  date: 2026-11-07
+  number: 11
+  researched_at: "2026-11-07T06:20:00-05:00"
+  research_window: "Primarily 6–7 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Friday's S&P 500 close differs between sources (about 7,376 vs 7,426). We use the figure two outlets agree on."
+
+lead: jobs-beat
+
+market_snapshot:
+  - {label: "S&P 500",   value: "≈7,376",  change: "+0.3% (−2.7% wk)", as_of: "Fri 6 Nov close, sources differ", src: "https://www.kiplinger.com/investing/stocks/nasdaq-adds-264-points-in-tech-rebound-but-ends-the-week-lower-stock-market-today"}
+  - {label: "Nasdaq",    value: "+264 pts", change: "≈+1.1%", as_of: "Fri 6 Nov close", src: "https://www.kiplinger.com/investing/stocks/nasdaq-adds-264-points-in-tech-rebound-but-ends-the-week-lower-stock-market-today"}
+  - {label: "Payrolls",  value: "+165K",    change: "vs ≈65K est.", as_of: "BLS, October", src: "https://www.bls.gov/news.release/empsit.nr0.htm"}
+  - {label: "Unemployment", value: "4.1%",  change: "from 4.2%", as_of: "BLS, October", src: "https://www.bls.gov/news.release/empsit.nr0.htm"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "−6 bp w/w", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: jobs-beat
+    section: brief
+    kind: news
+    headline: "Payrolls jump by 165,000 in October, nearly triple forecasts, and unemployment falls to 4.1%"
+    dek: "A strong labour market gives the Fed room to hike in December. Yields rose."
+    summary: >-
+      The BLS reported nonfarm payrolls rose 165,000 against a roughly 65,000 consensus, and September was revised to
+      60,000. Unemployment fell to 4.1%, participation edged up to 61.9%, and wage growth was slightly hotter than
+      expected. Gains came in professional services, health care and transportation.
+    why: "With inflation at 3.6–3.7% and hiring strong, the Fed has little reason to wait. Strong data pushed December hike odds higher."
+    me: >-
+      This is good for the economy but bad for rate-sensitive holdings and for land financing. It could halt the
+      three-week decline in mortgage rates.
+    inference: "Our read: a December hike now looks more likely than not, though CPI on Tuesday could still change that."
+    event_date: 2026-11-06
+    sources:
+      - {name: "BLS — Employment Situation, October 2026", url: "https://www.bls.gov/news.release/empsit.nr0.htm", published: "2026-11-06"}
+      - {name: "Yahoo Finance — Strong October jobs report sends yields higher", url: "https://finance.yahoo.com/economy/policy/articles/strong-october-jobs-report-sends-134858909.html", published: "2026-11-06"}
+    scores: {personal: 9, impact: 9, magnitude: 8, timeliness: 10, actionability: 5}
+    qr: true
+
+  - id: ai-bills
+    section: tech
+    kind: analysis
+    headline: "Democrats plan a wave of AI bills for January, but lack the 60 Senate votes to pass most of them"
+    dek: "Expect oversight hearings before legislation. Senator Cantwell is pushing federal model testing."
+    summary: >-
+      Reporting says Democrats intend to move quickly on AI once they take control, but with about 54 Senate seats they
+      are six short of the 60 needed to end debate on most bills. Analysts expect committee oversight of AI companies,
+      including possible federal model-testing requirements, to come before any binding law. Fear of that agenda drove
+      Thursday's chip selloff.
+    why: "It suggests Thursday's selloff priced in more regulatory risk than Congress can actually deliver in 2027."
+    me: "For your AI holdings this is a nuance worth knowing. For your work, model-testing and audit rules would directly affect enterprise AI deployments."
+    use: >-
+      Track the bills on two lists: those that could pass with 60 votes or by unanimous consent, and those that are
+      likely only hearing material. A one-page tracker is useful for compliance planning at work and for judging
+      portfolio risk.
+    inference: "The 'priced in more than can pass' view is our analysis."
+    event_date: 2026-11-06
+    sources:
+      - {name: "Detroit News — Democrats planning flood of AI bills", url: "https://detroitnews.com/story/tech/2026/11/06/democrats-planning-flood-of-ai-bills-when-they-take-control-of-congress/92641085007", published: "2026-11-06"}
+      - {name: "Tech Times — Democrats win Senate but lack 60 votes for AI regulation", url: "https://www.techtimes.com/articles/330158/20261106/democrats-win-senate-lack-60-votes-ai-regulation-cantwell-pushes-federal-model-testing.htm", published: "2026-11-06"}
+    scores: {personal: 9, impact: 7, magnitude: 7, timeliness: 10, actionability: 6}
+
+world_in_brief:
+  - {text: "Iran: Bloomberg reports intensifying diplomacy, but no agreement has been announced.", src: "https://investingnews.com/iran-talks-push-oil-lower/", published: "2026-11-06"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: AMD
+      also: [AVGO]
+      headline: "Chips bounce: AMD rebounds 9.8% and the semiconductor index rises about 6.5% after Thursday's rout"
+      what: >-
+        AMD recovered part of Thursday's 17% fall, and the VanEck Semiconductor ETF rose 3.8%. The broader market gained
+        less, as the strong jobs report raised the odds of a Fed hike. The Nasdaq is still in correction territory.
+      signal: neutral
+      horizon: short-term
+      materiality: medium
+      consider: "A sharp rebound after a sharp fall is normal. Nvidia's report on 17 November is the next fundamental test for the group."
+      labels: {fact: "price moves", inference: "framing"}
+      sources:
+        - {name: "Benzinga — Nasdaq 100 rebounds 2%, payrolls beat", url: "https://www.benzinga.com/markets/equities/26/11/62998202/stock-market-today-nasdaq-100-rebounds-chip-stocks-payrolls-beat", published: "2026-11-06"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "+9.8% on 6 Nov after −17% on 5 Nov."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Rebounded with the chip group."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash. Yield would rise with a December hike."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Higher yields are a headwind for gold (inference)."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −2.7% for the week."}
+
+  exposure_note: "Observation, not advice: in one week your AI holdings swung −17% and +10% in consecutive days. Concentration magnifies headline risk."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "Friday's strong jobs data pushed yields up, so the three-week decline in mortgage rates may stall at Thursday's reading."
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: "No new ideas this weekend. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Hiring is strong (165,000 jobs, 4.1% unemployment), which makes a December Fed hike more likely."
+    - "Chips rebounded sharply on Friday, but the Nasdaq is still in a correction and the S&P 500 fell 2.7% on the week."
+    - "Democrats lack the 60 Senate votes for most AI bills, so expect hearings before laws."
+  two_opportunities:
+    - title: "AI-regulation tracker"
+      detail: "A one-page bill tracker (could pass vs. hearing material) is useful for work compliance and for judging portfolio risk."
+    - title: "Lock a land-loan quote"
+      detail: "If rates stall at 7.18% after the jobs data, today's quote may be the low for a while."
+  one_action: "Write down your risk tolerance, time horizon, cash needs and tax situation, so future editions can address concentration properly."
+  upcoming:
+    - {date: "Mon 9 Nov",  event: "Strategy weekly disclosure"}
+    - {date: "Tue 10 Nov", event: "October CPI"}
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
