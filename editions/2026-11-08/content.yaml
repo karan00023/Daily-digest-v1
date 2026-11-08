@@ -1,0 +1,128 @@
+# The Kapoor Daily — Sunday, 8 November 2026 (Edition No. 12). Sunday edition with the Week Ahead.
+# Researched 2026-11-08 ~06:06–06:20 EST via web search.
+
+edition:
+  date: 2026-11-08
+  number: 12
+  researched_at: "2026-11-08T06:20:00-05:00"
+  research_window: "Primarily 6–8 Nov 2026, plus scheduled events for 9–13 Nov."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "The Iran item rests partly on a single lower-profile source. It is labelled as such."
+    - "No dated Jersey City or Hoboken news from this weekend could be verified."
+
+lead: week-ahead-cpi
+
+market_snapshot:
+  - {label: "S&P 500",   value: "≈7,376",  change: "−2.7% wk", as_of: "Fri 6 Nov close", src: "https://www.kiplinger.com/investing/stocks/nasdaq-adds-264-points-in-tech-rebound-but-ends-the-week-lower-stock-market-today"}
+  - {label: "Payrolls",  value: "+165K",    change: "Oct", as_of: "BLS, 6 Nov", src: "https://www.bls.gov/news.release/empsit.nr0.htm"}
+  - {label: "CPI (est.)", value: "≈3.9% y/y", change: "from 3.7%", as_of: "FactSet avg., due Tue", src: "https://www.cnbc.com/2026/11/06/stock-market-next-week-outlook-for-nov-9-13-2026.html"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "−6 bp w/w", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: week-ahead-cpi
+    section: brief
+    kind: analysis
+    headline: "The Week Ahead: October CPI on Tuesday could seal a December hike; bond markets close Wednesday"
+    dek: "PPI follows Friday. Cisco, Applied Materials and CoreWeave report."
+    summary: >-
+      October CPI is due Tuesday, with FactSet estimates near 3.9% year on year (up from 3.7%). Monthly forecasts range
+      from 0.2% to 0.3%. Wednesday is Veterans Day: stock markets are open but bond markets are closed. PPI arrives
+      Friday. About 169 companies worth $2 billion or more report, including Cisco, Applied Materials, CoreWeave and
+      Rocket Lab. Nvidia follows on 17 November.
+    why: "Strong jobs plus hot inflation would make a December hike the base case, which pressures long-duration tech and mortgage rates."
+    me: >-
+      Applied Materials and CoreWeave are direct reads on the AI build-out behind your chip holdings. CPI drives the
+      rate outlook for both your portfolio and your land financing.
+    inference: "Our read: a 3.9% CPI print would make a December hike likely. A soft print could rescue the tech rebound."
+    event_date: 2026-11-09
+    sources:
+      - {name: "CNBC — Stock market next week: outlook for 9–13 Nov", url: "https://www.cnbc.com/2026/11/06/stock-market-next-week-outlook-for-nov-9-13-2026.html", published: "2026-11-06"}
+      - {name: "StockTitan — Earnings calendar, week of 9 Nov", url: "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-9-2026", published: "2026-11-07"}
+      - {name: "Globe and Mail — What investors need to know for the week ahead", url: "https://www.theglobeandmail.com/investing/markets/inside-the-market/article-calendar-what-investors-need-to-know-for-the-week-ahead-165/", published: "2026-11-07"}
+    scores: {personal: 9, impact: 8, magnitude: 7, timeliness: 10, actionability: 6}
+    qr: true
+
+  - id: hormuz-conditions
+    section: brief
+    kind: news
+    headline: "Iran says Hormuz stays closed until the US meets seven conditions, hours after Trump said talks were progressing"
+    dek: "Iran is exempting India, China, Iraq and Qatar from transit limits (single source)."
+    summary: >-
+      Iran's army spokesman said on 6 November that the strait would reopen only once the US accepts all seven of
+      Iran's conditions. That came hours after Trump said "we are talking to Iran" and claimed progress. A
+      reopening framework agreed with Qatar on 1 November is now uncertain. The reported exemption for Indian
+      shipping comes from the same source.
+    why: "Talks are continuing while both sides harden their public positions, so oil is likely to stay volatile."
+    me: "India's reported exemption would ease the energy pressure on the rupee, but it isn't confirmed by a second source."
+    inference: "Single, lower-profile source for the Iranian statement and the exemptions. Treat both as unconfirmed."
+    event_date: 2026-11-07
+    sources:
+      - {name: "House of Saud — Iran says Hormuz stays closed until US meets 7 conditions", url: "https://houseofsaud.com/iran-hormuz-no-backing-down-nov7", published: "2026-11-07"}
+      - {name: "CBS News — Tehran touts proposal to reopen the Strait of Hormuz", url: "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-sanctions/", published: "2026-11-06"}
+    scores: {personal: 6, impact: 7, magnitude: 7, timeliness: 9, actionability: 2}
+
+world_in_brief:
+  - {text: "Markets: last week's tech selloff showed how much stocks now hinge on rate fears and AI valuations.", src: "https://www.theglobeandmail.com/investing/markets/inside-the-market/article-calendar-what-investors-need-to-know-for-the-week-ahead-165/", published: "2026-11-07"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Applied Materials and Nvidia (17 Nov) are the next reads."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Cisco's results are a networking read-across."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "CPI and Iran are the drivers this week."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check Tuesday."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "CoreWeave's results are an AI-cloud read-across."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Weekly re-check Tuesday."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −2.7% last week."}
+  exposure_note: "Observation, not advice: this week's three AI-infrastructure reports (Applied Materials, CoreWeave, then Nvidia on the 17th) bear directly on most of your holdings."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: >-
+    Weekly review: mortgage rates fell three weeks in a row to 7.18%, but strong jobs data and a hot CPI could end the
+    streak at Thursday's reading.
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: "No new ideas this Sunday. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Tuesday's CPI decides whether a December Fed hike becomes the base case."
+    - "This week's AI-infrastructure results (Applied Materials, CoreWeave) are the first fundamental test since Thursday's chip crash."
+    - "Iran talks continue as both sides harden their public positions."
+  two_opportunities:
+    - title: "Land-loan quote before CPI"
+      detail: "If CPI is hot, rates could turn up. Ask for a quote on Monday."
+    - title: "AI-regulation tracker"
+      detail: "Start the one-page bill tracker suggested yesterday before Congress convenes."
+  one_action: "Request a land or lot-loan quote on Monday, before Tuesday's CPI release can move rates."
+  upcoming:
+    - {date: "Mon 9 Nov",  event: "Strategy weekly disclosure · busiest earnings day (69 reports)"}
+    - {date: "Tue 10 Nov", event: "October CPI (est. ≈3.9% y/y)"}
+    - {date: "Wed 11 Nov", event: "Veterans Day: stocks open, bond market closed"}
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 13 Nov", event: "October PPI"}
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
