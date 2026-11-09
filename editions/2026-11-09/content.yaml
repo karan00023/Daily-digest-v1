@@ -1,0 +1,143 @@
+# The Kapoor Daily — Monday, 9 November 2026 (Edition No. 13).
+# Researched 2026-11-09 ~06:11–06:25 EST via web search.
+
+edition:
+  date: 2026-11-09
+  number: 13
+  researched_at: "2026-11-09T06:25:00-05:00"
+  research_window: "Primarily 7–9 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Futures readings differed by time of capture. We show the later readings."
+    - "The Nvidia item is based on the company's own board statement plus CNBC. We report only what's material to investors."
+
+lead: nvidia-probe
+
+market_snapshot:
+  - {label: "Dow futures", value: "≈+0.8%",   change: "—", as_of: "Mon 9 Nov early, futures", src: "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-9-dow-sp-500-nasdaq-nvidia-090535419.html"}
+  - {label: "S&P 500 fut.", value: "≈+0.4%",  change: "—", as_of: "Mon 9 Nov early, futures", src: "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-9-dow-sp-500-nasdaq-nvidia-090535419.html"}
+  - {label: "Brent",     value: "≈$98.35",  change: "slightly up", as_of: "9 Nov early", src: "https://brecorder.com/news/40448086/oil-steadies-after-trump-signals-restraint-on-iran-hormuz-risks-persist"}
+  - {label: "Dec hike odds", value: "≈80%", change: "per futures", as_of: "9 Nov, single source", src: "https://coincentral.com/stock-market-today-futures-edge-higher-as-nvidia-probe-meets-cpi-report-and-coreweave-earnings"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "−6 bp w/w", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: nvidia-probe
+    section: brief
+    kind: news
+    headline: "Nvidia's board opens an independent investigation after reports that CEO Jensen Huang was targeted by a foreign intelligence effort"
+    dek: "The board says it has no reason to think security or company secrets were compromised. Huang stays on as CEO, and the stock fell about 5% premarket."
+    summary: >-
+      Nvidia's board said a committee of independent directors, with outside counsel, will oversee the review, which
+      has no set end date. The board expressed confidence in Huang and his team. Three House committee chairs have
+      asked Huang to attend a closed-door briefing on 18 November, the day after Nvidia reports earnings.
+    why: >-
+      Nvidia sets the tone for the whole AI chip group. Key-person risk at the sector leader lands in a week already
+      shaken by regulatory fears.
+    me: >-
+      You don't hold Nvidia, but AMD and AVGO trade alongside it. Expect the group to be volatile into 17–18 November.
+    inference: "Our read: the board's statement limits the immediate damage. The congressional briefing is the next point of risk."
+    event_date: 2026-11-08
+    sources:
+      - {name: "NVIDIA — Statement from the Board of Directors", url: "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors", published: "2026-11-08"}
+      - {name: "CNBC — Nvidia investigates CEO Jensen Huang's relationship with alleged Chinese spy", url: "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html", published: "2026-11-08"}
+      - {name: "Benzinga — Futures rise despite Nvidia sell-off", url: "https://www.benzinga.com/markets/equities/26/11/63024253/stock-market-today-dow-sp-500-futures-rise-despite-nvidia-sell-off-over-jensen-huang-controversy-nvda-oxy-ceg-in-focus", published: "2026-11-09"}
+    scores: {personal: 8, impact: 8, magnitude: 8, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO]
+    qr: true
+
+  - id: trump-iran-restraint
+    section: brief
+    kind: news
+    headline: "Trump says new attacks on Iran are 'highly unlikely' if talks progress, but ships are still being hit near Hormuz"
+    dek: "Brent is steady near $98. The US blockade of Iranian ports continues."
+    summary: >-
+      Trump said Sunday that renewed war is highly unlikely if Tehran moves toward a nuclear deal and reopens the
+      strait, while warning the US could strike again. Both sides reported ships hit in or near the strait over the
+      weekend, and Qatar has stepped up mediation.
+    why: "The restraint is conditional, so oil risk is lower but hasn't gone away."
+    me: "Oil under $100 helps on inflation and rates ahead of Tuesday's CPI."
+    event_date: 2026-11-08
+    sources:
+      - {name: "Business Recorder (Reuters) — Oil steadies after Trump signals restraint", url: "https://brecorder.com/news/40448086/oil-steadies-after-trump-signals-restraint-on-iran-hormuz-risks-persist", published: "2026-11-09"}
+      - {name: "Fox News — Trump says fresh attacks 'highly unlikely' if Tehran strikes deal", url: "https://www.foxnews.com/live-news/iran-war-news-trump-saudi-houthi-november-8", published: "2026-11-08"}
+    scores: {personal: 6, impact: 7, magnitude: 7, timeliness: 10, actionability: 2}
+
+  - id: cpi-tomorrow
+    section: brief
+    kind: news
+    headline: "CPI tomorrow: futures now price about an 80% chance of a December Fed hike"
+    dek: "CoreWeave reports this week. It's a direct read on AI cloud demand."
+    summary: >-
+      October CPI is due Tuesday, with estimates near 3.9% year on year. After last week's strong payrolls, futures
+      reportedly price about an 80% chance of a hike on 9 December. CoreWeave, Cisco and Applied Materials also
+      report this week.
+    why: "A hot print would all but lock in a hike."
+    me: "Higher rates hit your tech holdings' valuations and your land-financing costs."
+    event_date: 2026-11-10
+    sources:
+      - {name: "CoinCentral — Futures edge higher as Nvidia probe meets CPI and CoreWeave earnings", url: "https://coincentral.com/stock-market-today-futures-edge-higher-as-nvidia-probe-meets-cpi-report-and-coreweave-earnings", published: "2026-11-09"}
+      - {name: "CNBC — Stock futures rise as investors eye AI trade", url: "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html", published: "2026-11-09"}
+    scores: {personal: 8, impact: 7, magnitude: 7, timeliness: 10, actionability: 5}
+
+world_in_brief:
+  - {text: "Crypto: bitcoin and ether were lower early Monday.", src: "https://crypto.news/why-is-the-crypto-market-down-today-bitcoin-ethereum-in-red", published: "2026-11-09"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Nvidia probe weighs on chip sentiment. Nvidia reports 17 Nov."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Same. Cisco's results this week are a networking read."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Yield would rise with a December hike."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "CPI and Iran drive it this week."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check Tuesday."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure due today. Crypto lower early."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "CoreWeave results are an AI-cloud read."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Crypto lower early."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Weekly re-check Tuesday."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "Futures higher."}
+  exposure_note: "Observation, not advice: news about Nvidia now moves your AMD and AVGO positions even though you don't own Nvidia."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "With an 80% chance of a December hike priced in, Thursday's mortgage reading may end the three-week decline."
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Nvidia's board is investigating its CEO after reports he was targeted by foreign intelligence. It hits chip sentiment into earnings on the 17th."
+    - "Trump says new Iran strikes are unlikely if talks progress. Brent is near $98."
+    - "Tomorrow's CPI could lock in a December hike, which futures price at about 80%."
+  two_opportunities:
+    - title: "Land-loan quote today"
+      detail: "Before CPI can move rates."
+    - title: "Watch CoreWeave this week"
+      detail: "It's the cleanest read on AI cloud demand ahead of Nvidia."
+  one_action: "Call or email your bank today for a land or lot-loan quote, before tomorrow's CPI."
+  upcoming:
+    - {date: "Mon 9 Nov",  event: "Strategy weekly disclosure"}
+    - {date: "Tue 10 Nov", event: "October CPI (est. ≈3.9% y/y)"}
+    - {date: "Wed 11 Nov", event: "Veterans Day: stocks open, bond market closed"}
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 13 Nov", event: "October PPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 18 Nov", event: "Huang closed-door House briefing (requested)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
