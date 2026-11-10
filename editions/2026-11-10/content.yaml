@@ -1,0 +1,152 @@
+# The Kapoor Daily — Tuesday, 10 November 2026 (Edition No. 14). CPI day.
+# Researched 2026-11-10 ~06:07–06:25 EST via web search.
+
+edition:
+  date: 2026-11-10
+  number: 14
+  researched_at: "2026-11-10T06:25:00-05:00"
+  research_window: "Primarily 9–10 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Correction: Sunday's and Monday's editions cited a ≈3.9% year-on-year CPI estimate. Previews now say the BLS won't publish the usual year-on-year comparison today, because October 2025 data is missing from last year's shutdown. The focus is the monthly change."
+    - "December hike odds differ by source and date (about 84% in one preview)."
+
+lead: cpi-today
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,549.94",  change: "+2.35%", as_of: "Mon 9 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-9-2026"}
+  - {label: "Nasdaq",    value: "25,253.14", change: "+2.74%", as_of: "Mon 9 Nov close", src: "https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/"}
+  - {label: "Dow",       value: "52,389.75", change: "+2.15%", as_of: "Mon 9 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-9-2026"}
+  - {label: "CPI m/m (est.)", value: "≈0.3%", change: "core ≈0.2%", as_of: "consensus, due 8:30 a.m.", src: "https://www.fxstreet.com/analysis/us-cpi-preview-moderation-on-the-horizon-but-underlying-pressures-linger-202611092231"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "−6 bp w/w", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: cpi-today
+    section: brief
+    kind: news
+    headline: "CPI at 8:30 a.m.: consensus is 0.3% headline and 0.2% core month on month, with no year-on-year figure this time"
+    dek: "The Cleveland Fed nowcast is 0.24%. Futures price a December hike at about 84%."
+    summary: >-
+      Forecasts cluster at 0.3% for headline CPI (from 0.6% in September) and 0.2–0.3% for core. MUFG sees 0.29% and
+      0.23%, and Deutsche Bank sees 0.20% on both. The BLS won't publish the usual year-on-year comparison because
+      October 2025 data is missing from last year's government shutdown. One preview puts December hike odds near 84%.
+    why: "A soft print could challenge the hike consensus after strong payrolls. A hot one would cement it."
+    me: "It sets the direction for Thursday's mortgage reading and for rate pressure on your tech holdings."
+    inference: "Our read: with hike odds this high, a 0.2% core print would surprise markets more than a 0.3% one."
+    event_date: 2026-11-10
+    sources:
+      - {name: "FXStreet — US CPI preview: moderation on the horizon", url: "https://www.fxstreet.com/analysis/us-cpi-preview-moderation-on-the-horizon-but-underlying-pressures-linger-202611092231", published: "2026-11-09"}
+      - {name: "MUFG Research — US inflation update", url: "https://www.mufgresearch.com/macro/us-inflation-update-november-10-2026", published: "2026-11-10"}
+      - {name: "Kiplinger — October CPI report: what to expect", url: "https://www.kiplinger.com/investing/economy/october-2026-cpi-report-what-to-expect", published: "2026-11-09"}
+    scores: {personal: 9, impact: 8, magnitude: 8, timeliness: 10, actionability: 5}
+    qr: true
+
+  - id: monday-rally
+    section: brief
+    kind: news
+    headline: "Stocks surge: the S&P 500 jumps 2.35%, its best day since April, even as Nvidia falls 4.3% on the CEO probe"
+    dek: "Chip stocks outside Nvidia led. Nvidia volume was 3.7 times normal."
+    summary: >-
+      The S&P 500 closed at 7,549.94 and the Nasdaq at 25,253.14 (+2.74%). Nvidia closed at $178.67, down 4.27%, after
+      its board opened an independent investigation of CEO Jensen Huang. The rest of the semiconductor group rallied.
+    why: "Investors are separating Nvidia's key-person risk from the sector. That matters for AMD and AVGO."
+    me: "Your AI holdings regained part of last week's losses. CPI and CoreWeave tonight are the next tests."
+    event_date: 2026-11-09
+    sources:
+      - {name: "StockTitan — Stocks closed higher as Nvidia fell on board investigation", url: "https://www.stocktitan.net/articles/stock-market-today-live-november-9-2026", published: "2026-11-09"}
+      - {name: "The Motley Fool — Nvidia plunges 4% as Nasdaq surges nearly 3%", url: "https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/", published: "2026-11-09"}
+    scores: {personal: 9, impact: 7, magnitude: 7, timeliness: 10, actionability: 3}
+    tickers: [AMD, AVGO]
+
+  - id: coreweave-tonight
+    section: tech
+    kind: news
+    headline: "CoreWeave reports Q3 at 5 p.m. after its shares fell about 45% in a month on debt concerns"
+    dek: "Consensus is about $3.52B in revenue. Options imply a ±19% move."
+    summary: >-
+      The AI-cloud provider guided Q3 revenue to $3.45–3.6 billion on its last call. Morningstar notes heavy pressure on
+      the shares over its debt load. Results come out after the close today.
+    why: "CoreWeave is the purest public read on GPU-cloud demand and on the financing behind the AI build-out."
+    me: "A direct read-across for ORCL's AI-cloud business and for chip demand (AMD, AVGO)."
+    use: "For FinOps at work, CoreWeave's pricing and utilisation commentary is a useful benchmark for GPU-capacity planning versus the hyperscalers."
+    event_date: 2026-11-10
+    sources:
+      - {name: "CoreWeave IR — Q3 2026 results date", url: "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Date-of-Third-Quarter-2026-Financial-Results-and-Conference-Call/default.aspx", published: "2026-10-20"}
+      - {name: "Morningstar — CoreWeave down 45% in the past month", url: "https://www.morningstar.com/stocks/coreweave-shares-are-down-45-past-month-is-stock-buy-ahead-earnings", published: "2026-11-09"}
+    scores: {personal: 8, impact: 6, magnitude: 6, timeliness: 10, actionability: 4}
+
+world_in_brief:
+  - {text: "Options: Monday's session used up the market's entire expected weekly range in one day.", src: "https://www.home.saxo/en-mena/content/articles/options/one-session-uses-up-the-weekly-range---options-brief---10-november-2026-10112026", published: "2026-11-10"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: MSTR
+      headline: "Strategy put $81.9M of stock-sale proceeds into bitcoin last week, and more into buying back preferred shares"
+      what: >-
+        Strategy's 9 November 8-K shows about $283.8 million of at-the-market share sales. $81.9 million went to bitcoin,
+        $188.3 million to buying back its STRC preferred stock, and $13.6 million to cash. The holdings table didn't come
+        through in our search, so the new bitcoin count is unverified.
+      signal: neutral
+      horizon: short-term
+      materiality: low
+      consider: "Most of the money went to buying back preferred stock rather than bitcoin, a shift from the company's earlier focus on accumulation."
+      labels: {fact: "8-K proceeds allocation", inference: "strategy shift"}
+      sources:
+        - {name: "SEC — Strategy 8-K, 9 Nov 2026", url: "https://www.sec.gov/Archives/edgar/data/0001050446/000119312526452693/mstr-20261109.htm", published: "2026-11-09"}
+
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Chip group rallied on 9 Nov."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Chip group rallied on 9 Nov."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "CPI sensitive."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found at the weekly check."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "See story."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "CoreWeave tonight is a read-across."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No new filing found at the weekly check."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +2.35% on 9 Nov."}
+  exposure_note: "Observation, not advice: after a −4.4% day and a +2.35% day within a week, the market is reacting sharply to every data point. Today's CPI is the next one."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Today's CPI sets the direction for Thursday's mortgage reading (7.18% last week)."
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "CPI at 8:30: consensus is 0.3% headline and 0.2% core month on month, and there's no year-on-year figure this time."
+    - "The S&P 500 had its best day since April even as Nvidia fell on its CEO probe."
+    - "CoreWeave reports after the close, a direct read on AI-cloud demand and debt."
+  two_opportunities:
+    - title: "Land-loan quote"
+      detail: "If CPI comes in soft, rates could ease into Thursday."
+    - title: "GPU-cloud benchmark"
+      detail: "Note CoreWeave's pricing and utilisation for your FinOps planning."
+  one_action: "Read the CPI release at 8:30 a.m. and check the core monthly figure against the 0.2% consensus."
+  upcoming:
+    - {date: "Tue 10 Nov", event: "October CPI 8:30 a.m. · CoreWeave Q3 after close"}
+    - {date: "Wed 11 Nov", event: "Veterans Day: stocks open, bond market closed"}
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 13 Nov", event: "October PPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 18 Nov", event: "Huang closed-door House briefing (requested)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
