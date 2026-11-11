@@ -1,0 +1,126 @@
+# The Kapoor Daily — Wednesday, 11 November 2026 (Edition No. 15). Veterans Day.
+# Researched 2026-11-11 ~06:14–06:25 EST via web search.
+
+edition:
+  date: 2026-11-11
+  number: 15
+  researched_at: "2026-11-11T06:25:00-05:00"
+  research_window: "Primarily 10–11 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Tuesday's index closes come from a single detailed recap. Another outlet showed Monday's figures, so treat these as provisional."
+    - "Veterans Day: stock markets are open today, bond markets closed."
+
+lead: cpi-hot
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,520.93",  change: "−0.38%", as_of: "Tue 10 Nov close, single source", src: "https://cappnotes.substack.com/p/closing-look-tuesday-november-10"}
+  - {label: "Nasdaq",    value: "25,065.88", change: "−0.74%", as_of: "Tue 10 Nov close, single source", src: "https://cappnotes.substack.com/p/closing-look-tuesday-november-10"}
+  - {label: "CPI m/m",   value: "+0.4%",     change: "core +0.3%", as_of: "BLS, October", src: "https://www.cbsnews.com/news/october-cpi-report-elevated-inflation/"}
+  - {label: "2-yr UST",  value: "≈4.73%",    change: "≈+17 bp", as_of: "10 Nov, single source", src: "https://cappnotes.substack.com/p/closing-look-tuesday-november-10"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "next reading Thu", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: cpi-hot
+    section: brief
+    kind: news
+    headline: "Hot CPI: prices rise 0.4% in October and core 0.3% again, putting a December hike, possibly a half-point, on the table"
+    dek: "Food, rent, car insurance and airfares drove the rise. Governor Waller had named 0.3% core as his threshold for considering 50 bp."
+    summary: >-
+      Headline CPI rose 0.4% (consensus 0.2–0.3%) and core rose 0.3% for a third straight month (consensus about 0.2%).
+      The BLS didn't publish a year-on-year rate because of the 2025 shutdown gap, but Axios estimates it near 4%. Fed
+      Governor Christopher Waller had said a half-point hike should be considered if October core rose at least 0.3%,
+      and it did. Two-year Treasury yields reportedly jumped about 17 basis points.
+    why: "A hike on 9 December now looks very likely, and the debate shifts to 25 versus 50 basis points."
+    me: >-
+      Bad news for land financing: Thursday's mortgage reading will probably end the three-week decline. It also adds
+      rate pressure on your long-duration tech holdings, while FDRXX yields would rise with a hike.
+    inference: "Our read: a 50 bp hike is now a real possibility, not the base case."
+    event_date: 2026-11-10
+    sources:
+      - {name: "CBS News — Inflation remained elevated in October", url: "https://www.cbsnews.com/news/october-cpi-report-elevated-inflation/", published: "2026-11-10"}
+      - {name: "Axios — Price pressures persisted in October", url: "https://www.axios.com/2026/11/10/cpi-october-inflation-fed", published: "2026-11-10"}
+      - {name: "StockTitan — Core up 0.3% again, hitting Waller's line", url: "https://www.stocktitan.net/articles/october-2026-cpi-inflation-report", published: "2026-11-10"}
+    scores: {personal: 9, impact: 9, magnitude: 9, timeliness: 10, actionability: 6}
+    qr: true
+
+  - id: coreweave-beat
+    section: tech
+    kind: news
+    headline: "CoreWeave beats and raises: revenue up 168% to $3.66B, a $132.5B backlog, and 2026 guidance lifted to $13.0–13.3B"
+    dek: "Net loss of $709M. Shares rose 1.5–6% after hours, depending on the source."
+    summary: >-
+      The GPU-cloud provider's Q3 revenue beat its $3.45–3.6 billion guidance, and contracted backlog reached $132.5
+      billion. The loss remains large because financing costs are heavy. Shares had fallen about 45% in the month
+      before the report.
+    why: "Demand for AI compute is still accelerating. The open question is financing, not customers."
+    me: "Positive for the AI-infrastructure demand story behind AMD, AVGO and ORCL."
+    use: "Note CoreWeave's backlog growth and pricing for GPU-capacity benchmarks in your FinOps work."
+    event_date: 2026-11-10
+    sources:
+      - {name: "MarketScreener — CoreWeave rallies as AI demand drives stronger outlook", url: "https://www.marketscreener.com/news/coreweave-rallies-as-ai-demand-drives-stronger-revenue-outlook-closing-bell-ce785edad08df627", published: "2026-11-10"}
+      - {name: "Gotrade — CoreWeave falls 0.5% to $48.73, then jumps after hours", url: "https://www.heygotrade.com/en/news/coreweave-crwv-stock-news-november-11-2026/", published: "2026-11-10"}
+    scores: {personal: 8, impact: 6, magnitude: 6, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO, ORCL]
+
+world_in_brief:
+  - {text: "Markets: Treasury yields jumped across the curve after CPI. Bond markets are closed today for Veterans Day.", src: "https://cappnotes.substack.com/p/closing-look-tuesday-november-10", published: "2026-11-10"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "CoreWeave's beat supports demand. Nvidia reports 17 Nov."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Same as AMD."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Yield likely to rise with a December hike."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Higher real yields are a headwind (inference)."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "CoreWeave's backlog is a positive read for AI cloud."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results Mon 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −0.38% on 10 Nov (provisional)."}
+  exposure_note: "Observation, not advice: rising rates and strong AI demand are now pulling your tech holdings in opposite directions."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "The hot CPI and the jump in two-year yields make a rise in Thursday's mortgage reading likely, ending a three-week decline. Any quote you got this week looks better in hindsight."
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "October CPI came in hot (0.4% headline, 0.3% core). A December hike looks very likely, and 50 bp is possible."
+    - "CoreWeave beat and raised, so AI-compute demand is still accelerating."
+    - "Bond markets are closed today, so the rate reaction resumes Thursday along with the mortgage survey."
+  two_opportunities:
+    - title: "If you got a land-loan quote, consider locking it"
+      detail: "Rates are likely to tick up from here."
+    - title: "Prepare for a possible 50 bp hike"
+      detail: "Note which of your holdings are most rate-sensitive before 9 December."
+  one_action: "If you requested a land-loan quote this week, ask the lender about a rate lock and how long it lasts."
+  upcoming:
+    - {date: "Wed 11 Nov", event: "Veterans Day: stocks open, bond market closed"}
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Fri 13 Nov", event: "October PPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 18 Nov", event: "Huang closed-door House briefing (requested)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "Thu 10 Dec", event: "November CPI (year-on-year comparison returns)"}
