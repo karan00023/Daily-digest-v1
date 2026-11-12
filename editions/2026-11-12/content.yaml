@@ -1,0 +1,132 @@
+# The Kapoor Daily — Thursday, 12 November 2026 (Edition No. 16).
+# Researched 2026-11-12 ~06:07–06:20 EST via web search.
+
+edition:
+  date: 2026-11-12
+  number: 16
+  researched_at: "2026-11-12T06:20:00-05:00"
+  research_window: "Primarily 11–12 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Reports about Nvidia's leadership conflicted on Wednesday. We report only the verified close and the board's earlier statement, not unconfirmed claims."
+    - "Freddie Mac's weekly mortgage rate publishes at midday today, after this edition."
+
+lead: ai-rebound
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,619.38",  change: "+1.31%", as_of: "Wed 11 Nov close", src: "https://cappnotes.substack.com/p/closing-look-wednesday-november-11"}
+  - {label: "Nasdaq",    value: "25,466.19", change: "+1.60%", as_of: "Wed 11 Nov close", src: "https://cappnotes.substack.com/p/closing-look-wednesday-november-11"}
+  - {label: "Nasdaq-100", value: "28,374.25", change: "+2.28%", as_of: "Wed 11 Nov close", src: "https://cappnotes.substack.com/p/closing-look-wednesday-november-11"}
+  - {label: "50 bp hike odds", value: "≈15%", change: "25 bp is base case", as_of: "CME FedWatch via report", src: "https://www.investing.com/news/stock-market-news/us-stock-futures-steady-after-techled-rebound-cpi-in-focus-5013763"}
+  - {label: "30-yr mortgage", value: "7.18%", change: "new reading today", as_of: "Freddie Mac, 5 Nov", src: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718"}
+
+graphics: {}
+
+stories:
+  - id: ai-rebound
+    section: brief
+    kind: news
+    headline: "AI trade roars back: the Nasdaq-100 jumps 2.3% on CoreWeave's beat, and the S&P 500 is within 2.6% of its record"
+    dek: "Nvidia snapped a two-day losing streak. Bond markets were closed for Veterans Day."
+    summary: >-
+      The S&P 500 rose 1.31% to 7,619.38 and the Nasdaq 1.60%, led by chip stocks after CoreWeave's results. Breadth was
+      positive on both exchanges. Bonds were closed, so the rate reaction to Tuesday's hot CPI resumes today.
+    why: "The market is betting AI demand outweighs higher rates, at least for now."
+    me: "Your AI holdings have recovered much of last week's crash. Volatility in both directions is now the norm."
+    inference: "Our read: today's bond reopening and Nvidia next Tuesday will test the rally."
+    event_date: 2026-11-11
+    sources:
+      - {name: "Closing Look — Wednesday, 11 November", url: "https://cappnotes.substack.com/p/closing-look-wednesday-november-11", published: "2026-11-11"}
+      - {name: "Babypips — Hawkish Fed meets stock market surge", url: "https://www.babypips.com/analysis/headline-hawkish-fed-stock-market-surge-rallies-last-2026-11-12", published: "2026-11-12"}
+    scores: {personal: 9, impact: 7, magnitude: 7, timeliness: 10, actionability: 3}
+    tickers: [AMD, AVGO]
+    qr: true
+
+  - id: waller-half
+    section: brief
+    kind: news
+    headline: "Fed's Waller backs a December hike and may push for 50 bp; markets put that at about 15%"
+    dek: "A quarter-point hike on 9 December is the base case."
+    summary: >-
+      Governor Christopher Waller said he would back a quarter-point December hike and could push for a half point if
+      October core inflation reached about 0.3%, which it did. CME FedWatch puts the odds of a half-point move near 15%.
+    why: "A 50 bp hike would be the Fed's most aggressive move this cycle."
+    me: "Higher short rates mean better yields on FDRXX cash, but more expensive financing for the land search."
+    event_date: 2026-11-10
+    sources:
+      - {name: "Newsquawk — Hawkish Waller and hot CPI ignite 50 bp hike bets", url: "https://www.newsquawk.com/headlines/newsquawk-us-market-wrap---hawkish-waller-and-hot-cpi-ignite-fed-50bps-rate-hike-bets", published: "2026-11-10"}
+      - {name: "Investing.com — Bets for a supersized Fed hike rise", url: "https://www.investing.com/news/stock-market-news/us-stock-futures-steady-after-techled-rebound-cpi-in-focus-5013763", published: "2026-11-11"}
+    scores: {personal: 8, impact: 8, magnitude: 7, timeliness: 9, actionability: 4}
+
+  - id: cisco-amat-tonight
+    section: tech
+    kind: news
+    headline: "Cisco and Applied Materials report tonight: two more reads on AI networking and chip equipment"
+    dek: "Cisco consensus is about $1.32 EPS on $18.11B in revenue."
+    summary: "Cisco's fiscal Q1 and Applied Materials' results come after the close, ahead of Nvidia on 17 November."
+    why: "Cisco covers data-centre networking (Broadcom's turf). Applied Materials covers chip-manufacturing demand."
+    me: "Read-across for AVGO (networking) and AMD (chip supply chain)."
+    event_date: 2026-11-12
+    sources:
+      - {name: "Seeking Alpha — Cisco Q1 earnings on deck", url: "https://seekingalpha.com/news/4670775-cisco-q1-earnings-on-deck-what-to-expect", published: "2026-11-11"}
+    scores: {personal: 7, impact: 5, magnitude: 5, timeliness: 10, actionability: 3}
+    tickers: [AVGO]
+
+world_in_brief:
+  - {text: "Bonds: the Treasury market reopens today after the Veterans Day closure.", src: "https://cappnotes.substack.com/p/closing-look-wednesday-november-11", published: "2026-11-11"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Chips rallied on 11 Nov."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Cisco tonight is a networking read."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Yield likely to rise with a December hike."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Hawkish Fed is a headwind."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Named among Wednesday's AI movers."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "AI-cloud sentiment improved after CoreWeave."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results Mon 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Named among Wednesday's movers. No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +1.31% on 11 Nov."}
+  exposure_note: "Observation, not advice: your AI-heavy portfolio has moved more in the past seven trading days than in a typical quarter."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Today's Freddie Mac reading is likely to rise after the hot CPI, ending a three-week decline."
+  sources:
+    - {name: "Freddie Mac — 7.18%", url: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-decline-third-consecutive-week-718", published: "2026-11-05"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "The AI rally is back: the Nasdaq-100 rose 2.3% on Wednesday after CoreWeave's beat."
+    - "The Fed is heading for a December hike, with 50 bp a minority view at about 15%."
+    - "Cisco and Applied Materials report tonight, then Nvidia next Tuesday."
+  two_opportunities:
+    - title: "Rate-lock check"
+      detail: "If you have a land-loan quote, lock before rates move up."
+    - title: "GPU-cloud benchmark note"
+      detail: "CoreWeave's 168% growth and $132.5B backlog are useful numbers for FinOps planning at work."
+  one_action: "Check Freddie Mac's mortgage rate at midday and compare it with last week's 7.18%."
+  upcoming:
+    - {date: "Thu 12 Nov", event: "Freddie Mac mortgage rates · Cisco & Applied Materials after close"}
+    - {date: "Fri 13 Nov", event: "October PPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · Strategy weekly disclosure"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Wed 18 Nov", event: "Huang closed-door House briefing (requested)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "Thu 10 Dec", event: "November CPI"}

@@ -50,6 +50,7 @@ tier2:
   - cnn.com
   - nytimes.com
   - axios.com
+  - seekingalpha.com
   - kiplinger.com
   - schwab.com
   - finance.yahoo.com
@@ -193,6 +194,7 @@ tier3:
   - houseofsaud.com
   - coincentral.com
   - cappnotes.substack.com
+  - newsquawk.com
   - cryptobriefing.com
   - aiera.blog
   - beincrypto.com
