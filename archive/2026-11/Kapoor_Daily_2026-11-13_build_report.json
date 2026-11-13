@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-13",
+  "built_at": "2026-11-13T06:07:50.234165-05:00",
+  "warnings": [
+    "portfolio: IDEXQ is flagged ambiguous/distressed but has no verification note today",
+    "portfolio: SPCX is flagged ambiguous/distressed but has no verification note today"
+  ],
+  "editorial_log": [],
+  "outputs": {
+    "web": "archive/2026-11/Kapoor_Daily_2026-11-13.html",
+    "artifact": "archive/2026-11/Kapoor_Daily_2026-11-13.artifact.html",
+    "email": "archive/2026-11/Kapoor_Daily_2026-11-13_email.html"
+  },
+  "print": {
+    "a4": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-13_A4.pdf",
+      "pages": 4,
+      "sections": {
+        "front": 1,
+        "brief": 2,
+        "realestate": 3,
+        "portfolio": 3,
+        "tech": 2,
+        "actions": 4,
+        "sources": 4
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "bound": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-13_Bound.pdf",
+      "pages": 5,
+      "sections": {
+        "front": 2,
+        "brief": 3,
+        "realestate": 4,
+        "portfolio": 4,
+        "tech": 3,
+        "actions": 5,
+        "sources": 5
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "booklet": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-13_A5_Booklet.pdf",
+      "a5_pages": 7,
+      "sheet_sides": 4,
+      "errors": [],
+      "warnings": [
+        "booklet: 7 pages (target 8\u201320)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,143 @@
+# The Kapoor Daily — Friday, 13 November 2026 (Edition No. 17).
+# Researched 2026-11-13 ~06:07–06:25 EST via web search.
+
+edition:
+  date: 2026-11-13
+  number: 17
+  researched_at: "2026-11-13T06:25:00-05:00"
+  research_window: "Primarily 12–13 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Correction: yesterday's edition said the mortgage rate would likely rise after the hot CPI. It fell to 7.11%, a fourth weekly decline."
+    - "The Nvidia leadership change is confirmed by the company's 8-K. We report the corporate facts, not personal allegations."
+    - "Thursday's moves in AMD and AVGO aren't confirmed by a reliable source, so no figures are printed."
+
+lead: nvidia-ceo-exit
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,592.40",  change: "−0.35%", as_of: "Thu 12 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026"}
+  - {label: "Nasdaq",    value: "25,366.09", change: "−0.39%", as_of: "Thu 12 Nov close", src: "https://cappnotes.substack.com/p/closing-look-thursday-november-12"}
+  - {label: "Dow",       value: "52,297.09", change: "−0.36%", as_of: "Thu 12 Nov close", src: "https://cappnotes.substack.com/p/closing-look-thursday-november-12"}
+  - {label: "Nvidia",    value: "−4.34%",    change: "was −13% early", as_of: "Thu 12 Nov close", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026"}
+  - {label: "30-yr mortgage", value: "7.11%", change: "−7 bp w/w", as_of: "Freddie Mac, 12 Nov", src: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html"}
+
+graphics: {}
+
+stories:
+  - id: nvidia-ceo-exit
+    section: brief
+    kind: news
+    headline: "Jensen Huang resigns as Nvidia CEO after 33 years; CFO Colette Kress is named interim CEO"
+    dek: "It's effective immediately, five days before Nvidia's earnings. The stock fell as much as 13% before closing down 4.3%."
+    summary: >-
+      Nvidia's 8-K says Colette Kress, executive vice president and CFO, will serve as interim CEO while keeping her CFO
+      role until a permanent successor is named. The board is considering internal and external candidates. The
+      departure followed the board's investigation, opened on 8 November, into reports that Huang was targeted by a
+      foreign intelligence effort. Nvidia gave no reason in its announcement. The broader market recovered most of its
+      early losses.
+    why: >-
+      This removes the founder-CEO of the world's most important AI chip company during an earnings week. Questions
+      about strategy, China policy and customer relationships will dominate Tuesday's call.
+    me: >-
+      For your AMD and AVGO positions, analysts are asking whether Nvidia's turmoil sends business to rivals. Yahoo's
+      headline said AMD and Broadcom rose on Thursday. Nvidia's report on Tuesday is now the event of the month for
+      your chip exposure.
+    inference: "Our read: the 'Nvidia rivals benefit' argument is analyst speculation. Customers rarely switch chip platforms quickly."
+    event_date: 2026-11-12
+    sources:
+      - {name: "SEC — Nvidia 8-K: CEO transition", url: "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm", published: "2026-11-12"}
+      - {name: "CNBC — Nvidia CEO Jensen Huang resigns: live updates", url: "https://www.cnbc.com/2026/11/12/nvidia-jensen-huang-ceo-live-updates.html", published: "2026-11-12"}
+      - {name: "Al Jazeera — Why did Huang resign, and who is Colette Kress?", url: "https://www.aljazeera.com/news/2026/11/12/why-did-nvidia-ceo-jensen-huang-resign-and-who-is-colette-kress", published: "2026-11-12"}
+      - {name: "Yahoo Finance — Indexes fall on Huang exit; AMD, Broadcom soar", url: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-131805045.html", published: "2026-11-12"}
+    scores: {personal: 9, impact: 9, magnitude: 10, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO]
+    qr: true
+
+  - id: mortgage-711
+    section: realestate
+    kind: news
+    headline: "Mortgage rates fall a fourth straight week, to 7.11%, the lowest in seven weeks"
+    dek: "The 15-year is at 6.45%, despite the hot CPI."
+    summary: >-
+      Freddie Mac's 12 November survey put the 30-year fixed at 7.11% (from 7.18%) and the 15-year at 6.45% (from 6.57%).
+      A year ago the 30-year was 6.24%.
+    why: "Long rates keep easing even as the Fed heads toward a hike, so the yield curve is flattening."
+    me: "Good for your land search. Rates are now 29 bp below mid-October's 7.40%."
+    event_date: 2026-11-12
+    sources:
+      - {name: "Freddie Mac (GlobeNewswire) — Rates decline for fourth week to 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+    scores: {personal: 9, impact: 7, magnitude: 5, timeliness: 10, actionability: 7}
+
+  - id: cisco-amat
+    section: tech
+    kind: news
+    headline: "Cisco posts record $18.5B revenue and raises guidance; Applied Materials beats too, but its shares slip"
+    dek: "Two more signs that AI infrastructure spending is holding up."
+    summary: >-
+      Cisco beat and raised, and rose about 3% after hours, per one report. Applied Materials beat estimates and guided
+      above consensus for fiscal Q1 2027, but the stock closed down 3.6% at $380.95, and after-hours reports conflicted.
+    why: "Demand for networking and chip-manufacturing equipment is a leading indicator for the AI build-out."
+    me: "Supportive read-across for AVGO (networking) and AMD (chip supply)."
+    event_date: 2026-11-12
+    sources:
+      - {name: "Closing Look — Thursday, 12 November", url: "https://cappnotes.substack.com/p/closing-look-thursday-november-12", published: "2026-11-12"}
+      - {name: "StockTitan — Stocks closed slightly lower", url: "https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026", published: "2026-11-12"}
+    scores: {personal: 7, impact: 5, magnitude: 5, timeliness: 10, actionability: 2}
+
+world_in_brief:
+  - {text: "Breadth: only 123 S&P 500 members rose on Thursday, and energy was the only sector higher.", src: "https://cappnotes.substack.com/p/closing-look-thursday-november-12", published: "2026-11-12"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Rose on Nvidia turmoil, per Yahoo's headline. Size unverified."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Same as AMD. Cisco's beat is supportive."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "PPI today."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results Monday."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −0.35% on 12 Nov."}
+  exposure_note: "Observation, not advice: a CEO change at Nvidia, a company you don't own, is now one of the biggest drivers of your portfolio."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Rates have fallen four weeks in a row, to 7.11%. That's helpful timing if you're getting a land-loan quote."
+  sources:
+    - {name: "Freddie Mac — 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Jensen Huang has resigned as Nvidia CEO, and Colette Kress is interim CEO ahead of Tuesday's earnings."
+    - "Mortgage rates fell a fourth straight week, to 7.11%, despite the hot CPI."
+    - "Cisco and Applied Materials beat, and AI infrastructure demand is holding."
+  two_opportunities:
+    - title: "Land-loan quote at 7.11%"
+      detail: "The lowest 30-year rate in seven weeks."
+    - title: "Nvidia earnings prep"
+      detail: "Before Tuesday, decide what you'd read in Nvidia's guidance and commentary as good or bad for AMD and AVGO."
+  one_action: "Request a land or lot-loan quote this week, while rates are at a seven-week low."
+  upcoming:
+    - {date: "Fri 13 Nov", event: "October PPI"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 · Strategy weekly disclosure"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results (first under interim CEO)"}
+    - {date: "Wed 18 Nov", event: "House briefing on Nvidia (status after resignation unclear)"}
+    - {date: "Thu 19 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
