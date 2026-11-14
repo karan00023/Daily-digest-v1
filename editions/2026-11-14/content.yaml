@@ -1,0 +1,118 @@
+# The Kapoor Daily — Saturday, 14 November 2026 (Edition No. 18). Weekend edition.
+# Researched 2026-11-14 ~06:06–06:20 EST via web search.
+
+edition:
+  date: 2026-11-14
+  number: 18
+  researched_at: "2026-11-14T06:20:00-05:00"
+  research_window: "Primarily 13–14 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Today's lead covers
+    Anthropic's IPO terms; it is reporting only, with no view on the shares.
+  data_notes:
+    - "One outlet's Friday S&P 500 close repeats Thursday's figure. We use the level several sources agree on."
+    - "Anthropic's exact first trading date wasn't clear in the reporting we found."
+
+lead: anthropic-terms
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,561.67",  change: "−0.40% (+2.51% wk)", as_of: "Fri 13 Nov close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-13-2026"}
+  - {label: "Nasdaq",    value: "25,136.27", change: "−0.91% (+2.27% wk)", as_of: "Fri 13 Nov close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-13-2026"}
+  - {label: "PPI m/m",   value: "+0.3%",     change: "vs 0.4% est.", as_of: "BLS, October", src: "https://www.stocktitan.net/articles/stock-market-today-live-november-13-2026"}
+  - {label: "30-yr mortgage", value: "7.11%", change: "−7 bp w/w", as_of: "Freddie Mac, 12 Nov", src: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html"}
+
+graphics: {}
+
+stories:
+  - id: anthropic-terms
+    section: brief
+    kind: news
+    headline: "Anthropic sets IPO terms: $70–78 a share, up to $64.4B raised, valuing it at up to $1.4 trillion"
+    dek: "A $10B Nvidia share pledge in a concurrent private placement is under scrutiny after Nvidia's CEO exit."
+    summary: >-
+      Reuters reports the Nasdaq listing would sell 825 million shares at $70–78, valuing Anthropic at up to $1.4
+      trillion, down from earlier talk of about $2 trillion. Bloomberg reports Nvidia agreed to buy about $10 billion of
+      shares in a $26 billion private placement alongside the IPO. That commitment is now in focus after Jensen Huang's
+      resignation. Trading is expected next week.
+    why: "It's the largest IPO on record, landing the same week as Nvidia's earnings. Together they test the whole AI trade."
+    me: "Expect volatility in your AI holdings next week, whichever way these two events go."
+    inference: "Disclosure: written by an Anthropic model. We don't comment on whether to participate."
+    event_date: 2026-11-13
+    sources:
+      - {name: "Kitco (Reuters) — Wall St Week Ahead: Nvidia results, Anthropic IPO pose tests", url: "https://www.kitco.com/news/off-the-wire/2026-11-13/wall-st-week-ahead-nvidia-results-anthropic-ipo-pose-tests-tumultuous", published: "2026-11-13"}
+      - {name: "Bloomberg — Nvidia CEO exit puts $10B Anthropic IPO pledge under scrutiny", url: "https://www.bloomberg.com/news/articles/2026-11-12/nvidia-s-10-billion-anthropic-ipo-pledge-in-focus-with-ceo-exit", published: "2026-11-12"}
+    scores: {personal: 8, impact: 8, magnitude: 9, timeliness: 10, actionability: 2}
+    qr: true
+
+  - id: ppi-cool
+    section: brief
+    kind: news
+    headline: "Producer prices rise 0.3% in October, below the 0.4% expected; stocks slip but post a weekly gain"
+    dek: "The S&P 500 fell 0.4% on Friday but rose 2.5% on the week. Nvidia turmoil weighed on chips."
+    summary: >-
+      PPI rose 0.3% (consensus 0.4%), and core PPI was in line at 0.3%. Year on year, producer prices are up 6.5%, the
+      most since November 2022. The Nasdaq-100 fell 1.2% on Friday as AI stocks resumed selling.
+    why: "A mild PPI eases the case for a 50 bp hike, but 25 bp in December remains the base case."
+    me: "It supports this week's drift lower in mortgage rates, while your chip holdings stay volatile."
+    event_date: 2026-11-13
+    sources:
+      - {name: "TheStreet — Nasdaq, S&P 500 end lower as Nvidia drama continues", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-13-2026", published: "2026-11-13"}
+      - {name: "StockTitan — Stocks close lower after a higher open", url: "https://www.stocktitan.net/articles/stock-market-today-live-november-13-2026", published: "2026-11-13"}
+    scores: {personal: 8, impact: 7, magnitude: 6, timeliness: 10, actionability: 3}
+
+world_in_brief:
+  - {text: "Nvidia's market value has fallen from about $5.8 trillion in early October to about $4 trillion (Reuters).", src: "https://www.kitco.com/news/off-the-wire/2026-11-13/wall-st-week-ahead-nvidia-results-anthropic-ipo-pose-tests-tumultuous", published: "2026-11-13"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Nvidia results on Tue 17 Nov are the key event."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Same."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Iran risk cited as underpriced by one strategist."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Disclosed Anthropic investor. IPO terms set."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Named in weekly summaries. No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results Monday after close."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Named in weekly summaries. No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +2.51% for the week."}
+  exposure_note: "Observation, not advice: next week brings Nvidia's results, Anthropic's IPO and Red Cat's quarter. Three events touch your holdings."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "Rates fell for a fourth week, to 7.11%, and a mild PPI supports a steady-to-lower reading next Thursday."
+  sources:
+    - {name: "Freddie Mac — 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+
+research:
+  preface: "No new ideas this weekend. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Anthropic's IPO is priced at $70–78 a share, up to $1.4 trillion, with trading expected next week."
+    - "PPI came in softer than expected, so 25 bp in December stays the base case."
+    - "Nvidia reports Tuesday under an interim CEO. It's the week's biggest event for your chip holdings."
+  two_opportunities:
+    - title: "Land-loan quote"
+      detail: "Rates are at a seven-week low of 7.11%."
+    - title: "Event-week plan"
+      detail: "Write down your response thresholds for Nvidia's results before Tuesday."
+  one_action: "Write down your risk tolerance, time horizon, cash needs and tax situation, so future editions can address your AI concentration directly."
+  upcoming:
+    - {date: "Sun 15 Nov", event: "Midtown Direct service returns to Penn Station"}
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 after close · Strategy weekly disclosure"}
+    - {date: "Tue 17 Nov", event: "Nvidia quarterly results"}
+    - {date: "Week of 16 Nov", event: "Anthropic IPO expected to begin trading"}
+    - {date: "Thu 19 Nov", event: "Freddie Mac mortgage rates"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
