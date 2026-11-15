@@ -1,0 +1,120 @@
+# The Kapoor Daily — Sunday, 15 November 2026 (Edition No. 19). Sunday edition with the Week Ahead.
+# Researched 2026-11-15 ~06:05–06:15 EST via web search.
+
+edition:
+  date: 2026-11-15
+  number: 19
+  researched_at: "2026-11-15T06:15:00-05:00"
+  research_window: "Primarily 13–15 Nov 2026, plus scheduled events for 16–20 Nov."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Mentions of Anthropic's IPO
+    are reporting only.
+  data_notes:
+    - "No dated Iran or local news from this weekend could be verified."
+    - "Anthropic's IPO trading date is still unconfirmed in the sources we found."
+
+lead: week-ahead-nvidia
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,561.67",  change: "+2.51% wk", as_of: "Fri 13 Nov close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-13-2026"}
+  - {label: "Nvidia est.", value: "≈$109B rev.", change: "≈+90% EPS", as_of: "LSEG consensus, Q3", src: "https://www.theglobeandmail.com/investing/article-wall-streets-week-ahead-nvidia-results-anthropic-ipo-pose-tests-for/"}
+  - {label: "30-yr mortgage", value: "7.11%", change: "−7 bp w/w", as_of: "Freddie Mac, 12 Nov", src: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html"}
+
+graphics: {}
+
+stories:
+  - id: week-ahead-nvidia
+    section: brief
+    kind: analysis
+    headline: "The Week Ahead: Nvidia's first report without Jensen Huang on Tuesday, Fed minutes Wednesday, Walmart Thursday, and Anthropic's IPO"
+    dek: "Analysts expect about $109B in revenue and 90% earnings growth for Nvidia."
+    summary: >-
+      Nvidia reports fiscal Q3 after Tuesday's close, the first report under interim CEO Colette Kress. Minutes of the
+      October Fed meeting come Wednesday. Walmart reports Thursday before the open, with Home Depot, Target, Lowe's and
+      TJX also reporting, alongside October retail sales. Anthropic's $70–78 IPO is expected this week, but we couldn't
+      confirm the date.
+    why: "Nvidia's guidance and leadership commentary decide the next leg of the AI trade. The retailers show how consumers are holding up against 4% inflation."
+    me: >-
+      Tuesday night is the week's key event for AMD and AVGO. Red Cat also reports Monday after the close.
+    inference: "Our read: Nvidia's numbers matter, but management's tone on continuity will move the stock more."
+    event_date: 2026-11-16
+    sources:
+      - {name: "Globe and Mail (Reuters) — Week ahead: Nvidia results, Anthropic IPO pose tests", url: "https://www.theglobeandmail.com/investing/article-wall-streets-week-ahead-nvidia-results-anthropic-ipo-pose-tests-for/", published: "2026-11-13"}
+      - {name: "StockTitan — Nvidia, Walmart and Home Depot lead the earnings week", url: "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-16-2026", published: "2026-11-14"}
+      - {name: "TradingKey — Week ahead: Nvidia, retail sales, FOMC minutes, Walmart", url: "https://www.tradingkey.com/analysis/stocks/us-stocks/262305825-week-ahead-nvidia-q3-earnings-us-october-retail-sales-fomc-minutes-walmart-tradingkey", published: "2026-11-14"}
+    scores: {personal: 9, impact: 8, magnitude: 8, timeliness: 10, actionability: 5}
+    tickers: [AMD, AVGO]
+    qr: true
+
+  - id: midtown-direct-back
+    section: local
+    kind: news
+    headline: "Midtown Direct trains are scheduled to return to Penn Station from today after five weeks of Portal Bridge work"
+    dek: "Morristown, Gladstone and Montclair-Boonton riders should see fewer transfers at Hoboken."
+    summary: >-
+      NJ Transit had diverted Midtown Direct service to Hoboken since 11 October for the Portal Bridge cutover, with
+      regular weekday service expected to resume on Sunday, 15 November. Check NJ Transit alerts for final confirmation.
+    why: "Fewer diverted riders on PATH from Hoboken should ease peak crowding."
+    me: "Your PATH commute should be less crowded from Monday if the restoration goes to plan."
+    event_date: 2026-11-15
+    context: true
+    sources:
+      - {name: "ABC7 — No Midtown Direct service as Portal Bridge work continues", url: "https://abc7ny.com/post/no-midtown-direct-service-portal-bridge-work-continues/19934408/", published: "2026-10-29"}
+    scores: {personal: 7, impact: 3, magnitude: 3, timeliness: 8, actionability: 4}
+
+world_in_brief:
+  - {text: "Macro: the Fed releases minutes of its October meeting on Wednesday, 18 November.", src: "https://www.tradingkey.com/analysis/stocks/us-stocks/262305825-week-ahead-nvidia-q3-earnings-us-october-retail-sales-fomc-minutes-walmart-tradingkey", published: "2026-11-14"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Nvidia Tue is the key read."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Nvidia Tue is the key read."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Fed minutes Wed."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Anthropic IPO this week (Alphabet is a disclosed investor)."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check Tuesday."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Q3 results Monday after close."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Weekly re-check Tuesday."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +2.51% last week."}
+  exposure_note: "Observation, not advice: three events in four days (Red Cat, Nvidia, Anthropic) bear on your holdings."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "Weekly review: the 30-year rate fell four weeks running, to 7.11%, its lowest in seven weeks. Mortgage rates have fallen despite hot CPI because long-term yields are easing."
+  sources:
+    - {name: "Freddie Mac — 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+
+research:
+  preface: "No new ideas this Sunday. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Nvidia's first report without Huang is Tuesday after the close, the biggest event of the week for your chip holdings."
+    - "Retail earnings and October retail sales show how consumers are coping with about 4% inflation."
+    - "Anthropic's IPO is expected this week, with the date unconfirmed."
+  two_opportunities:
+    - title: "Land-loan quote"
+      detail: "The 30-year rate is at a seven-week low of 7.11%."
+    - title: "Red Cat Monday"
+      detail: "Watch how the €39/share Steyr deal will be financed."
+  one_action: "Before Tuesday, write down what Nvidia result or comment would change your view on AMD and AVGO."
+  upcoming:
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 after close · Strategy weekly disclosure"}
+    - {date: "Tue 17 Nov", event: "Nvidia Q3 after close · Home Depot"}
+    - {date: "Wed 18 Nov", event: "FOMC minutes · Target, Lowe's, TJX"}
+    - {date: "Thu 19 Nov", event: "Walmart (pre-market) · Freddie Mac mortgage rates"}
+    - {date: "This week", event: "Anthropic IPO expected (date unconfirmed)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
