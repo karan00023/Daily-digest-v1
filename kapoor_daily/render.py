@@ -144,7 +144,8 @@ def build_context(content, cfg, ranked, report, log, assets_href="assets"):
         # Desks with nothing to print today. Their heads are omitted (or, for research, kept as a one-line note)
         # and excluded from the stranded-head check, since a head with no stories always "strands".
         "empty_sections": {sid for sid in ("local", "tech", "india", "finance", "lifestyle") if not ranked.get(sid)}
-                          | ({"research"} if not content["research"].get("ideas") else set()),
+                          | ({"research"} if not content["research"].get("ideas") else set())
+                          | ({"brief"} if not brief else set()),
         "print_titles": {**{s["id"]: s["title"] for s in cfg["sections"]}, **SECTION_TITLES},
         "assets": assets_href,
         "researched_label": researched_label(ed.get("researched_at")),
