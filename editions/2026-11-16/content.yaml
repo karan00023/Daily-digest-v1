@@ -1,0 +1,116 @@
+# The Kapoor Daily — Monday, 16 November 2026 (Edition No. 20).
+# Researched 2026-11-16 ~06:06–06:20 EST via web search.
+
+edition:
+  date: 2026-11-16
+  number: 20
+  researched_at: "2026-11-16T06:20:00-05:00"
+  research_window: "Primarily 13–16 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Mentions of Anthropic's IPO
+    are reporting only.
+  data_notes:
+    - "Futures readings differ by timestamp. We use the Reuters and TipRanks readings."
+    - "Reports conflict on Anthropic's timing: one says pricing Wednesday, another says trading Thursday."
+    - "A single report of talk about Huang returning is unconfirmed and is not printed as fact."
+
+lead: nvidia-week
+
+market_snapshot:
+  - {label: "Nasdaq-100 fut.", value: "≈−0.9%", change: "—", as_of: "Mon 16 Nov early, futures", src: "https://www.tipranks.com/news/stock-market-today-nov-16-u-s-stocks-mixed-ahead-of-nvidia-results-and-anthropic-ipo"}
+  - {label: "S&P 500 fut.",   value: "≈−0.3%", change: "—", as_of: "Mon 16 Nov early, futures", src: "https://www.investing.com/news/economy-news/sp-500-nasdaq-futures-slide-as-nvidia-earnings-anthropic-debut-loom-5028900"}
+  - {label: "S&P 500",   value: "7,561.67",  change: "+2.51% wk", as_of: "Fri 13 Nov close", src: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-13-2026"}
+  - {label: "Nvidia est.", value: "$108.93B rev.", change: "EPS $2.47", as_of: "consensus, Q3", src: "https://www.tipranks.com/news/u-s-stocks-brace-for-nvidia-earnings-and-anthropics-mega-ipo"}
+  - {label: "30-yr mortgage", value: "7.11%", change: "−7 bp w/w", as_of: "Freddie Mac, 12 Nov", src: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html"}
+
+graphics: {}
+
+stories:
+  - id: nvidia-week
+    section: brief
+    kind: news
+    headline: "Futures slip as the AI trade braces for Nvidia tomorrow and Anthropic's roughly $64B IPO later this week"
+    dek: "Nvidia fell 13% last week, its steepest weekly drop since April 2025. Consensus is $108.9B revenue and $2.47 EPS."
+    summary: >-
+      Nasdaq-100 futures were down about 0.9% early Monday. Nvidia reports fiscal Q3 after Tuesday's close, the first
+      report under interim CEO Colette Kress. Analysts expect revenue up 91% to about $108.9 billion and EPS of $2.47.
+      Anthropic's IPO is reportedly about six times covered at a roughly $1.4 trillion target, with pricing or trading
+      on Wednesday or Thursday depending on the report. Reuters notes investors may sell other AI stocks to buy into the IPO.
+    why: "Two events in three days test whether last month's AI selloff is over."
+    me: "Expect the biggest swings in your AMD and AVGO positions on Tuesday night and Wednesday."
+    inference: "Our read: the risk that investors sell other AI holdings to fund IPO buying is real and short-lived."
+    event_date: 2026-11-16
+    sources:
+      - {name: "Investing.com (Reuters) — Futures slide as Nvidia earnings, Anthropic debut loom", url: "https://www.investing.com/news/economy-news/sp-500-nasdaq-futures-slide-as-nvidia-earnings-anthropic-debut-loom-5028900", published: "2026-11-16"}
+      - {name: "TipRanks — US stocks brace for Nvidia earnings and Anthropic's mega IPO", url: "https://www.tipranks.com/news/u-s-stocks-brace-for-nvidia-earnings-and-anthropics-mega-ipo", published: "2026-11-16"}
+    scores: {personal: 9, impact: 8, magnitude: 8, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO]
+    qr: true
+
+world_in_brief:
+  - {text: "Markets: TipRanks also cites rising Middle East tensions and volatile oil as concerns.", src: "https://www.tipranks.com/news/stock-market-today-nov-16-u-s-stocks-mixed-ahead-of-nvidia-results-and-anthropic-ipo", published: "2026-11-16"}
+
+portfolio:
+  verification: []
+  developments:
+    - ticker: RCAT
+      headline: "Red Cat reports Q3 tonight after the close; the Steyr Motors deal is the focus"
+      what: >-
+        Results come after the close with a 4:30 p.m. ET webinar. The €39-a-share Steyr Motors tender (about $250M per
+        Barron's) runs to 18 December. The last price we verified was $4.40 on 26 October.
+      signal: neutral
+      horizon: short-term
+      materiality: high
+      consider: "Look for how the Steyr deal will be financed (cash vs. new shares) and the defense-order backlog."
+      labels: {fact: "dates, deal terms", inference: "what to watch"}
+      sources:
+        - {name: "StockTitan — Red Cat sets 16 Nov date for Q3 2026 earnings", url: "https://www.stocktitan.net/news/RCAT/red-cat-announces-third-quarter-2026-earnings-release-date-and-tagi9ewegyg5.html", published: "2026-10-20"}
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Nvidia tomorrow."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Nvidia tomorrow."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Middle East tensions cited."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Anthropic IPO this week."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "Weekly re-check tomorrow."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure today."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "$4.40", as_of: "26 Oct close (last verified)", note: "Q3 tonight. See story."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "Weekly re-check tomorrow."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "Futures lower."}
+  exposure_note: "Observation, not advice: this is the most event-heavy week for your holdings since early November."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "The next mortgage reading is Thursday. Rates are at a seven-week low of 7.11%."
+  sources:
+    - {name: "Freddie Mac — 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Nvidia reports tomorrow after the close, its first quarter without Huang. Consensus is $108.9B revenue."
+    - "Anthropic's roughly $64B IPO prices or starts trading Wednesday or Thursday."
+    - "Red Cat reports tonight. Watch how the Steyr deal will be paid for."
+  two_opportunities:
+    - title: "Land-loan quote at 7.11%"
+      detail: "Rates are at a seven-week low."
+    - title: "Event plan"
+      detail: "Write down your thresholds for Nvidia's results before tomorrow."
+  one_action: "Read Red Cat's results tonight and check how the Steyr deal will be financed."
+  upcoming:
+    - {date: "Mon 16 Nov", event: "Red Cat Q3 after close · Strategy weekly disclosure"}
+    - {date: "Tue 17 Nov", event: "Nvidia Q3 after close · Home Depot"}
+    - {date: "Wed 18 Nov", event: "FOMC minutes · Target, Lowe's, TJX · Anthropic pricing (reported)"}
+    - {date: "Thu 19 Nov", event: "Walmart · Freddie Mac rates · Anthropic trading (reported)"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}

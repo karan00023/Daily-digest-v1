@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-16",
+  "built_at": "2026-11-16T06:07:03.931222-05:00",
+  "warnings": [
+    "portfolio: IDEXQ is flagged ambiguous/distressed but has no verification note today",
+    "portfolio: SPCX is flagged ambiguous/distressed but has no verification note today"
+  ],
+  "editorial_log": [],
+  "outputs": {
+    "web": "archive/2026-11/Kapoor_Daily_2026-11-16.html",
+    "artifact": "archive/2026-11/Kapoor_Daily_2026-11-16.artifact.html",
+    "email": "archive/2026-11/Kapoor_Daily_2026-11-16_email.html"
+  },
+  "print": {
+    "a4": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-16_A4.pdf",
+      "pages": 4,
+      "sections": {
+        "front": 1,
+        "brief": 2,
+        "realestate": 3,
+        "portfolio": 3,
+        "actions": 4,
+        "sources": 4
+      },
+      "errors": [
+        "a4: section head 'The Morning Brief' stranded at foot of page 2"
+      ],
+      "warnings": [
+        "a4: forced page breaks before ['brief'] to keep heads with their stories"
+      ]
+    },
+    "bound": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-16_Bound.pdf",
+      "pages": 5,
+      "sections": {
+        "front": 2,
+        "brief": 3,
+        "realestate": 4,
+        "portfolio": 4,
+        "actions": 5,
+        "sources": 5
+      },
+      "errors": [
+        "bound: section head 'The Morning Brief' stranded at foot of page 3"
+      ],
+      "warnings": [
+        "bound: forced page breaks before ['brief'] to keep heads with their stories"
+      ]
+    },
+    "booklet": {
+      "file": "archive/2026-11/Kapoor_Daily_2026-11-16_A5_Booklet.pdf",
+      "a5_pages": 7,
+      "sheet_sides": 4,
+      "errors": [
+        "booklet: section head 'The Morning Brief' stranded at foot of page 3"
+      ],
+      "warnings": [
+        "booklet: 7 pages (target 8\u201320)",
+        "booklet: forced page breaks before ['brief'] to keep heads with their stories"
+      ]
+    }
+  }
+}
