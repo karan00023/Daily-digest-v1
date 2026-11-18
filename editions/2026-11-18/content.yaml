@@ -1,0 +1,127 @@
+# The Kapoor Daily — Wednesday, 18 November 2026 (Edition No. 22).
+# Researched 2026-11-18 ~06:06–06:20 EST via web search.
+
+edition:
+  date: 2026-11-18
+  number: 22
+  researched_at: "2026-11-18T06:20:00-05:00"
+  research_window: "Primarily 17–18 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Today's Anthropic IPO coverage
+    is reporting only, with no view on the shares.
+  data_notes:
+    - "Nvidia's after-hours move is reported as anywhere from +2.4% to +4%, and premarket as +3.1% (Benzinga). The move grew during the call."
+    - "One Yahoo item gives the S&P close as 7,416.59, but its own table shows 7,340.53. We use 7,340.53, which several sources agree on."
+    - "The Dow's Tuesday drop is reported as 849 or 955 points, so no figure is printed."
+    - "Anthropic's final IPO price isn't set yet. Pricing is expected tonight."
+
+lead: nvidia-beat
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,340.53",  change: "−1.03%", as_of: "Tue 17 Nov close", src: "https://www.cnbc.com/2026/11/16/stock-market-today-live-updates.html"}
+  - {label: "Nasdaq",    value: "24,328.38", change: "−0.74%", as_of: "Tue 17 Nov close", src: "https://www.cnbc.com/2026/11/16/stock-market-today-live-updates.html"}
+  - {label: "Nvidia rev.", value: "$115.8B", change: "+103% y/y", as_of: "fiscal Q3, reported 17 Nov", src: "https://investing.com/news/earnings/nvidia-quarterly-results-beat-estimates-5033943"}
+  - {label: "Nvidia Q4 guide", value: "$130B ±3%", change: "—", as_of: "company guidance, 17 Nov", src: "https://investing.com/news/earnings/nvidia-quarterly-results-beat-estimates-5033943"}
+  - {label: "30-yr mortgage", value: "7.11%", change: "−7 bp w/w", as_of: "Freddie Mac, 12 Nov", src: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html"}
+
+graphics: {}
+
+stories:
+  - id: nvidia-beat
+    section: brief
+    kind: news
+    headline: "Nvidia beats with $115.8B in revenue and guides to $130B; shares rise about 3% premarket after a 1% S&P slide"
+    dek: "It's the first report under interim CEO Colette Kress. Data-center revenue rose 110%, and the chairman says there are no plans to bring back Huang."
+    summary: >-
+      Fiscal Q3 revenue was $115.8 billion against about $108.8 billion expected, and adjusted EPS was $2.68 against
+      $2.47. Data-center revenue rose 110% to $107.6 billion. Nvidia guided fourth-quarter revenue to $130 billion, plus
+      or minus 3%, with gross margin of 71–72%, and raised its buyback authorisation. Kress said the Vera Rubin roadmap
+      is on track. Earlier, the S&P 500 fell 1.03% to 7,340.53, its lowest close since July, with only 75 members higher.
+    why: "The results answer the AI-demand question for now. Whether the rally holds depends on the leadership and on Anthropic's debut."
+    me: "Good news for your AMD and AVGO read-across, after a month in which the AI trade fell hard."
+    inference: "Our read: a beat this size removes the demand worry; the open question is management continuity, which numbers can't settle."
+    event_date: 2026-11-17
+    sources:
+      - {name: "Investing.com — Nvidia shares gain 3% after outlook lift, post-Huang strategy update", url: "https://investing.com/news/earnings/nvidia-quarterly-results-beat-estimates-5033943", published: "2026-11-17"}
+      - {name: "NBC News — Nvidia earnings live updates", url: "https://www.nbcnews.com/business/business-news/live-blog/nvidia-stock-earnings-report-jensen-huang-rcna609804", published: "2026-11-17"}
+      - {name: "Benzinga — Nvidia shares jump 3.13% premarket", url: "https://www.benzinga.com/markets/equities/26/11/63377299/nvidia-shares-premarket-rally-q3-earnings-beat", published: "2026-11-18"}
+      - {name: "CNBC — S&P 500 posts lowest close since July", url: "https://www.cnbc.com/2026/11/16/stock-market-today-live-updates.html", published: "2026-11-17"}
+    scores: {personal: 9, impact: 9, magnitude: 9, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO]
+    qr: true
+
+  - id: anthropic-pricing
+    section: brief
+    kind: news
+    headline: "Anthropic is expected to price its IPO tonight at $70–78 a share, with Nasdaq trading as ANT from Thursday"
+    dek: "825 million shares; orders were reported at about six times the offering."
+    summary: >-
+      The range values Anthropic at up to $1.4 trillion on a fully diluted basis, down from about $2 trillion discussed in
+      September. Reported proceeds vary from about $64 billion to $90 billion including a $26 billion private placement.
+      No final price has been set.
+    why: "The largest IPO on record is a test of appetite for AI stocks after a month-long selloff."
+    me: "Alphabet (GOOGL), which you hold, is a disclosed investor in Anthropic."
+    inference: "Disclosure: written by an Anthropic model. We don't comment on whether to participate."
+    event_date: 2026-11-18
+    sources:
+      - {name: "CNBC — Anthropic IPO guide: the price range, date and more", url: "https://www.cnbc.com/2026/11/16/anthropic-ipo-date-price-range.html", published: "2026-11-16"}
+      - {name: "Yahoo Finance — Anthropic sets IPO price range at $70 to $78", url: "https://finance.yahoo.com/markets/stocks/articles/anthropic-sets-ipo-price-range-140602411.html", published: "2026-11-13"}
+    scores: {personal: 7, impact: 8, magnitude: 9, timeliness: 10, actionability: 2}
+    tickers: [GOOGL]
+
+world_in_brief:
+  - {text: "Markets: CNBC quotes traders saying reports that an NSA classified network went down pushed stocks to session lows on Tuesday.", src: "https://www.cnbc.com/2026/11/16/stock-market-today-live-updates.html", published: "2026-11-17"}
+  - {text: "Home Depot fell 2.45% despite a Q3 beat and named its CFO as CEO.", src: "https://cappnotes.substack.com/p/closing-look-tuesday-november-17", published: "2026-11-17"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Nvidia beat; read-across."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Nvidia beat; read-across."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "FOMC minutes today."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Anthropic investor. Pricing tonight."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Software names led Tuesday's losses."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "No weekly 8-K found."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "Software names led Tuesday's losses."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance Monday."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −1.03% Tuesday."}
+  exposure_note: "Observation, not advice: Nvidia's beat helps your chip names, but Tuesday's broad selloff (426 of 500 S&P members down) shows the pressure isn't only about AI."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Rates are at a seven-week low of 7.11%. The next reading is tomorrow."
+  sources:
+    - {name: "Freddie Mac — 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Nvidia beat with $115.8B in revenue and guided to $130B, and its shares are up about 3% premarket."
+    - "The S&P 500 closed at 7,340.53, its lowest since July, before the results."
+    - "Anthropic prices tonight and starts trading Thursday as ANT."
+  two_opportunities:
+    - title: "Land-loan quote at 7.11%"
+      detail: "Rates are at a seven-week low. New reading tomorrow."
+    - title: "Review your Nvidia thresholds"
+      detail: "Compare the results with the thresholds you wrote down, if you did, before reacting."
+  one_action: "Read the FOMC minutes summary this afternoon for hints on the size of a December hike."
+  upcoming:
+    - {date: "Wed 18 Nov", event: "FOMC minutes · Target, Lowe's, TJX · Anthropic pricing"}
+    - {date: "Thu 19 Nov", event: "Anthropic trading (ANT) · Walmart · Freddie Mac rates"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
