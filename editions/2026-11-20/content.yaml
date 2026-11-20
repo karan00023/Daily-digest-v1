@@ -1,0 +1,106 @@
+# The Kapoor Daily — Friday, 20 November 2026 (Edition No. 24).
+# Researched 2026-11-20 ~06:07–06:20 EST via web search.
+
+edition:
+  date: 2026-11-20
+  number: 24
+  researched_at: "2026-11-20T06:20:00-05:00"
+  research_window: "Primarily 19–20 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Today's lead covers Anthropic's
+    first day of trading; it is reporting only, with no view on the shares.
+  data_notes:
+    - "Reports disagree on Anthropic's offering size: Forbes says $81.3B, and a Bloomberg headline says $107B, possibly including the private placement. We use $81.3B."
+    - "We couldn't find the 19 November Freddie Mac mortgage survey, so the 12 November figure is shown."
+    - "We found no single, well-sourced explanation for Thursday's selloff, so no cause is printed."
+
+lead: ant-debut
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,175.83",  change: "−2.02%", as_of: "Thu 19 Nov close", src: "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454"}
+  - {label: "Dow",       value: "49,097.06", change: "−2.19%", as_of: "Thu 19 Nov close", src: "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454"}
+  - {label: "Nasdaq",    value: "23,879.20", change: "−2.25%", as_of: "Thu 19 Nov close", src: "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454"}
+  - {label: "ANT",       value: "$97.17",    change: "+17.1% vs $83 IPO", as_of: "Thu 19 Nov close", src: "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/"}
+  - {label: "30-yr mortgage", value: "7.11%", change: "19 Nov reading not found", as_of: "Freddie Mac, 12 Nov", src: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html"}
+
+graphics: {}
+
+stories:
+  - id: ant-debut
+    section: brief
+    kind: news
+    headline: "Anthropic closes its first day at $97.17, up 17% on its $83 IPO price, as the S&P 500 falls 2% for a sixth straight loss"
+    dek: "ANT opened at $111.50, up 34%, but gave up half that gain by the close. It traded at $92.60 after hours."
+    summary: >-
+      Trading began shortly before noon on Nasdaq. The shares touched $115.10, then dipped below $100 within 17 minutes
+      of the first trade. The broad market fell hard: the S&P 500 lost 2.02% to 7,175.83, its sixth straight decline and
+      8.2% below last month's record, and only 37 S&P members rose. The Dow fell 2.19% and the Nasdaq 2.25%. Alphabet
+      shares also fell on the day, as the debut put a fresh value on its Anthropic stake.
+    why: "Demand for the record IPO held up, but the fading premium and a falling market show how fragile sentiment is."
+    me: "Alphabet (GOOGL) is a disclosed Anthropic investor. Every holding you own that tracks the market fell sharply."
+    inference: "Disclosure: written by an Anthropic model. We don't comment on the shares."
+    event_date: 2026-11-19
+    sources:
+      - {name: "Forbes — Anthropic IPO live: stock closes day at $97, up more than 17%", url: "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/", published: "2026-11-19"}
+      - {name: "Bloomberg — Anthropic shares close first trading day up 17%", url: "https://www.bloomberg.com/news/live-blog/2026-11-19/anthropic-trading-debut-live-updates", published: "2026-11-19"}
+      - {name: "ABC News (AP) — How major US stock indexes fared, 19 Nov 2026", url: "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454", published: "2026-11-19"}
+      - {name: "Motley Fool — Alphabet falls as Anthropic debut puts fresh value on Google's stake", url: "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-stock-market-today-nov-19-alphabet-shares-fall-as-anthropic-nasdaq-debut-puts-fresh-value-on-google-s-stake/", published: "2026-11-19"}
+    scores: {personal: 9, impact: 8, magnitude: 9, timeliness: 10, actionability: 2}
+    tickers: [GOOGL, VTI]
+    qr: true
+
+world_in_brief:
+  - {text: "Breadth: 464 S&P 500 members fell and 37 rose on Thursday (Motley Fool).", src: "https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-dow-plunges-1-100-points-as-the-s-and-p-500-suffers-its-6th-straight-day-of-losses/", published: "2026-11-19"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Broad selloff Thursday."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Broad selloff Thursday."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "No new driver found."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Fell Thursday (Motley Fool). Anthropic stake revalued."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "No weekly 8-K found."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −2.02% Thursday; 8.2% off its record."}
+  exposure_note: "Observation, not advice: the S&P 500 is 8.2% below its October record after six straight falls. A 10% drop is the usual definition of a correction."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "We couldn't find this week's Freddie Mac reading. Last week's was 7.11%."
+  sources:
+    - {name: "Freddie Mac — 7.11%", url: "https://www.globenewswire.com/news-release/2026/11/12/3402013/0/en/mortgage-rates-decline-for-fourth-consecutive-week-to-7-11.html", published: "2026-11-12"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Anthropic closed its debut at $97.17, up 17%, after opening up 34%."
+    - "The S&P 500 fell 2% for a sixth straight loss and is 8.2% off its record."
+    - "Alphabet, one of your holdings, fell as the market revalued its Anthropic stake."
+  two_opportunities:
+    - title: "Rate check"
+      detail: "Look up this week's Freddie Mac rate before requesting a land-loan quote."
+    - title: "Weekend review"
+      detail: "Compare your portfolio's drawdown with the S&P's 8.2%, using your own statement."
+  one_action: "This weekend, write down your risk tolerance and time horizon, so future editions can address the drawdown directly."
+  upcoming:
+    - {date: "Sun 22 Nov", event: "Week Ahead (Thanksgiving week)"}
+    - {date: "Thu 26 Nov", event: "Thanksgiving — US markets closed"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
