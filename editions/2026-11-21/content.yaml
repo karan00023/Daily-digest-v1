@@ -1,0 +1,125 @@
+# The Kapoor Daily — Saturday, 21 November 2026 (Edition No. 25). Weekend edition.
+# Researched 2026-11-21 ~06:05–06:20 EST via web search.
+
+edition:
+  date: 2026-11-21
+  number: 25
+  researched_at: "2026-11-21T06:20:00-05:00"
+  research_window: "Primarily 19–21 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic. Anthropic is mentioned only in
+    passing today.
+  data_notes:
+    - "Reuters' report on the SEC and Nvidia's accounting cites two unnamed sources. The SEC declined to comment, and Reuters couldn't say which practices are under review. We report it as a reported probe, not a finding."
+    - "Nvidia's Friday drop is given as about 14% (Yahoo Finance). The exact close varies by outlet, so we print 'below $126' as reported."
+
+lead: correction-friday
+
+market_snapshot:
+  - {label: "S&P 500",   value: "6,910.39",  change: "−3.7% (−8.6% wk)", as_of: "Fri 20 Nov close", src: "https://www.yakimaherald.com/news/nation_and_world/business/how-major-us-stock-indexes-fared-friday-11-20-2026/article_963ce6d2-85a3-5fd6-981d-e60b72a58fbb.html"}
+  - {label: "Nasdaq",    value: "22,617.73", change: "−5.3%", as_of: "Fri 20 Nov close", src: "https://www.yakimaherald.com/news/nation_and_world/business/how-major-us-stock-indexes-fared-friday-11-20-2026/article_963ce6d2-85a3-5fd6-981d-e60b72a58fbb.html"}
+  - {label: "Dow",       value: "48,147.33", change: "−1.9%", as_of: "Fri 20 Nov close", src: "https://www.yakimaherald.com/news/nation_and_world/business/how-major-us-stock-indexes-fared-friday-11-20-2026/article_963ce6d2-85a3-5fd6-981d-e60b72a58fbb.html"}
+  - {label: "Nvidia",    value: "<$126",     change: "≈−14%", as_of: "Fri 20 Nov close", src: "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html"}
+  - {label: "30-yr mortgage", value: "7.28%", change: "+17 bp w/w", as_of: "Freddie Mac, 19 Nov", src: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html"}
+
+graphics: {}
+
+stories:
+  - id: correction-friday
+    section: brief
+    kind: news
+    headline: "S&P 500 plunges 3.7% into a correction after Reuters reports the SEC is examining Nvidia's accounting; the Nasdaq falls 5.3%"
+    dek: "Nvidia fell about 14%, its worst day since January 2025. The S&P lost 8.6% on the week, its worst since April 2025."
+    summary: >-
+      Reuters, citing two people familiar with the matter, reported that accounting is a focus of an SEC investigation
+      into Nvidia. It couldn't say when the inquiry began or which practices are involved, and the SEC declined to
+      comment. The Wall Street Journal had reported the SEC probe on Tuesday. Nvidia said its 10-Q would come "in the
+      coming weeks", and its results release mentioned an independent board-committee investigation. The S&P 500 closed
+      at 6,910.39, its seventh straight loss, and the Nasdaq turned negative for 2026. Consumer staples was the only
+      sector to rise.
+    why: "Accounting questions at the biggest AI company hit confidence in the whole AI trade, beyond any one quarter's numbers."
+    me: >-
+      Your AMD, AVGO and broader market holdings (VTI) were exposed to the selloff. We haven't verified single-stock
+      moves for your holdings.
+    inference: "Our read: until Nvidia files its 10-Q and the scope of the probe is clear, headlines are likely to keep driving the stock more than fundamentals."
+    event_date: 2026-11-20
+    sources:
+      - {name: "Investing.com (Reuters) — Exclusive: Nvidia's accounting is a focus of SEC investigation, sources say", url: "https://www.investing.com/news/economy-news/exclusiveus-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-5042460", published: "2026-11-20"}
+      - {name: "Yahoo Finance — Nvidia extends $2.7 trillion rout as SEC probe reportedly examines accounting", url: "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html", published: "2026-11-20"}
+      - {name: "Yakima Herald (AP) — How major US stock indexes fared, 20 Nov 2026", url: "https://www.yakimaherald.com/news/nation_and_world/business/how-major-us-stock-indexes-fared-friday-11-20-2026/article_963ce6d2-85a3-5fd6-981d-e60b72a58fbb.html", published: "2026-11-20"}
+      - {name: "StockTitan — US stocks close sharply lower", url: "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026", published: "2026-11-20"}
+    scores: {personal: 10, impact: 9, magnitude: 10, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO, VTI]
+    qr: true
+
+  - id: mortgage-728
+    section: realestate
+    kind: news
+    headline: "Mortgage rates jump to 7.28%, ending a four-week slide"
+    dek: "The 30-year rose 17 bp, and the 15-year rose to 6.66%."
+    summary: >-
+      Freddie Mac's 19 November survey put the 30-year fixed at 7.28% (from 7.11%) and the 15-year at 6.66% (from 6.45%).
+      A year ago the 30-year averaged 6.26%. The rise followed hawkish Fed minutes.
+    why: "The run of lower rates is over for now, with a December Fed hike widely priced."
+    me: "If you were waiting for rates to fall before requesting a land-loan quote, last week's 7.11% has gone."
+    event_date: 2026-11-19
+    sources:
+      - {name: "Freddie Mac (GlobeNewswire) — Mortgage rates average 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+    scores: {personal: 9, impact: 6, magnitude: 5, timeliness: 9, actionability: 6}
+
+world_in_brief:
+  - {text: "Correction to our 20 Nov edition: Freddie Mac's 19 Nov survey did publish, at 7.28%. We had shown 7.11%.", src: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Chip selloff Friday. Move unverified."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Chip selloff Friday. Move unverified."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "No new driver found."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Nasdaq −5.3%. Move unverified."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Nasdaq −5.3%. Move unverified."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "No weekly 8-K found."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −8.6% on the week; in correction."}
+  exposure_note: "Observation, not advice: the S&P 500 is now in a correction, and your largest risk exposure is AI and tech. We can't size it without your positions or risk profile."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "Rates rose 17 bp to 7.28% this week, ending a four-week decline."
+  sources:
+    - {name: "Freddie Mac — 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+research:
+  preface: "No new ideas this weekend. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "The S&P 500 is in a correction after falling 3.7% Friday and 8.6% on the week."
+    - "Reuters reports the SEC is examining Nvidia's accounting, and Nvidia fell about 14%."
+    - "Mortgage rates rose to 7.28%, ending a four-week slide."
+  two_opportunities:
+    - title: "Portfolio check"
+      detail: "Pull your own statement this weekend and see how much of the drop came from your AI and tech names."
+    - title: "Rate plan"
+      detail: "If a land-loan quote matters, note that rates are now 17 bp higher than last week."
+  one_action: "Write down your risk tolerance, time horizon and cash needs this weekend, so we can address the correction directly. We still won't suggest trades."
+  upcoming:
+    - {date: "Sun 22 Nov", event: "Week Ahead (Thanksgiving week)"}
+    - {date: "Thu 26 Nov", event: "Thanksgiving — US markets closed"}
+    - {date: "Fri 27 Nov", event: "Shortened trading day"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
