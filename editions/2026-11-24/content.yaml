@@ -1,0 +1,108 @@
+# The Kapoor Daily — Tuesday, 24 November 2026 (Edition No. 28).
+# Researched 2026-11-24 ~06:06–06:15 EST via web search.
+
+edition:
+  date: 2026-11-24
+  number: 28
+  researched_at: "2026-11-24T06:15:00-05:00"
+  research_window: "Primarily 23–24 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Update: yesterday's edition reported that Nvidia's board had said it wouldn't rehire Huang. Before Monday's open, the board reinstated him as CEO."
+    - "Tuesday futures snapshots conflict (from about +0.3% to −1.2% for the Nasdaq-100) depending on the time. We print the direction only."
+    - "One outlet gives the S&P 500 close as 7,243.94. We use 7,237.17, which several sources agree on."
+
+lead: huang-returns
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,237.17",  change: "+4.73%", as_of: "Mon 23 Nov close", src: "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html"}
+  - {label: "Nasdaq",    value: "24,089.56", change: "+6.51%", as_of: "Mon 23 Nov close", src: "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html"}
+  - {label: "Dow",       value: "49,595.31", change: "+3.01%", as_of: "Mon 23 Nov close", src: "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/"}
+  - {label: "Nvidia",    value: "+31.5%",    change: "1 day", as_of: "Mon 23 Nov close", src: "https://cnn.com/2026/11/23/markets/us-stocks-rebound-intl"}
+  - {label: "30-yr mortgage", value: "7.28%", change: "+17 bp w/w", as_of: "Freddie Mac, 19 Nov", src: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html"}
+
+graphics: {}
+
+stories:
+  - id: huang-returns
+    section: brief
+    kind: news
+    headline: "Nvidia reinstates Jensen Huang as CEO; its shares soar 31.5% and the Nasdaq jumps 6.5%, its best day since April 2025"
+    dek: "The S&P 500 rose 4.7% and left correction territory, ending a seven-session losing streak. Futures are mixed this morning."
+    summary: >-
+      Nvidia's board reinstated Huang as CEO, effective immediately, before Monday's open, reversing its stance of the
+      previous week. Chip and AI stocks rallied: the S&P 500 closed at 7,237.17 and the Dow gained 1,448 points.
+      Bloomberg describes the rally giving way to caution this morning, and Benzinga ties early futures weakness to new
+      Iran sanctions and warnings about the Strait of Hormuz from Treasury Secretary Bessent. The SEC probe into Nvidia
+      has not been resolved.
+    why: "Management continuity was the biggest uncertainty for the AI trade. Huang's return removes it, but not the regulatory overhang."
+    me: "Your AMD and AVGO positions and VTI benefited from Monday's rebound. Last week's losses are partly recovered."
+    inference: "Our read: a one-day 31% move on a leadership reversal is a sentiment shift; the SEC probe and Iran headlines can still swing the market."
+    event_date: 2026-11-23
+    sources:
+      - {name: "CNN — Nvidia shares soar more than 30% after Huang reinstated as CEO", url: "https://cnn.com/2026/11/23/markets/us-stocks-rebound-intl", published: "2026-11-23"}
+      - {name: "CNBC — Stock market today: live updates", url: "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html", published: "2026-11-23"}
+      - {name: "24/7 Wall St. — Dow, S&P 500 and Nasdaq surge as Nvidia leads AI rebound", url: "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/", published: "2026-11-23"}
+      - {name: "Yahoo Finance — Futures mixed as investors test Nvidia-fuelled rally", url: "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-rebound-090614276.html", published: "2026-11-24"}
+      - {name: "Benzinga — Futures fall after Bessent unveils fresh Iran sanctions", url: "https://www.benzinga.com/markets/equities/26/11/63569914/stock-market-today-dow-sp-500-futures-fall-after-scott-bessent-unveils-fresh-iran-sanctions-hormuz-warnings-hpe-smtc-dell-in-focus", published: "2026-11-24"}
+    scores: {personal: 10, impact: 9, magnitude: 10, timeliness: 10, actionability: 3}
+    tickers: [AMD, AVGO, VTI]
+    qr: true
+
+world_in_brief:
+  - {text: "Oil: WTI near $80 and Brent around $86–89, slightly lower early Tuesday.", src: "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-rebound-090614276.html", published: "2026-11-24"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Chip rally Monday. Size unverified."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Chip rally Monday. Size unverified."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Iran sanctions headlines. PCE Wednesday."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Nasdaq +6.5% Monday."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Nasdaq +6.5% Monday."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "No weekly 8-K found."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "Nasdaq +6.5% Monday."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +4.73% Monday."}
+  exposure_note: "Observation, not advice: your tech-heavy holdings swung down hard last week and up hard on Monday. That's the volatility of a concentrated AI exposure."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Rates are 7.28%. Freddie Mac's survey is expected early this week because of Thanksgiving."
+  sources:
+    - {name: "Freddie Mac — 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Nvidia reinstated Huang as CEO, and its shares rose 31.5%."
+    - "The S&P 500 rose 4.7% and left correction territory. The Nasdaq rose 6.5%."
+    - "Futures are mixed today on new Iran sanctions. PCE comes Wednesday, and markets close Thursday."
+  two_opportunities:
+    - title: "Review, don't chase"
+      detail: "After a 10% fall and a 6.5% one-day bounce, check where your own portfolio stands against last month."
+    - title: "Rate watch"
+      detail: "Freddie Mac's survey is likely early this week."
+  one_action: "Write down your risk tolerance and time horizon, so we can address the volatility in your tech holdings. No trade suggested."
+  upcoming:
+    - {date: "Wed 25 Nov", event: "PCE inflation (reported) · Freddie Mac (likely)"}
+    - {date: "Thu 26 Nov", event: "Thanksgiving — US markets closed"}
+    - {date: "Fri 27 Nov", event: "Early close, 1 p.m. ET · Black Friday"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
