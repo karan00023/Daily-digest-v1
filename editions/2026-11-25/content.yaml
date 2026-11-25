@@ -1,0 +1,106 @@
+# The Kapoor Daily — Wednesday, 25 November 2026 (Edition No. 29).
+# Researched 2026-11-25 ~06:05–06:15 EST via web search.
+
+edition:
+  date: 2026-11-25
+  number: 29
+  researched_at: "2026-11-25T06:15:00-05:00"
+  research_window: "Primarily 24–25 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "PCE consensus figures are forecasts. Core PCE forecasts range from 3.2% to 3.3% y/y depending on the source."
+    - "Futures readings this morning range from −0.4% to −1.5% depending on index and time. We print the range."
+
+lead: pce-day
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,201.09",  change: "−0.50%", as_of: "Tue 24 Nov close", src: "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-tuesday-11-24-2026"}
+  - {label: "Nasdaq",    value: "23,733.54", change: "−1.48%", as_of: "Tue 24 Nov close", src: "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-tuesday-11-24-2026"}
+  - {label: "Dow",       value: "50,018.70", change: "+0.85%", as_of: "Tue 24 Nov close", src: "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-tuesday-11-24-2026"}
+  - {label: "PCE y/y est.", value: "3.8%", change: "core 3.2% est.", as_of: "consensus, October", src: "https://www.stocktitan.net/articles/october-2026-pce-inflation-preview"}
+  - {label: "30-yr mortgage", value: "7.28%", change: "+17 bp w/w", as_of: "Freddie Mac, 19 Nov", src: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html"}
+
+graphics: {}
+
+stories:
+  - id: pce-day
+    section: brief
+    kind: news
+    headline: "October PCE inflation lands at 8:30 a.m., the last big read before the Fed's 9 December decision; futures fall after AI stocks give back gains"
+    dek: "Headline inflation is expected to rise to 3.8% and core to 3.2%. The Nasdaq fell 1.5% on Tuesday while the Dow closed above 50,000."
+    summary: >-
+      Economists polled by Dow Jones expect headline PCE up 0.3% on the month and 3.8% on the year (from 3.6%), and core
+      up 0.3% and 3.2% (from 3.1%). Some Fed officials have suggested core could be 3.3%. On Tuesday, AI chip and server
+      stocks gave back much of Monday's Nvidia-led surge: the S&P 500 fell 0.5% and the Nasdaq 1.48%, while the Dow rose
+      0.85% on a rotation into value stocks. Index futures were down 0.4–1.5% early Wednesday. Markets close Thursday for
+      Thanksgiving.
+    why: "A hot PCE reading would firm up a December hike and raise talk of more hikes in 2027."
+    me: "A hot number would pressure your tech holdings and mortgage rates. A soft one would help both."
+    inference: "Our read: with a hike nearly priced in, the market will focus on whether core inflation is still accelerating."
+    event_date: 2026-11-25
+    sources:
+      - {name: "StockTitan — PCE preview: last major inflation release before the Fed's decision", url: "https://www.stocktitan.net/articles/october-2026-pce-inflation-preview", published: "2026-11-24"}
+      - {name: "FXStreet — Core PCE set to rise in October", url: "https://www.fxstreet.com/news/us-core-pce-inflation-set-to-heat-up-in-october-prompting-federal-reserve-rate-hikes-in-2027-202611250930", published: "2026-11-25"}
+      - {name: "WTOP (AP) — How major US stock indexes fared, 24 Nov 2026", url: "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-tuesday-11-24-2026", published: "2026-11-24"}
+      - {name: "Yahoo Finance — Tech sell-off drags Nasdaq as Dow gains on value rotation", url: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-24-221148355.html", published: "2026-11-24"}
+    scores: {personal: 9, impact: 8, magnitude: 7, timeliness: 10, actionability: 4}
+    tickers: [AMD, AVGO, VTI]
+    qr: true
+
+world_in_brief:
+  - {text: "The revised Q3 GDP estimate is also due this morning.", src: "https://coingape.com/markets-await-us-pce-inflation-data-and-revised-q3-gdp-today/", published: "2026-11-25"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "AI chips fell Tuesday."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "AI chips fell Tuesday."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "Dow +0.85% Tuesday."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "PCE today."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Nasdaq −1.48% Tuesday."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "Dow +0.85% Tuesday."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Nasdaq −1.48% Tuesday."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "No weekly 8-K found."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "AI server stocks fell Tuesday."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −0.50% Tuesday."}
+  exposure_note: "Observation, not advice: Tuesday's rotation favoured value (Dow) over tech (Nasdaq). Most of your holdings are on the tech side."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing today."
+  market_reality: "Rates are 7.28%. Freddie Mac's survey is likely out today, ahead of Thanksgiving. A hot PCE could push rates up."
+  sources:
+    - {name: "Freddie Mac — 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "October PCE is due at 8:30 a.m. Expectations are 3.8% headline and 3.2% core."
+    - "AI stocks gave back much of Monday's rally. The Dow closed above 50,000."
+    - "Markets close Thursday and close early at 1 p.m. Friday."
+  two_opportunities:
+    - title: "Rate check today"
+      detail: "Freddie Mac's survey is likely out today. Compare it with 7.28%."
+    - title: "Holiday review"
+      detail: "Use the long weekend to review your allocation with your own statements."
+  one_action: "Check the PCE result after 8:30 and note how December-hike odds move. No trade suggested."
+  upcoming:
+    - {date: "Wed 25 Nov", event: "PCE · Q3 GDP revision · Freddie Mac (likely)"}
+    - {date: "Thu 26 Nov", event: "Thanksgiving — US markets closed"}
+    - {date: "Fri 27 Nov", event: "Early close, 1 p.m. ET · Black Friday"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
