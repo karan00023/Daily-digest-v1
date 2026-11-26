@@ -1,0 +1,106 @@
+# The Kapoor Daily — Thursday, 26 November 2026 (Edition No. 30). Thanksgiving edition.
+# Researched 2026-11-26 ~06:06–06:20 EST via web search.
+
+edition:
+  date: 2026-11-26
+  number: 30
+  researched_at: "2026-11-26T06:20:00-05:00"
+  research_window: "Primarily 25–26 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "We couldn't find this week's Freddie Mac survey, so the 19 November figure (7.28%) is shown."
+    - "Nvidia's −3.91% close comes from one market recap and is not confirmed elsewhere."
+    - "One commentary site gives core PCE as 3.1%, which is September's figure. We use 3.3%, which UPI, Marketplace and others agree on."
+
+lead: core-pce-high
+
+market_snapshot:
+  - {label: "Core PCE y/y", value: "3.3%", change: "vs 3.2% est.", as_of: "BEA, October (released 25 Nov)", src: "https://www.upi.com/Top_News/US/2026/11/25/october-2026-personal-consumption-expenditures-inflation/4091795624220"}
+  - {label: "PCE y/y",   value: "3.8%",      change: "in line", as_of: "BEA, October", src: "https://www.marketplace.org/story/2026/11/25/core-pce-inflation-hit-a-3year-high-last-month"}
+  - {label: "S&P 500",   value: "7,182.78",  change: "−0.25%", as_of: "Wed 25 Nov close", src: "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"}
+  - {label: "Nasdaq",    value: "23,585.80", change: "−0.62%", as_of: "Wed 25 Nov close", src: "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"}
+  - {label: "Dow",       value: "50,182.95", change: "+0.33%", as_of: "Wed 25 Nov close", src: "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"}
+
+graphics: {}
+
+stories:
+  - id: core-pce-high
+    section: brief
+    kind: news
+    headline: "Core PCE inflation hits a three-year high of 3.3%, above forecasts; stocks recover from a 3% intraday plunge to close mixed before Thanksgiving"
+    dek: "Headline PCE rose to 3.8%. The S&P 500 was down more than 3% at the lows before closing 0.25% lower."
+    summary: >-
+      The Fed's preferred inflation gauge rose 0.3% in October. Core PCE (excluding food and energy) rose 3.3% from a
+      year earlier, up from 3.1% and above the 3.2% consensus, the highest in three years. Headline PCE rose to 3.8%. It
+      was the last major inflation reading before the Fed's 9 December decision. Stocks opened sharply lower on inflation
+      and AI worries, then recovered most of the losses: the Dow rose 0.33%, while the S&P 500 and Nasdaq ended modestly
+      lower. US markets are closed today and close at 1 p.m. on Friday.
+    why: "A core reading above forecasts makes a December hike very likely and keeps more hikes in 2027 on the table."
+    me: "Higher-for-longer rates weigh on your growth-tech holdings and keep mortgage rates elevated for your land search."
+    inference: "Our read: the intraday recovery suggests the hike is largely priced in. The open question is how many follow."
+    event_date: 2026-11-25
+    sources:
+      - {name: "UPI — Core inflation rose to an annual 3.3% in October", url: "https://www.upi.com/Top_News/US/2026/11/25/october-2026-personal-consumption-expenditures-inflation/4091795624220", published: "2026-11-25"}
+      - {name: "Marketplace — Core PCE inflation hit a three-year high last month", url: "https://www.marketplace.org/story/2026/11/25/core-pce-inflation-hit-a-3year-high-last-month", published: "2026-11-25"}
+      - {name: "CNBC — Stock market news for 25 Nov 2026", url: "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html", published: "2026-11-25"}
+      - {name: "Yahoo Finance — Dow erases losses; S&P 500 and Nasdaq recover ground", url: "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html", published: "2026-11-25"}
+    scores: {personal: 9, impact: 8, magnitude: 7, timeliness: 10, actionability: 4}
+    tickers: [VTI]
+    qr: true
+
+world_in_brief:
+  - {text: "Markets: US exchanges are closed today for Thanksgiving and close early at 1 p.m. ET on Friday.", src: "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html", published: "2026-11-25"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "AI stocks weak Wednesday."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "AI stocks weak Wednesday."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash. Yield rises if the Fed hikes."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "Dow +0.33% Wednesday."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Hot core PCE."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Nasdaq −0.62% Wednesday."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "Dow +0.33% Wednesday."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Nasdaq −0.62% Wednesday."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "No weekly 8-K found."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "AI stocks weak Wednesday."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 −0.25% Wednesday."}
+  exposure_note: "Observation, not advice: inflation is accelerating while the Fed hikes. That backdrop has historically been hard on long-duration growth stocks, which make up most of your holdings by count."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "We couldn't find this week's Freddie Mac survey. The last reading was 7.28%, and a hot core PCE doesn't point lower."
+  sources:
+    - {name: "Freddie Mac — 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+research:
+  preface: "No new ideas on Thanksgiving. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Core PCE hit 3.3%, a three-year high and above forecasts."
+    - "Stocks recovered from a 3% intraday plunge to close mixed."
+    - "Markets are closed today and close at 1 p.m. on Friday."
+  two_opportunities:
+    - title: "Holiday reading"
+      detail: "A quiet day to review your portfolio and goals away from the screen."
+    - title: "Rate plan"
+      detail: "With core inflation rising, don't count on lower mortgage rates in the near term."
+  one_action: "Write down your risk tolerance, time horizon and cash needs, so future editions can address the Fed outlook for your holdings. No trade suggested."
+  upcoming:
+    - {date: "Thu 26 Nov", event: "Thanksgiving — US markets closed"}
+    - {date: "Fri 27 Nov", event: "Early close, 1 p.m. ET · Black Friday"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
