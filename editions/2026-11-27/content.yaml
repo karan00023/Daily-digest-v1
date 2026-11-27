@@ -1,0 +1,103 @@
+# The Kapoor Daily — Friday, 27 November 2026 (Edition No. 31). Black Friday.
+# Researched 2026-11-27 ~06:06–06:15 EST via web search.
+
+edition:
+  date: 2026-11-27
+  number: 31
+  researched_at: "2026-11-27T06:15:00-05:00"
+  research_window: "Primarily 25–27 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "Futures readings vary by time (Nasdaq-100 +2.4% to +2.9%). We print the range. Futures aren't closing prices."
+    - "We again couldn't find Freddie Mac's Thanksgiving-week survey. 7.28% (19 Nov) is the last confirmed reading."
+    - "'One of the worst months since 2008' is one outlet's characterisation and isn't independently verified."
+
+lead: black-friday-rebound
+
+market_snapshot:
+  - {label: "Nasdaq-100 fut.", value: "+2.4% to +2.9%", change: "—", as_of: "Fri 27 Nov early, futures", src: "https://www.tipranks.com/news/u-s-stock-futures-in-focus-ahead-of-a-shortened-black-friday-session"}
+  - {label: "S&P 500 fut.",   value: "≈+1.8%",  change: "—", as_of: "Fri 27 Nov early, futures", src: "https://finance.yahoo.com/markets/live/stock-market-today-firday-november-27-dow-sp-500-nasdaq-black-friday-holiday-091152065.html"}
+  - {label: "S&P 500",   value: "7,182.78",  change: "−0.25%", as_of: "Wed 25 Nov close", src: "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"}
+  - {label: "Core PCE y/y", value: "3.3%", change: "3-yr high", as_of: "BEA, October", src: "https://www.upi.com/Top_News/US/2026/11/25/october-2026-personal-consumption-expenditures-inflation/4091795624220"}
+  - {label: "30-yr mortgage", value: "7.28%", change: "latest found", as_of: "Freddie Mac, 19 Nov", src: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html"}
+
+graphics: {}
+
+stories:
+  - id: black-friday-rebound
+    section: brief
+    kind: news
+    headline: "Futures jump 2–3% for a shortened Black Friday session as the AI trade rebounds; markets close at 1 p.m."
+    dek: "Nasdaq-100 futures are up as much as 2.9%. South Korea's Kospi rose 4.3% overnight on memory-chip stocks."
+    summary: >-
+      Futures rallied after Thanksgiving, led by tech, with Nvidia up about 5% premarket in one report. The rebound
+      follows a volatile November that one outlet describes as among the worst months for US stocks since 2008. The
+      October trade deficit and inventory data are due at 8:30 a.m. Stocks close at 1 p.m. ET and bond desks at 2 p.m.
+      Trading volume is typically thin on the day after Thanksgiving.
+    why: "Thin holiday trading can exaggerate moves, so today's price action says little about the trend into the Fed's 9 December decision."
+    me: "If the rebound holds, your tech-heavy holdings end a rough month on a better note. VTI tracks the broad move."
+    inference: "Our read: with core inflation at a three-year high, a December hike is still the base case whatever today brings."
+    event_date: 2026-11-27
+    sources:
+      - {name: "TipRanks — US stock futures in focus ahead of a shortened Black Friday session", url: "https://www.tipranks.com/news/u-s-stock-futures-in-focus-ahead-of-a-shortened-black-friday-session", published: "2026-11-27"}
+      - {name: "Yahoo Finance — Futures gain as AI jitters steady", url: "https://finance.yahoo.com/markets/live/stock-market-today-firday-november-27-dow-sp-500-nasdaq-black-friday-holiday-091152065.html", published: "2026-11-27"}
+      - {name: "MarketScreener — Stock futures jump as AI trade set for rebound", url: "https://www.marketscreener.com/news/stock-futures-jump-as-ai-trade-set-for-rebound-ce7851d9dd8cf227", published: "2026-11-27"}
+    scores: {personal: 8, impact: 7, magnitude: 6, timeliness: 10, actionability: 3}
+    tickers: [AMD, AVGO, VTI]
+    qr: true
+
+world_in_brief:
+  - {text: "Asia: South Korea's Kospi rose 4.3% on memory-chip stocks.", src: "https://www.tipranks.com/news/u-s-stock-futures-in-focus-ahead-of-a-shortened-black-friday-session", published: "2026-11-27"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Chip futures higher."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Chip futures higher."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "Gold higher premarket in one report."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Tech futures higher."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Tech futures higher."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday, if any."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "Tech futures higher."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P futures ≈+1.8%."}
+  exposure_note: "Observation, not advice: November tested how much volatility your tech concentration produces. That's worth weighing against your own risk tolerance."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "The last confirmed 30-year rate is 7.28% (19 Nov). This week's holiday survey couldn't be found."
+  sources:
+    - {name: "Freddie Mac — 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+research:
+  preface: "No new ideas today. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "Futures are up 2–3% for a shortened session that closes at 1 p.m."
+    - "Core PCE hit 3.3% this week, so a December hike is still likely."
+    - "Holiday trading is thin, so don't read much into today's moves."
+  two_opportunities:
+    - title: "Month-end review"
+      detail: "November is almost over. Compare your month-end statement with October's."
+    - title: "Black Friday travel deals"
+      detail: "Check Amex Travel and partner sales for points redemptions."
+  one_action: "Over the weekend, write down your risk tolerance and time horizon, so editions can address November's volatility directly. No trade suggested."
+  upcoming:
+    - {date: "Fri 27 Nov", event: "Early close, 1 p.m. ET · trade deficit 8:30 a.m."}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
