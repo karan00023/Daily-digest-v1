@@ -1,0 +1,104 @@
+# The Kapoor Daily — Saturday, 28 November 2026 (Edition No. 32). Weekend edition.
+# Researched 2026-11-28 ~06:06–06:15 EST via web search.
+
+edition:
+  date: 2026-11-28
+  number: 32
+  researched_at: "2026-11-28T06:15:00-05:00"
+  research_window: "Primarily 27–28 Nov 2026."
+  disclosure: >-
+    This newspaper is researched and written by Claude, an AI model made by Anthropic.
+  data_notes:
+    - "One recap repeats Wednesday's figures as Friday's close. We use the levels most sources agree on."
+    - "November's full-month index return isn't out yet; the month ends Monday."
+    - "Russell 2000 gains are reported as 1.4% to 1.7%, so no figure is printed."
+
+lead: best-week
+
+market_snapshot:
+  - {label: "S&P 500",   value: "7,297.49",  change: "+1.60% (+5.6% wk)", as_of: "Fri 27 Nov close", src: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-major-indexes-140450439.html"}
+  - {label: "Nasdaq",    value: "24,129.50", change: "+2.31%", as_of: "Fri 27 Nov close", src: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-major-indexes-140450439.html"}
+  - {label: "Dow",       value: "50,774.94", change: "+1.18%", as_of: "Fri 27 Nov close", src: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-major-indexes-140450439.html"}
+  - {label: "Core PCE y/y", value: "3.3%", change: "3-yr high", as_of: "BEA, October", src: "https://www.upi.com/Top_News/US/2026/11/25/october-2026-personal-consumption-expenditures-inflation/4091795624220"}
+  - {label: "30-yr mortgage", value: "7.28%", change: "latest found", as_of: "Freddie Mac, 19 Nov", src: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html"}
+
+graphics: {}
+
+stories:
+  - id: best-week
+    section: brief
+    kind: news
+    headline: "S&P 500 posts its best week since April 2025, up 5.6%, as AI and chip stocks lead a Black Friday rally; the Dow has its best week since 2022"
+    dek: "Friday's shortened session: S&P +1.6%, Nasdaq +2.3%. All 11 sectors rose."
+    summary: >-
+      A week after entering a correction, the S&P 500 closed at 7,297.49. The rebound began Monday when Nvidia
+      reinstated Jensen Huang as CEO, survived a hotter-than-expected core PCE on Wednesday, and broadened on Friday,
+      when advancers beat decliners 419 to 80. The Dow closed at 50,774.94. The Fed's 9 December decision is next,
+      with a hike widely expected after core inflation reached 3.3%.
+    why: "The swing from correction to best week shows how sentiment-driven this market is, with an inflation-fighting Fed still ahead."
+    me: "Your tech-heavy holdings recovered a good share of November's losses this week. VTI tracked the broad rally."
+    inference: "Our read: the SEC probe into Nvidia and a probable December hike are still unresolved, so this week's rebound isn't the end of volatility."
+    event_date: 2026-11-27
+    sources:
+      - {name: "Yahoo Finance — Major indexes surge as AI stocks rally; Dow posts best week since 2022", url: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-major-indexes-140450439.html", published: "2026-11-27"}
+      - {name: "Closing Look — Friday, 27 November 2026", url: "https://cappnotes.substack.com/p/closing-look-friday-november-27-2026", published: "2026-11-27"}
+      - {name: "Business Upturn — Nasdaq leads Friday surge", url: "https://businessupturn.com/usa/money/us-markets/us-stocks-rally-to-close-out-the-week-as-nasdaq-leads-friday-surge/", published: "2026-11-27"}
+    scores: {personal: 9, impact: 8, magnitude: 8, timeliness: 10, actionability: 3}
+    tickers: [AMD, AVGO, VTI]
+    qr: true
+
+world_in_brief:
+  - {text: "Breadth: all 11 S&P 500 sectors rose on Friday.", src: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-major-indexes-140450439.html", published: "2026-11-27"}
+
+portfolio:
+  verification: []
+  developments: []
+  watchlist:
+    - {ticker: AMD,   last: "unavailable", as_of: "", note: "Chip stocks led the rally."}
+    - {ticker: AVGO,  last: "unavailable", as_of: "", note: "Chip stocks led the rally."}
+    - {ticker: FDRXX, last: "$1.00 NAV (target)", as_of: "—", note: "Cash."}
+    - {ticker: GE,    last: "unavailable", as_of: "", note: "Dow +1.18% Friday."}
+    - {ticker: GLD,   last: "unavailable", as_of: "", note: "No new driver found."}
+    - {ticker: GOOGL, last: "unavailable", as_of: "", note: "Nasdaq +2.31% Friday."}
+    - {ticker: IBM,   last: "unavailable", as_of: "", note: "Dow +1.18% Friday."}
+    - {ticker: IDEXQ, last: "unavailable", as_of: "", note: "No new filing found."}
+    - {ticker: MSFT,  last: "unavailable", as_of: "", note: "Nasdaq +2.31% Friday."}
+    - {ticker: MSTR,  last: "unavailable", as_of: "", note: "Weekly disclosure Monday, if any."}
+    - {ticker: OCGN,  last: "unavailable", as_of: "", note: "Vote 22 Dec."}
+    - {ticker: ORCL,  last: "unavailable", as_of: "", note: "Nasdaq +2.31% Friday."}
+    - {ticker: RCAT,  last: "unavailable", as_of: "", note: "Withdrew 2026 guidance on 16 Nov."}
+    - {ticker: RIOT,  last: "unavailable", as_of: "", note: "Moves with bitcoin."}
+    - {ticker: SPCX,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: TSLA,  last: "unavailable", as_of: "", note: "No company news."}
+    - {ticker: VTI,   last: "unavailable", as_of: "", note: "S&P 500 +5.6% on the week."}
+  exposure_note: "Observation, not advice: in two weeks the S&P went from −8.6% to +5.6%. Your concentration in AI names amplified both moves."
+
+realestate:
+  criteria_text: "≥4,000 sq ft lot · ≤$250,000 · ≤30 min drive to the Holland Tunnel (Manhattan side) · safe area with development potential"
+  matches: []
+  no_match_note: "No new verified listing this week."
+  market_reality: "Weekly review: the last confirmed 30-year rate is 7.28% (19 Nov). The Thanksgiving-week survey couldn't be found."
+  sources:
+    - {name: "Freddie Mac — 7.28%", url: "https://www.globenewswire.com/news-release/2026/11/19/3406994/0/en/mortgage-rates-average-7-28.html", published: "2026-11-19"}
+
+research:
+  preface: "No new ideas this weekend. Position sizing needs your risk profile, which isn't on file."
+  ideas: []
+
+action_board:
+  three_things:
+    - "The S&P 500 rose 5.6% this week, its best since April 2025."
+    - "The Dow had its best week since 2022 and closed at 50,774.94."
+    - "The Fed decides on 9 December, with a hike widely expected."
+  two_opportunities:
+    - title: "Month-end review"
+      detail: "November ends Monday. Compare your statement with the end of October."
+    - title: "Rate check"
+      detail: "Look for Freddie Mac's next survey on Thursday, 3 December."
+  one_action: "This weekend, write down your risk tolerance and time horizon, so editions can address this volatility directly. No trade suggested."
+  upcoming:
+    - {date: "Sun 29 Nov", event: "Week Ahead"}
+    - {date: "Thu 3 Dec",  event: "Freddie Mac mortgage rates"}
+    - {date: "Wed 9 Dec",  event: "Next Fed decision"}
+    - {date: "18 Dec",     event: "Steyr Motors tender offer closes"}
+    - {date: "Tue 22 Dec", event: "Ocugen shareholder vote"}
